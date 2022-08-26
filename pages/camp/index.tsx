@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 
 const Index: NextPage = () => {
   return (
-    <div>Hello Camp</div>
+    <div></div>
   )
 }
 

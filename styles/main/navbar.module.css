@@ -1,0 +1,96 @@
+
+.headTop {
+    padding-top: 31px;
+    padding-bottom: 31px;
+    position: relative;
+    z-index: 10;
+}
+
+.headTopInner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.logo img{
+    display: inline-block;
+    width: 158px;
+    height: auto;
+}
+
+.menu {
+    margin-left: auto;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 1020px) {
+    .menu {
+        display: none;
+    }
+}
+
+.menu::marker {
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    text-indent: 0 !important;
+    text-align: start !important;
+    text-align-last: start !important;
+}
+
+.menuItems {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+
+.contact {
+    margin-left: 35px;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 1020px) {
+    .contact {
+        display: none;
+    }
+}
+
+.contact A {
+    color: #fff;
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+.contact p {
+    padding-top: 5px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.socialHead {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.socialHead a{
+   font-size: 20px;
+}
+
+.socialHead a:hover{
+    color: #838383;
+}
+
+

@@ -1,0 +1,11 @@
+.homeBoxes {
+    padding-top: 130px;
+    padding-bottom: 0;
+}
+
+@media (max-width: 991px) {
+    .homeBoxes {
+        padding-top: 60px;
+        padding-bottom: 0;
+    }
+}

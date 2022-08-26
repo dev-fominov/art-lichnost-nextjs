@@ -1,0 +1,56 @@
+
+.boxInfoHead {
+    margin-top: 50vh;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 991px) {
+    .boxInfoHead {
+        margin-top: 50vh;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.boxInfoHead .title {
+    position: relative;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 53px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    color: #fff;
+}
+
+@media (max-width: 991px) {
+    .boxInfoHead .title {
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 30px;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        color: #fff;
+        position: relative;
+    }
+}
+.boxInfoHead p {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: #fff;
+    width: 100%;
+    max-width: 600px;
+}
+
+@media (max-width: 991px) {
+    .boxInfoHead p {
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 20px;
+        color: #fff;
+        width: 100%;
+        max-width: 400px;
+        margin-top: 10px;
+    }
+}

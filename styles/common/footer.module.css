@@ -1,0 +1,242 @@
+.footer {
+    margin-top: 100px;
+    background: #f1f1f1;
+    padding-top: 33px;
+    padding-bottom: 80px;
+}
+
+@media (max-width: 991px) {
+    .footer {
+        margin-top: 60px;
+        padding-bottom: 30px;
+    }
+}
+
+.footBoxes {
+    margin-bottom: 18px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 991px) {
+    .footBoxes {
+        display: block;
+        position: relative;
+    }
+}
+
+.footLogo {
+    padding-top: 28px;
+}
+
+.footLogoImg {
+    display: inline-block;
+    width: 158px;
+    height: auto;
+}
+
+.footLogolinks {
+    margin-top: 10px;
+}
+
+.footLogolinks A {
+    display: block;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 16px;
+    color: #6a6a6a;
+    text-decoration: none;
+    margin-bottom: 3px;
+}
+
+.footMenu {
+    margin-left: auto;
+    top: 40px;
+    position: relative;
+}
+
+@media (max-width: 991px) {
+    .footMenu  {
+        top: 20px;
+    }
+}
+
+.footMenu::marker {
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    text-indent: 0 !important;
+    text-align: start !important;
+    text-align-last: start !important;
+}
+
+.footMenu ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 991px) {
+    .footMenu ul {
+        flex-direction: column;
+        margin: 10px 0 20px 0;
+    }
+}
+
+.footMenu ul li {
+    padding: 0 25px;
+    list-style-type: none;
+}
+
+@media (max-width: 991px) {
+    .footMenu ul li {
+        padding: 0;
+    }
+}
+
+.footMenu ul li a {
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: none;
+    line-height: 27px;
+    color: #000;
+}
+
+@media (max-width: 991px) {
+    .footMenu ul li a {
+        font-size: 14px;
+    }
+}
+
+.footMenu ul li > ul {
+    display: block;
+    margin-top: 20px;
+}
+
+@media (max-width: 991px) {
+    .footMenu ul li > ul {
+        margin-top: 0;
+    }
+}
+
+.footMenu ul li > ul li {
+    display: block;
+    padding: 0;
+    margin-bottom: 2px;
+}
+
+.footMenu ul li > ul li a {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 27px;
+    color: #515151;
+}
+
+@media (max-width: 991px) {
+    .footMenu ul li > ul li a {
+        font-size: 12px;
+    }
+}
+
+.footContact {
+    margin-left: auto;
+    padding-top: 28px;
+    text-align: right;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+}
+
+@media (max-width: 1202px) {
+    .footContact {
+        margin-left: 0;
+        margin-right: auto;
+        align-items: start;
+    }
+}
+
+@media (max-width: 991px) {
+    .footContact {
+        position: absolute;
+        top: 0;
+        right: 0;
+        align-items: end;
+    }
+}
+
+.footContact a {
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: none;
+    line-height: 27px;
+    color: #000;
+    margin-left: 14px;
+}
+
+.socialHead {
+    margin-left: auto;
+    margin-top: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    max-width: 122px;
+}
+
+@media (max-width: 1202px) {
+    .socialHead {
+        margin-left: 0;
+    }
+}
+
+.socialHead a {
+    font-size: 20px;
+    color: #B1B1B1;
+}
+
+.socialHead a:hover {
+    color: #727272;
+}
+
+.copy {
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 16px;
+    text-align: right;
+    color: #6a6a6a;
+    margin-top: 62px;
+}
+
+@media (max-width: 1202px) {
+    .copy {
+        margin-top: 30px;
+        text-align: left;
+        margin-left: 14px;
+    }
+}
+
+@media (max-width: 991px) {
+    .copy {
+        display: none;
+    }
+}
+

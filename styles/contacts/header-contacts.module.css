@@ -1,0 +1,12 @@
+.header {
+    background-color: #30aa33;
+    height: 300px;
+}
+
+.title {
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 53px;
+    text-transform: uppercase;
+    color: #fff;
+}

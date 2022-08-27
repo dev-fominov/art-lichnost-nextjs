@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {GiHamburgerMenu} from 'react-icons/gi';
 import {AiOutlineClose} from 'react-icons/ai'
 import styles from '../../styles/main/burger-nav.module.css'
@@ -9,7 +9,6 @@ import {BurgerNavModule} from "./burger-nav-module";
 
 function BurgerNav() {
     let [menuIsOpen, setMenuIsOpen] = useState(false)
-
     const burgerBtnClick = () => {
         setMenuIsOpen(!menuIsOpen)
     }
@@ -45,7 +44,7 @@ function BurgerNav() {
                 </div>
             </div>
             <div onClick={burgerBtnClick} className={styles.burgerBtn}>{menuIsOpen ?
-                <AiOutlineClose style={{color: '#30AA33'}}/> :
+                <AiOutlineClose/> :
                 <GiHamburgerMenu/>}</div>
         </div>
     );

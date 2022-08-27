@@ -25,7 +25,6 @@ export const BurgerNavModule = ({title, children, menuIsOpen}: BurgerNavModuleTy
 
     return (
         <div className={styles.burgerNav}>
-            <div>
                 <div className={styles.itemTitle}>
                     {title}
                     <div onClick={itemBtnClick}>{itemIsOpen ? <AiOutlineUp/> : <AiOutlineDown/>}</div>
@@ -33,7 +32,6 @@ export const BurgerNavModule = ({title, children, menuIsOpen}: BurgerNavModuleTy
                 {itemIsOpen && <div className={styles.itemLink}>
                     {children}
                 </div>}
-            </div>
         </div>
     )
 }

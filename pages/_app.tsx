@@ -11,23 +11,27 @@ function MyApp({Component, pageProps}: AppProps) {
 
     Router.events.on('routeChangeStart', () => {
         setLoading(true)
-        setTimeout(() => {setLoading(false)}, 1500);
     });
+    Router.events.on('routeChangeComplete', () => {
+        setLoading(false)
+    })
 
     return <>
-        {loading ? <ProgressBar completed={100}
-                           animateOnRender={true}
-                           baseBgColor={'#ffffff'}
-                           borderRadius={'40px'}
-                           height={'50px'}
-                           bgColor={'#30AA33'}
-                           customLabel={"АРТЛИЧНОСТЬ"}
-                           transitionDuration={'1.5s'}
-                           barContainerClassName={styles.container}
-                           className={styles.wrapper}
-                           labelClassName={styles.label}
-                           />
-            : <Component {...pageProps} />}
+        {loading && <ProgressBar completed={100}
+                                 animateOnRender={true}
+                                 baseBgColor={'#ffffff'}
+                                 borderRadius={'40px'}
+                                 height={'50px'}
+                                 bgColor={'#30AA33'}
+                                 customLabel={"АРТЛИЧНОСТЬ"}
+                                 transitionDuration={'1.5s'}
+                                 barContainerClassName={styles.container}
+                                 className={styles.wrapper}
+                                 labelClassName={styles.label}
+        />}
+        <div className={loading ? 'wrapper' : ''}>
+            <Component {...pageProps} />
+        </div>
     </>
 }
 

@@ -50,7 +50,7 @@
     align-items: center;
 }
 
-@media (max-width: 1041px) {
+@media (max-width: 1060px) {
     .mapBox {
         justify-content: center;
     }

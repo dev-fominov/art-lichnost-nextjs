@@ -25,6 +25,9 @@ a {
   box-sizing: border-box;
 }
 
+.wrapper{
+  display: none;
+}
 
 
 

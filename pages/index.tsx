@@ -27,7 +27,7 @@ const Home: NextPage = ({data}: any) => {
 
 export default Home
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
         const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/home`)
         const data = await res.json();
 

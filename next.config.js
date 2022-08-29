@@ -5,7 +5,9 @@ const nextConfig = {
   images: {
     loader: "akamai",
     path: "",
-  }
+  },
+  basePath: "/art-lichnost-nextjs",
+  assetPrefix: "/art-lichnost-nextjs",
 }
 
 module.exports = nextConfig

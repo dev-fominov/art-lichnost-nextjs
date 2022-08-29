@@ -6,11 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next export",
     "lint": "next lint"
   },
   "dependencies": {
     "@ramonak/react-progress-bar": "^5.0.2",
     "@types/react-icons": "^3.0.0",
+    "gh-pages": "^4.0.0",
     "mobile-detect": "^1.4.5",
     "next": "12.2.5",
     "react": "18.2.0",

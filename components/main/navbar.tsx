@@ -13,8 +13,7 @@ export const Navbar = () => {
             <div className={styles.headTopInner}>
                 <div className={styles.logo}>
                     <A href={'/'}
-                       text={<img
-                           src={'https://art-lichnost.ru/wp-content/themes/art_person_1/img/logo-aleksandr.svg'}/>}/>
+                       text={<img src={'https://art-lichnost.ru/wp-content/themes/art_person_1/img/logo-aleksandr.svg'}/>}/>
                 </div>
                 <BurgerNav/>
                 <div className={styles.menu}>

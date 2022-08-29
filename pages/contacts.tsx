@@ -16,7 +16,7 @@ const Contacts: NextPage = ({data}:any) => {
 export default Contacts
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/contacts`)
   const data = await res.json();
 

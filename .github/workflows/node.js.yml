@@ -31,7 +31,7 @@ jobs:
     - run: yarn run export
 
     - name: Deploy
-      uses: VadimFominov/github-pages-deploy-action@v1.0.0
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
       with:
         branch: gh-pages
         folder: out

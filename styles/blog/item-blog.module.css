@@ -1,0 +1,82 @@
+.boxItemBlogs {
+    width: 48%;
+    margin-bottom: 60px;
+}
+
+@media (max-width: 991px) {
+    .boxItemBlogs  {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 991px) {
+    .boxItemBlogsColumn  {
+        width: 550px;
+    }
+}
+
+.imgBox {
+    overflow: hidden;
+    display: block;
+    background-size: cover !important;
+    width: 100%;
+    height: 256px;
+    border-radius: 40px;
+    margin-bottom: 12px;
+}
+
+.info {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    border: 1px solid #c4c4c4;
+    border-radius: 40px;
+    width: 100%;
+   min-height: 233px;
+}
+
+.title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    color: #000;
+}
+
+.excerpt {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: justify;
+    color: #000;
+}
+
+.more{
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    color: #eb3535;
+    text-decoration: none;
+    display: inline-block;
+    padding-right: 25px;
+    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/css/../img/arr.svg) no-repeat right center;
+}
+
+.more:hover{
+    text-decoration: underline ;
+}

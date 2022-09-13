@@ -57,6 +57,6 @@ const aboutMenu = [{path: '/about', text: 'О компании',},
     {path: '/jobs', text: 'Вакансии'}]
 
 const blogsMenu = [{path: '/psychologist', text: 'Психолог',},
-    {path: '/blogs', text: 'Блоги'}]
+    {path: '/blog', text: 'Блоги'}]
 
 

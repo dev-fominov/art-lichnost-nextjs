@@ -1,0 +1,27 @@
+.title{
+
+}
+
+.content{
+    text-align: justify
+}
+
+.content p{
+    margin: 0 0 20px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.content span{
+    margin: 0 0 20px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.content blockquote {
+    padding: 10px 18px 13px;
+    background: #189e40;
+    color: #fff;
+    margin: 0 0 20px;
+    display: block;
+}

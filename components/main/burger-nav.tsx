@@ -35,7 +35,7 @@ function BurgerNav() {
                 </BurgerNavModule>
                 <BurgerNavModule menuIsOpen={menuIsOpen} title={<A text={'Ещё'} href={'#!'}/>}>
                     <A text={'Психолог'} href={'/psychologist'}/>
-                    <A text={'Блоги'} href={'/blogs'}/>
+                    <A text={'Блоги'} href={'/blog'}/>
                 </BurgerNavModule>
                 <div className={styles.itemTitle}><A text={'Контакты'} href={"/contacts"}/></div>
                 <div className={styles.contact}>
@@ -44,7 +44,7 @@ function BurgerNav() {
                 </div>
             </div>
             <div onClick={burgerBtnClick} className={styles.burgerBtn}>{menuIsOpen ?
-                <AiOutlineClose/> :
+                <AiOutlineClose style={{ color: '#30AA33'}}/> :
                 <GiHamburgerMenu/>}</div>
         </div>
     );

@@ -32,12 +32,14 @@ export const SliderContacts = ({arrImg}: any) => {
         }
     }
     return <Carousel
+        slidesToSlide={1}
         className={styles.carousel}
+        swipeable
         ssr
         itemClass="image-item"
         infinite
         responsive={responsive}
-        deviceType={"mobile"}
+        deviceType={"tablet"}
     >
         {arrImg.map((img: any, index: number) => <img
                 style={{width: "100%", height: "100%"}}

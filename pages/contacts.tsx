@@ -1,12 +1,12 @@
 import type { NextPage } from 'next'
-import {HeaderContacts} from "../components/contacts/header-contacts";
 import {Footer} from "../components/common/footer";
 import {SectionContacts} from "../components/contacts/section-contacts";
+import {HeaderGreen} from "../components/common/header-green";
 
 const Contacts: NextPage = ({data}:any) => {
   return (
     <>
-      <HeaderContacts/>
+      <HeaderGreen title={'Контакты'}/>
       <SectionContacts data={data}/>
       <Footer/>
     </>

@@ -39,7 +39,7 @@ export const Footer = () => {
                             <li><A href={"#"} target="_blank" text={'Еще'}/>
                                 <ul>
                                     <li><A href={"/psychologist"} text={'Психолог'}/></li>
-                                    <li><A href={"/blogs"} text={'Блоги'}/></li>
+                                    <li><A href={"/blog"} text={'Блоги'}/></li>
                                 </ul>
                             </li>
                             <li><A href={"/about"} text={'О нас'}/>

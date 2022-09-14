@@ -4,7 +4,6 @@ import { Navbar } from "../components/main/navbar";
 import { BigLinks } from "../components/main/big-links";
 import { InfoHead } from "../components/main/info-head";
 import { Section } from "../components/common/section";
-import { Container } from "../components/common/container";
 import { HomeItem } from "../components/main/home-item";
 import { Footer } from "../components/common/footer";
 
@@ -16,9 +15,7 @@ const Home: NextPage = ({ data }: any) => {
             <InfoHead content={data.content} />
         </Header>
         <Section>
-            <Container>
-                {data.sections.map((item: any, index: number) => <HomeItem key={index} id={index} item={item} />)}
-            </Container>
+            {data.sections.map((item: any, index: number) => <HomeItem key={index} id={index} item={item} />)}
         </Section>
         <Footer />
     </>
@@ -28,15 +25,15 @@ const Home: NextPage = ({ data }: any) => {
 export default Home
 
 export async function getStaticProps() {
-        const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/home`)
-        const data = await res.json();
+    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/home`)
+    const data = await res.json();
 
-        return {
-            props: {
-                data
-            },
-            revalidate: 10,
-        };
+    return {
+        props: {
+            data
+        },
+        revalidate: 10,
+    };
 }
 
 
@@ -59,3 +56,11 @@ export async function getStaticProps() {
 //         }
 //     }
 // }
+// =======
+//     return {
+//         props: {
+//             data
+//         }
+//     };
+// }
+// >>>>>>> mainPage

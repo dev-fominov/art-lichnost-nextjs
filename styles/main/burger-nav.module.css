@@ -4,28 +4,38 @@
 }
 
 .burgerNavItems {
+    transition: 0.4s;
     position: absolute;
-    top: 65px;
-    right: 15px;
-    height: 0;
-    padding: 25px;
+    top: 0px;
+    right: 0px;
+    height: auto;
+    width: 270px;
+    padding: 25px 25px 25px 25px;
     display: flex;
-    flex-direction: column;
     background-color: #fdfdfd;
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    flex-direction: column;
     transform: translate(0, -300px);
 }
 
 .show {
+    opacity: 1;
     transform: translate(0, 0);
     height: auto;
     width: 270px;
-    transition: 0.7s;
+    transition: 0.4s;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 80px 25px 25px 25px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fdfdfd;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 .burgerBtn {
     cursor: pointer;
-    color: white;
+    color: #ffffff;
     font-size: 1.7rem;
     position: absolute;
     top: 31px;

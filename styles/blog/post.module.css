@@ -1,4 +1,4 @@
-.title{
+.title {
 
 }
 
@@ -6,17 +6,21 @@
     text-align: justify
 }
 
-.content p{
-    margin: 0 0 20px;
-    font-size: 16px;
+.content img {
+    margin: 0 30px 20px 0;
+    width: 100%;
+    height: auto;
+}
+
+.content p {
+    margin: 0 0 15px;
+}
+
+.content span {
+    font-size: 14px;
     line-height: 1.5;
 }
 
-.content span{
-    margin: 0 0 20px;
-    font-size: 16px;
-    line-height: 1.5;
-}
 
 .content blockquote {
     padding: 10px 18px 13px;

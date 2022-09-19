@@ -5,14 +5,6 @@
     z-index: 1;
 }
 
-@media (max-width: 991px) {
-    .boxInfoHead {
-        margin-top: 50vh;
-        position: relative;
-        z-index: 1;
-    }
-}
-
 .boxInfoHead .title {
     position: relative;
     font-weight: 800;

@@ -8,7 +8,7 @@ import {SectionPsychologist} from "../components/psychologist/section-psychologi
 const Psychologist: NextPage = ({data}:any) => {
   return (
     <>
-        <Header banner={''}>
+        <Header banner={'https://art-lichnost.ru/wp-content/uploads/2022/03/3dc231223ac9bf8d44bfbc648e105680.jpeg'}>
             <Navbar/>
             <InfoHead content={data.content}/>
         </Header>
@@ -19,7 +19,6 @@ const Psychologist: NextPage = ({data}:any) => {
 }
 
 export default Psychologist
-
 
 export async function getStaticProps() {
   const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/psychologist`)

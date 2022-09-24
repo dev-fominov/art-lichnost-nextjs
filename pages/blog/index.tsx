@@ -6,7 +6,7 @@ import {SectionBlog} from "../../components/blog/section-blog";
 const Blog: NextPage = ({data}:any) => {
     return (
         <>
-            <HeaderBlog banner={'https://art-lichnost.ru/wp-content/uploads/2022/03/rectangle-1-1.jpg'} content={'regrgeg'}/>
+            <HeaderBlog banner={data.background_img.url} content={data.content} video={data.background_video}/>
             <SectionBlog data={data}/>
             <Footer/>
         </>

@@ -2,12 +2,24 @@ import React from "react";
 import {Navbar} from "../main/navbar";
 import {Header} from "../common/header";
 import {InfoHead} from "../main/info-head";
+import dynamic from 'next/dynamic';
+import styles from "../../styles/common/header.module.css";
+// @ts-ignore
+const YoutubeBackground = dynamic(() => import('react-youtube-background'), {
+    ssr: false,
+})
 
 
-export const HeaderBlog = ({banner, content}: any) => {
-    return (<Header banner={banner}>
+export const HeaderBlog = ({banner, content, video}: any) => {
+    return video
+        // @ts-ignore
+        ? <YoutubeBackground videoId={video} className={styles.header}>
             <Navbar/>
-            <InfoHead content={'<h1>БЛОГИ</h1>\n <p>Курсы профессий и развития навыков помогут ребенку стать успешным в будущем.</p>\n'}/>
+            <InfoHead content={content}/>
+        </YoutubeBackground>
+        : <Header banner={banner}>
+            <Navbar/>
+            <InfoHead content={content}/>
         </Header>
-    )
+
 }

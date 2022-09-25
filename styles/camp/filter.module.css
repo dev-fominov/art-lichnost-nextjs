@@ -1,0 +1,20 @@
+.filter{
+    margin: 94px 15px 86px 0;
+}
+
+.title{
+    margin-bottom: 36px;
+    padding: 0 15px;
+}
+
+.filterBox{
+    border-top: 1px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1;
+    border-bottom: 1px solid #d1d1d1;
+    border-left: none;
+    border-radius: 0 60px 60px 0;
+    width: calc(100% - 108px);
+    padding-top: 35px;
+    padding-right: 35px;
+    position: relative;
+}

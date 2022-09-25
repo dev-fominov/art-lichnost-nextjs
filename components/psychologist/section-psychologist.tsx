@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import {Section} from "../common/section";
 import styles from '../../styles/psychologist/section-psychologist.module.css'
 import {Forms} from "../common/forms";
+import "react-responsive-modal/styles.css";
+import {Modal} from "react-responsive-modal/dist";
 
 export const SectionPsychologist = ({data}: any) => {
-    const [toggleModal, setToggleModal] = useState(false)
+    const [showModal, updateShowModal] = useState(false);
+
+    const showModalHandler = () => {
+        updateShowModal(!showModal);
+    }
+
     return (<Section>
             <div className={styles.questionBlock}>
                 <div className={styles.questionTitle}>
@@ -25,7 +32,7 @@ export const SectionPsychologist = ({data}: any) => {
                         </ul>
                         <div className={styles.btnPriceBox}>
                             <div className={styles.btnOrder}>
-                                <button className={styles.btnRed} onClick={() => setToggleModal((prev) => !prev)}>Записаться</button>
+                                <button className={styles.btnRed} onClick={() => showModalHandler()}>Записаться</button>
                             </div>
                             <div className={styles.priceTime}>
                                 <div className={styles.price}>{data.issues_addressed.for_kids.price_1[0]}</div>
@@ -47,7 +54,7 @@ export const SectionPsychologist = ({data}: any) => {
                         </ul>
                         <div className={styles.btnPriceBox}>
                             <div className={styles.btnOrder}>
-                                <button className={styles.btnRed} onClick={() => setToggleModal((prev) => !prev)}>Записаться</button>
+                                <button className={styles.btnRed} onClick={() => showModalHandler()}>Записаться</button>
                             </div>
                             <div className={styles.priceTime}>
                                 <div className={styles.price}>{data.issues_addressed.for_parents.price_1[0]}</div>
@@ -100,7 +107,7 @@ export const SectionPsychologist = ({data}: any) => {
             <div>
                 <h3 className={styles.titleInner}>Оформить заявку</h3>
                 <div className={styles.formOrderBox}>
-                        <Forms/>
+                    <Forms/>
                     <div className={styles.formSteps}>
                         <h4>{data.steps_form_title}</h4>
                         <ul>
@@ -116,6 +123,17 @@ export const SectionPsychologist = ({data}: any) => {
                     </div>
                 </div>
             </div>
+            {showModal && <Modal styles={{
+                modal: {position: 'relative', borderRadius: '40px', padding: 0},
+                closeButton: {position: "absolute", top: '12px', right: '12px'}
+            }}
+                                 blockScroll={false}
+                                 open={showModal}
+                                 onClose={showModalHandler}
+                                 closeOnEsc
+                                 center>
+              <Forms/>
+            </Modal>}
         </Section>
     )
 }

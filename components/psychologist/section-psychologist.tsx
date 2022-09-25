@@ -127,7 +127,6 @@ export const SectionPsychologist = ({data}: any) => {
                 modal: {position: 'relative', borderRadius: '40px', padding: 0},
                 closeButton: {position: "absolute", top: '12px', right: '12px'}
             }}
-                                 blockScroll={false}
                                  open={showModal}
                                  onClose={showModalHandler}
                                  closeOnEsc

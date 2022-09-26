@@ -1,3 +1,8 @@
+.header{
+    min-height: 884px;
+    height: 100vh;
+}
+
 .header:before {
     background: rgba(0,0,0,.4);
     content: '';

@@ -9,8 +9,7 @@ const YoutubeBackground = dynamic(() => import('react-youtube-background'), {
     ssr: false,
 })
 
-
-export const HeaderBlog = ({banner, content, video}: any) => {
+export const HeaderCamp = ({banner, content, video}: any) => {
     return video
         // @ts-ignore
         ? <YoutubeBackground videoId={video} className={styles.header}>

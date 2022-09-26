@@ -17,6 +17,18 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@bedrock-layout/use-forwarded-ref@^1.1.4":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/use-forwarded-ref/-/use-forwarded-ref-1.6.0.tgz#efd33df912b7d5c91de2da976b780257b6032e99"
+  integrity sha512-6O4uqkoogYQYT8Vx0HEmusrdxvIgj9/dhFQzPrCWzA87A3yzD+Jr1uVgoyt7VJe86X82NLRyP9XBx957W3Lnkw==
+  dependencies:
+    "@bedrock-layout/use-stateful-ref" "^1.4.0"
+
+"@bedrock-layout/use-stateful-ref@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/use-stateful-ref/-/use-stateful-ref-1.4.0.tgz#33ee6201421b06cac420ec89f1cd7b1c3c76dd52"
+  integrity sha512-olGeFJwOCx38+qNsJ2AHm4IFYqFtD5JMcQkUW9VICxlFzmodfP/tTiqhcFbSfUc/62Qz7iQ2bp5eG+ptT2sDGA==
+
 "@eslint/eslintrc@^1.3.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-1.3.0.tgz#29f92c30bb3e771e4a2048c95fa6855392dfac4f"
@@ -373,6 +385,11 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
 
+body-scroll-lock@^3.1.5:
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/body-scroll-lock/-/body-scroll-lock-3.1.5.tgz#c1392d9217ed2c3e237fee1e910f6cdd80b7aaec"
+  integrity sha512-Yi1Xaml0EvNA0OYWxXiYNqY24AfWkbA6w5vxE7GWxtKfzIbZM+Qw+aSmkgsbWzbHiy/RCSkUZBplVxTA+E4jJg==
+
 brace-expansion@^1.1.7:
   version "1.1.11"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
@@ -413,6 +430,11 @@ chalk@^4.0.0:
   dependencies:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
+
+classnames@^2.2.6:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.2.tgz#351d813bf0137fcc6a76a16b88208d2560a0d924"
+  integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
 
 color-convert@^2.0.1:
   version "2.0.1"
@@ -1701,6 +1723,15 @@ react-multi-carousel@^2.8.2:
   resolved "https://registry.yarnpkg.com/react-multi-carousel/-/react-multi-carousel-2.8.2.tgz#4bbd7a9656d8e49e081745331593e5500eefdbe4"
   integrity sha512-M9Y7DfAp8bA/r6yexttU6RLA7uyppje4c0ELRuCHZWswH+u7nr0uVP6qHNPjc4XGOEY1MYFOb5nBg7JvoKutuQ==
 
+react-responsive-modal@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/react-responsive-modal/-/react-responsive-modal-6.2.0.tgz#339226b911d8ffaba4e0afce83387a65221b8e29"
+  integrity sha512-i3Or4ixdDnLOeZbOQltgayOj69zg6Pbd8IF+RMi6gG1hyZvXHL39QvMvXBuG7poEaBMHspXNDtCzbTBJpOmdfw==
+  dependencies:
+    "@bedrock-layout/use-forwarded-ref" "^1.1.4"
+    body-scroll-lock "^3.1.5"
+    classnames "^2.2.6"
+
 react-yandex-maps@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/react-yandex-maps/-/react-yandex-maps-4.6.0.tgz#87808ee71900a0c46dc0792bd65884ce50f432d4"
@@ -1709,6 +1740,11 @@ react-yandex-maps@^4.6.0:
     create-react-context "^0.3.0"
     prop-types "^15.7.2"
     react-display-name "^0.2.5"
+
+react-youtube-background@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-youtube-background/-/react-youtube-background-1.0.0.tgz#b9bd4cbc425fdc74c80496f99b0a5b4fb7086814"
+  integrity sha512-EEnpEyPAjUIMi1QJM620r6NdBDHuC7Dg12/B3L8m0mA1hqYDCLOdEq0rjbk9demX7bVXQAU5zuRQ0MXpWoFY+w==
 
 react@18.2.0:
   version "18.2.0"

@@ -1,3 +1,11 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: false,
+  swcMinify: true,
+}
+
+module.exports = nextConfig
+
 // Для выгрузки в сеть
 // /** @type {import('next').NextConfig} */
 // const nextConfig = {
@@ -14,10 +22,11 @@
 // module.exports = nextConfig
 
 // для локальной работы
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   reactStrictMode: true,
+//   swcMinify: true,
+// }
 
-module.exports = nextConfig
+// module.exports = nextConfig
+

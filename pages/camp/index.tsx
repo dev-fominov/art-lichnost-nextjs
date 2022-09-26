@@ -5,12 +5,12 @@ import {SectionCamp} from "../../components/camp/section-camp";
 import Filter from "../../components/camp/filter";
 import React from "react";
 
-<<<<<<< HEAD
-const Index: NextPage = () => {
-  return (
-    <div>CAMP</div>
-  )
-=======
+// <<<<<<< HEAD
+// const Index: NextPage = () => {
+//   return (
+//     <div>CAMP</div>
+//   )
+// =======
 const Camp: NextPage = ({data}: any) => {
     return (
         <>
@@ -20,7 +20,7 @@ const Camp: NextPage = ({data}: any) => {
             <Footer/>
         </>
     )
->>>>>>> mainPage
+// >>>>>>> mainPage
 }
 
 export default Camp

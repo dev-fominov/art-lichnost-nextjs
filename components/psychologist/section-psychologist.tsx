@@ -125,7 +125,7 @@ export const SectionPsychologist = ({data}: any) => {
             </div>
             {showModal && <Modal styles={{
                 modal: {position: 'relative', borderRadius: '40px', padding: 0},
-                closeButton: {position: "absolute", top: '12px', right: '12px'}
+                closeButton: {position: "absolute", top: '15px', right: '15px'}
             }}
                                  open={showModal}
                                  onClose={showModalHandler}

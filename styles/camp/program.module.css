@@ -1,0 +1,38 @@
+.title {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 39px;
+    color: #30aa33;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.title span {
+    position: absolute;
+    font-size: 8px;
+    line-height: 27px;
+    color: #c4c4c4;
+    top: -13px;
+    left: 5px;
+    font-weight: 400;
+    text-transform: none;
+}
+
+.description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: justify;
+    color: #000;
+    width: 100%;
+    margin-bottom: 33px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-wrap: wrap ;
+
+}

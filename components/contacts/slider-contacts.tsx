@@ -35,6 +35,8 @@ export const SliderContacts = ({arrImg}: any) => {
         slidesToSlide={1}
         className={styles.carousel}
         swipeable
+        focusOnSelect={false}
+        arrows
         ssr
         itemClass="image-item"
         infinite

@@ -1,0 +1,18 @@
+.title {
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 45px;
+    margin-top: 50px;
+    text-decoration: none;
+}
+
+.slide {
+    position: relative;
+    overflow: hidden;
+    max-width: 286px;
+    height: 466px;
+    margin: auto;
+    border-radius: 40px;
+    background-size: cover;
+}
+

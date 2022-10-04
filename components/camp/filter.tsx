@@ -5,7 +5,12 @@ const Filter = ({data}: any) => {
         <div className={styles.filter}>
             <h2 className={styles.title}>Подобрать смену</h2>
             <div className={styles.filterBox}>
-
+                <div className={styles.programsFilter}>
+                    <div className={styles.programsFilterLeft}>
+                    </div>
+                    <div className={styles.programsFilterRight}>
+                    </div>
+                </div>
             </div>
         </div>
     )

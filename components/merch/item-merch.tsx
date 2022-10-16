@@ -3,6 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import {CgArrowLongRight} from "react-icons/cg";
 import {Modal} from "react-responsive-modal";
+import "react-responsive-modal/styles.css";
 import React, {useState} from "react";
 import {MerchForm} from "./merch-form";
 

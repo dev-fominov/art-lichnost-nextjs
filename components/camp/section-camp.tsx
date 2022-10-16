@@ -10,7 +10,7 @@ export const SectionCamp = ({data}: any) => {
             {data.camps.map((el:any)=> <Program key={el.term_id} data={el}/>)}
             <Reviews data={data}/>
             <Merch data={data.merch}/>
-            <Docs data={data.docs}/>
+            <Docs data={data.docs} title={'Забронировал, что дальше?'}/>
         </Section>
     )
 }

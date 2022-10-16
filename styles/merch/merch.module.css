@@ -1,0 +1,60 @@
+.merchPage{
+    margin-bottom: 60px;
+}
+
+.titleMerch{
+    position: relative;
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 35px;
+}
+
+.contentTitle{
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.merchDescription{
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+}
+
+.merchDescription li{
+    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/css/../img/arr.svg) no-repeat left top 4px;
+    padding-left: 35px;
+    padding-right: 30px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 10px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    text-align: justify;
+}
+
+@media (max-width: 991px) {
+    .merchDescription {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .merchDescription li{
+        width: 100%;
+        padding-right: 0;
+    }
+}
+
+.pageCard{
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

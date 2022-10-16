@@ -3,7 +3,7 @@ import {A} from "../common/A";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-const Docs = ({data}: any) => {
+const Docs = ({data, title}: any) => {
     const responsive = {
         desktop: {
             breakpoint: {
@@ -31,7 +31,7 @@ const Docs = ({data}: any) => {
         }
     }
     return (<div className={styles.docs}>
-            <h2 className={styles.title}>Забронировал, что дальше?</h2>
+            <h2 className={styles.title}>{title}</h2>
             <Carousel
                 slidesToSlide={1}
                 className={styles.carousel}
@@ -46,7 +46,11 @@ const Docs = ({data}: any) => {
                 {data.map((el: any) => <div key={el.id} className={styles.boxItem}>
                     <h3>{el.title}</h3>
                     <p>{el.subtitle}</p>
-                    <A href={`/${el.slug}`} text={'Узнать больше'}/>
+                    <A href={{
+                        pathname: '/camp/[docs]',
+                        query: {docs: el.slug,},
+                    }}
+                       text={'Узнать больше'}/>
                 </div>)}
             </Carousel>
         </div>

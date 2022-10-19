@@ -15,7 +15,7 @@ const Camp: NextPage = ({data}: any) => {
     return (
         <>
             <HeaderCamp banner={data.background_img.url} content={data.content} video={data.background_video}/>
-            <Filter/>
+            <Filter data={data.filter}/>
             <SectionCamp data={data}/>
             <Footer/>
         </>

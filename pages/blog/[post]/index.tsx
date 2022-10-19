@@ -1,7 +1,6 @@
 import {HeaderGreen} from "../../../components/common/header-green";
 import {Section} from "../../../components/common/section";
 import styles from '../../../styles/blog/post.module.css'
-import {useRouter} from "next/router";
 import {Footer} from "../../../components/common/footer";
 
 const Post = ({data}:any) => {

@@ -1417,11 +1417,6 @@ minimist@^1.2.0, minimist@^1.2.6:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
   integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
-mobile-detect@^1.4.5:
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/mobile-detect/-/mobile-detect-1.4.5.tgz#da393c3c413ca1a9bcdd9ced653c38281c0fb6ad"
-  integrity sha512-yc0LhH6tItlvfLBugVUEtgawwFU2sIe+cSdmRJJCTMZ5GEJyLxNyC/NIOAOGk67Fa8GNpOttO3Xz/1bHpXFD/g==
-
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -1734,11 +1729,6 @@ react-yandex-maps@^4.6.0:
     create-react-context "^0.3.0"
     prop-types "^15.7.2"
     react-display-name "^0.2.5"
-
-react-youtube-background@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/react-youtube-background/-/react-youtube-background-1.0.0.tgz#b9bd4cbc425fdc74c80496f99b0a5b4fb7086814"
-  integrity sha512-EEnpEyPAjUIMi1QJM620r6NdBDHuC7Dg12/B3L8m0mA1hqYDCLOdEq0rjbk9demX7bVXQAU5zuRQ0MXpWoFY+w==
 
 react@18.2.0:
   version "18.2.0"

@@ -1,20 +1,25 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {GiHamburgerMenu} from 'react-icons/gi';
 import {AiOutlineClose} from 'react-icons/ai'
 import styles from '../../styles/main/burger-nav.module.css'
 import {A} from "../common/A";
 import Link from "next/link";
 import {BurgerNavModule} from "./burger-nav-module";
+import {clickOutside} from "../common/clickOutside";
 
 
 function BurgerNav() {
+    const wrapperRef = useRef(null);
     let [menuIsOpen, setMenuIsOpen] = useState(false)
     const burgerBtnClick = () => {
         setMenuIsOpen(!menuIsOpen)
     }
+    clickOutside(wrapperRef, () => {
+        setMenuIsOpen(false);
+    });
     return (
         <div className={styles.burgerNav}>
-            <div className={menuIsOpen ? `${styles.burgerNavItems} ${styles.show}` : styles.burgerNavItems}>
+            <div  ref={wrapperRef} className={menuIsOpen ? `${styles.burgerNavItems} ${styles.show}` : styles.burgerNavItems}>
                 <BurgerNavModule menuIsOpen={menuIsOpen} title={<A text={'Лагерь'} href={'/camp'}/>}>
                     <A text={'Лагерь профессий'} href={'/programs/4-smena-2'}/>
                     <A text={'Лагерь навыков'} href={'/programs/3-smena'}/>

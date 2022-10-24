@@ -1,23 +1,23 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: false,
-  swcMinify: true,
-}
-
-module.exports = nextConfig
-
-// Для выгрузки в сеть
 // /** @type {import('next').NextConfig} */
 // const nextConfig = {
 //   reactStrictMode: false,
 //   swcMinify: true,
-//   images: {
-//     loader: "akamai",
-//     path: "",
-//   },
-//   basePath: "/art-lichnost-nextjs",
-//   assetPrefix: "/art-lichnost-nextjs",
 // }
+
+// module.exports = nextConfig
+
+// Для выгрузки в сеть
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: false,
+  swcMinify: true,
+  images: {
+    loader: "akamai",
+    path: "",
+  },
+  basePath: "/art-lichnost-nextjs",
+  assetPrefix: "/art-lichnost-nextjs",
+}
 
 // module.exports = nextConfig
 

@@ -1,9 +1,9 @@
 import React from "react";
 import {Navbar} from "../main/navbar";
-import {Header} from "../common/header";
+import {Header} from "./header";
 import {InfoHead} from "../main/info-head";
 
-export const HeaderBlog = ({banner, content, video}: any) => {
+export const HeaderVideo = ({banner, content, video}: any) => {
 
     const VIDEO_WIDTH = 1920;
     const VIDEO_HEIGHT = 1080;

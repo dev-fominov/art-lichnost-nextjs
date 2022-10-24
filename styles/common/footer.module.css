@@ -24,7 +24,7 @@
     flex-wrap: wrap;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1018px) {
     .footBoxes {
         display: block;
         position: relative;
@@ -95,7 +95,7 @@
 }
 
 .footMenu ul li {
-    padding: 0 25px;
+    padding: 0 20px;
     list-style-type: none;
 }
 

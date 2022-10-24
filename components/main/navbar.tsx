@@ -42,9 +42,9 @@ export const Navbar = () => {
     </div>)
 }
 
-const campMenu = [{path: '/programs/4-smena-2', text: 'Лагерь профессий',},
-    {path: '/programs/3-smena', text: 'Лагерь навыков'},
-    {path: '/programs/3-smena-14-dnej-31-iyulya-13-avgusta-copy', text: 'Туристические каникулы'},
+const campMenu = [{path: '/programs/professions', text: 'Лагерь профессий',},
+    {path: '/programs/skills', text: 'Лагерь навыков'},
+    {path: '/programs/tourist-holidays', text: 'Туристические каникулы'},
     {path: '/merch', text: 'Мерч'},]
 
 const programmesMenu = [{path: '/tests/online-test', text: 'Онлайн-тестирование',},

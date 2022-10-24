@@ -19,7 +19,7 @@ const nextConfig = {
   assetPrefix: "/art-lichnost-nextjs",
 }
 
-// module.exports = nextConfig
+module.exports = nextConfig
 
 // для локальной работы
 // /** @type {import('next').NextConfig} */

@@ -1,0 +1,116 @@
+.descriptionBox {
+    min-height: 357px;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 1180px) {
+    .descriptionBox {
+        justify-content: center;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+}
+
+.whatText {
+    width: 100%;
+    max-width: 598px;
+}
+
+@media (max-width: 1180px) {
+    .whatText {
+      margin-bottom: 15px;
+    }
+}
+
+.descriptionText h3 {
+    position: relative;
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 35px;
+}
+
+.descriptionText p {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+.descriptionText ul {
+    list-style: none;
+}
+
+.descriptionText ul li {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    padding-left: 20px;
+    margin-bottom: 12px;
+    background: url(https://art-lichnost.ru/wp-content/themes/art_person_1/img/list-bullet-svg.svg) no-repeat left top 4px;
+}
+
+.whatImg {
+    width: 100%;
+    max-width: 529px;
+    height: 267px;
+    overflow: hidden;
+    border-radius: 40px;
+}
+
+.descriptionImg {
+    max-width: 100%;
+    position: relative;
+    height: 267px;
+    cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.descriptionVideo{
+    max-width: 100%;
+    position: relative;
+    height: 267px;
+    cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.play{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -29px 0 0 -29px;
+    width: 58px;
+    height: 58px;
+    cursor: pointer;
+    color: #b62323;
+    opacity: .9;
+}
+
+.descriptionImg:hover {
+    -webkit-transform:scale(1.15);
+    -moz-transform:scale(1.15);
+    -ms-transform:scale(1.15);
+    -o-transform:scale(1.15);
+    transform:scale(1.15);
+}

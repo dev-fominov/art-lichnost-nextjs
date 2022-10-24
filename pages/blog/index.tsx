@@ -1,12 +1,12 @@
 import type {NextPage} from 'next'
 import {Footer} from "../../components/common/footer";
-import {HeaderBlog} from "../../components/blog/header-blog";
+import {HeaderVideo} from "../../components/common/header-video";
 import {SectionBlog} from "../../components/blog/section-blog";
 
 const Blog: NextPage = ({data}:any) => {
     return (
         <>
-            <HeaderBlog banner={data.background_img.url} content={data.content} video={data.background_video}/>
+            <HeaderVideo banner={data.background_img.url} content={data.content} video={data.background_video}/>
             <SectionBlog data={data}/>
             <Footer/>
         </>

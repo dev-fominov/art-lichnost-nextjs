@@ -24,8 +24,9 @@ export const Footer = () => {
                         <ul>
                             <li><A href={"/camp"} text={'Лагерь'}/>
                                 <ul>
-                                    <li><A href={"/programs/vesna-2022-lager-navykov-i-umenij"} text={'Лагерь профессий'}/></li>
-                                    <li><A href={"/programs/2-smena"} text={'Лагерь навыков'}/></li>
+                                    <li><A href={"/programs/professions"} text={'Лагерь профессий'}/></li>
+                                    <li><A href={"/programs/skills"} text={'Лагерь навыков'}/></li>
+                                    <li><A href={"/programs/tourist-holidays"} text={'Туристические каникулы'}/></li>
                                     <li><A href={"/merch"} text={'Мерч'}/></li>
                                 </ul>
                             </li>

@@ -21,10 +21,10 @@ function BurgerNav() {
         <div className={styles.burgerNav}>
             <div  ref={wrapperRef} className={menuIsOpen ? `${styles.burgerNavItems} ${styles.show}` : styles.burgerNavItems}>
                 <BurgerNavModule menuIsOpen={menuIsOpen} title={<A text={'Лагерь'} href={'/camp'}/>}>
-                    <A text={'Лагерь профессий'} href={'/programs/4-smena-2'}/>
-                    <A text={'Лагерь навыков'} href={'/programs/3-smena'}/>
+                    <A text={'Лагерь профессий'} href={'/programs/professions'}/>
+                    <A text={'Лагерь навыков'} href={'/programs/skills'}/>
                     <A text={'Туристические каникулы'}
-                       href={'/programs/3-smena-14-dnej-31-iyulya-13-avgusta-copy'}/>
+                       href={'/programs/tourist-holidays'}/>
                     <A text={'Мерч'} href={'/merch'}/>
                 </BurgerNavModule>
                 <div className={styles.itemTitle}><A text={'Курсы'} href={'/courses'}/></div>

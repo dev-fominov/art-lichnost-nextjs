@@ -1,8 +1,8 @@
-import {HeaderGreen} from "../../../components/common/header-green";
-import {Section} from "../../../components/common/section";
-import {Footer} from "../../../components/common/footer";
+import {HeaderGreen} from "../../../../components/common/header-green";
+import {Section} from "../../../../components/common/section";
+import {Footer} from "../../../../components/common/footer";
 import {useRouter} from "next/router";
-import Docs from "../../../components/camp/docs";
+import Docs from "../../../../components/camp/docs";
 
 const DocsPage = ({data}:any) => {
     const router = useRouter()

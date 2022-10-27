@@ -1,0 +1,104 @@
+.boxDescription {
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+
+.description {
+    margin-bottom: 33px;
+    width: 70%;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: justify;
+    color: #000000;
+}
+
+.box {
+    margin-bottom: 20px;
+}
+
+.titleProf {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 39px;
+    color: #30AA33;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.titleInner {
+    position: relative;
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 35px;
+}
+
+
+.formOrderBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    align-content: center;
+}
+
+@media (max-width: 1000px) {
+    .formOrderBox {
+        justify-content: center;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+}
+
+.formSteps {
+    width: 100%;
+    max-width: 688px;
+    margin-left: 20px;
+}
+
+@media (max-width: 1000px) {
+    .formSteps {
+        margin-top: 15px;
+    }
+}
+
+.formSteps h4 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 12px;
+}
+
+.formSteps ul {
+    margin-bottom: 24px;
+    list-style: none;
+}
+
+.formSteps li {
+    font-size: 14px;
+    line-height: 37px;
+    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/css/../img/arr-red-svg.svg) no-repeat left top 13px;
+    padding-left: 35px;
+}
+
+.formStepImg {
+    max-width: 688px;
+    height: 281px;
+    border-radius: 40px;
+}
+
+.form{
+    margin-top: 70px;
+}

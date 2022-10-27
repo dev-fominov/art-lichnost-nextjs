@@ -19,16 +19,29 @@ function BurgerNav() {
     });
     return (
         <div className={styles.burgerNav}>
-            <div  ref={wrapperRef} className={menuIsOpen ? `${styles.burgerNavItems} ${styles.show}` : styles.burgerNavItems}>
+            <div ref={wrapperRef}
+                 className={menuIsOpen ? `${styles.burgerNavItems} ${styles.show}` : styles.burgerNavItems}>
                 <BurgerNavModule menuIsOpen={menuIsOpen} title={<A text={'Лагерь'} href={'/camp'}/>}>
-                    <A text={'Лагерь профессий'} href={'/programs/professions'}/>
-                    <A text={'Лагерь навыков'} href={'/programs/skills'}/>
+                    <A text={'Лагерь профессий'}
+                       href={{
+                           pathname: '/camp/[programs]',
+                           query: {programs: 'professions',},
+                       }}/>
+                    <A text={'Лагерь навыков'}
+                       href={{
+                           pathname: '/camp/[programs]',
+                           query: {programs: 'skills',},
+                       }}/>
                     <A text={'Туристические каникулы'}
-                       href={'/programs/tourist-holidays'}/>
+                       href={{
+                           pathname: '/camp/[programs]',
+                           query: {programs: 'tourist-holidays',},
+                       }}/>
                     <A text={'Мерч'} href={'/merch'}/>
                 </BurgerNavModule>
                 <div className={styles.itemTitle}><A text={'Курсы'} href={'/courses'}/></div>
-                <BurgerNavModule menuIsOpen={menuIsOpen} title={<A text={'Профтестирование'} href={'/programmes/proftestirovanie_school'}/>}>
+                <BurgerNavModule menuIsOpen={menuIsOpen}
+                                 title={<A text={'Профтестирование'} href={'/programmes/proftestirovanie_school'}/>}>
                     <A text={'Онлайн-тестирование'} href={'/tests/online-test'}/>
                     <A text={'Офлайн-тестирование'} href={'/tests/offline-test'}/>
                 </BurgerNavModule>
@@ -49,7 +62,7 @@ function BurgerNav() {
                 </div>
             </div>
             <div onClick={burgerBtnClick} className={styles.burgerBtn}>{menuIsOpen ?
-                <AiOutlineClose style={{ color: '#30AA33'}}/> :
+                <AiOutlineClose style={{color: '#30AA33'}}/> :
                 <GiHamburgerMenu/>}</div>
         </div>
     );

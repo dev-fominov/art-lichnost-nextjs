@@ -2,13 +2,7 @@ import {useState} from "react";
 import styles from "../../styles/common/dropdown.module.css";
 import {A} from "./A";
 
-interface DropdownType {
-    title: string
-    path: string
-    itemMenu?: Array<{ path: string, text: string }>
-}
-
-export const Dropdown = ({title, path, itemMenu}: DropdownType) => {
+export const Dropdown = ({title, path, itemMenu}: any) => {
     const [click, setClick] = useState(false)
 
     return <div onMouseEnter={() => setClick(true)}

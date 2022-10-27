@@ -47,7 +47,7 @@ const Docs = ({data, title}: any) => {
                     <h3>{el.title}</h3>
                     <p>{el.subtitle}</p>
                     <A href={{
-                        pathname: '/camp/[docs]',
+                        pathname: '/camp/docs/[docs]',
                         query: {docs: el.slug,},
                     }}
                        text={'Узнать больше'}/>

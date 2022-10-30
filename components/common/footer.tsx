@@ -43,7 +43,7 @@ export const Footer = () => {
                                 </ul>
                             </li>
                             <li><A href={"/courses"} text={'Курсы'}/></li>
-                            <li><A href={"/programmes/proftestirovanie_school"} text={'Профтестирование'}/>
+                            <li><A href={"/proftestirovanie"} text={'Профтестирование'}/>
                                 <ul>
                                     <li><A href={"/tests/online-test"} text={'Онлайн-тестирование'}/></li>
                                     <li><A href={"/tests/offline-test"} text={'Офлайн-тестирование'}/></li>

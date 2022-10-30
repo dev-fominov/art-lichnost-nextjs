@@ -41,7 +41,7 @@ function BurgerNav() {
                 </BurgerNavModule>
                 <div className={styles.itemTitle}><A text={'Курсы'} href={'/courses'}/></div>
                 <BurgerNavModule menuIsOpen={menuIsOpen}
-                                 title={<A text={'Профтестирование'} href={'/programmes/proftestirovanie_school'}/>}>
+                                 title={<A text={'Профтестирование'} href={'/proftestirovanie'}/>}>
                     <A text={'Онлайн-тестирование'} href={'/tests/online-test'}/>
                     <A text={'Офлайн-тестирование'} href={'/tests/offline-test'}/>
                 </BurgerNavModule>

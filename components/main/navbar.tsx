@@ -21,7 +21,7 @@ export const Navbar = () => {
                     <div className={styles.menuItems}>
                         <Dropdown title={'Лагерь'} path={'/camp'} itemMenu={campMenu}/>
                         <Dropdown title={'Курсы'} path={'/courses'}/>
-                        <Dropdown title={'Профтестирование'} path={'/programmes/proftestirovanie_school'}
+                        <Dropdown title={'Профтестирование'} path={'/proftestirovanie'}
                                   itemMenu={programmesMenu}/>
                         <Dropdown title={'О нас'} path={'/about'} itemMenu={aboutMenu}/>
                         <Dropdown title={'Ещё'} path={'#!'} itemMenu={blogsMenu}/>

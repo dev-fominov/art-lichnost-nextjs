@@ -1,0 +1,87 @@
+.test {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 100%;
+    max-width: 594px;
+    margin-left: 11px;
+    margin-right: 11px;
+}
+
+@media (max-width: 991px) {
+    .test {
+      margin: 20px 0 0 0;
+    }
+}
+
+.testImg {
+    margin-bottom: 10px;
+    max-width: 593px;
+    height: 223px;
+    overflow: hidden;
+    border-radius: 40px;
+}
+
+.testText {
+    border: 1px solid #C4C4C4;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 40px;
+    padding: 25px 36px;
+}
+
+.testLabel {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 7px 15px;
+    border: 1px solid #30AA33;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 40px;
+    height: 35px;
+    text-align: center;
+    margin-bottom: 33px;
+    display: inline-block;
+}
+
+.testLabel a {
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+}
+
+.testText span {
+    font-size: 14px;
+    line-height: 17px;
+    display: block;
+}
+
+.dates {
+    margin-bottom: 7px;
+}
+
+.address {
+    margin-bottom: 20px;
+}
+
+.price {
+    margin-bottom: 22px;
+}
+
+.link{
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    color: #eb3535;
+    text-decoration: none;
+    display: inline-block;
+    padding-right: 25px;
+    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/css/../img/arr.svg) no-repeat right center;
+}
+
+.link:hover{
+    text-decoration: underline;
+}

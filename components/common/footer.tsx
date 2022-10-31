@@ -45,8 +45,14 @@ export const Footer = () => {
                             <li><A href={"/courses"} text={'Курсы'}/></li>
                             <li><A href={"/proftestirovanie"} text={'Профтестирование'}/>
                                 <ul>
-                                    <li><A href={"/tests/online-test"} text={'Онлайн-тестирование'}/></li>
-                                    <li><A href={"/tests/offline-test"} text={'Офлайн-тестирование'}/></li>
+                                    <li><A href={{
+                                        pathname: '/proftestirovanie/[testirovanie]',
+                                        query: {testirovanie: 'online-test',}
+                                    }} text={'Онлайн-тестирование'}/></li>
+                                    <li><A href={{
+                                        pathname: '/proftestirovanie/[testirovanie]',
+                                        query: {testirovanie: 'offline-test',}
+                                    }} text={'Офлайн-тестирование'}/></li>
                                 </ul>
                             </li>
                             <li><A href={"#"} target="_blank" text={'Еще'}/>

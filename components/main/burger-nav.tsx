@@ -42,8 +42,14 @@ function BurgerNav() {
                 <div className={styles.itemTitle}><A text={'Курсы'} href={'/courses'}/></div>
                 <BurgerNavModule menuIsOpen={menuIsOpen}
                                  title={<A text={'Профтестирование'} href={'/proftestirovanie'}/>}>
-                    <A text={'Онлайн-тестирование'} href={'/tests/online-test'}/>
-                    <A text={'Офлайн-тестирование'} href={'/tests/offline-test'}/>
+                    <A text={'Онлайн-тестирование'} href={{
+                        pathname: '/proftestirovanie/[testirovanie]',
+                        query: {testirovanie: 'online-test',}
+                    }}/>
+                    <A text={'Офлайн-тестирование'} href={{
+                        pathname: '/proftestirovanie/[testirovanie]',
+                        query: {testirovanie: 'offline-test',}
+                    }}/>
                 </BurgerNavModule>
                 <BurgerNavModule menuIsOpen={menuIsOpen} title={<A text={'О нас'} href={'/about'}/>}>
                     <A text={'О компании'} href={'/about'}/>

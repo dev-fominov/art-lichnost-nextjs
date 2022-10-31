@@ -10,12 +10,12 @@ export const Test = ({data}: any) => {
         }}
              className={styles.testImg}/>
         <div className={styles.testText}>
-            <A className={styles.testLabel} text={data.title} href={`/${data.link_to_page}`}/>
+            <A className={styles.testLabel} text={data.title} href={`/proftestirovanie/${data.link_to_page}`}/>
             <span className={styles.dates}>{data.for_whom}</span>
             <span className={styles.dates}>Ближайшая дата: {data.upcoming_dates}</span>
             <span className={styles.address}>Адрес: {data.address}</span>
             <span className={styles.price}>Цена: {data.price}</span>
-            <A className={styles.link} href={`/${data.link_to_page}`} text={'Узнать больше'} />
+            <A className={styles.link} href={`/proftestirovanie/${data.link_to_page}`} text={'Узнать больше'} />
         </div>
     </div>)
 }

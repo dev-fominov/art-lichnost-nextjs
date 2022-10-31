@@ -66,8 +66,22 @@ const campMenu = [
     },
     {path: '/merch', text: 'Мерч'},]
 
-const programmesMenu = [{path: '/tests/online-test', text: 'Онлайн-тестирование',},
-    {path: '/tests/offline-test', text: 'Офлайн-тестирование'},]
+const programmesMenu = [
+    {
+        path: {
+            pathname: '/proftestirovanie/[testirovanie]',
+            query: {testirovanie: 'online-test',}
+        },
+        text: 'Онлайн-тестирование'
+    },
+    {
+        path: {
+            pathname: '/proftestirovanie/[testirovanie]',
+            query: {testirovanie: 'offline-test',}
+        },
+        text: 'Офлайн-тестирование'
+    },
+]
 
 const aboutMenu = [{path: '/about', text: 'О компании',},
     {path: '/team', text: 'Команда'},

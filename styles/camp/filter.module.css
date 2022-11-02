@@ -73,6 +73,12 @@
     }
 }
 
+@media (max-width: 550px) {
+    .programsFilterRight {
+        width: 100%;
+    }
+}
+
 .programsFilterTitle {
     font-weight: 600;
     font-size: 16px;

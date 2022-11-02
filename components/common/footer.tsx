@@ -24,17 +24,35 @@ export const Footer = () => {
                         <ul>
                             <li><A href={"/camp"} text={'Лагерь'}/>
                                 <ul>
-                                    <li><A href={"/programs/professions"} text={'Лагерь профессий'}/></li>
-                                    <li><A href={"/programs/skills"} text={'Лагерь навыков'}/></li>
-                                    <li><A href={"/programs/tourist-holidays"} text={'Туристические каникулы'}/></li>
+                                    <li><A href={{
+                                        pathname: '/camp/[programs]',
+                                        query: {programs: 'professions',},
+                                    }}
+                                           text={'Лагерь профессий'}/></li>
+                                    <li><A href={{
+                                        pathname: '/camp/[programs]',
+                                        query: {programs: 'skills',},
+                                    }}
+                                           text={'Лагерь навыков'}/></li>
+                                    <li><A href={{
+                                        pathname: '/camp/[programs]',
+                                        query: {programs: 'tourist-holidays',},
+                                    }}
+                                           text={'Туристические каникулы'}/></li>
                                     <li><A href={"/merch"} text={'Мерч'}/></li>
                                 </ul>
                             </li>
                             <li><A href={"/courses"} text={'Курсы'}/></li>
-                            <li><A href={"/programmes/proftestirovanie_school"} text={'Профтестирование'}/>
+                            <li><A href={"/proftestirovanie"} text={'Профтестирование'}/>
                                 <ul>
-                                    <li><A href={"/tests/online-test"} text={'Онлайн-тестирование'}/></li>
-                                    <li><A href={"/tests/offline-test"} text={'Офлайн-тестирование'}/></li>
+                                    <li><A href={{
+                                        pathname: '/proftestirovanie/[testirovanie]',
+                                        query: {testirovanie: 'online-test',}
+                                    }} text={'Онлайн-тестирование'}/></li>
+                                    <li><A href={{
+                                        pathname: '/proftestirovanie/[testirovanie]',
+                                        query: {testirovanie: 'offline-test',}
+                                    }} text={'Офлайн-тестирование'}/></li>
                                 </ul>
                             </li>
                             <li><A href={"#"} target="_blank" text={'Еще'}/>

@@ -12,7 +12,7 @@ export const SlideProzhivaniya = ({data}: any) => {
     return <div className={styles.slideBox}
                 onClick={showModalHandler}
                 style={{
-                    background: `url(${data.oblozhka.url}) no-repeat center center`,
+                    background: `url(${data.oblozhka ? data.oblozhka.url : data.img.url}) no-repeat center center`,
                     backgroundSize: `cover`
                 }}>
         <AiOutlinePlayCircle className={styles.play}/>

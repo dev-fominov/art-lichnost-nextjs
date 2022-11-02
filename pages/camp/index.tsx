@@ -1,14 +1,14 @@
 import type {NextPage} from 'next'
-import {HeaderCamp} from "../../components/camp/header-camp";
 import {Footer} from "../../components/common/footer";
 import {SectionCamp} from "../../components/camp/section-camp";
 import Filter from "../../components/camp/filter";
 import React from "react";
+import {HeaderVideo} from "../../components/common/header-video";
 
 const Camp: NextPage = ({data}: any) => {
     return (
         <>
-            <HeaderCamp banner={data.background_img.url} content={data.content} video={data.background_video}/>
+            <HeaderVideo banner={data.background_img.url} content={data.content} video={data.background_video}/>
             <Filter data={data.filter}/>
             <SectionCamp data={data}/>
             <Footer/>

@@ -1,0 +1,203 @@
+.boxDescription {
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+
+.description {
+    margin-bottom: 33px;
+    width: 70%;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: justify;
+    color: #000000;
+}
+
+.box {
+    margin-bottom: 20px;
+}
+
+.titleProf {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 39px;
+    color: #30AA33;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.titleInner {
+    position: relative;
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 35px;
+}
+
+
+.formOrderBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    align-content: center;
+}
+
+@media (max-width: 1000px) {
+    .formOrderBox {
+        justify-content: center;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+}
+
+.formSteps {
+    width: 100%;
+    max-width: 688px;
+    margin-left: 20px;
+}
+
+@media (max-width: 1000px) {
+    .formSteps {
+        margin-top: 15px;
+    }
+}
+
+.formSteps h4 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 12px;
+}
+
+.formSteps ul {
+    margin-bottom: 24px;
+    list-style: none;
+}
+
+.formSteps li {
+    font-size: 14px;
+    line-height: 37px;
+    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/css/../img/arr-red-svg.svg) no-repeat left top 13px;
+    padding-left: 35px;
+}
+
+.formStepImg {
+    max-width: 688px;
+    height: 281px;
+    border-radius: 40px;
+}
+
+.boxContent {
+    margin-bottom: 70px;
+}
+
+.boxCourse {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.itemSkill {
+    width: 48%;
+    border: 1px solid #C4C4C4;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 40px;
+    padding: 30px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.listSkills {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.listSkills li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 19px;
+    width: 50%;
+}
+
+.onstock {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 40px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 10px;
+    text-align: center;
+    width: 35px;
+    min-width: 35px;
+    height: 35px;
+    margin-right: 8px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.boxAlex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+.boxAlex span{
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration: none;
+    color: #000;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.postTitle{
+    text-decoration: underline;
+}

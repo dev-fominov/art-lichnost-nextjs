@@ -1,0 +1,46 @@
+.benefits{
+    margin-top: 80px;
+    z-index: 1000;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.itemLabel {
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 32px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 100px;
+    padding: 14px 20px;
+}
+
+@media (max-width: 991px) {
+    .benefits {
+        margin-top: 20px;
+    }
+    .itemLabel {
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+        text-transform: uppercase;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border-radius: 40px;
+        height: 40px;
+        padding: 12px;
+        margin-bottom: 10px;
+    }
+}

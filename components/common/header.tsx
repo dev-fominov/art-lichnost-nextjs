@@ -8,9 +8,8 @@ interface HeaderProps  {
 
 export const Header = ({children, banner}:HeaderProps) => {
     return (<header className={styles.header} style={{
-            background: `url(${banner}) no-repeat center center`,
+            background: `url(${banner}) center center / cover no-repeat`,
             minHeight: '884px',
-            backgroundSize: 'cover',
             height: '100vh'
         }}>
             {children}

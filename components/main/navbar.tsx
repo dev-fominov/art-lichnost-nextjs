@@ -20,7 +20,8 @@ export const Navbar = () => {
                     <div className={styles.menuItems}>
                         <Dropdown title={'Лагерь'} path={'/camp'} itemMenu={campMenu}/>
                         <Dropdown title={'Курсы'} path={'/courses'}/>
-                        <Dropdown title={'Профтестирование'} path={'/programmes/proftestirovanie_school'} itemMenu={programmesMenu}/>
+                        <Dropdown title={'Профтестирование'} path={'/proftestirovanie'}
+                                  itemMenu={programmesMenu}/>
                         <Dropdown title={'О нас'} path={'/about'} itemMenu={aboutMenu}/>
                         <Dropdown title={'Ещё'} path={'#!'} itemMenu={blogsMenu}/>
                         <Dropdown title={'Контакты'} path={"/contacts"}/>
@@ -42,13 +43,44 @@ export const Navbar = () => {
     </div>)
 }
 
-const campMenu = [{path: '/programs/professions', text: 'Лагерь профессий',},
-    {path: '/programs/skills', text: 'Лагерь навыков'},
-    {path: '/programs/tourist-holidays', text: 'Туристические каникулы'},
+const campMenu = [
+    {
+        path: {
+            pathname: '/camp/[programs]',
+            query: {programs: 'professions',}
+        },
+        text: 'Лагерь профессий',
+    },
+    {
+        path: {
+            pathname: '/camp/[programs]',
+            query: {programs: 'skills',},
+        }, text: 'Лагерь навыков'
+    },
+    {
+        path: {
+            pathname: '/camp/[programs]',
+            query: {programs: 'tourist-holidays',},
+        }, text: 'Туристические каникулы'
+    },
     {path: '/merch', text: 'Мерч'},]
 
-const programmesMenu = [{path: '/tests/online-test', text: 'Онлайн-тестирование',},
-    {path: '/tests/offline-test', text: 'Офлайн-тестирование'},]
+const programmesMenu = [
+    {
+        path: {
+            pathname: '/proftestirovanie/[testirovanie]',
+            query: {testirovanie: 'online-test',}
+        },
+        text: 'Онлайн-тестирование'
+    },
+    {
+        path: {
+            pathname: '/proftestirovanie/[testirovanie]',
+            query: {testirovanie: 'offline-test',}
+        },
+        text: 'Офлайн-тестирование'
+    },
+]
 
 const aboutMenu = [{path: '/about', text: 'О компании',},
     {path: '/team', text: 'Команда'},

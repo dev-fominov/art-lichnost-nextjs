@@ -1,5 +1,4 @@
-.docs{
-padding-top: 50px;
+.docs {
 }
 
 .title {
@@ -9,7 +8,7 @@ padding-top: 50px;
     text-decoration: none;
 }
 
-.boxItem{
+.boxItem {
     border: 1px solid #c4c4c4;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -19,7 +18,7 @@ padding-top: 50px;
     margin: auto;
 }
 
-.boxItem h3{
+.boxItem h3 {
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
@@ -27,7 +26,7 @@ padding-top: 50px;
     margin-bottom: 40px;
 }
 
-.boxItem p{
+.boxItem p {
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
@@ -48,10 +47,47 @@ padding-top: 50px;
     background: url(//art-lichnost.ru/wp-content/themes/art_person_1/css/../img/arr.svg) no-repeat right center;
 }
 
-.boxItem A:hover{
+.boxItem A:hover {
     text-decoration: underline;
 }
 
+.titleInner {
+    position: relative;
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 35px;
+}
+.medicalBlock  {
+    margin-bottom: 70px;
+}
+
+.medicalBlock ul {
+    list-style: none;
+}
+
+.medicalBlock li {
+    font-size: 14px;
+    line-height: 20px;
+    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/img/arr-red-svg.svg) no-repeat left 22px top 5px;
+    padding-left: 50px;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.medicalBlock p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.medicalBlock h3{
+ margin-bottom: 10px;
+}
+
+.medicalBlock ol{
+    list-style: none;
+}
 
 
 

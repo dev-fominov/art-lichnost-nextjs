@@ -1,63 +1,20 @@
 import {HeaderGreen} from "../../../../components/common/header-green";
 import {Section} from "../../../../components/common/section";
 import {Footer} from "../../../../components/common/footer";
-import {useRouter} from "next/router";
 import Docs from "../../../../components/camp/docs";
+import styles from "../../../../styles/camp/docs.module.css";
 
-const DocsPage = ({data}:any) => {
-    const router = useRouter()
-    const { docs } = router.query
+const DocsPage = ({data}: any) => {
+
     return (<div>
-            <HeaderGreen title={docs}/>
+            <HeaderGreen title={data.title}/>
             <Section>
-                <div>
-                    <h3>{docs}</h3>
+                <div className={styles.docs}>
+                    <h3 className={styles.titleInner}>{data.subtitle_docs}</h3>
+                    <div className={styles.medicalBlock} dangerouslySetInnerHTML={{__html: data.content}}/>
                 </div>
                 <Docs title={'Посмотреть другое'}
-                    data={[
-                    {
-                        "id": 522,
-                        "slug": "mediczinskie-spravki",
-                        "title": "Медицинские справки",
-                        "subtitle": "Для поездки в лагерь"
-                    },
-                    {
-                        "id": 523,
-                        "slug": "algoritm-dejstvij",
-                        "title": "Алгоритм действий",
-                        "subtitle": "Что делать после заявки?"
-                    },
-                    {
-                        "id": 524,
-                        "slug": "dokumenty-dlya-dogovora",
-                        "title": "Документы для договора",
-                        "subtitle": "Что взять для подписания?"
-                    },
-                    {
-                        "id": 525,
-                        "slug": "oplata",
-                        "title": "Оплата",
-                        "subtitle": "Как удобнее оплатить?"
-                    },
-                    {
-                        "id": 526,
-                        "slug": "sobranie-dlya-roditelej",
-                        "title": "Собрание для родителей",
-                        "subtitle": "Ответы на все вопросы"
-                    },
-                    {
-                        "id": 527,
-                        "slug": "sertifikat",
-                        "title": "Сертификат",
-                        "subtitle": "Как получить?"
-                    },
-                    {
-                        "id": 528,
-                        "slug": "kovidnye-ogranicheniya",
-                        "title": "Ковидные ограничения",
-                        "subtitle": "И как с ними быть?"
-                    }
-                ]}/>
+                      data={data.docs}/>
             </Section>
             <Footer/>
         </div>
@@ -66,8 +23,7 @@ const DocsPage = ({data}:any) => {
 
 export default DocsPage
 
-/*
-export async function getServerSideProps (context: any) {
+export async function getServerSideProps(context: any) {
     const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/docs/${context.params.docs}`)
     const data = await res.json();
 
@@ -76,4 +32,4 @@ export async function getServerSideProps (context: any) {
             data
         }
     };
-}*/
+}

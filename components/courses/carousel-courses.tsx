@@ -32,7 +32,10 @@ const CarouselCourses = ({data}: any) => {
         }
     }
     return (<div className={styles.box}>
-            <h2 className={styles.titleProf}>{data.name.toUpperCase()}</h2>
+            <h2 className={styles.titleProf}
+                style={{color: `${data.name.toUpperCase() === 'HARD SKILLS'? '#FF822E' : '#30AA33' }`}}>
+                {data.name.toUpperCase()}
+            </h2>
             <div className={styles.description}>
                 {data.description}
             </div>

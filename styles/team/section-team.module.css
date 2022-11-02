@@ -1,0 +1,394 @@
+.teamBox {
+    margin-bottom: 60px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+
+.description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: justify;
+    color: #000000;
+    margin-bottom: 20px;
+    width: 70%;
+}
+
+.principlesBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.principleItem {
+    width: 302px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 33px;
+}
+
+.principleItem:before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #eb3535;
+    position: absolute;
+    top: 23px;
+    z-index: -1;
+}
+
+.item {
+    background: #FFFFFF;
+    border: 1px solid #EB3535;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 40px;
+    cursor: pointer;
+    position: relative;
+}
+
+.item:before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #eb3535;
+    position: absolute;
+    top: 16px;
+    left: -37px;
+    z-index: -1;
+}
+
+.contentItem {
+    max-height: 0px;
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+    top: 15px;
+    left: 0;
+    padding: 0 52px 0px 52px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: justify;
+    color: #000000;
+    z-index: 100;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 240px;
+    height: 44px;
+}
+
+.box:before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #eb3535;
+    position: absolute;
+    top: 16px;
+    right: -37px;
+    z-index: -1;
+}
+
+
+.box span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.arrow {
+    color: #eb3535;
+    font-size: 25px;
+}
+
+.tags {
+    margin: -5px -10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.tagItem {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+    padding: 10px 20px;
+    margin: 5px 10px;
+    border: 1px solid #EB3535;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 40px;
+}
+
+.leaders {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+@media (max-width: 700px) {
+    .leaders {
+        flex-direction: column;
+        justify-content: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+    }
+}
+
+.leftBox {
+    max-width: 500px;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.rightBox {
+    width: calc(100% - 370px);
+}
+
+@media (max-width: 700px) {
+    .leftBox {
+        padding-bottom: 15px;
+    }
+
+    .rightBox {
+        width: 100%;
+    }
+}
+
+.rightBox img {
+    width: 100%;
+    height: 472px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.trebovaniya {
+    margin-bottom: 25px;
+}
+
+.requirements {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #000000;
+    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/img/arr-orange-svg.svg) no-repeat left top 8px;
+    padding-left: 25px;
+}
+
+.descriptionLeaders {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: justify;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.obyazannost {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+.jobsBox {
+    border: 1px solid #C4C4C4;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.contentComand {
+    margin-bottom: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.left {
+    width: calc(100% - 450px);
+}
+
+.right {
+    margin: -5px;
+    width: 410px;
+}
+
+.title2 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.description2 {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: justify;
+    color: #000000;
+    margin-bottom: 25px;
+}
+
+.left A {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    color: #eb3535;
+    text-decoration: none;
+    display: inline-block;
+    padding-right: 25px;
+    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/css/../img/arr.svg) no-repeat right center;
+}
+
+.left A:hover {
+    text-decoration: underline;
+}
+
+.right A {
+    font-weight: 500;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+    padding: 10px 15px;
+    margin: 5px;
+    border: 1px solid #EB3535;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 40px;
+    background: none;
+    text-decoration: none;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.right A:hover {
+    border: 1px solid #30aa33;
+}
+
+.right span {
+    font-weight: 500;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+    padding: 10px 15px;
+    margin: 5px;
+    border: 1px solid #30aa33;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 40px;
+    background: none;
+}
+
+@media (max-width: 650px) {
+    .description {
+        width: 100%;
+    }
+
+    .principlesBox {
+        justify-content: center;
+    }
+
+    .principleItem {
+        width: 100%;
+    }
+
+
+}
+
+@media (max-width: 850px) {
+    .jobsBox {
+        padding: 20px;
+    }
+
+    .contentComand {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .left {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .right {
+        width: 100%;
+        margin: 0;
+    }
+}

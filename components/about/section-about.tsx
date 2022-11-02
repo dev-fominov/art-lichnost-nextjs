@@ -1,6 +1,5 @@
 import {Section} from "../common/section";
 import styles from "../../styles/about/section-about.module.css";
-import {A} from "../common/A";
 import ItemCard from "./item-card";
 
 const SectionAbout = ({data}: any) => {

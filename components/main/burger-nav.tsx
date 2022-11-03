@@ -55,7 +55,7 @@ function BurgerNav() {
                     <A text={'О компании'} href={'/about'}/>
                     <A text={'Команда'} href={'/team'}/>
                     <A text={'Проекты'} href={'/projects'}/>
-                    <A text={'Вакансии'} href={'/jobs'}/>
+                    <A text={'Вакансии'} href={'/vacancies'}/>
                 </BurgerNavModule>
                 <BurgerNavModule menuIsOpen={menuIsOpen} title={<A text={'Ещё'} href={'#!'}/>}>
                     <A text={'Психолог'} href={'/psychologist'}/>

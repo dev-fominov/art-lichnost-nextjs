@@ -66,7 +66,7 @@ export const Footer = () => {
                                     <li><A href={"/about"} text={'О компании'}/></li>
                                     <li><A href={"/team"} text={'Команда'}/></li>
                                     <li><A href={"/projects"} text={'Проекты'}/></li>
-                                    <li><A href={"/jobs"} text={'Вакансии'}/></li>
+                                    <li><A href={"/vacancies"} text={'Вакансии'}/></li>
                                     <li><A href={"/contacts"} text={'Контакты'}/></li>
                                 </ul>
                             </li>

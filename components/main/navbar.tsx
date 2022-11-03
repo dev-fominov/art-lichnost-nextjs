@@ -86,7 +86,7 @@ const programmesMenu = [
 const aboutMenu = [{path: '/about', text: 'О компании',},
     {path: '/team', text: 'Команда'},
     {path: '/projects', text: 'Проекты'},
-    {path: '/jobs', text: 'Вакансии'}]
+    {path: '/vacancies', text: 'Вакансии'}]
 
 const blogsMenu = [{path: '/psychologist', text: 'Психолог',},
     {path: '/blog', text: 'Блоги'}]

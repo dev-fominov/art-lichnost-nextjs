@@ -86,7 +86,12 @@ const SectionTeam = ({data}: any) => {
                             <A href={`/vacancies`} text={'Посмотреть все вакансии'}/>
                         </div>
                         <div className={styles.right}>
-                            <A href={`/vacancies`} text={'Вожатый в лагерь'}/>
+                            <A  href={
+                                {
+                                    pathname: '/vacancies/[job]',
+                                    query: {job: 'vozhatyj-v-lager',},
+                                }}
+                                text={'Вожатый'}/>
                         </div>
                     </div>
                     <div className={styles.contentComand}>

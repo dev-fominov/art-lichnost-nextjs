@@ -2,8 +2,9 @@ import {HeaderGreen} from "../../../components/common/header-green";
 import {Section} from "../../../components/common/section";
 import styles from '../../../styles/blog/post.module.css'
 import {Footer} from "../../../components/common/footer";
+import {NextPage} from "next";
 
-const Post = ({data}:any) => {
+const Post: NextPage = ({data}:any) => {
 
     return (<div>
             <HeaderGreen title={data.title}/>

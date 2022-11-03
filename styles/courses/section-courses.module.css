@@ -126,7 +126,14 @@
     font-size: 16px;
     line-height: 20px;
     color: #000000;
-    margin-bottom: 30px;
+}
+
+.prozhivanieDescription{
+    width: 100%;
+    max-width: 811px;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: justify;
 }
 
 .listSkills {

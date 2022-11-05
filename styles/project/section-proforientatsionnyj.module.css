@@ -1,0 +1,261 @@
+.boxList {
+    margin-bottom: 50px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.contentBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: space-between;
+}
+
+.itemFirst {
+    border: 1px solid #B1B1B1;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 40px;
+    padding: 20px;
+    position: relative;
+    width: 232px;
+    height: 223px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@media (max-width: 1200px) {
+    .contentBox {
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 550px) {
+    .itemFirst {
+        width: 100%;
+    }
+}
+
+
+.itemFirst img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    -o-object-position: center;
+    object-position: center;
+}
+
+.itemTitle {
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 39px;
+    text-transform: uppercase;
+    color: #EB3535;
+}
+
+.itemDescription {
+    position: absolute;
+    top: 117px;
+    left: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    width: calc(100% - 40px);
+}
+
+.itemArr {
+    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/img/arr-red-svg.svg) no-repeat left top 4px;
+    padding-left: 35px;
+    width: 70%;
+}
+
+@media (max-width: 1200px) {
+    .itemArr {
+ width: 100%;
+    }
+}
+
+.itemDescriptionArr {
+    font-size: 15px;
+    font-weight: 400;
+    color: #000000;
+}
+
+
+.history {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+@media (max-width: 700px) {
+    .history {
+        flex-direction: column;
+        justify-content: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+    }
+}
+
+.leftBox {
+    max-width: 613px;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.rightBox {
+    max-width: 527px;
+    width: 100%;
+}
+
+@media (max-width: 700px) {
+    .leftBox {
+        padding-bottom: 15px;
+    }
+}
+
+.leftBox p {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: justify;
+    color: #000;
+    margin-bottom: 17px;
+}
+
+.rightBox img {
+    width: 100%;
+    height: 215px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.itemDescriptionRedBorder {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    border: 1px solid #EB3535;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 40px;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+}
+
+.contentBoxCard {
+    margin-left: -15px;
+    margin-right: -15px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+@media (max-width: 1440px) {
+    .contentBoxCard {
+        justify-content: space-evenly;
+    }
+}
+
+.card {
+    margin-left: 14px;
+    margin-right: 15px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    width: 384px;
+}
+
+.card img {
+    width: 384px;
+    height: 220px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    border-radius: 40px;
+    margin-bottom: 30px;
+}
+
+.itemTitleCard {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.count {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    background: #30AA33;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-right: 15px;
+}
+
+.titleCard {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    color: #000000;
+    display: block;
+    width: calc(100% - 52px);
+}
+
+.itemDescriptionCard {
+    display: flex;
+    flex-direction: column;
+}
+
+.itemDescriptionCard p {
+    margin-bottom: 10px;
+    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/img/arr-green-svg.svg) no-repeat left top 4px;
+    padding-left: 35px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+
+}
+

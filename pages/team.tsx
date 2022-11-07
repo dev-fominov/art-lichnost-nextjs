@@ -6,7 +6,9 @@ import SectionTeam from "../components/team/section-team";
 const Team: NextPage = ({data}: any) => {
     return (
         <>
-            <HeaderVideo banner={data.banner.url} content={data.content} video={data.id_video}/>
+            <HeaderVideo banner={data.banner.url}
+                         content={data.content}
+                         video={data.id_video}/>
             <SectionTeam data={data}/>
             <Footer/>
         </>

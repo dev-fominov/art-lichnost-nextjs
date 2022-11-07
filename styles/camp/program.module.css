@@ -2,7 +2,6 @@
     font-weight: 800;
     font-size: 32px;
     line-height: 39px;
-    color: #30aa33;
     position: relative;
     margin-bottom: 25px;
 }
@@ -31,8 +30,12 @@
 .cards {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: start;
     width: 100%;
     flex-wrap: wrap ;
 
+}
+
+.cardCamp{
+    margin: auto;
 }

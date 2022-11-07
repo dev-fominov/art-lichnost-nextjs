@@ -45,6 +45,21 @@
     display: inline-block;
 }
 
+.testLabelColor{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 7px 15px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 40px;
+    height: 35px;
+    text-align: center;
+    margin-bottom: 33px;
+    display: inline-block;
+    border: 1px solid #FF822E;
+}
+
 .testLabel a {
     font-weight: 600;
     font-size: 16px;

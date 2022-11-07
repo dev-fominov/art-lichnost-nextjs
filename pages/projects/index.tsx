@@ -8,7 +8,9 @@ import React from "react";
 
 const Projects: NextPage = ({data}: any) => {
     return (<>
-    <HeaderVideo banner={data.banner.url} content={data.content} video={data.id_video}/>
+    <HeaderVideo banner={data.banner.url}
+                 content={data.content}
+                 video={data.id_video}/>
     <Section>
         <div className={styles.contentProjects}>
         {data.projects.map((item: any, index: any) => <div key={index} className={styles.itemProject}>

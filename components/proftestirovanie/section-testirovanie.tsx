@@ -6,8 +6,11 @@ import {CustomAccordion} from "../common/accordion";
 import {Modal} from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 
+
 const SectionTestirovanie = ({data}: any) => {
     const [showModal, updateShowModal] = useState(false);
+
+    let color = data.id_page === 54 ? {color: '#FF822E',} : {}
 
     const showModalHandler = () => {
         updateShowModal(!showModal);
@@ -20,9 +23,10 @@ const SectionTestirovanie = ({data}: any) => {
                 </ul>
             </div>
             <div className={styles.testBlock}>
-                {data.type_of_test.map((item: any, index: any) => <div key={index} className={styles.orderTest}>
-                    <span>Тесты</span>
-                    <h4>{item.for_whom}</h4>
+                {data.type_of_test.map((item: any, index: any) => <div key={index}
+                                                                       className={styles.orderTest}>
+                    <span style={color}>Тесты</span>
+                    <h4 style={color}>{item.for_whom}</h4>
                     <p>{item.title}</p>
                     <ul className={styles.listFor}>
                         {item.list_descr.map((el: any, index: number) => <li key={index}>{el}</li>)}
@@ -42,12 +46,14 @@ const SectionTestirovanie = ({data}: any) => {
                 <h3 className={styles.titleInner}> Как проводится онлайн-тестирование?</h3>
                 {data.stages_test.map((item: any, index: any) => <div key={index} className={styles.stepItem}>
                     <div className={styles.stepImg}>
-                        <span>{index + 1}</span>
+                        <span style={data.id_page === 54 ? {backgroundColor: '#FF822E',} : {}}>{index + 1}</span>
                         <img src={item.img.url} alt={item.img.alt}/>
                     </div>
                     <div className={styles.stepDesc}>
                         <div className={styles.stepTitle}>{item.title}</div>
-                        <div className={styles.stepText}><p>{item.description}</p></div>
+                        <div className={data.id_page === 54 ? styles.stepTextColor : styles.stepText}>
+                            <p>{item.description}</p>
+                        </div>
                     </div>
                 </div>)}
             </div>

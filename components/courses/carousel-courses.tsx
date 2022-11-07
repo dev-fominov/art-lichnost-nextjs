@@ -33,7 +33,7 @@ const CarouselCourses = ({data}: any) => {
     }
     return (<div className={styles.box}>
             <h2 className={styles.titleProf}
-                style={{color: `${data.name.toUpperCase() === 'HARD SKILLS'? '#FF822E' : '#30AA33' }`}}>
+                style={{color: `${data.name.toUpperCase() === 'HARD SKILLS' ? '#FF822E' : '#30AA33'}`}}>
                 {data.name.toUpperCase()}
             </h2>
             <div className={styles.description}>
@@ -52,7 +52,9 @@ const CarouselCourses = ({data}: any) => {
                 >
                     {data.camp_card.map((el: any) => <Card key={el.ID} data={el}/>)}
                 </Carousel>
-                :  <div className={styles.card}>{data.camp_card.map((el: any) => <Card key={el.ID} data={el}/>)}</div>}
+                : <div className={styles.card}>
+                    {data.camp_card.map((el: any) => <Card key={el.ID} data={el}/>)}
+                </div>}
         </div>
     )
 }

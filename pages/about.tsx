@@ -6,7 +6,9 @@ import SectionAbout from "../components/about/section-about";
 const About: NextPage = ({data}: any) => {
     return (
         <>
-            <HeaderVideo banner={data.banner.url} content={data.content} video={data.id_video}/>
+            <HeaderVideo banner={data.banner.url}
+                         content={data.content}
+                         video={data.id_video}/>
             <SectionAbout data={data}/>
             <Footer/>
         </>

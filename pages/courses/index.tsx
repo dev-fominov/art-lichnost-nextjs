@@ -9,7 +9,9 @@ import styles from '../../styles/courses/section-courses.module.css';
 const Courses: NextPage = ({data}: any) => {
     return (
         <>
-            <HeaderVideo banner={data.background_img.url} content={data.content} video={data.background_video}/>
+            <HeaderVideo banner={data.background_img.url}
+                         content={data.content}
+                         video={data.background_video}/>
             <Container>
                 <div className={styles.boxDescription}>
                     <div className={styles.description}>{data.description}</div>

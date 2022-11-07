@@ -16,3 +16,49 @@
     background-size: cover;
 }
 
+.carousel {
+    padding: 15px 0;
+}
+
+
+.container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.slideBox {
+    position: relative;
+    overflow: hidden;
+    max-width: 286px;
+    height: 466px;
+    margin: auto;
+    border-radius: 40px;
+    background-size: cover;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.slideBox:hover {
+    transform: scale(1.05)
+}
+
+.play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -29px 0 0 -29px;
+    width: 58px;
+    height: 58px;
+    cursor: pointer;
+    color: #e3e3e3;
+}
+
+.video {
+    max-width: 100%;
+    position: relative;
+    height: 100%;
+    cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}

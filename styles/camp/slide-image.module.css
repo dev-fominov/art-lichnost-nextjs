@@ -1,0 +1,52 @@
+.slideBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 466px;
+    margin-left: 12px;
+    margin-right: 12px;
+
+}
+
+.textReviewBox {
+    width: 100%;
+    max-width: 285px;
+    height: 222px;
+    overflow: hidden;
+    border: 1px solid #c4c4c4;
+    border-radius: 40px;
+    padding: 20px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.textReviewBox:hover {
+    transform: scale(1.05)
+}
+
+.textReviewBox img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.boxModal {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxModal img {
+    height: auto;
+    width: 100%;
+}

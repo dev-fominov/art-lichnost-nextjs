@@ -295,7 +295,7 @@
     justify-content: center;
     left: -10px;
     top: -10px;
-    background: #FF822E;
+    background:  #30AA33;
     border-radius: 100%;
 }
 
@@ -330,6 +330,25 @@
 }
 
 .stepText:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/img/arr-down-green.png) no-repeat center center;
+    width: 10px;
+    height: 16px;
+}
+
+.stepTextColor {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: justify;
+    padding-bottom: 40px;
+    position: relative;
+}
+
+.stepTextColor:after {
     content: '';
     display: block;
     position: absolute;

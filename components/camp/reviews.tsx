@@ -1,6 +1,8 @@
 import styles from '../../styles/camp/reviews.module.css'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import {SlideVideo} from "./slide-video";
+import {SlideImage} from "./slide-image";
 
 const Reviews = ({data}: any) => {
 
@@ -31,56 +33,25 @@ const Reviews = ({data}: any) => {
         }
     }
     return (
-        <div>
+        <>
             <h2 className={styles.title}>Отзывы</h2>
-                <Carousel
-                    slidesToSlide={1}
-                    className={styles.carousel}
-                    swipeable
-                    focusOnSelect={false}
-                    arrows
-                    ssr
-                    itemClass="image-item"
-                    infinite
-                    responsive={responsive}
-                >
-                            <div className={styles.slide}
-                                 style={{
-                                     background: `url(${data.camps[1].camp_card[0].thumbnail.url}) no-repeat center center`,
-                                     backgroundSize: `cover`
-                                 }}/>
-                    <div className={styles.slide}
-                         style={{
-                             background: `url(${data.camps[1].camp_card[0].thumbnail.url}) no-repeat center center`,
-                             backgroundSize: `cover`
-                         }}/>
-                    <div className={styles.slide}
-                         style={{
-                             background: `url(${data.camps[1].camp_card[0].thumbnail.url}) no-repeat center center`,
-                             backgroundSize: `cover`
-                         }}/>
-                    <div className={styles.slide}
-                         style={{
-                             background: `url(${data.camps[1].camp_card[0].thumbnail.url}) no-repeat center center`,
-                             backgroundSize: `cover`
-                         }}/>
-                    <div className={styles.slide}
-                         style={{
-                             background: `url(${data.camps[1].camp_card[0].thumbnail.url}) no-repeat center center`,
-                             backgroundSize: `cover`
-                         }}/>
-                    <div className={styles.slide}
-                         style={{
-                             background: `url(${data.camps[1].camp_card[0].thumbnail.url}) no-repeat center center`,
-                             backgroundSize: `cover`
-                         }}/>
-                    <div className={styles.slide}
-                         style={{
-                             background: `url(${data.camps[1].camp_card[0].thumbnail.url}) no-repeat center center`,
-                             backgroundSize: `cover`
-                         }}/>
-                </Carousel>
-            </div>
+            <Carousel
+                slidesToSlide={1}
+                className={styles.carousel}
+                swipeable
+                focusOnSelect={false}
+                arrows
+                ssr
+                itemClass="image-item"
+                infinite
+                responsive={responsive}
+            >
+                {data.map((el: any, index: any) => el.id_video
+                    ? <SlideVideo key={index} data={el}/>
+                    : <SlideImage key={index} data={el}/>
+                )}
+            </Carousel>
+        </>
     )
 }
 

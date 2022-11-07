@@ -25,7 +25,15 @@ const Testirovanie = ({data}: any) => {
                 <Container>
                     <div>
                         {data.benefits.map((item: any, index: any) => <div className={styles.itemLabel}
-                                                                           key={index}>{item}</div>)}
+                                                                           key={index}
+                                                                           style={data.id_page === 54
+                                                                               ? {
+                                                                                   color: '#FF822E',
+                                                                                   border: '1px solid #FF822E'
+                                                                               }
+                                                                               : {}}>
+                            {item}
+                        </div>)}
                     </div>
                 </Container>
             </div>
@@ -35,7 +43,15 @@ const Testirovanie = ({data}: any) => {
                 <Container>
                     <div className={styles.benefits}>
                         {data.benefits.map((item: any, index: any) => <div className={styles.itemLabel}
-                                                                           key={index}>{item}</div>)}
+                                                                           key={index}
+                                                                           style={data.id_page === 54
+                                                                               ? {
+                                                                                   color: '#FF822E',
+                                                                                   border: '1px solid #FF822E'
+                                                                               }
+                                                                               : {}}>
+                            {item}
+                        </div>)}
                     </div>
                 </Container>
             </Header>}

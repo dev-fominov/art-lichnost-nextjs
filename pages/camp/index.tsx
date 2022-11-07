@@ -8,7 +8,9 @@ import {HeaderVideo} from "../../components/common/header-video";
 const Camp: NextPage = ({data}: any) => {
     return (
         <>
-            <HeaderVideo banner={data.background_img.url} content={data.content} video={data.background_video}/>
+            <HeaderVideo banner={data.background_img.url}
+                         content={data.content}
+                         video={data.background_video}/>
             <Filter data={data.filter}/>
             <SectionCamp data={data}/>
             <Footer/>

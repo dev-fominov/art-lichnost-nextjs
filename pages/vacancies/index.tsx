@@ -5,7 +5,9 @@ import {SectionVacancies} from "../../components/vacancies/section-vacancies";
 
 const Vacancies: NextPage = ({data}: any) => {
     return (<>
-            <HeaderVideo banner={data.banner.url} content={data.content} video={data.id_video}/>
+            <HeaderVideo banner={data.banner.url}
+                         content={data.content}
+                         video={data.id_video}/>
             <SectionVacancies data={data}/>
             <Footer/>
         </>

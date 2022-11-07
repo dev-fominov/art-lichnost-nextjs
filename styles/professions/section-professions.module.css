@@ -9,6 +9,17 @@
     margin-bottom: 35px;
 }
 
+.tablist{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
 .reasonBox {
     border: 1px solid #C4C4C4;
     -webkit-box-sizing: border-box;
@@ -278,3 +289,53 @@
     height: 281px;
     border-radius: 40px;
 }
+
+.carouselCard {
+    width: 320px;
+    margin: auto;
+}
+
+.boxImg {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    width: 320px;
+    height: 180px;
+    margin-bottom: 10px;
+    border-radius: 40px;
+    background-size: cover !important;
+}
+
+.boxLink {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 40px;
+    padding: 22px 36px;
+    max-width: 320px;
+}
+
+.postTitle {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000;
+    margin-bottom: 25px;
+    min-height: 40px;
+}
+
+.boxLink A {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    color: #eb3535;
+    text-decoration: none;
+    display: inline-block;
+    padding-right: 25px;
+    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/css/../img/arr.svg) no-repeat right center;
+}
+
+.boxLink A:hover {
+    text-decoration: underline;
+}
+
+

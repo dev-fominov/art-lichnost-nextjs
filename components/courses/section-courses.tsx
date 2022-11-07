@@ -1,4 +1,3 @@
-import React from "react";
 import {Section} from "../common/section";
 import styles from '../../styles/courses/section-courses.module.css'
 import CarouselCourses from "./carousel-courses";
@@ -7,13 +6,17 @@ import {Forms} from "../common/forms";
 import {A} from "../common/A";
 
 export const SectionCourses = ({data}: any) => {
+
     return (<Section>
             <div className={styles.boxContent}>
                 <h3 className={styles.titleInner}>Старт запуска группы</h3>
                 <div className={styles.boxCourse}>
                     {data.launch_group.map((item: any, index: any) => {
-                        return item.count && <div key={index} className={styles.itemSkill}>
-                          <div className={styles.title}>{item.name}</div>
+                        return item.count && <div key={index}
+                                                  className={styles.itemSkill}>
+                          <div className={styles.title}>
+                              {item.name}
+                          </div>
                           <ul className={styles.listSkills}>
                               {item.camp_card.map((item: any, index: any) => <li key={index}>
                                   {item.availability_seats

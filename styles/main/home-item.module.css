@@ -39,6 +39,10 @@
     max-width: 320px;
 }
 
+.boxHomeItemLink:hover {
+   text-decoration: underline;
+}
+
 .boxHomeItemLink span {
     position: absolute;
     font-size: 8px;

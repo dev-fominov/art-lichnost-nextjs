@@ -3,7 +3,7 @@ import {Footer} from "../../components/common/footer";
 import {HeaderVideo} from "../../components/common/header-video";
 import {SectionBlog} from "../../components/blog/section-blog";
 
-const Blog: NextPage = ({data}:any) => {
+const Blog: NextPage = ({data}: any) => {
     return (
         <>
             <HeaderVideo banner={data.background_img.url} content={data.content} video={data.background_video}/>

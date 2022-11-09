@@ -8,8 +8,6 @@ import {Forms} from "../common/forms";
 import {A} from "../common/A";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import {SlideVideo} from "../camp/slide-video";
-import {SlideImage} from "../camp/slide-image";
 
 export const SectionProfessions = ({data}: any) => {
     const responsive = {

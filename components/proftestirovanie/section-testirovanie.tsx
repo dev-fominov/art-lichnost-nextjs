@@ -10,7 +10,7 @@ import "react-responsive-modal/styles.css";
 const SectionTestirovanie = ({data}: any) => {
     const [showModal, updateShowModal] = useState(false);
 
-    let color = data.id_page === 54 ? {color: '#FF822E',} : {}
+    let color = data.id_page === 54 ? {color: '#FF822E'} : {}
 
     const showModalHandler = () => {
         updateShowModal(!showModal);

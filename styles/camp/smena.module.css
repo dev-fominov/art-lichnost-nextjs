@@ -1,0 +1,29 @@
+.slideBox {
+    position: relative;
+    height: 300px;
+    width: 360px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.slideBox img {
+    object-fit: cover;
+    height: auto;
+    width: 360px;
+}
+
+.dots li button {
+    width: 10px;
+    height: 10px;
+    margin-right: 15px;
+}
+
+.item li {
+    width: 360px;
+}
+
+.carousel {
+    display: flex;
+    justify-content: space-evenly;
+}
+

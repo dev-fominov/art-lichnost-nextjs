@@ -1,5 +1,5 @@
 .questionBlock {
-    padding-bottom: 90px;
+    padding-bottom: 70px;
 }
 
 .questionTitle {
@@ -66,7 +66,7 @@
 
 @media (max-width: 520px) {
     .answerFor {
-        padding: 20px 30px;
+        padding: 20px 25px;
     }
 }
 
@@ -252,6 +252,8 @@
 
 @media (max-width: 1000px) {
     .itemPsychologist {
+        margin-right: 0;
+        margin-left: 0;
         width: 100%
     }
 }
@@ -360,6 +362,7 @@
 @media (max-width: 1000px) {
     .formSteps {
         margin-top: 15px;
+        margin-left: 0;
     }
 }
 
@@ -388,7 +391,7 @@
     border-radius: 40px;
 }
 
-.modal{
+.modal {
     height: auto;
     width: auto;
     z-index: 1000;

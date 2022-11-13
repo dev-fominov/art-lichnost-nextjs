@@ -39,7 +39,7 @@
     max-width: 320px;
 }
 
-.boxHomeItemLink:hover {
+.boxHomeItemLink a:hover {
    text-decoration: underline;
 }
 

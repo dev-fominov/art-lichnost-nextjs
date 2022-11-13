@@ -5,36 +5,43 @@ import {Section} from "../../components/common/section";
 import styles from '../../styles/projects/projects.module.css'
 import {A} from "../../components/common/A";
 import React from "react";
+import Head from "next/head";
 
 const Projects: NextPage = ({data}: any) => {
-    return (<>
-    <HeaderVideo banner={data.banner.url}
-                 content={data.content}
-                 video={data.id_video}/>
-    <Section>
-        <div className={styles.contentProjects}>
-        {data.projects.map((item: any, index: any) => <div key={index} className={styles.itemProject}>
-            <div className={styles.left}>
-                <div className={styles.comment}>???????????????????</div>
-                <div className={styles.title}>{item.title}</div>
-                <div className={styles.leftBox}>{item.description}</div>
-                <A className={styles.link}
-                   href={
-                       {
-                           pathname: '/projects/[project]',
-                           query: {project: item.slug,},
-                       }}
-                   text={'Узнать больше'}/>
-            </div>
-            <div className={styles.right}>
-                <img src={item.img.url} alt={item.img.alt}/>
-            </div>
-        </div>)}
-    </div>
-    </Section>
-    <Footer/>
-</>
-)
+    return (
+        <>
+            <Head>
+                <title>
+                    Проекты - Центр развития детей и выбора профессии АртЛичность
+                </title>
+            </Head>
+            <HeaderVideo banner={data.banner.url}
+                         content={data.content}
+                         video={data.id_video}/>
+            <Section>
+                <div className={styles.contentProjects}>
+                    {data.projects.map((item: any, index: any) => <div key={index} className={styles.itemProject}>
+                        <div className={styles.left}>
+                            <div className={styles.comment}>???????????????????</div>
+                            <div className={styles.title}>{item.title}</div>
+                            <div className={styles.leftBox}>{item.description}</div>
+                            <A className={styles.link}
+                               href={
+                                   {
+                                       pathname: '/projects/[project]',
+                                       query: {project: item.slug,},
+                                   }}
+                               text={'Узнать больше'}/>
+                        </div>
+                        <div className={styles.right}>
+                            <img src={item.img.url} alt={item.img.alt}/>
+                        </div>
+                    </div>)}
+                </div>
+            </Section>
+            <Footer/>
+        </>
+    )
 }
 
 export default Projects

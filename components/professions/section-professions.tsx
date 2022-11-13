@@ -8,8 +8,12 @@ import {Forms} from "../common/forms";
 import {A} from "../common/A";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import {useRouter} from "next/router";
 
 export const SectionProfessions = ({data}: any) => {
+    const router = useRouter()
+    const { programs } = router.query
+
     const responsive = {
         desktop: {
             breakpoint: {
@@ -149,7 +153,7 @@ export const SectionProfessions = ({data}: any) => {
                 >
                     {data.past_shifts.map((el: any, index: number) => <div key={index}
                                                                            className={styles.carouselCard}>
-                            <A href={`/smena/${el.slug}`} text={<div
+                            <A href={`/camp/${programs}/smena/${el.slug}`} text={<div
                                 className={styles.boxImg}
                                 style={{
                                     background: `url(${el.thumbnail_url.url}) no-repeat center center`,
@@ -158,7 +162,7 @@ export const SectionProfessions = ({data}: any) => {
                             </div>}/>
                             <div className={styles.boxLink}>
                                 <h3 className={styles.postTitle}>{el.title}</h3>
-                                <A href={`/smena/${el.slug}`} text={'Узнать больше'}/>
+                                <A href={`/camp/${programs}/smena/${el.slug}`} text={'Узнать больше'}/>
                             </div>
                         </div>
                     )}

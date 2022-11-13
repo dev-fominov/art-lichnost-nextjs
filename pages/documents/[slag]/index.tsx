@@ -1,11 +1,12 @@
 import {HeaderGreen} from "../../../components/common/header-green";
+import {Section} from "../../../components/common/section";
+import styles from '../../../styles/documents/documents.module.css'
 import {Footer} from "../../../components/common/footer";
 import {NextPage} from "next";
-import {SectionCourse} from "../../../components/course/section-course";
 import Head from "next/head";
 import React from "react";
 
-const Course: NextPage = ({data}: any) => {
+const Slag: NextPage = ({data}:any) => {
 
     return (
         <>
@@ -15,16 +16,21 @@ const Course: NextPage = ({data}: any) => {
                 </title>
             </Head>
             <HeaderGreen title={data.title}/>
-            <SectionCourse data={data}/>
+            <Section>
+                <div>
+                    <h1 className={styles.title}>{data.title}</h1>
+                     <div className={styles.content} dangerouslySetInnerHTML={{__html: data.content}}/>
+                </div>
+            </Section>
             <Footer/>
         </>
     )
 }
 
-export default Course
+export default Slag
 
-export async function getServerSideProps(context: any) {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/courses/${context.params.course}`)
+export async function getServerSideProps (context: any) {
+    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/${context.params.slag}`)
     const data = await res.json();
 
     return {

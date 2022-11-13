@@ -43,12 +43,12 @@ const SliderTeamPhoto = ({data}: any) => {
                     responsive={responsive}
                 >
                     {data.map((item: any, index: number) => <div key={index} className={styles.slide}>
-                        <img src={item.url} alt={item.alt}/>
+                        <img src={item.url} alt={item.alt}  draggable={false}/>
                     </div>)}
                 </Carousel>
             </div>
             : data.map((item: any, index: number) => <div key={index} className={styles.slide}>
-                <img src={item.url} alt={item.alt}/>
+                <img src={item.url} alt={item.alt}  draggable={false}/>
             </div>)
     )
 }

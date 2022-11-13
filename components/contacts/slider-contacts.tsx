@@ -4,7 +4,6 @@ import "react-multi-carousel/lib/styles.css";
 import styles from '../../styles/contacts/section-contacts.module.css'
 
 export const SliderContacts = ({arrImg}: any) => {
-
     const responsive = {
         desktop: {
             breakpoint: {
@@ -20,7 +19,7 @@ export const SliderContacts = ({arrImg}: any) => {
                 min: 0
             },
             items: 1,
-            partialVisibilityGutter: 30
+            partialVisibilityGutter: 20
         },
         tablet: {
             breakpoint: {
@@ -31,20 +30,19 @@ export const SliderContacts = ({arrImg}: any) => {
             partialVisibilityGutter: 30
         }
     }
-    return <Carousel
-        slidesToSlide={1}
-        className={styles.carousel}
-        swipeable
-        focusOnSelect={false}
-        arrows
-        ssr
-        itemClass="image-item"
-        infinite
-        responsive={responsive}
-        deviceType={"tablet"}
-    >
+    return <Carousel slidesToSlide={1}
+                     className={styles.carousel}
+                     swipeable
+                     focusOnSelect={false}
+                     arrows
+                     ssr
+                     itemClass="image-item"
+                     infinite
+                     responsive={responsive}
+                     deviceType={"tablet"}>
         {arrImg.map((img: any, index: number) => <img
                 style={{width: "100%", height: "100%"}}
+                draggable={false}
                 key={index}
                 src={img.url}
                 alt={img.alt}

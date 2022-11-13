@@ -5,19 +5,28 @@ import React from "react";
 import {HeaderGreen} from "../../../components/common/header-green";
 import {SectionIssledovanie} from "../../../components/projects/section-issledovanie";
 import {SectionProforientatsionnyj} from "../../../components/projects/section-proforientatsionnyj";
+import Head from "next/head";
 
 const Project: NextPage = ({data}: any) => {
-    return data.id_page === 12056
-        ? <>
+    return (
+        <>
+            <Head>
+                <title>
+                    {data.title + '- Центр развития детей и выбора профессии АртЛичность'}
+                </title>
+            </Head>
+            data.id_page === 12056
+            ? <>
             <HeaderVideo banner={data.banner.url} content={data.content} video={data.id_video}/>
             <SectionIssledovanie data={data}/>
             <Footer/>
-        </>
-        : <>
+             </>
+            : <>
             <HeaderGreen title={data.title}/>
             <SectionProforientatsionnyj data={data}/>
             <Footer/>
-        </>
+             </>
+        </>)
 }
 
 export default Project

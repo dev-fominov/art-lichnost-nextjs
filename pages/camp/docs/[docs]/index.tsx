@@ -3,10 +3,18 @@ import {Section} from "../../../../components/common/section";
 import {Footer} from "../../../../components/common/footer";
 import Docs from "../../../../components/camp/docs";
 import styles from "../../../../styles/camp/docs.module.css";
+import Head from "next/head";
+import React from "react";
 
 const DocsPage = ({data}: any) => {
 
-    return (<div>
+    return (
+        <>
+            <Head>
+                <title>
+                    {data.title + '- Центр развития детей и выбора профессии АртЛичность'}
+                </title>
+            </Head>
             <HeaderGreen title={data.title}/>
             <Section>
                 <div className={styles.docs}>
@@ -17,7 +25,7 @@ const DocsPage = ({data}: any) => {
                       data={data.docs}/>
             </Section>
             <Footer/>
-        </div>
+        </>
     )
 }
 

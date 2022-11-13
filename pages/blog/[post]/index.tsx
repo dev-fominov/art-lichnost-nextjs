@@ -3,25 +3,32 @@ import {Section} from "../../../components/common/section";
 import styles from '../../../styles/blog/post.module.css'
 import {Footer} from "../../../components/common/footer";
 import {NextPage} from "next";
+import Head from "next/head";
+import React from "react";
 
-const Post: NextPage = ({data}:any) => {
+const Post: NextPage = ({data}: any) => {
 
-    return (<div>
+    return (
+        <> <Head>
+            <title>
+                {data.title + '- Центр развития детей и выбора профессии АртЛичность'}
+            </title>
+        </Head>
             <HeaderGreen title={data.title}/>
             <Section>
                 <div>
                     <h3 className={styles.title}>{data.title}</h3>
-                     <div className={styles.content} dangerouslySetInnerHTML={{__html: data.content}}/>
+                    <div className={styles.content} dangerouslySetInnerHTML={{__html: data.content}}/>
                 </div>
             </Section>
             <Footer/>
-        </div>
+        </>
     )
 }
 
 export default Post
 
-export async function getServerSideProps (context: any) {
+export async function getServerSideProps(context: any) {
     const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/blogs/${context.params.post}`)
     const data = await res.json();
 

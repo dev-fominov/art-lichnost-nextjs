@@ -5,10 +5,16 @@ import {Footer} from "../../../components/common/footer";
 import React from "react";
 import {A} from "../../../components/common/A";
 import SliderJobPhoto from "../../../components/vacancies/slider-job-photo";
+import Head from "next/head";
 
 const Job = ({data}: any) => {
-
-    return (<>
+    return (
+        <>
+            <Head>
+                <title>
+                    {data.title + '- Центр развития детей и выбора профессии АртЛичность'}
+                </title>
+            </Head>
             <HeaderGreen title={data.title}/>
             <Section>
                 <div className={styles.boxContent}>

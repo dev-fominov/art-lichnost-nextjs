@@ -89,7 +89,7 @@
 
 @media (max-width: 1200px) {
     .itemArr {
- width: 100%;
+        width: 100%;
     }
 }
 
@@ -165,6 +165,15 @@
     border-radius: 40px;
     padding: 10px 20px;
     margin-bottom: 15px;
+}
+
+@media (max-width: 700px) {
+    .itemDescriptionRedBorder {
+        width: 100%;
+    }
+    .leftBox{
+        padding: 0;
+    }
 }
 
 .contentBoxCard {
@@ -257,5 +266,20 @@
     line-height: 20px;
     color: #000000;
 
+}
+
+@media (max-width: 700px) {
+    .contentBoxCard {
+        margin: 0;
+        padding: 0;
+    }
+    .card{
+        margin: 0;
+        width: auto;
+    }
+    .card img{
+      height: 220px;
+        width: 100%;
+    }
 }
 

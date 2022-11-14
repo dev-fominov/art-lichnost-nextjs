@@ -6,9 +6,9 @@ import styles from "../../../styles/proftestirovanie/testirovanie.module.css";
 import {Container} from "../../../components/common/container";
 import SectionTestirovanie from "../../../components/proftestirovanie/section-testirovanie";
 import Head from "next/head";
-import React from "react";
+import {NextPage} from "next";
 
-const Testirovanie = ({data}: any) => {
+const OfflineTest: NextPage = ({data}: any) => {
 
     const VIDEO_WIDTH = 1920;
     const VIDEO_HEIGHT = 1080;
@@ -16,8 +16,7 @@ const Testirovanie = ({data}: any) => {
     return (
         <> <Head>
             <title>
-                {data.id_page === 54 ? 'Онлайн-тест 7-11 класс' : 'Оффлайн-тест'} +
-                {'- Центр развития детей и выбора профессии АртЛичность'}
+                Офлайн-тест - Центр развития детей и выбора профессии АртЛичность
             </title>
         </Head>
             {data.id_video
@@ -70,10 +69,10 @@ const Testirovanie = ({data}: any) => {
     )
 }
 
-export default Testirovanie
+export default OfflineTest
 
-export async function getServerSideProps(context: any) {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/${context.params.testirovanie}`)
+export async function getStaticProps() {
+    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/offline-test`)
     const data = await res.json();
 
     return {

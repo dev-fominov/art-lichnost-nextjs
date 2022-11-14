@@ -7,17 +7,45 @@
 }
 
 .content img {
-    margin: 0 30px 20px 0;
-    width: 100%;
+    display: block;
+    margin: 15px auto;
+    width: 70%;
     height: auto;
 }
 
 .content p {
+    font-size: 14px;
     margin: 0 0 15px;
 }
 
+.content li {
+    font-size: 14px;
+    margin: 0 0 7px;
+}
+
+.content b {
+    font-size: 16px;
+    margin: 0 0 15px;
+}
+
+.content em {
+    font-size: 14px;
+    margin: 0 0 15px;
+}
+
+.content h3 {
+    font-size: 16px;
+    margin: 0 0 15px;
+}
+
+
 .content span {
     font-size: 14px;
+    line-height: 1.5;
+}
+
+.content strong {
+    font-size: 16px;
     line-height: 1.5;
 }
 

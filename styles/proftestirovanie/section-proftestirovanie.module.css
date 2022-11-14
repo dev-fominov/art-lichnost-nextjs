@@ -120,16 +120,6 @@
     width: 100%;
 }
 
-@media (max-width: 1150px) {
-    .consImg {
-       margin-bottom: 7px;
-    }
-
-    .consName {
-        margin-bottom: 7px;
-    }
-}
-
 .name {
     font-weight: 600;
     font-size: 20px;
@@ -146,6 +136,35 @@
 .consText {
     max-width: 690px;
     width: 100%;
+}
+
+@media (max-width: 1150px) {
+    .consImg {
+        margin-bottom: 7px;
+        margin-right: 20px;
+    }
+
+    .consName {
+        margin-bottom: 7px;
+    }
+    .consultantBox{
+        justify-content: start;
+    }
+    .consText{
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 570px) {
+    .consultantBox {
+        padding: 20px;
+    }
+    .status{
+        margin-bottom: 20px;
+    }
+    .consultantBox{
+        justify-content: center;
+    }
 }
 
 .consText p {

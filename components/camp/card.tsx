@@ -3,7 +3,7 @@ import {A} from "../common/A";
 
 const Card = ({data, carouselCard}: any) => {
     return (
-        <div className={carouselCard? styles.carouselCard : styles.card}>
+        <div className={carouselCard ? styles.carouselCard : styles.card}>
             <A href={`/${data.location ? 'camp/program' : 'courses'}/${data.post_slug}`} text={<div
                 className={styles.boxImg}
                 style={{

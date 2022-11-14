@@ -77,7 +77,7 @@ const SectionTeam = ({data}: any) => {
                 </div>
             </div>
             <div className={styles.teamBox}>
-                <div className={styles.title}>?????Стать частью команды????</div>
+                <div className={styles.title}>Стать частью команды</div>
                 <div className={styles.jobsBox}>
                     <div className={styles.contentComand}>
                         <div className={styles.left}>
@@ -91,7 +91,7 @@ const SectionTeam = ({data}: any) => {
                                     pathname: '/vacancies/[job]',
                                     query: {job: 'vozhatyj-v-lager',},
                                 }}
-                                text={'Вожатый'}/>
+                                text={'Вожатый в лагерь'}/>
                         </div>
                     </div>
                     <div className={styles.contentComand}>

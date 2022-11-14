@@ -1,4 +1,3 @@
-import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import styles from '../../styles/contacts/section-contacts.module.css'
@@ -40,13 +39,11 @@ export const SliderContacts = ({arrImg}: any) => {
                      infinite
                      responsive={responsive}
                      deviceType={"tablet"}>
-        {arrImg.map((img: any, index: number) => <img
-                style={{width: "100%", height: "100%"}}
-                draggable={false}
-                key={index}
-                src={img.url}
-                alt={img.alt}
-            />
+        {arrImg.map((img: any, index: number) => <img style={{width: "100%", height: "100%"}}
+                                                      draggable={false}
+                                                      key={index}
+                                                      src={img.url}
+                                                      alt={img.alt}/>
         )}
     </Carousel>
 }

@@ -111,6 +111,9 @@
         -webkit-box-pack: center;
         -ms-flex-pack: center;
     }
+    .itemArr{
+        width: 100%;
+    }
 }
 
 .leftBox {

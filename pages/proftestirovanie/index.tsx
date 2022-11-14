@@ -16,7 +16,7 @@ const Proftestirovanie: NextPage = ({data}: any) => {
     return (
         <> <Head>
             <title>
-                Центр развития детей и выбора профессии АртЛичность
+                Профтестирование - Центр развития детей и выбора профессии АртЛичность
             </title>
         </Head>
             {data.id_video

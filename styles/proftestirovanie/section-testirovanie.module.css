@@ -295,7 +295,7 @@
     justify-content: center;
     left: -10px;
     top: -10px;
-    background:  #30AA33;
+    background: #30AA33;
     border-radius: 100%;
 }
 
@@ -359,14 +359,14 @@
     height: 16px;
 }
 
-.boxWhatNeed{
+.boxWhatNeed {
     display: flex;
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: start;
 }
 
-.needItem{
+.needItem {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -382,29 +382,24 @@
     margin-right: 95px;
 }
 
-@media (max-width: 890px) {
-    .boxWhatNeed {
-        flex-wrap: wrap;
-    }
-}
 
-.needInfo{
+.needInfo {
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
 }
 
-.needInfoSmall{
+.needInfoSmall {
     font-size: 12px;
     line-height: 15px;
 }
 
-.boxWhatNeed ul{
+.boxWhatNeed ul {
     list-style: none;
 }
 
 
-.boxWhatNeed li{
+.boxWhatNeed li {
     font-size: 14px;
     line-height: 20px;
     text-align: justify;
@@ -416,14 +411,17 @@
     .boxWhatNeed {
         flex-wrap: wrap;
     }
-    .boxWhatNeed ul{
-        margin-top: 13px;
+
+    .boxWhatNeed ul {
+        margin-top: 25px;
     }
-    .boxWhatNeed li{
+
+    .boxWhatNeed li {
         line-height: 15px;
     }
-    .needInfoSmall{
-       margin-top: 5px;
+
+    .needInfoSmall {
+        margin-top: 8px;
     }
 }
 
@@ -472,15 +470,6 @@
     width: 100%;
 }
 
-@media (max-width: 1150px) {
-    .consImg {
-        margin-bottom: 7px;
-    }
-
-    .consName {
-        margin-bottom: 7px;
-    }
-}
 
 .name {
     font-weight: 600;
@@ -500,6 +489,40 @@
     width: 100%;
 }
 
+
+@media (max-width: 1150px) {
+    .consImg {
+        margin-bottom: 7px;
+        margin-right: 20px;
+    }
+
+    .consName {
+        margin-bottom: 7px;
+    }
+
+    .consultantBox {
+        justify-content: start;
+    }
+
+    .consText {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 570px) {
+    .consultantBox {
+        padding: 20px;
+    }
+
+    .status {
+        margin-bottom: 20px;
+    }
+
+    .consultantBox {
+        justify-content: center;
+    }
+}
+
 .consText p {
     font-size: 14px;
     line-height: 20px;
@@ -510,5 +533,33 @@
     margin-top: 70px;
 }
 
+@media (max-width: 700px) {
+    .stepTextColor {
+        padding-bottom: 20px;
+    }
+
+    .stepDesc {
+        max-width: 100%;
+        margin-top: 15px;
+    }
+
+    .stepImg {
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .stepImg img {
+        max-width: 100%;
+    }
+    .needItem{
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .formSteps{
+        margin-left: 0;
+    }
+
+}
 
 

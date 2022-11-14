@@ -33,7 +33,8 @@ const Program = ({data}: any) => {
     }
     return (
         <>
-            <div><A href={`camp/${data.slug}`} text={
+            <div>
+                <A href={`camp/${data.slug}`} text={
                 <h2 className={styles.title}
                     style={{
                         color: `${data.term_id === 11
@@ -45,7 +46,8 @@ const Program = ({data}: any) => {
                     {data.name.toUpperCase()}
                     <span>Программа</span>
                 </h2>}/>
-                <p className={styles.description}>{data.description}</p></div>
+                <p className={styles.description}>{data.description}</p>
+            </div>
             {data.count >= 3
                 ? <Carousel
                     slidesToSlide={1}

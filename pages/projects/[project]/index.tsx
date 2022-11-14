@@ -10,22 +10,27 @@ import Head from "next/head";
 const Project: NextPage = ({data}: any) => {
     return (
         <>
-            <Head>
-                <title>
-                    {data.title + '- Центр развития детей и выбора профессии АртЛичность'}
-                </title>
-            </Head>
-            data.id_page === 12056
-            ? <>
-            <HeaderVideo banner={data.banner.url} content={data.content} video={data.id_video}/>
-            <SectionIssledovanie data={data}/>
-            <Footer/>
-             </>
-            : <>
-            <HeaderGreen title={data.title}/>
-            <SectionProforientatsionnyj data={data}/>
-            <Footer/>
-             </>
+            {data.id_page === 12056
+                ? <>
+                    <Head>
+                        <title>
+                            Ценности современных подростков ожидание работадателей
+                        </title>
+                    </Head>
+                    <HeaderVideo banner={data.banner.url} content={data.content} video={data.id_video}/>
+                    <SectionIssledovanie data={data}/>
+                    <Footer/>
+                </>
+                : <>
+                    <Head>
+                        <title>
+                            {data.title + '- Центр развития детей и выбора профессии АртЛичность'}
+                        </title>
+                    </Head>
+                    <HeaderGreen title={data.title}/>
+                    <SectionProforientatsionnyj data={data}/>
+                    <Footer/>
+                </>}
         </>)
 }
 

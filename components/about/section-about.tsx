@@ -51,9 +51,11 @@ const SectionAbout = ({data}: any) => {
                 </div>
             </div>
             <div className={styles.aboutBox}>
+                <div className={styles.title}>{data.our_successes.title}</div>
                 <div className={styles.contentBoxCard}>
-                    {data.our_successes.map((item: any, index: any) => <ItemCard key={index} index={index + 1}
-                                                                                 data={item}/>)}
+                    {data.our_successes.our_successes_array.map((item: any, index: any) => <ItemCard key={index}
+                                                                                                     index={index + 1}
+                                                                                                     data={item}/>)}
                 </div>
             </div>
         </Section>

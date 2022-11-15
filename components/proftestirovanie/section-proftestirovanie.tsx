@@ -56,7 +56,7 @@ const SectionProftestirovanie = ({data}: any) => {
             <div className={styles.formStepsBox}>
                 <h3 className={styles.titleInner}>Оформить заявку</h3>
                 <div className={styles.formOrderBox}>
-                    <Forms/>
+                    <Forms confirm={data.link_to_oferta}/>
                     <div className={styles.formSteps}>
                         <h4>{data.step_form.steps_form_title}</h4>
                         <ul>

@@ -10,12 +10,20 @@ import Head from "next/head";
 
 const Smena: NextPage = ({data}: any) => {
     const responsive = {
-        desktop: {
+        desktopFull: {
             breakpoint: {
                 max: 3000,
-                min: 1024
+                min: 1200
             },
             items: 4,
+            partialVisibilityGutter: 40
+        },
+        desktop: {
+            breakpoint: {
+                max: 1200,
+                min: 1024
+            },
+            items: 3,
             partialVisibilityGutter: 40
         },
         mobile: {

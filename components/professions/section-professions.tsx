@@ -15,9 +15,17 @@ export const SectionProfessions = ({data}: any) => {
     const { programs } = router.query
 
     const responsive = {
-        desktop: {
+        desktopFull: {
             breakpoint: {
                 max: 3000,
+                min: 1200
+            },
+            items: 4,
+            partialVisibilityGutter: 40
+        },
+        desktop: {
+            breakpoint: {
+                max: 1200,
                 min: 1024
             },
             items: 3,
@@ -122,7 +130,7 @@ export const SectionProfessions = ({data}: any) => {
             <div className={styles.reasonsProgram}>
                 <h3 className={styles.titleInner}>Оформить заявку</h3>
                 <div className={styles.formOrderBox}>
-                    <Forms/>
+                    <Forms confirm={data.link_to_oferta}/>
                     <div className={styles.formSteps}>
                         <h4>{data.request_title}</h4>
                         <ul>

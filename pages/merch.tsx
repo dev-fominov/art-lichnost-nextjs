@@ -5,7 +5,7 @@ import {SectionMerch} from "../components/merch/section-merch";
 import styles from "./../styles/merch/merch.module.css";
 import Head from "next/head";
 
-const Merch: NextPage = ({data}:any) => {
+const Merch: NextPage = ({data}: any) => {
     return (
         <>
             <Head>

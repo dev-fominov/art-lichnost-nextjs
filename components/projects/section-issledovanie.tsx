@@ -186,7 +186,7 @@ export const SectionIssledovanie = ({data}: any) => {
                 <div className={styles.contentBox}>
                     <div className={styles.leftBox}>
                         <div className={styles.titleBlack}>{data.teenager_at_work.title}</div>
-                        <div className={styles.descriptionGray}>{data.teenager_at_work.description}?????????????????????????????????</div>
+                        <div className={styles.description} dangerouslySetInnerHTML={{__html: data.teenager_at_work.description}}/>
                     </div>
                     <div className={styles.rightBoxImg}>
                         <img className={styles.img1} src={data.teenager_at_work.img1.url} alt={data.teenager_at_work.img1.alt}/>

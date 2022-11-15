@@ -4,9 +4,11 @@ import {IoIosArrowRoundDown} from "react-icons/io";
 import SliderTeam from "./slider-team";
 import SliderTeamPhoto from "./slider-team-photo";
 import {A} from "../common/A";
+import {AccordionTeam} from "./accordionTeam";
 
 const SectionTeam = ({data}: any) => {
-    return (<Section>
+    return (
+        <Section>
             <div className={styles.teamBox}>
                 <div className={styles.title}>{data.ideology.title}</div>
                 <div className={styles.description}>
@@ -15,18 +17,7 @@ const SectionTeam = ({data}: any) => {
             </div>
             <div className={styles.teamBox}>
                 <div className={styles.title}>{data.principles.title}</div>
-                <div className={styles.principlesBox}>
-                    {data.principles.list_principles.map((item: any, index: any) => <div key={index}
-                                                                                         className={styles.principleItem}>
-                        <div className={styles.item}>
-                            <div className={styles.box}>
-                                <span>{item.title}</span>
-                                <IoIosArrowRoundDown className={styles.arrow}/>
-                            </div>
-                        </div>
-                        {/*<div className={styles.contentItem}></div>*/}
-                    </div>)}
-                </div>
+                <AccordionTeam data={data.principles.list_principles}/>
             </div>
             <div className={styles.teamBox}>
                 <div className={styles.title}>{data.team_manager.title}</div>
@@ -86,12 +77,12 @@ const SectionTeam = ({data}: any) => {
                             <A href={`/vacancies`} text={'Посмотреть все вакансии'}/>
                         </div>
                         <div className={styles.right}>
-                            <A  href={
+                            <A href={
                                 {
                                     pathname: '/vacancies/[job]',
                                     query: {job: 'vozhatyj-v-lager',},
                                 }}
-                                text={'Вожатый в лагерь'}/>
+                               text={'Вожатый в лагерь'}/>
                         </div>
                     </div>
                     <div className={styles.contentComand}>

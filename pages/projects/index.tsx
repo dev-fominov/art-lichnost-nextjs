@@ -22,7 +22,7 @@ const Projects: NextPage = ({data}: any) => {
                 <div className={styles.contentProjects}>
                     {data.projects.map((item: any, index: any) => <div key={index} className={styles.itemProject}>
                         <div className={styles.left}>
-                            <div className={styles.comment}>???????????????????</div>
+                            <div className={styles.comment}>{item.type_project}</div>
                             <div className={styles.title}>{item.title}</div>
                             <div className={styles.leftBox}>{item.description}</div>
                             <A className={styles.link}

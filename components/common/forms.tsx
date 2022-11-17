@@ -1,7 +1,6 @@
 import {Field, Form, Formik} from "formik";
 import styles from "../../styles/common/forms.module.css";
 import {A} from "./A";
-import {fetch} from "next/dist/compiled/@edge-runtime/primitives/fetch";
 
 export const Forms = ({confirm, sandmail_url, pageName}: any) => {
     return (<div className={styles.formBlock}>
@@ -30,17 +29,20 @@ export const Forms = ({confirm, sandmail_url, pageName}: any) => {
                         return errors;
                     }}
                     onSubmit={async (values, {setSubmitting}) => {
-                       /* const res = await fetch(sandmail_url, {
-                            method: 'GET',
+                        const res = await fetch( 'https://alex-volkov.ru/sendmail.php/', {
+                            method: 'POST',
                             body: JSON.stringify({
                                 parentsName: values.parentsName,
                                 childName: values.childName,
                                 birthdate: values.birthdate,
                                 userEmail: values.userEmail,
                                 userPhone: values.userPhone,
-                                pageName: pageName,
+                                pageName: "аппарпар",
                             }),
-                        })*/
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                        })
                         setSubmitting(false)
                     }}
                     /* validationSchema={loginFormSchema}*/>

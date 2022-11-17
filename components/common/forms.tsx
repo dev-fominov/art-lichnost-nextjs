@@ -28,17 +28,18 @@ export const Forms = ({confirm, sandmail_url, pageName}: any) => {
                         }
                         return errors;
                     }}
-                    onSubmit={async (values, {setSubmitting}) => {
+                    onSubmit={  async (values, {setSubmitting}) => {
                         const res = await fetch( 'https://alex-volkov.ru/sendmail.php/', {
                             method: 'POST',
                             body: JSON.stringify({
                                 parentsName: values.parentsName,
                                 childName: values.childName,
                                 birthdate: values.birthdate,
-                                userEmail: values.userEmail,пше 
+                                userEmail: values.userEmail, 
                                 userPhone: values.userPhone,
                                 pageName: "аппарпар",
                             }),
+                            // body: 'test',
                             headers: {
                                 'Content-Type': 'application/json',
                             },

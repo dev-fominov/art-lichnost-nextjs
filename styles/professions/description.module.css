@@ -59,7 +59,7 @@
     line-height: 20px;
     padding-left: 20px;
     margin-bottom: 12px;
-    background: url(https://art-lichnost.ru/wp-content/themes/art_person_1/img/list-bullet-svg.svg) no-repeat left top 4px;
+    background: url('../../components/common/img/circle.svg') no-repeat left top 4px;
 }
 
 .whatImg {

@@ -13,8 +13,8 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: 40px;
-    padding: 23px 36px;
-    max-width: 320px;
+    padding: 21px 21px;
+    max-width: 287px;
     margin: auto;
 }
 
@@ -44,7 +44,7 @@
     text-decoration: none;
     display: inline-block;
     padding-right: 25px;
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/css/../img/arr.svg) no-repeat right center;
+    background: url('../../components/common/img/red-arr.svg') no-repeat right center;
 }
 
 .boxItem A:hover {
@@ -68,7 +68,7 @@
 .medicalBlock li {
     font-size: 14px;
     line-height: 20px;
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/img/arr-red-svg.svg) no-repeat left 22px top 5px;
+    background: url('../../components/common/img/red-arr.svg') no-repeat left 22px top 5px;
     padding-left: 50px;
     margin-bottom: 12px;
     position: relative;

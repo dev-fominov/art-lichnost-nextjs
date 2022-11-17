@@ -6,7 +6,6 @@ import Link from "next/link";
 import {FaVk, FaYoutube} from "react-icons/fa";
 import {GrFacebookOption} from "react-icons/gr";
 
-
 export const Footer = () => {
     return (<footer className={styles.footer}>
             <Container>
@@ -16,8 +15,16 @@ export const Footer = () => {
                            text={<img className={styles.footLogoImg}
                                       src={'https://art-lichnost.ru/wp-content/themes/art_person_1/img/logo-aleksandr.svg'}/>}/>
                         <div className={styles.footLogolinks}>
-                            <A href={"/privacy_policy"} text={'Политика конфиденциальности'}/>
-                            <A href={"/polzovatelskoe-soglashenie"} text={'Пользовательское соглашение'}/>
+                            <A href={{
+                                pathname: '/documents/[slag]',
+                                query: {slag: 'privacy-policy',},
+                            }}
+                               text={'Политика конфиденциальности'}/>
+                            <A href={{
+                                pathname: '/documents/[slag]',
+                                query: {slag: 'user-agreement',},
+                            }}
+                               text={'Пользовательское соглашение'}/>
                         </div>
                     </div>
                     <div className={styles.footMenu}>
@@ -66,7 +73,7 @@ export const Footer = () => {
                                     <li><A href={"/about"} text={'О компании'}/></li>
                                     <li><A href={"/team"} text={'Команда'}/></li>
                                     <li><A href={"/projects"} text={'Проекты'}/></li>
-                                    <li><A href={"/jobs"} text={'Вакансии'}/></li>
+                                    <li><A href={"/vacancies"} text={'Вакансии'}/></li>
                                     <li><A href={"/contacts"} text={'Контакты'}/></li>
                                 </ul>
                             </li>

@@ -5,11 +5,19 @@ import {HeaderVideo} from "../../components/common/header-video";
 import {Container} from "../../components/common/container";
 import {SectionCourses} from "../../components/courses/section-courses";
 import styles from '../../styles/courses/section-courses.module.css';
+import Head from "next/head";
 
 const Courses: NextPage = ({data}: any) => {
     return (
         <>
-            <HeaderVideo banner={data.background_img.url} content={data.content} video={data.background_video}/>
+            <Head>
+                <title>
+                    Курсы - Центр развития детей и выбора профессии АртЛичность
+                </title>
+            </Head>
+            <HeaderVideo banner={data.background_img.url}
+                         content={data.content}
+                         video={data.background_video}/>
             <Container>
                 <div className={styles.boxDescription}>
                     <div className={styles.description}>{data.description}</div>

@@ -13,6 +13,12 @@
     color: #000000;
 }
 
+@media (max-width: 600px) {
+    .description {
+        width: 100%;
+    }
+}
+
 .box {
     margin-bottom: 20px;
 }
@@ -89,7 +95,7 @@
 .formSteps li {
     font-size: 14px;
     line-height: 37px;
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/css/../img/arr-red-svg.svg) no-repeat left top 13px;
+    background: url('../../components/common/img/red-arr.svg') no-repeat left top 13px;
     padding-left: 35px;
 }
 
@@ -113,7 +119,7 @@
 }
 
 .itemSkill {
-    width: 48%;
+    width: 49%;
     border: 1px solid #C4C4C4;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -129,6 +135,14 @@
     margin-bottom: 30px;
 }
 
+.prozhivanieDescription {
+    width: 100%;
+    max-width: 811px;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: justify;
+}
+
 .listSkills {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -136,6 +150,7 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     list-style: none;
+    justify-content: space-between;
 }
 
 .listSkills li {
@@ -146,7 +161,25 @@
     -ms-flex-align: center;
     align-items: center;
     margin-bottom: 19px;
-    width: 50%;
+    width: 49%;
+}
+
+@media (max-width: 1000px) {
+    .boxCourse {
+        flex-direction: column;
+    }
+
+    .itemSkill {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .listSkills li  {
+      width: 100%;
+    }
 }
 
 .onstock {
@@ -184,12 +217,11 @@
     justify-content: flex-start;
 }
 
-.boxAlex span{
+.boxAlex span {
     display: block;
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
-    text-decoration: none;
     color: #000;
     width: 100%;
     height: auto;
@@ -198,6 +230,14 @@
     transition: all 300ms ease;
 }
 
-.postTitle{
+.postTitle {
     text-decoration: underline;
+}
+
+.titleGreen .postTitle:hover{
+    color: #30aa33;
+}
+
+.titleRed .postTitle:hover{
+    color: #eb3535;
 }

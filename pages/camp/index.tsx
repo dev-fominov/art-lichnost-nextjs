@@ -4,11 +4,19 @@ import {SectionCamp} from "../../components/camp/section-camp";
 import Filter from "../../components/camp/filter";
 import React from "react";
 import {HeaderVideo} from "../../components/common/header-video";
+import Head from "next/head";
 
 const Camp: NextPage = ({data}: any) => {
     return (
         <>
-            <HeaderVideo banner={data.background_img.url} content={data.content} video={data.background_video}/>
+            <Head>
+                <title>
+                     Лагерь для детей в Ленинградской области - АртЛичность
+                </title>
+            </Head>
+            <HeaderVideo banner={data.background_img.url}
+                         content={data.content}
+                         video={data.background_video}/>
             <Filter data={data.filter}/>
             <SectionCamp data={data}/>
             <Footer/>

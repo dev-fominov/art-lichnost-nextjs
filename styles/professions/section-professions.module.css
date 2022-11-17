@@ -9,6 +9,17 @@
     margin-bottom: 35px;
 }
 
+.tablist {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
 .reasonBox {
     border: 1px solid #C4C4C4;
     -webkit-box-sizing: border-box;
@@ -113,7 +124,7 @@
 }
 
 .listForKids li {
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/img/arr-red-svg.svg) no-repeat left top 6px;
+    background: url('../../components/common/img/red-arr.svg') no-repeat left top 6px;
     padding-left: 35px;
     font-weight: 500;
     font-size: 14px;
@@ -125,7 +136,7 @@
 }
 
 .listForParents li {
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/css/../img/arr-green-svg.svg) no-repeat left top 6px;
+    background: url('../../components/common/img/green-arr.svg') no-repeat left top 6px;
     padding-left: 35px;
     font-weight: 500;
     font-size: 14px;
@@ -179,7 +190,7 @@
     line-height: 20px;
     padding-left: 20px;
     margin-bottom: 12px;
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/img/list-bullet-svg.svg) no-repeat left top 4px;
+    background: url('../../components/common/img/circle.svg') no-repeat left top 4px;
 }
 
 .whatImg {
@@ -208,18 +219,18 @@
     }
 }
 
-.priceBox{
+.priceBox {
     margin-bottom: 70px;
 }
 
-.priceIclude p{
+.priceIclude p {
     font-weight: normal;
     font-size: 14px;
     line-height: 27px;
     margin-bottom: 5px;
 }
 
-.faqBox{
+.faqBox {
     margin-bottom: 70px;
 }
 
@@ -269,7 +280,7 @@
 .formSteps li {
     font-size: 14px;
     line-height: 37px;
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/css/../img/arr-red-svg.svg) no-repeat left top 13px;
+    background: url('../../components/common/img/red-arr.svg') no-repeat left top 13px;
     padding-left: 35px;
 }
 
@@ -278,3 +289,53 @@
     height: 281px;
     border-radius: 40px;
 }
+
+.carouselCard {
+    width: 285px;
+    margin: auto;
+}
+
+.boxImg {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    width: 285px;
+    height: 180px;
+    margin-bottom: 10px;
+    border-radius: 40px;
+    background-size: cover !important;
+}
+
+.boxLink {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 40px;
+    padding: 21px 21px;
+    max-width: 285px;
+}
+
+.postTitle {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000;
+    margin-bottom: 25px;
+    min-height: 10px;
+}
+
+.boxLink A {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    color: #eb3535;
+    text-decoration: none;
+    display: inline-block;
+    padding-right: 25px;
+    background: url('../../components/common/img/red-arr.svg') no-repeat right center;
+}
+
+.boxLink A:hover {
+    text-decoration: underline;
+}
+
+

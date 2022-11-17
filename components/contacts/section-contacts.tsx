@@ -1,12 +1,13 @@
-import React from "react";
 import {Section} from "../common/section";
 import styles from '../../styles/contacts/section-contacts.module.css'
 import Link from "next/link";
 import {SliderContacts} from "./slider-contacts";
 import {MyPlacemark} from "./map";
 
+
 export const SectionContacts = ({data}: any) => {
-    return (<Section>
+    return (
+        <Section>
             <div className={styles.titleInner} dangerouslySetInnerHTML={{__html: data.content}}/>
             <div className={styles.contactFields}>
                 <div className={styles.itemField}>
@@ -22,7 +23,9 @@ export const SectionContacts = ({data}: any) => {
             <SliderContacts arrImg={data.gallery_contacts}/>
             <div className={styles.mapBox}>
                 <div className={styles.itemMapBg}>
-                    <img src={data.image_ofise.url} alt={data.image_ofise.alt}/>
+                    <img src={data.image_ofise.url}
+                         alt={data.image_ofise.alt}
+                         draggable={"false"}/>
                 </div>
                 <div className={styles.itemMap}>
                     <MyPlacemark/>

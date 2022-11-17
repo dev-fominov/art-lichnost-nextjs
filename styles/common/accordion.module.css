@@ -1,8 +1,8 @@
-.accordion{
+.accordion {
     max-width: 727px;
 }
 
-.itemHeading{
+.itemHeading {
     position: relative;
     cursor: pointer;
     border: 1px solid #C4C4C4;
@@ -15,7 +15,7 @@
     margin-bottom: 10px;
 }
 
-.icon{
+.icon {
     position: absolute;
     right: 20px;
     top: 20%;
@@ -23,7 +23,7 @@
     font-size: 30px;
 }
 
-.accordionItem p{
+.accordionItem p {
     opacity: 1;
     font-size: 14px;
     padding: 0 15px 5px 15px;
@@ -34,11 +34,11 @@
     padding: 16px 35px 16px 22px;
 }
 
-.accordionItemNull{
+.accordionItemNull {
     display: none;
 }
 
-.showMore{
+.showMore {
     cursor: pointer;
     margin-top: 20px;
     margin-left: 20px;
@@ -50,5 +50,9 @@
     color: #eb3535;
     text-decoration: none;
     padding-right: 25px;
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/img/arr-red-svg.svg) no-repeat right center;
+    background: url('../../components/common/img/red-arr.svg') no-repeat right center;
+}
+
+.showMore:hover {
+text-decoration: underline;
 }

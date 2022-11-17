@@ -50,7 +50,7 @@
     color: #eb3535;
     text-decoration: none;
     padding-right: 25px;
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/img/arr-red-svg.svg) no-repeat right center;
+    background: url('../../components/common/img/red-arr.svg') no-repeat right center;
 }
 
 .showMore:hover {

@@ -72,10 +72,43 @@
     font-size: 14px;
     line-height: 17px;
     color: #4e4e4e;
+    margin-left: 23px;
+}
+
+.checkboxLabel a {
+    text-decoration: underline;
 }
 
 .confirmForm{
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+}
+
+.radioTrue {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1.3px solid #EB3535;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 50%;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    background-color: #EB3535;
+}
+
+.radioFalse {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1.3px solid #EB3535;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 50%;
+    position: absolute;
+    top: 9px;
+    left: 0;
 }

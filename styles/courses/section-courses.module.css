@@ -95,7 +95,7 @@
 .formSteps li {
     font-size: 14px;
     line-height: 37px;
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/css/../img/arr-red-svg.svg) no-repeat left top 13px;
+    background: url('../../components/common/img/red-arr.svg') no-repeat left top 13px;
     padding-left: 35px;
 }
 
@@ -232,4 +232,12 @@
 
 .postTitle {
     text-decoration: underline;
+}
+
+.titleGreen .postTitle:hover{
+    color: #30aa33;
+}
+
+.titleRed .postTitle:hover{
+    color: #eb3535;
 }

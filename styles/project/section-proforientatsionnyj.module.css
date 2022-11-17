@@ -82,7 +82,7 @@
 }
 
 .itemArr {
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/img/arr-red-svg.svg) no-repeat left top 4px;
+    background: url('../../components/common/img/red-arr.svg') no-repeat left top 4px;
     padding-left: 35px;
     width: 70%;
 }
@@ -259,7 +259,7 @@
 
 .itemDescriptionCard p {
     margin-bottom: 10px;
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/img/arr-green-svg.svg) no-repeat left top 4px;
+    background: url('../../components/common/img/green-arr.svg') no-repeat left top 4px;
     padding-left: 35px;
     font-weight: 400;
     font-size: 14px;

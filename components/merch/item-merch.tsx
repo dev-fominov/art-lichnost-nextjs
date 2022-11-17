@@ -55,6 +55,7 @@ export const ItemMerch = ({data}: any) => {
                     responsive={responsive}
                 >
                     {data.gallery.map((item: any, index: any) => <div key={index} className={styles.slide}
+                                                                      draggable={false}
                                                                       style={{
                                                                           background: `url(${item.url}) no-repeat center center`,
                                                                           backgroundSize: `cover`

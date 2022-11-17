@@ -24,7 +24,7 @@
 }
 
 .merchDescription li{
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/css/../img/arr.svg) no-repeat left top 4px;
+    background: url('../../components/common/img/red-arr.svg') no-repeat left top 4px;
     padding-left: 35px;
     padding-right: 30px;
     font-weight: 500;
@@ -37,6 +37,16 @@
     text-align: justify;
 }
 
+.pageCard{
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+
 @media (max-width: 991px) {
     .merchDescription {
         -webkit-box-orient: vertical;
@@ -48,13 +58,7 @@
         width: 100%;
         padding-right: 0;
     }
-}
-
-.pageCard{
-    display: flex;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    .pageCard{
+       justify-content: space-evenly;
+    }
 }

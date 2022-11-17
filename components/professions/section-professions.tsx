@@ -163,6 +163,7 @@ export const SectionProfessions = ({data}: any) => {
                                                                            className={styles.carouselCard}>
                             <A href={`/camp/${programs}/smena/${el.slug}`} text={<div
                                 className={styles.boxImg}
+                                draggable={false}
                                 style={{
                                     background: `url(${el.thumbnail_url.url}) no-repeat center center`,
                                     backgroundSize: `cover`

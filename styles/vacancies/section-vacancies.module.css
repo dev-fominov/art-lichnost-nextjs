@@ -72,7 +72,7 @@
 
 .benefit {
     margin-bottom: 10px;
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/img/list-bullet-svg.svg) no-repeat left top 4px;
+    background: url('../../components/common/img/circle.svg') no-repeat left top 4px;
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
@@ -88,7 +88,7 @@
     text-decoration: none;
     display: inline-block;
     padding-right: 25px;
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/css/../img/arr.svg) no-repeat right center;
+    background: url('../../components/common/img/red-arr.svg') no-repeat right center;
 }
 
 .link:hover {

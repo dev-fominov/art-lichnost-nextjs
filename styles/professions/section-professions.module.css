@@ -9,7 +9,7 @@
     margin-bottom: 35px;
 }
 
-.tablist{
+.tablist {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -124,7 +124,7 @@
 }
 
 .listForKids li {
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/img/arr-red-svg.svg) no-repeat left top 6px;
+    background: url('../../components/common/img/red-arr.svg') no-repeat left top 6px;
     padding-left: 35px;
     font-weight: 500;
     font-size: 14px;
@@ -136,7 +136,7 @@
 }
 
 .listForParents li {
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/css/../img/arr-green-svg.svg) no-repeat left top 6px;
+    background: url('../../components/common/img/green-arr.svg') no-repeat left top 6px;
     padding-left: 35px;
     font-weight: 500;
     font-size: 14px;
@@ -190,7 +190,7 @@
     line-height: 20px;
     padding-left: 20px;
     margin-bottom: 12px;
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/img/list-bullet-svg.svg) no-repeat left top 4px;
+    background: url('../../components/common/img/circle.svg') no-repeat left top 4px;
 }
 
 .whatImg {
@@ -219,18 +219,18 @@
     }
 }
 
-.priceBox{
+.priceBox {
     margin-bottom: 70px;
 }
 
-.priceIclude p{
+.priceIclude p {
     font-weight: normal;
     font-size: 14px;
     line-height: 27px;
     margin-bottom: 5px;
 }
 
-.faqBox{
+.faqBox {
     margin-bottom: 70px;
 }
 
@@ -280,7 +280,7 @@
 .formSteps li {
     font-size: 14px;
     line-height: 37px;
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/css/../img/arr-red-svg.svg) no-repeat left top 13px;
+    background: url('../../components/common/img/red-arr.svg') no-repeat left top 13px;
     padding-left: 35px;
 }
 
@@ -291,7 +291,7 @@
 }
 
 .carouselCard {
-    width: 320px;
+    width: 285px;
     margin: auto;
 }
 
@@ -299,7 +299,7 @@
     position: relative;
     overflow: hidden;
     display: block;
-    width: 320px;
+    width: 285px;
     height: 180px;
     margin-bottom: 10px;
     border-radius: 40px;
@@ -310,8 +310,8 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: 40px;
-    padding: 22px 36px;
-    max-width: 320px;
+    padding: 21px 21px;
+    max-width: 285px;
 }
 
 .postTitle {
@@ -331,7 +331,7 @@
     text-decoration: none;
     display: inline-block;
     padding-right: 25px;
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/css/../img/arr.svg) no-repeat right center;
+    background: url('../../components/common/img/red-arr.svg') no-repeat right center;
 }
 
 .boxLink A:hover {

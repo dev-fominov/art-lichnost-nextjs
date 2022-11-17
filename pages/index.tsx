@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import type { NextPage } from 'next'
 import { Header } from "../components/common/header";
 import { Navbar } from "../components/main/navbar";
@@ -7,31 +6,9 @@ import { InfoHead } from "../components/main/info-head";
 import { Section } from "../components/common/section";
 import { HomeItem } from "../components/main/home-item";
 import { Footer } from "../components/common/footer";
-
-const Home: NextPage = ({ data }: any) => {
-    return (<>
-        <Header banner={data.banner.url}>
-            <Navbar />
-            <BigLinks />
-            <InfoHead content={data.content} />
-        </Header>
-        <Section>
-            {data.sections.map((item: any, index: number) => <HomeItem key={index} id={index} item={item} />)}
-        </Section>
-        <Footer />
-    </>
-=======
-import type {NextPage} from 'next'
-import {Header} from "../components/common/header";
-import {Navbar} from "../components/main/navbar";
-import {BigLinks} from "../components/main/big-links";
-import {InfoHead} from "../components/main/info-head";
-import {Section} from "../components/common/section";
-import {HomeItem} from "../components/main/home-item";
-import {Footer} from "../components/common/footer";
 import Head from "next/head";
 
-const Home: NextPage = ({data}: any) => {
+const Home: NextPage = ({ data }: any) => {
     return (
         <>
             <Head>
@@ -40,16 +17,15 @@ const Home: NextPage = ({data}: any) => {
                 </title>
             </Head>
             <Header banner={data.banner.url}>
-                <Navbar/>
-                <BigLinks/>
-                <InfoHead content={data.content}/>
+                <Navbar />
+                <BigLinks />
+                <InfoHead content={data.content} />
             </Header>
             <Section>
-                {data.sections.map((item: any, index: number) => <HomeItem key={index} id={index} item={item}/>)}
+                {data.sections.map((item: any, index: number) => <HomeItem key={index} id={index} item={item} />)}
             </Section>
-            <Footer/>
+            <Footer />
         </>
->>>>>>> mainPage
     )
 }
 

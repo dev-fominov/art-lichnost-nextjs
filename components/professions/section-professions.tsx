@@ -57,7 +57,7 @@ export const SectionProfessions = ({ data }: any) => {
             <ul className={styles.tablist}>
                 {/* {data.shift_selection.map((el: any, index: number) => <li key={index}>
                         {el}
-                    </li>)}*/}
+                    </li>)} */}
             </ul>
         </div>
 
@@ -163,6 +163,38 @@ export const SectionProfessions = ({ data }: any) => {
                     className={styles.carouselCard}>
                     <A href={`/camp/${programs}/smena/${el.slug}`} text={<div
                         className={styles.boxImg}
+                        style={{
+                            background: `url(${el.thumbnail_url.url}) no-repeat center center`,
+                            backgroundSize: `cover`
+                        }}>
+                    </div>} />
+                    <div className={styles.boxLink}>
+                        <h3 className={styles.postTitle}>{el.title}</h3>
+                        <A href={`/camp/${programs}/smena/${el.slug}`} text={'Узнать больше'} />
+                    </div>
+                </div>
+                )}
+            </Carousel>
+
+        </div>
+        <div className={styles.reasonsProgram}>
+            <h1 className={styles.titleInner}>Прошедшие смены</h1>
+            <Carousel
+                slidesToSlide={1}
+                className={styles.carousel}
+                swipeable
+                focusOnSelect={false}
+                arrows
+                ssr
+                itemClass="image-item"
+                infinite
+                responsive={responsive}
+            >
+                {data.past_shifts.map((el: any, index: number) => <div key={index}
+                    className={styles.carouselCard}>
+                    <A href={`/camp/${programs}/smena/${el.slug}`} text={<div
+                        className={styles.boxImg}
+                        draggable={false}
                         style={{
                             background: `url(${el.thumbnail_url.url}) no-repeat center center`,
                             backgroundSize: `cover`

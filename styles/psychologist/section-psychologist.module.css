@@ -115,12 +115,24 @@
     background: #30aa33;
 }
 
-.listFor {
+.listForKids {
     list-style: none;
 }
 
-.listFor li {
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/css/../img/arr-green-svg.svg) no-repeat left top 6px;
+.listForKids li {
+    background: url('../../components/common/img/red-arr.svg') no-repeat left top 6px;
+    padding-left: 35px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.listForParents {
+    list-style: none;
+}
+
+.listForParents li {
+    background: url('../../components/common/img/green-arr.svg') no-repeat left top 6px;
     padding-left: 35px;
     font-weight: 500;
     font-size: 14px;
@@ -381,7 +393,7 @@
 .formSteps li {
     font-size: 14px;
     line-height: 37px;
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/css/../img/arr-red-svg.svg) no-repeat left top 13px;
+    background: url('../../components/common/img/red-arr.svg') no-repeat left top 13px;
     padding-left: 35px;
 }
 

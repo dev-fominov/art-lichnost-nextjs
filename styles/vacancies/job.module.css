@@ -30,7 +30,7 @@
     line-height: 20px;
     text-align: justify;
     color: #000000;
-    background: url(//art-lichnost.ru/wp-content/themes/art_person_1/img/arr-red-svg.svg) no-repeat left top 5px;
+    background: url('../../components/common/img/red-arr.svg') no-repeat left top 5px;
     padding-left: 30px;
 }
 

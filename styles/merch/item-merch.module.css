@@ -1,8 +1,7 @@
 .item{
-    margin-left: 11px;
-    margin-right: 11px;
+    margin-right: 17px;
     margin-bottom: 45px;
-    width: 300px;
+    max-width: 285px;
 }
 
 .slide{
@@ -19,7 +18,7 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: 40px;
-    padding: 30px;
+    padding: 25px;
     position: relative;
     height: 330px;
     min-height: 302px;

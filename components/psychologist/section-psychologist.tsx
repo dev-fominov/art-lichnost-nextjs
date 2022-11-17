@@ -25,7 +25,7 @@ export const SectionPsychologist = ({data}: any) => {
                             </span>
                             Для детей
                         </h2>
-                        <ul className={styles.listFor}>
+                        <ul className={styles.listForKids}>
                             {data.issues_addressed.for_kids.vaprosy_1.map((el: any, index: number) => {
                                 return <li key={index}>{el}</li>
                             })}
@@ -47,7 +47,7 @@ export const SectionPsychologist = ({data}: any) => {
                             </span>
                             Для родителей
                         </h2>
-                        <ul className={styles.listFor}>
+                        <ul className={styles.listForParents}>
                             {data.issues_addressed.for_parents.vaprosy_1.map((el: any, index: number) => {
                                 return <li key={index}>{el}</li>
                             })}
@@ -107,7 +107,7 @@ export const SectionPsychologist = ({data}: any) => {
             <div>
                 <h3 className={styles.titleInner}>Оформить заявку</h3>
                 <div className={styles.formOrderBox}>
-                    <Forms confirm={data.link_to_oferta}/>
+                    <Forms confirm={data.link_to_oferta} pageName={''} sandmail_url={data.sandmail_url}/>
                     <div className={styles.formSteps}>
                         <h4>{data.steps_form_title}</h4>
                         <ul>

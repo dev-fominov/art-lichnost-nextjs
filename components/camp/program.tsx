@@ -3,6 +3,7 @@ import {A} from "../common/A";
 import Card from "./card";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import {ButtonGroup} from "../common/button-group";
 
 const Program = ({data}: any) => {
     const responsive = {
@@ -40,39 +41,41 @@ const Program = ({data}: any) => {
         }
     }
     return (
-        <>
+        <div className={styles.programBox}>
             <div>
                 <A href={`camp/${data.slug}`} text={
-                <h2 className={styles.title}
-                    style={{
-                        color: `${data.term_id === 11
-                            ? '#30AA33'
-                            : data.term_id === 10
-                                ? '#FF822E'
-                                : '#EB3535'}`
-                    }}>
-                    {data.name.toUpperCase()}
-                    <span>Программа</span>
-                </h2>}/>
+                    <h2 className={styles.title}
+                        style={{
+                            color: `${data.term_id === 11
+                                ? '#30AA33'
+                                : data.term_id === 10
+                                    ? '#FF822E'
+                                    : '#EB3535'}`
+                        }}>
+                        {data.name.toUpperCase()}
+                        <span>Программа</span>
+                    </h2>}/>
                 <p className={styles.description}>{data.description}</p>
             </div>
             {data.count >= 3
-                ? <Carousel
-                    slidesToSlide={1}
-                    swipeable
-                    focusOnSelect={false}
-                    arrows
-                    ssr
-                    itemClass="image-item"
-                    infinite
-                    responsive={responsive}
-                >
-                    {data.camp_card.map((el: any, index: any) => <Card key={index} carouselCard={true}  data={el}/>)}
-                </Carousel>
+                ? <div className={styles.containerBtn}>
+                    <Carousel slidesToSlide={1}
+                              swipeable
+                              focusOnSelect={false}
+                              arrows={false}
+                              renderButtonGroupOutside={true}
+                              customButtonGroup={<ButtonGroup/>}
+                              ssr
+                              itemClass="image-item"
+                              infinite
+                              responsive={responsive}>
+                        {data.camp_card.map((el: any, index: any) => <Card key={index} carouselCard={true} data={el}/>)}
+                    </Carousel>
+                </div>
                 : <div className={styles.cards}>
                     {data.camp_card.map((el: any, index: any) => <Card key={index} data={el}/>)}
                 </div>}
-        </>
+        </div>
     )
 }
 

@@ -4,7 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import {SlideItem} from "./slide-item";
 import {ButtonGroup} from "../common/button-group";
 
-const SliderTeam = ({data}: any) => {
+const SliderTeamPsihologs = ({data}: any) => {
 
     const responsive = {
         desktopFull: {
@@ -48,7 +48,7 @@ const SliderTeam = ({data}: any) => {
                       className={styles.container}
                       arrows={false}
                       renderButtonGroupOutside={true}
-                      customButtonGroup={<ButtonGroup/>}
+                      customButtonGroup={<ButtonGroup noBtn={true}/>}
                       ssr
                       itemClass="image-item"
                       infinite
@@ -60,4 +60,4 @@ const SliderTeam = ({data}: any) => {
     )
 }
 
-export default SliderTeam
+export default SliderTeamPsihologs

@@ -2,6 +2,7 @@ import Carousel from "react-multi-carousel";
 import styles from '../../styles/professions/slide-prozhivaniya.module.css'
 import "react-multi-carousel/lib/styles.css";
 import {SlideProzhivaniya} from "./slide-prozhivaniya";
+import {ButtonGroup} from "../common/button-group";
 
 const SliderProfessions = ({data}: any) => {
 
@@ -40,20 +41,21 @@ const SliderProfessions = ({data}: any) => {
         }
     }
     return (
-        <div>
-            <Carousel
-                slidesToSlide={1}
-                swipeable
-                focusOnSelect={false}
-                className={styles.container}
-                arrows
-                ssr
-                itemClass="image-item"
-                infinite
-                responsive={responsive}
-            >
-                {data.map((item: any, index: number) => <SlideProzhivaniya key={index} data={item}/>)}
-            </Carousel>
+            <div className={styles.containerBtn}>
+                <Carousel slidesToSlide={1}
+                          swipeable
+                          focusOnSelect={false}
+                          className={styles.container}
+                          ssr
+                          arrows={false}
+                          renderButtonGroupOutside={true}
+                          customButtonGroup={<ButtonGroup/>}
+                          itemClass="image-item"
+                          infinite
+                          responsive={responsive}
+                >
+                    {data.map((item: any, index: number) => <SlideProzhivaniya key={index} data={item}/>)}
+                </Carousel>
         </div>
     )
 }

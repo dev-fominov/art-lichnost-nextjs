@@ -9,6 +9,7 @@ import {A} from "../common/A";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import {useRouter} from "next/router";
+import {ButtonGroup} from "../common/button-group";
 
 export const SectionProfessions = ({data}: any) => {
     const router = useRouter()
@@ -151,17 +152,19 @@ export const SectionProfessions = ({data}: any) => {
                 </div>
             </div>
             {data.past_shifts && <div className={styles.reasonsProgram}>
-                <h1 className={styles.titleInner}>Прошедшие смены</h1>
-                <Carousel
-                    slidesToSlide={1}
-                    className={styles.carousel}
-                    swipeable
-                    focusOnSelect={false}
-                    arrows
-                    ssr
-                    itemClass="image-item"
-                    infinite
-                    responsive={responsive}
+              <h1 className={styles.titleInner}>Прошедшие смены</h1>
+              <div className={styles.containerBtn}>
+                <Carousel slidesToSlide={1}
+                          className={styles.carousel}
+                          swipeable
+                          focusOnSelect={false}
+                          arrows={false}
+                          renderButtonGroupOutside={true}
+                          customButtonGroup={<ButtonGroup/>}
+                          ssr
+                          itemClass="image-item"
+                          infinite
+                          responsive={responsive}
                 >
                     {data.past_shifts.map((el: any, index: number) => <div key={index}
                                                                            className={styles.carouselCard}>
@@ -180,6 +183,7 @@ export const SectionProfessions = ({data}: any) => {
                         </div>
                     )}
                 </Carousel>
+              </div>
             </div>}
         </Section>
     )

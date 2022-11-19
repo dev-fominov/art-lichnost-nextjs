@@ -20,7 +20,7 @@
 }
 
 .box {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .titleProf {
@@ -37,9 +37,6 @@
     justify-content: center;
 }
 
-.carousel button {
-   background-color: #30aa33;
-}
 
 .card {
     display: flex;
@@ -81,6 +78,7 @@
 @media (max-width: 1000px) {
     .formSteps {
         margin-top: 15px;
+        margin-left: 0;
     }
 }
 
@@ -242,18 +240,6 @@
     color: #eb3535;
 }
 
-.carouselBtn{
-    position:unset;
+.containerBtn{
+    position: relative;
 }
-.react-multi-carousel-list{
-    position: unset !important;
-}
-
-.react-multiple-carousel__arrow--left {
-    left: calc(-3% + 1px)
-}
-
-.react-multiple-carousel__arrow--right {
-    right: calc(3% + 1px)
-}
-

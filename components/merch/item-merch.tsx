@@ -42,25 +42,26 @@ export const ItemMerch = ({data}: any) => {
     }
     return (<div className={styles.item}>
             {data.gallery.length > 1
-                ? <Carousel
-                    slidesToSlide={1}
-                    className={styles.carousel}
-                    swipeable
-                    focusOnSelect={false}
-                    arrows={false}
-                    showDots={true}
-                    ssr
-                    itemClass="image-item"
-                    infinite
-                    responsive={responsive}
-                >
-                    {data.gallery.map((item: any, index: any) => <div key={index} className={styles.slide}
-                                                                      draggable={false}
-                                                                      style={{
-                                                                          background: `url(${item.url}) no-repeat center center`,
-                                                                          backgroundSize: `cover`
-                                                                      }}/>)}
-                </Carousel>
+                ? <div className={styles.containerBtn}>
+                    <Carousel slidesToSlide={1}
+                              className={styles.carousel}
+                              swipeable
+                              focusOnSelect={false}
+                              arrows={false}
+                              showDots={true}
+                              ssr
+                              itemClass="image-item"
+                              infinite
+                              responsive={responsive}
+                    >
+                        {data.gallery.map((item: any, index: any) => <div key={index} className={styles.slide}
+                                                                          draggable={false}
+                                                                          style={{
+                                                                              background: `url(${item.url}) no-repeat center center`,
+                                                                              backgroundSize: `cover`
+                                                                          }}/>)}
+                    </Carousel>
+                </div>
                 : <div className={styles.slide} style={{
                     background: `url(${data.gallery[0].url}) no-repeat center center`,
                     backgroundSize: `cover`

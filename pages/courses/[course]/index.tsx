@@ -5,6 +5,9 @@ import {SectionCourse} from "../../../components/course/section-course";
 import Head from "next/head";
 import React from "react";
 
+
+
+
 const Course: NextPage = ({data}: any) => {
 
     return (

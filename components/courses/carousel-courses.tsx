@@ -3,6 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import React from "react";
 import Card from "../camp/card";
+import {ButtonGroup} from "../common/button-group";
 
 const CarouselCourses = ({data}: any) => {
     const responsive = {
@@ -48,20 +49,21 @@ const CarouselCourses = ({data}: any) => {
                 {data.description}
             </div>
             {data.count > 3
-                ? <Carousel
-                    slidesToSlide={1}
-                    swipeable
-                    renderButtonGroupOutside={true}
-                    focusOnSelect={false}
-                    arrows
-                    ssr
-                    className={styles.carouselBtn}
-                    itemClass={styles.carousel}
-                    infinite
-                    responsive={responsive}
-                >
-                    {data.camp_card.map((el: any) => <Card key={el.ID} data={el}/>)}
-                </Carousel>
+                ? <div className={styles.containerBtn}>
+                    <Carousel slidesToSlide={1}
+                              swipeable
+                              focusOnSelect={false}
+                              arrows={false}
+                              renderButtonGroupOutside={true}
+                              customButtonGroup={<ButtonGroup/>}
+                              ssr
+                              itemClass={styles.carousel}
+                              infinite
+                              responsive={responsive}
+                    >
+                        {data.camp_card.map((el: any) => <Card key={el.ID} data={el}/>)}
+                    </Carousel>
+                </div>
                 : <div className={styles.card}>
                     {data.camp_card.map((el: any) => <Card key={el.ID} data={el}/>)}
                 </div>}

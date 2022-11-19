@@ -40,6 +40,7 @@ const SliderTeamPsihologs = ({data}: any) => {
             partialVisibilityGutter: 30
         }
     }
+
     return (
         <div className={styles.containerBtn}>
             <Carousel slidesToSlide={1}

@@ -31,7 +31,7 @@ export const SectionCourse = ({data}: any) => {
                         <div className={styles.title}>{data.what_we_do.to_do_title}</div>
                         <ul>
                             {data.what_we_do.to_do_list.map((item: any, index: any) => <li
-                                key={index}>- {item}</li>)}
+                                key={index}>— {item}</li>)}
                         </ul>
                     </div>
                     <div className={styles.rightProgramm}>
@@ -65,7 +65,10 @@ export const SectionCourse = ({data}: any) => {
                     <div className={styles.rightUser}>
                         <div className={styles.title}>Стоимость</div>
                         <div className={styles.price}>{data.educator.price} рублей</div>
-                        <div className={styles.description}>{data.educator.one_time_fee}</div>
+                        <div className={styles.description}>{data.educator.one_time_fee
+                            ? '*стоимость можно разбить на две равные части'
+                            : ''}
+                        </div>
                     </div>
                 </div>
             </div>

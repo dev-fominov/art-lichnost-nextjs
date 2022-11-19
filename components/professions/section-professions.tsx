@@ -12,7 +12,7 @@ import {useRouter} from "next/router";
 
 export const SectionProfessions = ({data}: any) => {
     const router = useRouter()
-    const { programs } = router.query
+    const {programs} = router.query
 
     const responsive = {
         desktopFull: {
@@ -130,7 +130,11 @@ export const SectionProfessions = ({data}: any) => {
             <div className={styles.reasonsProgram}>
                 <h3 className={styles.titleInner}>Оформить заявку</h3>
                 <div className={styles.formOrderBox}>
-                    <Forms confirm={data.link_to_oferta}/>
+                    <Forms confirm={data.link_to_oferta} hiddenText={`Общая заявка со страницы ${data.id_page === 12
+                        ? 'ТУРИСТИЧЕСКИЕ КАНИКУЛЫ'
+                        : data.id_page === 11
+                            ? 'ЛАГЕРЬ НАВЫКОВ'
+                            : 'ЛАГЕРЬ ПРОФЕССИЙ'}`}/>
                     <div className={styles.formSteps}>
                         <h4>{data.request_title}</h4>
                         <ul>
@@ -146,7 +150,7 @@ export const SectionProfessions = ({data}: any) => {
                     </div>
                 </div>
             </div>
-            <div className={styles.reasonsProgram}>
+            {data.past_shifts && <div className={styles.reasonsProgram}>
                 <h1 className={styles.titleInner}>Прошедшие смены</h1>
                 <Carousel
                     slidesToSlide={1}
@@ -176,7 +180,7 @@ export const SectionProfessions = ({data}: any) => {
                         </div>
                     )}
                 </Carousel>
-            </div>
+            </div>}
         </Section>
     )
 }

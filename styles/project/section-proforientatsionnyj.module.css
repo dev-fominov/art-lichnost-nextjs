@@ -19,6 +19,16 @@
     justify-content: space-between;
 }
 
+.contentBoxImportant{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: space-between;
+}
+
 .itemFirst {
     border: 1px solid #B1B1B1;
     -webkit-box-sizing: border-box;

@@ -37,6 +37,10 @@
     justify-content: center;
 }
 
+.carousel button {
+   background-color: #30aa33;
+}
+
 .card {
     display: flex;
     flex-wrap: wrap;
@@ -230,14 +234,26 @@
     transition: all 300ms ease;
 }
 
-.postTitle {
-    text-decoration: underline;
-}
-
-.titleGreen .postTitle:hover{
+.titleGreen:hover span{
     color: #30aa33;
 }
 
-.titleRed .postTitle:hover{
+.titleRed:hover span{
     color: #eb3535;
 }
+
+.carouselBtn{
+    position:unset;
+}
+.react-multi-carousel-list{
+    position: unset !important;
+}
+
+.react-multiple-carousel__arrow--left {
+    left: calc(-3% + 1px)
+}
+
+.react-multiple-carousel__arrow--right {
+    right: calc(3% + 1px)
+}
+

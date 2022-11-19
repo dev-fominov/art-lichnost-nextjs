@@ -5,6 +5,8 @@ import {Container} from "./container";
 import Link from "next/link";
 import {FaVk, FaYoutube} from "react-icons/fa";
 import {GrFacebookOption} from "react-icons/gr";
+import logo from "./img/logo.png";
+import Image from "next/image";
 
 export const Footer = () => {
     return (<footer className={styles.footer}>
@@ -12,8 +14,10 @@ export const Footer = () => {
                 <div className={styles.footBoxes}>
                     <div className={styles.footLogo}>
                         <A href={'/'}
-                           text={<img className={styles.footLogoImg}
-                                      src={'https://art-lichnost.ru/wp-content/themes/art_person_1/img/logo-aleksandr.svg'}/>}/>
+                           text={<Image width={158}
+                                        height={48}
+                                        src={logo}
+                                        alt={'logo'}/>}/>
                         <div className={styles.footLogolinks}>
                             <A href={{
                                 pathname: '/documents/[slag]',

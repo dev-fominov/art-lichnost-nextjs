@@ -6,6 +6,9 @@ import {FaVk, FaYoutube} from 'react-icons/fa'
 import {GrFacebookOption} from 'react-icons/gr'
 import {Dropdown} from "../common/dropdown";
 import BurgerNav from "./burger-nav";
+import logo from "../common/img/logo.png"
+import Image from 'next/image'
+
 
 export const Navbar = () => {
     return (<div className={styles.headTop}>
@@ -13,8 +16,10 @@ export const Navbar = () => {
             <div className={styles.headTopInner}>
                 <div className={styles.logo}>
                     <A href={'/'}
-                       text={<img
-                           src={'https://art-lichnost.ru/wp-content/themes/art_person_1/img/logo-aleksandr.svg'}/>}/>
+                       text={<Image width={158}
+                                    height={48}
+                                    src={logo}
+                                    alt={'logo'}/>}/>
                 </div>
                 <BurgerNav/>
                 <div className={styles.menu}>

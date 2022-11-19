@@ -1,7 +1,6 @@
 import React from "react";
 import {Section} from "../common/section";
 import styles from '../../styles/project/section-proforientatsionnyj.module.css'
-import ItemCard from "../about/item-card";
 
 export const SectionProforientatsionnyj = ({data}: any) => {
     return (<Section>
@@ -18,7 +17,7 @@ export const SectionProforientatsionnyj = ({data}: any) => {
             </div>
             <div className={styles.boxList}>
                 <div className={styles.title}>{data.important.title}</div>
-                <div className={styles.contentBox}>
+                <div className={styles.contentBoxImportant}>
                     {data.important.list.map((item: any, index: any) => <div key={index}
                                                                              className={styles.itemArr}>
                         <div className={styles.itemDescriptionArr}>{item}</div>
@@ -51,7 +50,7 @@ export const SectionProforientatsionnyj = ({data}: any) => {
                 <div className={styles.contentBoxCard}>
                     {data.what_do.list.map((item: any, index: any) => <div key={index} className={styles.card}>
                         <div className={styles.itemTitleCard}>
-                            <span className={styles.count}>{index+1}</span>
+                            <span className={styles.count}>{index + 1}</span>
                             <span className={styles.titleCard}>{item.title_item}</span>
                         </div>
                         <img src={item.img_item.url} alt={item.img_item.alt}/>

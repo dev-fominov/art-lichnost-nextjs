@@ -283,6 +283,7 @@
     border-radius: 30px;
     font-weight: normal;
     border: none;
+    cursor: pointer;
 }
 
 .btnGrey:active {

@@ -73,6 +73,7 @@
     line-height: 17px;
     color: #4e4e4e;
     margin-left: 23px;
+    cursor: pointer;
 }
 
 .checkboxLabel a {
@@ -98,6 +99,7 @@
     top: 9px;
     left: 0;
     background-color: #EB3535;
+    cursor: pointer;
 }
 
 .radioFalse {
@@ -111,4 +113,5 @@
     position: absolute;
     top: 9px;
     left: 0;
+    cursor: pointer;
 }

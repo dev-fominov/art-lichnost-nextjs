@@ -2,15 +2,15 @@ import {Field, Form, Formik} from "formik";
 import styles from "../../styles/common/forms.module.css";
 import {A} from "./A";
 
-export const Forms = ({confirm, sandmail_url, pageName}: any) => {
+export const Forms = ({confirm, hiddenText}: any) => {
     return (<div className={styles.formBlock}>
             <h4 className={styles.titleInnerForm}>Заполните форму заявки</h4>
             <div>
                 <Formik
                     initialValues={
                         {
-                            parentsName: "",
-                            childName: "",
+                            parentsName: '',
+                            childName: '',
                             birthdate: '',
                             userEmail: '',
                             userPhone: '',
@@ -29,19 +29,19 @@ export const Forms = ({confirm, sandmail_url, pageName}: any) => {
                         return errors;
                     }}
                     onSubmit={async (values, {setSubmitting}) => {
-                        const res = await fetch( 'https://alex-volkov.ru/sendmail.php/', {
+                        const res = await fetch('https://alex-volkov.ru/wp-json/art/v1/send-mail/', {
                             method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
                             body: JSON.stringify({
                                 parentsName: values.parentsName,
                                 childName: values.childName,
                                 birthdate: values.birthdate,
                                 userEmail: values.userEmail,
                                 userPhone: values.userPhone,
-                                pageName: "аппарпар",
+                                hiddenText: hiddenText,
                             }),
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
                         })
                         setSubmitting(false)
                     }}
@@ -71,10 +71,10 @@ export const Forms = ({confirm, sandmail_url, pageName}: any) => {
                             <button className={styles.submitButton} type={'submit'} disabled={isSubmitting}>Оставить
                                 заявку
                             </button>
-                            <div className={styles.confirmForm}>
-                                <div className={styles.radioLabel} onClick={() => {
-                                    setFieldValue('assent', !values.assent)
-                                }}> {values.assent === true
+                            <div className={styles.confirmForm} onClick={() => {
+                                setFieldValue('assent', !values.assent)
+                            }}>
+                                <div className={styles.radioLabel}> {values.assent === true
                                     ? <div className={styles.radioTrue}/>
                                     : <div className={styles.radioFalse}/>}
                                 </div>
@@ -83,10 +83,12 @@ export const Forms = ({confirm, sandmail_url, pageName}: any) => {
                                     хранением указанных здесь персональных данных</label>
                                 <br/>
                             </div>
-                            {confirm && <div className={styles.confirmForm} style={{marginTop: '8px'}}>
-                              <div className={styles.radioLabel} onClick={() => {
-                                  setFieldValue('confirm', !values.confirm)
-                              }}> {values.confirm === true
+                            {confirm && <div className={styles.confirmForm}
+                                             style={{marginTop: '8px'}}
+                                             onClick={() => {
+                                                 setFieldValue('confirm', !values.confirm)
+                                             }}>
+                              <div className={styles.radioLabel}> {values.confirm === true
                                   ? <div className={styles.radioTrue}/>
                                   : <div className={styles.radioFalse}/>}
                               </div>

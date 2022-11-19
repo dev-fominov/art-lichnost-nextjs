@@ -51,9 +51,11 @@ const CarouselCourses = ({data}: any) => {
                 ? <Carousel
                     slidesToSlide={1}
                     swipeable
+                    renderButtonGroupOutside={true}
                     focusOnSelect={false}
                     arrows
                     ssr
+                    className={styles.carouselBtn}
                     itemClass={styles.carousel}
                     infinite
                     responsive={responsive}

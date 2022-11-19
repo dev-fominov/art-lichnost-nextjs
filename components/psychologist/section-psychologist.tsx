@@ -7,7 +7,7 @@ import {Modal} from "react-responsive-modal/dist";
 
 export const SectionPsychologist = ({data}: any) => {
     const [showModal, updateShowModal] = useState(false);
-
+    const [hiddenText, setHiddenText] = useState('');
     const showModalHandler = () => {
         updateShowModal(!showModal);
     }
@@ -32,7 +32,11 @@ export const SectionPsychologist = ({data}: any) => {
                         </ul>
                         <div className={styles.btnPriceBox}>
                             <div className={styles.btnOrder}>
-                                <button className={styles.btnRed} onClick={() => showModalHandler()}>Записаться</button>
+                                <button className={styles.btnRed} onClick={() => {
+                                    setHiddenText('детей')
+                                    showModalHandler()
+                                }}>Записаться
+                                </button>
                             </div>
                             <div className={styles.priceTime}>
                                 <div className={styles.price}>{data.issues_addressed.for_kids.price_1[0]}</div>
@@ -54,7 +58,11 @@ export const SectionPsychologist = ({data}: any) => {
                         </ul>
                         <div className={styles.btnPriceBox}>
                             <div className={styles.btnOrder}>
-                                <button className={styles.btnRed} onClick={() => showModalHandler()}>Записаться</button>
+                                <button className={styles.btnRed} onClick={() => {
+                                    setHiddenText('родителей')
+                                    showModalHandler()
+                                }}>Записаться
+                                </button>
                             </div>
                             <div className={styles.priceTime}>
                                 <div className={styles.price}>{data.issues_addressed.for_parents.price_1[0]}</div>
@@ -107,7 +115,7 @@ export const SectionPsychologist = ({data}: any) => {
             <div>
                 <h3 className={styles.titleInner}>Оформить заявку</h3>
                 <div className={styles.formOrderBox}>
-                    <Forms confirm={data.link_to_oferta} pageName={''} sandmail_url={data.sandmail_url}/>
+                    <Forms confirm={data.link_to_oferta} hiddenText={"Заявка на общую консультацию психолога"}/>
                     <div className={styles.formSteps}>
                         <h4>{data.steps_form_title}</h4>
                         <ul>
@@ -131,7 +139,7 @@ export const SectionPsychologist = ({data}: any) => {
                                  onClose={showModalHandler}
                                  closeOnEsc
                                  center>
-              <Forms confirm={data.link_to_oferta}/>
+              <Forms confirm={data.link_to_oferta} hiddenText={`Заявка на консультацию психолога для ${hiddenText}`}/>
             </Modal>}
         </Section>
     )

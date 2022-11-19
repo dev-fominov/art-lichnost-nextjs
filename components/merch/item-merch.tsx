@@ -13,7 +13,7 @@ export const ItemMerch = ({data}: any) => {
     const showModalHandler = () => {
         updateShowModal(!showModal);
     }
-
+    const noSize = data.size.every((item: any) => item.stock === 0)
     const responsive = {
         desktop: {
             breakpoint: {
@@ -71,14 +71,16 @@ export const ItemMerch = ({data}: any) => {
                 <div className={styles.boxAbsolute}>
                     <div className={styles.sizes}>
                         {data.size.map((item: any, index: any) => {
-                            return !!item.stock && <div key={index} className={styles.sizeTitle}>
+                            return <div key={index} className={item.stock ? styles.sizeTitle : styles.noSizeTitle}>
                                 {item.title}
                             </div>
                         })}
                     </div>
                     <div className={styles.availableBox}>
-                        <CgArrowLongRight className={styles.arrow}/>
-                        <span className={styles.availableTitle}>Есть в наличии</span>
+                        <CgArrowLongRight className={noSize ? styles.noSizeArrow : styles.arrow}/>
+                        {noSize
+                            ? <span className={styles.noSizeAvailableTitle}>Нет в наличии</span>
+                            : <span className={styles.availableTitle}>Есть в наличии</span>}
                     </div>
                     <div className={styles.priceMerch}>{data.price}</div>
                     <button onClick={() => showModalHandler()} className={styles.btn}>Оставить заявку</button>
@@ -92,7 +94,7 @@ export const ItemMerch = ({data}: any) => {
                                  onClose={showModalHandler}
                                  closeOnEsc
                                  center>
-              <MerchForm/>
+              <MerchForm hiddenText={`Заявка на мерч (${data.title})`}/>
             </Modal>}
         </div>
     )

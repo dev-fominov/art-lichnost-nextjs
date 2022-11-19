@@ -115,3 +115,17 @@
     left: 0;
     cursor: pointer;
 }
+
+.modal{
+    background-color: #30aa33;
+    max-width: 350px;
+    height: 200px;
+    color: #FFFFFF;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 30px
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Section} from "../common/section";
 import {Description} from "./description";
 import styles from '../../styles/professions/section-professions.module.css'
@@ -14,6 +14,8 @@ import {ButtonGroup} from "../common/button-group";
 export const SectionProfessions = ({data}: any) => {
     const router = useRouter()
     const {programs} = router.query
+    const [idProfi, setIdProfi] = useState(12320)
+   /* const  shiftSelection = data.shift_selection.filter((item: any) => item.id == idProfi)*/
 
     const responsive = {
         desktopFull: {
@@ -53,16 +55,48 @@ export const SectionProfessions = ({data}: any) => {
             <Description img={data.description_img}
                          video={data.description_video}
                          text={data.description_text}/>
-            <div className={styles.reasonsProgram}>
-                <h1 className={styles.titleInner}>Выбрать смену и профессию</h1>
-                <ul className={styles.tablist}>
-                    {/* {data.shift_selection.map((el: any, index: number) => <li key={index}>
-                        {el}
+            {data.shift_selection && <div className={styles.reasonsProgram}>
+              <h1 className={styles.titleInner}>Выбрать смену и профессию</h1>
+              <ul className={styles.tablist}>
+                  {data.shift_selection.map((el: any, index: number) => <li key={index}
+                                                                            style={{
+                                                                                backgroundColor: `${el.id === idProfi
+                                                                                    ? '#30aa33'
+                                                                                    : '#ffffff'}`
+                                                                            }}
+                                                                            onClick={() => setIdProfi(el.id)}>
+                      <span style={{
+                          color: `${el.id === idProfi
+                              ? '#ffffff'
+                              : '#000000'}`
+                      }}>
+                          {el.title}
+                      </span>
+                  </li>)}
+              </ul>
+              <div className={styles.sysProfi}>
+                <ul className={styles.listSkills}>
+                   {/* {shiftSelection && shiftSelection[0].profi.card.map((item: any, index: any) => <li
+                        key={index}>
+                        {item.seats
+                            ? <span style={{background: '#30aa33'}} className={styles.onstock}>Есть места</span>
+                            : <span style={{background: '#eb3535'}} className={styles.onstock}>Нет места</span>}
+                        <div className={styles.boxAlex}>
+                            <A href={`/courses/${item.post_slug}`} text={
+                                <div className={item.seats
+                                    ? styles.titleGreen
+                                    : styles.titleRed}>
+                                              <span style={{textDecoration: 'underline'}}>
+                                                  {item.title}
+                                              </span>
+                                    <span>{item.age_title}</span>
+                                </div>
+                            }/>
+                        </div>
                     </li>)}*/}
                 </ul>
-            </div>
-
-
+              </div>
+            </div>}
             <div className={styles.reasonsProgram}>
                 <h3 className={styles.titleInner}>5 причин, почему нужно поехать в лагерь:</h3>
                 <div className={styles.reasonBox}>
@@ -151,7 +185,7 @@ export const SectionProfessions = ({data}: any) => {
                     </div>
                 </div>
             </div>
-            {data.past_shifts && <div className={styles.reasonsProgram}>
+            {data.past_shifts.length > 0 && <div className={styles.reasonsProgram}>
               <h1 className={styles.titleInner}>Прошедшие смены</h1>
               <div className={styles.containerBtn}>
                 <Carousel slidesToSlide={1}

@@ -5,16 +5,13 @@ import {SectionCourse} from "../../../components/course/section-course";
 import Head from "next/head";
 import React from "react";
 
-
-
-
 const Course: NextPage = ({data}: any) => {
 
     return (
         <>
             <Head>
                 <title>
-                    {data.title + '- Центр развития детей и выбора профессии АртЛичность'}
+                    {data.background_img.alt + '- Центр развития детей и выбора профессии АртЛичность'}
                 </title>
             </Head>
             <HeaderGreen title={data.title}/>

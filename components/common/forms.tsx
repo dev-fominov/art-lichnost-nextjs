@@ -1,8 +1,15 @@
 import {Field, Form, Formik} from "formik";
 import styles from "../../styles/common/forms.module.css";
 import {A} from "./A";
+import {Modal} from "react-responsive-modal";
+import "react-responsive-modal/styles.css";
+import React from "react";
 
 export const Forms = ({confirm, hiddenText}: any) => {
+    const [showModal, setShowModal] = React.useState(false)
+    const [showLoading, setShowLoading] = React.useState(false)
+    const showModalHandler = () => setShowModal(false)
+
     return (<div className={styles.formBlock}>
             <h4 className={styles.titleInnerForm}>Заполните форму заявки</h4>
             <div>
@@ -28,7 +35,9 @@ export const Forms = ({confirm, hiddenText}: any) => {
                         }
                         return errors;
                     }}
-                    onSubmit={async (values, {setSubmitting}) => {
+                    onSubmit={async (values, {setSubmitting, resetForm}) => {
+                        setShowLoading(true)
+                        resetForm()
                         const res = await fetch('https://alex-volkov.ru/wp-json/art/v1/send-mail/', {
                             method: 'POST',
                             headers: {
@@ -42,7 +51,15 @@ export const Forms = ({confirm, hiddenText}: any) => {
                                 userPhone: values.userPhone,
                                 hiddenText: hiddenText,
                             }),
-                        })
+                        }).then(() => {
+                                setShowLoading(false)
+                                setShowModal(true)
+                                setTimeout(() => {
+                                    setShowModal(false)
+                                    return
+                                }, 3000)
+                            }
+                        )
                         setSubmitting(false)
                     }}
                     /* validationSchema={loginFormSchema}*/>
@@ -68,8 +85,8 @@ export const Forms = ({confirm, hiddenText}: any) => {
                             <div>
                                 <Field className={styles.form} type={'tel'} name={'userPhone'} placeholder={'Телефон'}/>
                             </div>
-                            <button className={styles.submitButton} type={'submit'} disabled={isSubmitting}>Оставить
-                                заявку
+                            <button className={styles.submitButton} type={'submit'} disabled={isSubmitting}>
+                                {showLoading ? 'Загрузка...' : 'Оставить заявку'}
                             </button>
                             <div className={styles.confirmForm} onClick={() => {
                                 setFieldValue('assent', !values.assent)
@@ -108,6 +125,18 @@ export const Forms = ({confirm, hiddenText}: any) => {
                     )}
                 </Formik>
             </div>
+            {showModal && <Modal styles={{
+                modal: {position: 'relative', borderRadius: '40px', padding: 0, background: "none"},
+                closeButton: {position: "absolute", top: '15px', right: '15px'},
+            }}
+                                 open={showModal}
+                                 onClose={showModalHandler}
+                                 closeOnEsc
+                                 center>
+              <div className={styles.modal}>
+                Заявка отправлена,<br/> мы свяжемся с Вами в ближайшее время
+              </div>
+            </Modal>}
         </div>
     )
 

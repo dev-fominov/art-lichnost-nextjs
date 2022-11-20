@@ -17,6 +17,9 @@ import styles from '../../styles/common/button-group.module.css'
          return <button className={styles.customLeftArrow} onClick={() => onClick()} />;
      };
     const { carouselState: { currentSlide } } = rest;
+
+
+
     return (
         <div className="carousel-button-group">
             <CustomLeftArrow onClick={() => previous()} />

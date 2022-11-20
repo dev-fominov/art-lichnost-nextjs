@@ -1,13 +1,13 @@
-import {HeaderGreen} from "../../../../../components/common/header-green";
-import {Footer} from "../../../../../components/common/footer";
+import {HeaderGreen} from "../../../../components/common/header-green";
+import {Footer} from "../../../../components/common/footer";
 import {NextPage} from "next";
-import {Section} from "../../../../../components/common/section";
-import styles from "../../../../../styles/camp/smena.module.css";
+import {Section} from "../../../../components/common/section";
+import styles from "../../../../styles/camp/smena.module.css";
 import Carousel from "react-multi-carousel";
 import React from "react";
 import "react-multi-carousel/lib/styles.css";
 import Head from "next/head";
-import {ButtonGroup} from "../../../../../components/common/button-group";
+import {ButtonGroup} from "../../../../components/common/button-group";
 
 const Smena: NextPage = ({data}: any) => {
     const responsive = {

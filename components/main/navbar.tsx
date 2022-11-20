@@ -50,25 +50,9 @@ export const Navbar = () => {
 }
 
 const campMenu = [
-    {
-        path: {
-            pathname: '/camp/[programs]',
-            query: {programs: 'professions',}
-        },
-        text: 'Лагерь профессий',
-    },
-    {
-        path: {
-            pathname: '/camp/[programs]',
-            query: {programs: 'skills',},
-        }, text: 'Лагерь навыков'
-    },
-    {
-        path: {
-            pathname: '/camp/[programs]',
-            query: {programs: 'tourist-holidays',},
-        }, text: 'Туристические каникулы'
-    },
+    {path: '/camp/[programs]', text: 'Лагерь профессий',},
+    {path:  '/camp/skills', text: 'Лагерь навыков'},
+    {path: '/camp/tourist-holidays', text: 'Туристические каникулы'},
     {path: '/merch', text: 'Мерч'},]
 
 const programmesMenu = [

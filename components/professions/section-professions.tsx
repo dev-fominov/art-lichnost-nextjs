@@ -15,7 +15,6 @@ export const SectionProfessions = ({data}: any) => {
     const router = useRouter()
     const {programs} = router.query
     const [idProfi, setIdProfi] = useState(12320)
-   /* const  shiftSelection = data.shift_selection.filter((item: any) => item.id == idProfi)*/
 
     const responsive = {
         desktopFull: {
@@ -202,7 +201,7 @@ export const SectionProfessions = ({data}: any) => {
                 >
                     {data.past_shifts.map((el: any, index: number) => <div key={index}
                                                                            className={styles.carouselCard}>
-                            <A href={`/camp/${programs}/smena/${el.slug}`} text={<div
+                            <A href={`/camp/smena/${el.slug}`} text={<div
                                 className={styles.boxImg}
                                 draggable={false}
                                 style={{

@@ -13,7 +13,7 @@ const SliderTeamPsihologs = ({data}: any) => {
                 min: 1200
             },
             items: 4,
-            partialVisibilityGutter: 40
+            partialVisibilityGutter: 40,
         },
         desktop: {
             breakpoint: {
@@ -49,7 +49,7 @@ const SliderTeamPsihologs = ({data}: any) => {
                       className={styles.container}
                       arrows={false}
                       renderButtonGroupOutside={true}
-                      customButtonGroup={<ButtonGroup noBtn={true}/>}
+                      customButtonGroup={<ButtonGroup/>}
                       ssr
                       itemClass="image-item"
                       infinite

@@ -4,11 +4,32 @@ import {A} from "./A";
 import {Modal} from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import React from "react";
+// @ts-ignore
+import MaskedInput from "react-text-mask";
 
 export const Forms = ({confirm, hiddenText}: any) => {
     const [showModal, setShowModal] = React.useState(false)
     const [showLoading, setShowLoading] = React.useState(false)
     const showModalHandler = () => setShowModal(false)
+
+    const phoneNumberMask = [
+        '+',
+        '7',
+        "(",
+        /[1-9]/,
+        /\d/,
+        /\d/,
+        ")",
+        " ",
+        /\d/,
+        /\d/,
+        /\d/,
+        "-",
+        /\d/,
+        /\d/,
+        /\d/,
+        /\d/
+    ];
 
     return (<div className={styles.formBlock}>
             <h4 className={styles.titleInnerForm}>Заполните форму заявки</h4>
@@ -27,11 +48,11 @@ export const Forms = ({confirm, hiddenText}: any) => {
                     validate={values => {
                         const errors = {} as any;
                         if (!values.userEmail) {
-                            errors.email = 'Required';
+
                         } else if (
                             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.userEmail)
                         ) {
-                            errors.email = 'Invalid email address';
+                            errors.userEmail = 'Некорректный email адрес';
                         }
                         return errors;
                     }}
@@ -51,7 +72,7 @@ export const Forms = ({confirm, hiddenText}: any) => {
                                 userPhone: values.userPhone,
                                 hiddenText: hiddenText,
                             }),
-                        }).then(() => {
+                        }).then((res) => {
                                 setShowLoading(false)
                                 setShowModal(true)
                                 setTimeout(() => {
@@ -63,29 +84,67 @@ export const Forms = ({confirm, hiddenText}: any) => {
                         setSubmitting(false)
                     }}
                     /* validationSchema={loginFormSchema}*/>
-                    {({isSubmitting, values, setFieldValue}) => (
+                    {({
+                          isSubmitting,
+                          values,
+                          setFieldValue,
+                          errors,
+                          handleChange,
+                          handleBlur,
+                      }) => (
                         <Form>
                             <div>
-                                <Field className={styles.form} type={'text'} name={'parentsName'}
+                                <Field className={styles.form}
+                                       required
+                                       type={'text'}
+                                       name={'parentsName'}
                                        placeholder={'Фамилия и имя родителя'}/>
                             </div>
                             <div>
-                                <Field className={styles.form} type={'text'} name={'childName'}
+                                <Field className={styles.form}
+                                       required
+                                       type={'text'}
+                                       name={'childName'}
                                        placeholder={'Фамилия и имя ребенка'}/>
                             </div>
                             <div>
                                 <label className={styles.birthdateLabel} htmlFor="birthdate">Дата рождения
                                     ребенка</label>
-                                <Field className={styles.form} type={'date'} name={'birthdate'}
+                                <Field className={styles.form}
+                                       required
+                                       type={'date'}
+                                       name={'birthdate'}
                                        timezone="[[timezone]]"/>
                             </div>
                             <div>
-                                <Field className={styles.form} type={'text'} name={'userEmail'} placeholder={'Email'}/>
+                                <Field className={styles.form}
+                                       required
+                                       type={'text'} name={'userEmail'}
+                                       placeholder={'Email'}/>
                             </div>
                             <div>
-                                <Field className={styles.form} type={'tel'} name={'userPhone'} placeholder={'Телефон'}/>
+                                <Field required
+                                       type={'tel'}
+                                       name={'userPhone'}
+                                       placeholder={'Телефон'}
+                                       render={({field}: any) => (
+                                           <MaskedInput
+                                               {...field}
+                                               required
+                                               mask={phoneNumberMask}
+                                               id="userPhone"
+                                               placeholder='Телефон'
+                                               type="tel"
+                                               onChange={handleChange}
+                                               onBlur={handleBlur}
+                                               className={styles.form}
+                                           />
+                                       )}
+                                />
                             </div>
-                            <button className={styles.submitButton} type={'submit'} disabled={isSubmitting}>
+                            <button className={styles.submitButton}
+                                    type={'submit'}
+                                    disabled={isSubmitting}>
                                 {showLoading ? 'Загрузка...' : 'Оставить заявку'}
                             </button>
                             <div className={styles.confirmForm} onClick={() => {
@@ -119,8 +178,10 @@ export const Forms = ({confirm, hiddenText}: any) => {
                               </label>
                               <br/>
                             </div>}
-                            <span
-                                className={styles.formDisclaimer}>Контактные данные не будут переданы третьим лицам</span>
+                            <span className={styles.formDisclaimer}>
+                                Контактные данные не будут переданы третьим лицам
+                            </span>
+                            <div className={styles.formError}>{errors.userEmail}</div>
                         </Form>
                     )}
                 </Formik>

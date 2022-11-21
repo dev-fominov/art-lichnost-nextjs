@@ -4,7 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import {SlideItem} from "./slide-item";
 import {ButtonGroup} from "../common/button-group";
 
-const SliderTeam = ({data}: any) => {
+const SliderTeamPsihologs = ({data}: any) => {
 
     const responsive = {
         desktopFull: {
@@ -13,7 +13,7 @@ const SliderTeam = ({data}: any) => {
                 min: 1200
             },
             items: 4,
-            partialVisibilityGutter: 40
+            partialVisibilityGutter: 40,
         },
         desktop: {
             breakpoint: {
@@ -40,6 +40,7 @@ const SliderTeam = ({data}: any) => {
             partialVisibilityGutter: 30
         }
     }
+
     return (
         <div className={styles.containerBtn}>
             <Carousel slidesToSlide={1}
@@ -60,4 +61,4 @@ const SliderTeam = ({data}: any) => {
     )
 }
 
-export default SliderTeam
+export default SliderTeamPsihologs

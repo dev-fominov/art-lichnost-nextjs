@@ -13,7 +13,7 @@ export const ItemMerch = ({data}: any) => {
     const showModalHandler = () => {
         updateShowModal(!showModal);
     }
-
+    const noSize = data.size.every((item: any) => item.stock === 0)
     const responsive = {
         desktop: {
             breakpoint: {
@@ -42,25 +42,26 @@ export const ItemMerch = ({data}: any) => {
     }
     return (<div className={styles.item}>
             {data.gallery.length > 1
-                ? <Carousel
-                    slidesToSlide={1}
-                    className={styles.carousel}
-                    swipeable
-                    focusOnSelect={false}
-                    arrows={false}
-                    showDots={true}
-                    ssr
-                    itemClass="image-item"
-                    infinite
-                    responsive={responsive}
-                >
-                    {data.gallery.map((item: any, index: any) => <div key={index} className={styles.slide}
-                                                                      draggable={false}
-                                                                      style={{
-                                                                          background: `url(${item.url}) no-repeat center center`,
-                                                                          backgroundSize: `cover`
-                                                                      }}/>)}
-                </Carousel>
+                ? <div className={styles.containerBtn}>
+                    <Carousel slidesToSlide={1}
+                              className={styles.carousel}
+                              swipeable
+                              focusOnSelect={false}
+                              arrows={false}
+                              showDots={true}
+                              ssr
+                              itemClass="image-item"
+                              infinite
+                              responsive={responsive}
+                    >
+                        {data.gallery.map((item: any, index: any) => <div key={index} className={styles.slide}
+                                                                          draggable={false}
+                                                                          style={{
+                                                                              background: `url(${item.url}) no-repeat center center`,
+                                                                              backgroundSize: `cover`
+                                                                          }}/>)}
+                    </Carousel>
+                </div>
                 : <div className={styles.slide} style={{
                     background: `url(${data.gallery[0].url}) no-repeat center center`,
                     backgroundSize: `cover`
@@ -71,14 +72,16 @@ export const ItemMerch = ({data}: any) => {
                 <div className={styles.boxAbsolute}>
                     <div className={styles.sizes}>
                         {data.size.map((item: any, index: any) => {
-                            return !!item.stock && <div key={index} className={styles.sizeTitle}>
+                            return <div key={index} className={item.stock ? styles.sizeTitle : styles.noSizeTitle}>
                                 {item.title}
                             </div>
                         })}
                     </div>
                     <div className={styles.availableBox}>
-                        <CgArrowLongRight className={styles.arrow}/>
-                        <span className={styles.availableTitle}>Есть в наличии</span>
+                        <CgArrowLongRight className={noSize ? styles.noSizeArrow : styles.arrow}/>
+                        {noSize
+                            ? <span className={styles.noSizeAvailableTitle}>Нет в наличии</span>
+                            : <span className={styles.availableTitle}>Есть в наличии</span>}
                     </div>
                     <div className={styles.priceMerch}>{data.price}</div>
                     <button onClick={() => showModalHandler()} className={styles.btn}>Оставить заявку</button>
@@ -92,7 +95,7 @@ export const ItemMerch = ({data}: any) => {
                                  onClose={showModalHandler}
                                  closeOnEsc
                                  center>
-              <MerchForm/>
+              <MerchForm hiddenText={`Заявка на мерч (${data.title})`}/>
             </Modal>}
         </div>
     )

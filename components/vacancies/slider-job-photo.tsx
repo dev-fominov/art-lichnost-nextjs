@@ -1,6 +1,7 @@
 import Carousel from "react-multi-carousel";
 import styles from '../../styles/team/slider-team-photo.module.css'
 import "react-multi-carousel/lib/styles.css";
+import {ButtonGroup} from "../common/button-group";
 
 const SliderJobPhoto = ({data}: any) => {
 
@@ -30,19 +31,20 @@ const SliderJobPhoto = ({data}: any) => {
             partialVisibilityGutter: 30
         }
     }
-    return (data.lenght > 1 ? <div>
-                <Carousel
-                    slidesToSlide={1}
-                    swipeable
-                    focusOnSelect={false}
-                    arrows
-                    ssr
-                    itemClass="image-item"
-                    infinite
-                    responsive={responsive}
+    return (data.lenght > 1 ? <div className={styles.containerBtn}>
+                <Carousel slidesToSlide={1}
+                          swipeable
+                          focusOnSelect={false}
+                          arrows={false}
+                          renderButtonGroupOutside={true}
+                          customButtonGroup={<ButtonGroup/>}
+                          ssr
+                          itemClass="image-item"
+                          infinite
+                          responsive={responsive}
                 >
                     {data.map((item: any, index: number) => <div key={index} className={styles.slide}>
-                        <img  draggable={false} src={item.url} alt={item.alt}/>
+                        <img draggable={false} src={item.url} alt={item.alt}/>
                     </div>)}
                 </Carousel>
             </div>

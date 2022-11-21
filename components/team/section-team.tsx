@@ -5,6 +5,7 @@ import SliderTeam from "./slider-team";
 import SliderTeamPhoto from "./slider-team-photo";
 import {A} from "../common/A";
 import {AccordionTeam} from "./accordionTeam";
+import SliderTeamPsihologs from "./slider-team-psihologs";
 
 const SectionTeam = ({data}: any) => {
     return (
@@ -25,7 +26,7 @@ const SectionTeam = ({data}: any) => {
             </div>
             <div className={styles.teamBox}>
                 <div className={styles.title}>{data.team_psiholog.title}</div>
-                <SliderTeam data={data.team_psiholog.list_team}/>
+                <SliderTeamPsihologs data={data.team_psiholog.list_team}/>
             </div>
             <div className={styles.teamBox}>
                 <div className={styles.title}>{data.team_leadership.title}</div>

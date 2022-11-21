@@ -257,6 +257,7 @@
 @media (max-width: 1000px) {
     .formSteps {
         margin-top: 15px;
+        margin-left: 0;
     }
 }
 

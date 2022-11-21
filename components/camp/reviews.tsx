@@ -3,6 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import {SlideVideo} from "./slide-video";
 import {SlideImage} from "./slide-image";
+import {ButtonGroup} from "../common/button-group";
 
 const Reviews = ({data}: any) => {
 
@@ -43,22 +44,25 @@ const Reviews = ({data}: any) => {
     return (
         <>
             <h2 className={styles.title}>Отзывы</h2>
-            <Carousel
-                slidesToSlide={1}
-                className={styles.carousel}
-                swipeable
-                focusOnSelect={false}
-                arrows
-                ssr
-                itemClass="image-item"
-                infinite
-                responsive={responsive}
-            >
-                {data.map((el: any, index: any) => el.id_video
-                    ? <SlideVideo key={index} data={el}/>
-                    : <SlideImage key={index} data={el}/>
-                )}
-            </Carousel>
+            <div className={styles.containerBtn}>
+                <Carousel slidesToSlide={1}
+                          className={styles.carousel}
+                          swipeable
+                          focusOnSelect={false}
+                          arrows={false}
+                          renderButtonGroupOutside={true}
+                          customButtonGroup={<ButtonGroup/>}
+                          ssr
+                          itemClass="image-item"
+                          infinite
+                          responsive={responsive}
+                >
+                    {data.map((el: any, index: any) => el.id_video
+                        ? <SlideVideo key={index} data={el}/>
+                        : <SlideImage key={index} data={el}/>
+                    )}
+                </Carousel>
+            </div>
         </>
     )
 }

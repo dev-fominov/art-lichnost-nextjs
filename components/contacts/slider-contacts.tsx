@@ -1,6 +1,7 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import styles from '../../styles/contacts/section-contacts.module.css'
+import styles from '../../styles/contacts/slider-contact.module.css'
+import {ButtonGroup} from "../common/button-group";
 
 export const SliderContacts = ({arrImg}: any) => {
     const responsive = {
@@ -29,22 +30,26 @@ export const SliderContacts = ({arrImg}: any) => {
             partialVisibilityGutter: 30
         }
     }
-    return <Carousel slidesToSlide={1}
-                     className={styles.carousel}
-                     swipeable
-                     focusOnSelect={false}
-                     arrows
-                     ssr
-                     itemClass="image-item"
-                     infinite
-                     responsive={responsive}
-                     deviceType={"tablet"}>
-        {arrImg.map((img: any, index: number) => <img style={{width: "100%", height: "100%"}}
-                                                      draggable={false}
-                                                      key={index}
-                                                      src={img.url}
-                                                      alt={img.alt}/>
-        )}
-    </Carousel>
+    return <div className={styles.containerBtn}>
+        <Carousel slidesToSlide={1}
+                  className={styles.carousel}
+                  swipeable
+                  focusOnSelect={false}
+                  arrows={false}
+                  renderButtonGroupOutside={true}
+                  customButtonGroup={<ButtonGroup/>}
+                  ssr
+                  itemClass="image-item"
+                  infinite
+                  responsive={responsive}
+                  deviceType={"tablet"}>
+            {arrImg.map((img: any, index: number) => <img style={{width: "100%", height: "100%"}}
+                                                          draggable={false}
+                                                          key={index}
+                                                          src={img.url}
+                                                          alt={img.alt}/>
+            )}
+        </Carousel>
+    </div>
 }
 

@@ -31,7 +31,7 @@ export const SectionCourse = ({data}: any) => {
                         <div className={styles.title}>{data.what_we_do.to_do_title}</div>
                         <ul>
                             {data.what_we_do.to_do_list.map((item: any, index: any) => <li
-                                key={index}>- {item}</li>)}
+                                key={index}>— {item}</li>)}
                         </ul>
                     </div>
                     <div className={styles.rightProgramm}>
@@ -65,14 +65,17 @@ export const SectionCourse = ({data}: any) => {
                     <div className={styles.rightUser}>
                         <div className={styles.title}>Стоимость</div>
                         <div className={styles.price}>{data.educator.price} рублей</div>
-                        <div className={styles.description}>{data.educator.one_time_fee}</div>
+                        <div className={styles.description}>{data.educator.one_time_fee
+                            ? '*стоимость можно разбить на две равные части'
+                            : ''}
+                        </div>
                     </div>
                 </div>
             </div>
             <div className={styles.boxContent}>
                 <h3 className={styles.title}>Оформить заявку</h3>
                 <div className={styles.formOrderBox}>
-                    <Forms confirm={data.link_to_oferta} />
+                    <Forms confirm={data.link_to_oferta} hiddenText={`Заявка на курс '${data.title}'`}/>
                     <div className={styles.formSteps}>
                         <h4>{data.step_form.steps_form_title}</h4>
                         <ul>

@@ -23,20 +23,11 @@ function BurgerNav() {
                  className={menuIsOpen ? `${styles.burgerNavItems} ${styles.show}` : styles.burgerNavItems}>
                 <BurgerNavModule menuIsOpen={menuIsOpen} title={<A text={'Лагерь'} href={'/camp'}/>}>
                     <A text={'Лагерь профессий'}
-                       href={{
-                           pathname: '/camp/[programs]',
-                           query: {programs: 'professions',},
-                       }}/>
+                       href={'/camp/professions'}/>
                     <A text={'Лагерь навыков'}
-                       href={{
-                           pathname: '/camp/[programs]',
-                           query: {programs: 'skills',},
-                       }}/>
+                       href={'/camp/skills'}/>
                     <A text={'Туристические каникулы'}
-                       href={{
-                           pathname: '/camp/[programs]',
-                           query: {programs: 'tourist-holidays',},
-                       }}/>
+                       href={'/camp/tourist-holidays'}/>
                     <A text={'Мерч'} href={'/merch'}/>
                 </BurgerNavModule>
                 <div className={styles.itemTitle}><A text={'Курсы'} href={'/courses'}/></div>

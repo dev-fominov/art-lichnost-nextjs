@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Section } from "../common/section";
 import { Description } from "./description";
 import styles from '../../styles/professions/section-professions.module.css'
@@ -9,10 +9,12 @@ import { A } from "../common/A";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useRouter } from "next/router";
+import { ButtonGroup } from "../common/button-group";
 
 export const SectionProfessions = ({ data }: any) => {
     const router = useRouter()
     const { programs } = router.query
+    const [idProfi, setIdProfi] = useState(12320)
 
     const responsive = {
         desktopFull: {
@@ -52,16 +54,48 @@ export const SectionProfessions = ({ data }: any) => {
         <Description img={data.description_img}
             video={data.description_video}
             text={data.description_text} />
-        <div className={styles.reasonsProgram}>
+        {data.shift_selection && <div className={styles.reasonsProgram}>
             <h1 className={styles.titleInner}>Выбрать смену и профессию</h1>
             <ul className={styles.tablist}>
-                {/* {data.shift_selection.map((el: any, index: number) => <li key={index}>
-                        {el}
-                    </li>)} */}
+                {data.shift_selection.map((el: any, index: number) => <li key={index}
+                    style={{
+                        backgroundColor: `${el.id === idProfi
+                            ? '#30aa33'
+                            : '#ffffff'}`
+                    }}
+                    onClick={() => setIdProfi(el.id)}>
+                    <span style={{
+                        color: `${el.id === idProfi
+                            ? '#ffffff'
+                            : '#000000'}`
+                    }}>
+                        {el.title}
+                    </span>
+                </li>)}
             </ul>
-        </div>
-
-
+            <div className={styles.sysProfi}>
+                <ul className={styles.listSkills}>
+                    {/* {shiftSelection && shiftSelection[0].profi.card.map((item: any, index: any) => <li
+                        key={index}>
+                        {item.seats
+                            ? <span style={{background: '#30aa33'}} className={styles.onstock}>Есть места</span>
+                            : <span style={{background: '#eb3535'}} className={styles.onstock}>Нет места</span>}
+                        <div className={styles.boxAlex}>
+                            <A href={`/courses/${item.post_slug}`} text={
+                                <div className={item.seats
+                                    ? styles.titleGreen
+                                    : styles.titleRed}>
+                                              <span style={{textDecoration: 'underline'}}>
+                                                  {item.title}
+                                              </span>
+                                    <span>{item.age_title}</span>
+                                </div>
+                            }/>
+                        </div>
+                    </li>)}*/}
+                </ul>
+            </div>
+        </div>}
         <div className={styles.reasonsProgram}>
             <h3 className={styles.titleInner}>5 причин, почему нужно поехать в лагерь:</h3>
             <div className={styles.reasonBox}>
@@ -145,68 +179,67 @@ export const SectionProfessions = ({ data }: any) => {
                         className={styles.formStepImg} />
                 </div>
             </div>
-        </div>
-        <div className={styles.reasonsProgram}>
-            <h1 className={styles.titleInner}>Прошедшие смены</h1>
-            <Carousel
-                slidesToSlide={1}
-                className={styles.carousel}
-                swipeable
-                focusOnSelect={false}
-                arrows
-                ssr
-                itemClass="image-item"
-                infinite
-                responsive={responsive}
-            >
-                {data.past_shifts.map((el: any, index: number) => <div key={index}
-                    className={styles.carouselCard}>
-                    <A href={`/camp/${programs}/smena/${el.slug}`} text={<div
-                        className={styles.boxImg}
-                        style={{
-                            background: `url(${el.thumbnail_url.url}) no-repeat center center`,
-                            backgroundSize: `cover`
-                        }}>
-                    </div>} />
-                    <div className={styles.boxLink}>
-                        <h3 className={styles.postTitle}>{el.title}</h3>
-                        <A href={`/camp/${programs}/smena/${el.slug}`} text={'Узнать больше'} />
+            <div className={styles.faqBox}>
+                <h3 className={styles.titleInner}>Часто задаваемые вопросы</h3>
+                <CustomAccordion data={data.faq} />
+            </div>
+            <div className={styles.reasonsProgram}>
+                <h3 className={styles.titleInner}>Оформить заявку</h3>
+                <div className={styles.formOrderBox}>
+                    <Forms confirm={data.link_to_oferta} hiddenText={`Общая заявка со страницы ${data.id_page === 12
+                        ? 'ТУРИСТИЧЕСКИЕ КАНИКУЛЫ'
+                        : data.id_page === 11
+                            ? 'ЛАГЕРЬ НАВЫКОВ'
+                            : 'ЛАГЕРЬ ПРОФЕССИЙ'}`} />
+                    <div className={styles.formSteps}>
+                        <h4>{data.request_title}</h4>
+                        <ul>
+                            {data.request.map((el: any, index: number) => {
+                                return <li key={index}>{el}</li>
+                            })}
+                        </ul>
+                        <div style={{
+                            background: `url(${data.request_img.url}) no-repeat center center`,
+                            backgroundSize: 'cover'
+                        }}
+                            className={styles.formStepImg} />
                     </div>
                 </div>
-                )}
-            </Carousel>
-
-        </div>
-        <div className={styles.reasonsProgram}>
-            <h1 className={styles.titleInner}>Прошедшие смены</h1>
-            <Carousel
-                slidesToSlide={1}
-                className={styles.carousel}
-                swipeable
-                focusOnSelect={false}
-                arrows
-                ssr
-                itemClass="image-item"
-                infinite
-                responsive={responsive}
-            >
-                {data.past_shifts.map((el: any, index: number) => <div key={index}
-                    className={styles.carouselCard}>
-                    <A href={`/camp/${programs}/smena/${el.slug}`} text={<div
-                        className={styles.boxImg}
-                        draggable={false}
-                        style={{
-                            background: `url(${el.thumbnail_url.url}) no-repeat center center`,
-                            backgroundSize: `cover`
-                        }}>
-                    </div>} />
-                    <div className={styles.boxLink}>
-                        <h3 className={styles.postTitle}>{el.title}</h3>
-                        <A href={`/camp/${programs}/smena/${el.slug}`} text={'Узнать больше'} />
-                    </div>
+            </div>
+            {data.past_shifts.length > 0 && <div className={styles.reasonsProgram}>
+                <h1 className={styles.titleInner}>Прошедшие смены</h1>
+                <div className={styles.containerBtn}>
+                    <Carousel slidesToSlide={1}
+                        className={styles.carousel}
+                        swipeable
+                        focusOnSelect={false}
+                        arrows={false}
+                        renderButtonGroupOutside={true}
+                        customButtonGroup={<ButtonGroup />}
+                        ssr
+                        itemClass="image-item"
+                        infinite
+                        responsive={responsive}
+                    >
+                        {data.past_shifts.map((el: any, index: number) => <div key={index}
+                            className={styles.carouselCard}>
+                            <A href={`/camp/smena/${el.slug}`} text={<div
+                                className={styles.boxImg}
+                                draggable={false}
+                                style={{
+                                    background: `url(${el.thumbnail_url.url}) no-repeat center center`,
+                                    backgroundSize: `cover`
+                                }}>
+                            </div>} />
+                            <div className={styles.boxLink}>
+                                <h3 className={styles.postTitle}>{el.title}</h3>
+                                <A href={`/camp/${programs}/smena/${el.slug}`} text={'Узнать больше'} />
+                            </div>
+                        </div>
+                        )}
+                    </Carousel>
                 </div>
-                )}
-            </Carousel>
+            </div>}
         </div>
     </Section>
     )

@@ -10,7 +10,7 @@ const Card = ({data, carouselCard}: any) => {
                     background: `url(${data.thumbnail.url}) no-repeat center center`,
                     backgroundSize: `cover`
                 }}>
-                {data.days && <div className={styles.days}>9 дней</div>}
+                {data.info && <div className={styles.days}>{data.info}</div>}
             </div>}/>
             <div className={styles.boxLink}>
                 <h3 className={styles.postTitle}>{data.post_title}</h3>

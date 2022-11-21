@@ -1,0 +1,40 @@
+.customRightArrow {
+    width: 31px;
+    height: 16px;
+    background: url('../../components/common/img/slider-arr-right.svg') no-repeat center center;
+    display: block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    right: -3%;
+    top: 50%;
+    z-index: 999;
+    position: absolute;
+}
+
+.customLeftArrow {
+    width: 31px;
+    height: 16px;
+    background: url('../../components/common/img/slider-arr-left.svg') no-repeat center center;
+    display: block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    left: -3%;
+    top: 50%;
+    z-index: 999;
+    position: absolute;
+}
+
+@media (max-width: 1200px) {
+    .customRightArrow {
+        right: 0%;
+    }
+    .customLeftArrow{
+        left: 0%;
+    }
+}
+
+.containerBtn {
+    position: relative;
+}

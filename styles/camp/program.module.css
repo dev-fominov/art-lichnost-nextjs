@@ -39,3 +39,11 @@
 .cardCamp{
     margin: auto;
 }
+
+.containerBtn {
+    position: relative;
+}
+
+.programBox{
+    margin-bottom: 60px;
+}

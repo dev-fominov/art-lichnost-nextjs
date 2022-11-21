@@ -9,7 +9,7 @@ import "react-responsive-modal/styles.css";
 
 const SectionTestirovanie = ({data}: any) => {
     const [showModal, updateShowModal] = useState(false);
-
+    const [hiddenText, setHiddenText] = useState('');
     let color = data.id_page === 54 ? {color: '#FF822E'} : {}
 
     const showModalHandler = () => {
@@ -33,7 +33,10 @@ const SectionTestirovanie = ({data}: any) => {
                     </ul>
                     <div className={styles.btnPriceBox}>
                         <div className={styles.btnOrder}>
-                            <button className={styles.btnRed} onClick={() => showModalHandler()}>Записаться</button>
+                            <button className={styles.btnRed} onClick={() => {
+                                setHiddenText(item.for_whom)
+                                showModalHandler()
+                            }}>Записаться</button>
                         </div>
                         <div className={styles.priceTime}>
                             <div className={styles.price}>{item.price}</div>
@@ -98,7 +101,9 @@ const SectionTestirovanie = ({data}: any) => {
             <div className={styles.formStepsBox}>
                 <h3 className={styles.titleInner}>Оформить заявку</h3>
                 <div className={styles.formOrderBox}>
-                    <Forms confirm={data.link_to_oferta}/>
+                    <Forms confirm={data.link_to_oferta} hiddenText={`Общая заявка на ${data.id_page === 54
+                        ? 'онлайн-тестирование'
+                        : 'офлайн-тестирование'}`}/>
                     <div className={styles.formSteps}>
                         <h4>{data.step_form.steps_form_title}</h4>
                         <ul>
@@ -120,7 +125,9 @@ const SectionTestirovanie = ({data}: any) => {
                                  onClose={showModalHandler}
                                  closeOnEsc
                                  center>
-              <Forms confirm={data.link_to_oferta}/>
+              <Forms confirm={data.link_to_oferta} hiddenText={`Заявка на ${data.id_page === 54 
+                  ? 'онлайн-тестирование'
+                  : 'офлайн-тестирование'} для ${hiddenText}`}/>
             </Modal>}
         </Section>
     )

@@ -3,7 +3,7 @@ import {HeaderVideo} from "../../../components/common/header-video";
 import {SectionProfessions} from "../../../components/professions/section-professions";
 import Head from "next/head";
 
-const Programs = ({data}: any) => {
+const TouristHolidays = ({data}: any) => {
     return (
         <>
             <Head>
@@ -20,10 +20,10 @@ const Programs = ({data}: any) => {
     )
 }
 
-export default Programs
+export default TouristHolidays
 
-export async function getServerSideProps (context: any) {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/${context.params.programs}`)
+export async function getStaticProps () {
+    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/tourist-holidays`)
     const data = await res.json();
 
     return {

@@ -6,6 +6,9 @@ import {FaVk, FaYoutube} from 'react-icons/fa'
 import {GrFacebookOption} from 'react-icons/gr'
 import {Dropdown} from "../common/dropdown";
 import BurgerNav from "./burger-nav";
+import logo from "../common/img/logo.png"
+import Image from 'next/image'
+
 
 export const Navbar = () => {
     return (<div className={styles.headTop}>
@@ -13,7 +16,14 @@ export const Navbar = () => {
             <div className={styles.headTopInner}>
                 <div className={styles.logo}>
                     <A href={'/'}
+<<<<<<< HEAD
                        text={<img src={'https://art-lichnost.ru/wp-content/themes/art_person_1/img/logo-aleksandr.svg'}/>}/>
+=======
+                       text={<Image width={158}
+                                    height={48}
+                                    src={logo}
+                                    alt={'logo'}/>}/>
+>>>>>>> mainPage
                 </div>
                 <BurgerNav/>
                 <div className={styles.menu}>
@@ -44,25 +54,9 @@ export const Navbar = () => {
 }
 
 const campMenu = [
-    {
-        path: {
-            pathname: '/camp/[programs]',
-            query: {programs: 'professions',}
-        },
-        text: 'Лагерь профессий',
-    },
-    {
-        path: {
-            pathname: '/camp/[programs]',
-            query: {programs: 'skills',},
-        }, text: 'Лагерь навыков'
-    },
-    {
-        path: {
-            pathname: '/camp/[programs]',
-            query: {programs: 'tourist-holidays',},
-        }, text: 'Туристические каникулы'
-    },
+    {path: '/camp/[programs]', text: 'Лагерь профессий',},
+    {path:  '/camp/skills', text: 'Лагерь навыков'},
+    {path: '/camp/tourist-holidays', text: 'Туристические каникулы'},
     {path: '/merch', text: 'Мерч'},]
 
 const programmesMenu = [

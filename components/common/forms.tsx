@@ -1,16 +1,45 @@
-import {Field, Form, Formik} from "formik";
+import { Field, Form, Formik } from "formik";
 import styles from "../../styles/common/forms.module.css";
-import {A} from "./A";
+import { A } from "./A";
+import { Modal } from "react-responsive-modal";
+import "react-responsive-modal/styles.css";
+import React from "react";
+// @ts-ignore
+import MaskedInput from "react-text-mask";
 
-export const Forms = ({confirm, sandmail_url, pageName}: any) => {
-    return (<div className={styles.formBlock}>
+export const Forms = ({ confirm, hiddenText }: any) => {
+    const [showModal, setShowModal] = React.useState(false)
+    const [showLoading, setShowLoading] = React.useState(false)
+    const showModalHandler = () => setShowModal(false)
+
+    const phoneNumberMask = [
+        '+',
+        '7',
+        "(",
+        /[1-9]/,
+        /\d/,
+        /\d/,
+        ")",
+        " ",
+        /\d/,
+        /\d/,
+        /\d/,
+        "-",
+        /\d/,
+        /\d/,
+        /\d/,
+        /\d/
+    ];
+
+    return (
+        <div className={styles.formBlock}>
             <h4 className={styles.titleInnerForm}>Заполните форму заявки</h4>
             <div>
                 <Formik
                     initialValues={
                         {
-                            parentsName: "",
-                            childName: "",
+                            parentsName: '',
+                            childName: '',
                             birthdate: '',
                             userEmail: '',
                             userPhone: '',
@@ -20,93 +49,158 @@ export const Forms = ({confirm, sandmail_url, pageName}: any) => {
                     validate={values => {
                         const errors = {} as any;
                         if (!values.userEmail) {
-                            errors.email = 'Required';
+
                         } else if (
                             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.userEmail)
                         ) {
-                            errors.email = 'Invalid email address';
+                            errors.userEmail = 'Некорректный email адрес';
                         }
                         return errors;
                     }}
-                    onSubmit={  async (values, {setSubmitting}) => {
-                        const res = await fetch( 'https://alex-volkov.ru/sendmail.php/', {
+                    onSubmit={async (values, { setSubmitting, resetForm }) => {
+                        setShowLoading(true)
+                        resetForm()
+                        const res = await fetch('https://alex-volkov.ru/wp-json/art/v1/send-mail/', {
                             method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                // 'Access-Control-Allow-Origin': 'http://localhost:3000',
+                            },
                             body: JSON.stringify({
                                 parentsName: values.parentsName,
                                 childName: values.childName,
                                 birthdate: values.birthdate,
-                                userEmail: values.userEmail, 
+                                userEmail: values.userEmail,
                                 userPhone: values.userPhone,
-                                pageName: "аппарпар",
+                                hiddenText: hiddenText,
                             }),
-                            // body: 'test',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                        })
+                        }).then((res) => {
+                            setShowLoading(false)
+                            setShowModal(true)
+                            setTimeout(() => {
+                                setShowModal(false)
+                                return
+                            }, 3000)
+                        }
+                        )
+                        console.log(res)
                         setSubmitting(false)
                     }}
                     /* validationSchema={loginFormSchema}*/>
-                    {({isSubmitting, values, setFieldValue}) => (
+                    {({
+                        isSubmitting,
+                        values,
+                        setFieldValue,
+                        errors,
+                        handleChange,
+                        handleBlur,
+                    }) => (
                         <Form>
                             <div>
-                                <Field className={styles.form} type={'text'} name={'parentsName'}
-                                       placeholder={'Фамилия и имя родителя'}/>
+                                <Field className={styles.form}
+                                    required
+                                    type={'text'}
+                                    name={'parentsName'}
+                                    placeholder={'Фамилия и имя родителя'} />
                             </div>
                             <div>
-                                <Field className={styles.form} type={'text'} name={'childName'}
-                                       placeholder={'Фамилия и имя ребенка'}/>
+                                <Field className={styles.form}
+                                    required
+                                    type={'text'}
+                                    name={'childName'}
+                                    placeholder={'Фамилия и имя ребенка'} />
                             </div>
                             <div>
                                 <label className={styles.birthdateLabel} htmlFor="birthdate">Дата рождения
                                     ребенка</label>
-                                <Field className={styles.form} type={'date'} name={'birthdate'}
-                                       timezone="[[timezone]]"/>
+                                <Field className={styles.form}
+                                    required
+                                    type={'date'}
+                                    name={'birthdate'}
+                                    timezone="[[timezone]]" />
                             </div>
                             <div>
-                                <Field className={styles.form} type={'text'} name={'userEmail'} placeholder={'Email'}/>
+                                <Field className={styles.form}
+                                    required
+                                    type={'text'} name={'userEmail'}
+                                    placeholder={'Email'} />
                             </div>
                             <div>
-                                <Field className={styles.form} type={'tel'} name={'userPhone'} placeholder={'Телефон'}/>
+                                <Field required
+                                    type={'tel'}
+                                    name={'userPhone'}
+                                    placeholder={'Телефон'}
+                                    render={({ field }: any) => (
+                                        <MaskedInput
+                                            {...field}
+                                            required
+                                            mask={phoneNumberMask}
+                                            id="userPhone"
+                                            placeholder='Телефон'
+                                            type="tel"
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            className={styles.form}
+                                        />
+                                    )}
+                                />
                             </div>
-                            <button className={styles.submitButton} type={'submit'} disabled={isSubmitting}>Оставить
-                                заявку
+                            <button className={styles.submitButton}
+                                type={'submit'}
+                                disabled={isSubmitting}>
+                                {showLoading ? 'Загрузка...' : 'Оставить заявку'}
                             </button>
-                            <div className={styles.confirmForm}>
-                                <div className={styles.radioLabel} onClick={() => {
-                                    setFieldValue('assent', !values.assent)
-                                }}> {values.assent === true
-                                    ? <div className={styles.radioTrue}/>
-                                    : <div className={styles.radioFalse}/>}
+                            <div className={styles.confirmForm} onClick={() => {
+                                setFieldValue('assent', !values.assent)
+                            }}>
+                                <div className={styles.radioLabel}> {values.assent === true
+                                    ? <div className={styles.radioTrue} />
+                                    : <div className={styles.radioFalse} />}
                                 </div>
                                 <label className={styles.checkboxLabel} htmlFor={'assent'}>
                                     Я согласен с обработкой и
                                     хранением указанных здесь персональных данных</label>
-                                <br/>
+                                <br />
                             </div>
-                            {confirm && <div className={styles.confirmForm} style={{marginTop: '8px'}}>
-                              <div className={styles.radioLabel} onClick={() => {
-                                  setFieldValue('confirm', !values.confirm)
-                              }}> {values.confirm === true
-                                  ? <div className={styles.radioTrue}/>
-                                  : <div className={styles.radioFalse}/>}
-                              </div>
-                              <label className={styles.checkboxLabel} htmlFor={'assent'}>
-                                <p>Нажимая на кнопку, вы соглашаетесь с</p>
-                                <A href={{
-                                    pathname: '/documents/[slag]',
-                                    query: {slag: confirm,},
-                                }}
-                                   text={'договором оферты'}/>
-                              </label>
-                              <br/>
+                            {confirm && <div className={styles.confirmForm}
+                                style={{ marginTop: '8px' }}
+                                onClick={() => {
+                                    setFieldValue('confirm', !values.confirm)
+                                }}>
+                                <div className={styles.radioLabel}> {values.confirm === true
+                                    ? <div className={styles.radioTrue} />
+                                    : <div className={styles.radioFalse} />}
+                                </div>
+                                <label className={styles.checkboxLabel} htmlFor={'assent'}>
+                                    <p>Нажимая на кнопку, вы соглашаетесь с</p>
+                                    <A href={{
+                                        pathname: '/documents/[slag]',
+                                        query: { slag: confirm, },
+                                    }}
+                                        text={'договором оферты'} />
+                                </label>
+                                <br />
                             </div>}
-                            <span
-                                className={styles.formDisclaimer}>Контактные данные не будут переданы третьим лицам</span>
+                            <span className={styles.formDisclaimer}>
+                                Контактные данные не будут переданы третьим лицам
+                            </span>
+                            <div className={styles.formError}>{errors.userEmail}</div>
                         </Form>
                     )}
                 </Formik>
             </div>
+            {showModal && <Modal styles={{
+                modal: { position: 'relative', borderRadius: '40px', padding: 0, background: "none" },
+                closeButton: { position: "absolute", top: '15px', right: '15px' },
+            }}
+                open={showModal}
+                onClose={showModalHandler}
+                closeOnEsc
+                center>
+                <div className={styles.modal}>
+                    Заявка отправлена,<br /> мы свяжемся с Вами в ближайшее время
+                </div>
+            </Modal>}
         </div>
     )
 

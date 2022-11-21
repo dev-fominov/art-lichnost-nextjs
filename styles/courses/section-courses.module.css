@@ -20,7 +20,7 @@
 }
 
 .box {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .titleProf {
@@ -36,6 +36,7 @@
     display: flex;
     justify-content: center;
 }
+
 
 .card {
     display: flex;
@@ -77,6 +78,7 @@
 @media (max-width: 1000px) {
     .formSteps {
         margin-top: 15px;
+        margin-left: 0;
     }
 }
 
@@ -230,14 +232,14 @@
     transition: all 300ms ease;
 }
 
-.postTitle {
-    text-decoration: underline;
-}
-
-.titleGreen .postTitle:hover{
+.titleGreen:hover span{
     color: #30aa33;
 }
 
-.titleRed .postTitle:hover{
+.titleRed:hover span{
     color: #eb3535;
+}
+
+.containerBtn{
+    position: relative;
 }

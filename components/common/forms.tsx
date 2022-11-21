@@ -60,11 +60,10 @@ export const Forms = ({ confirm, hiddenText }: any) => {
                     onSubmit={async (values, { setSubmitting, resetForm }) => {
                         setShowLoading(true)
                         resetForm()
-                        const res = await fetch('https://alex-volkov.ru/wp-json/art/v1/send-mail/', {
+                        const resp = await fetch('https://alex-volkov.ru/wp-json/art/v1/send-mail/', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
-                                // 'Access-Control-Allow-Origin': 'http://localhost:3000',
                             },
                             body: JSON.stringify({
                                 parentsName: values.parentsName,
@@ -75,15 +74,15 @@ export const Forms = ({ confirm, hiddenText }: any) => {
                                 hiddenText: hiddenText,
                             }),
                         }).then((res) => {
+                            console.log(res)
                             setShowLoading(false)
                             setShowModal(true)
                             setTimeout(() => {
                                 setShowModal(false)
                                 return
                             }, 3000)
-                        }
-                        )
-                        console.log(res)
+                        })
+                    
                         setSubmitting(false)
                     }}
                     /* validationSchema={loginFormSchema}*/>

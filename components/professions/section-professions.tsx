@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Section} from "../common/section";
 import {Description} from "./description";
 import styles from '../../styles/professions/section-professions.module.css'
@@ -8,13 +8,15 @@ import {Forms} from "../common/forms";
 import {A} from "../common/A";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import {useRouter} from "next/router";
 import {ButtonGroup} from "../common/button-group";
+import {useRouter} from "next/router";
 
 export const SectionProfessions = ({data}: any) => {
     const router = useRouter()
-    const {programs} = router.query
-    const [idProfi, setIdProfi] = useState(12320)
+    const {slug} = router.query
+
+    const [slugProfi, setSlugProfi] = useState(data.shift_selection[0].slug)
+    const [smena, setSmena] = useState({receivedData: false as any, loading: false})
 
     const responsive = {
         desktopFull: {
@@ -50,6 +52,26 @@ export const SectionProfessions = ({data}: any) => {
             partialVisibilityGutter: 30
         }
     }
+
+    useEffect(() => {
+        data.shift_selection[0].slug && getSmena(data.shift_selection[0].slug)
+        if (typeof slug !== 'undefined') {
+            setSlugProfi(slug)
+            getSmena(slug)
+        }
+    }, [slug])
+
+
+    const getSmena = async (slug: any) => {
+        setSmena({...smena, loading: true})
+        const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/camp-changes/?camp=${data.id_page === 10
+            ? 'professions'
+            : data.id_page === 11
+                ? 'skills'
+                : 'tourist-holidays'}&slug=${slug}`)
+        setSmena({receivedData: await res.json(), loading: false})
+    }
+
     return (<Section>
             <Description img={data.description_img}
                          video={data.description_video}
@@ -59,13 +81,16 @@ export const SectionProfessions = ({data}: any) => {
               <ul className={styles.tablist}>
                   {data.shift_selection.map((el: any, index: number) => <li key={index}
                                                                             style={{
-                                                                                backgroundColor: `${el.id === idProfi
+                                                                                backgroundColor: `${el.slug === slugProfi
                                                                                     ? '#30aa33'
                                                                                     : '#ffffff'}`
                                                                             }}
-                                                                            onClick={() => setIdProfi(el.id)}>
+                                                                            onClick={() => {
+                                                                                setSlugProfi(el.slug)
+                                                                                getSmena(el.slug)
+                                                                            }}>
                       <span style={{
-                          color: `${el.id === idProfi
+                          color: `${el.slug === slugProfi
                               ? '#ffffff'
                               : '#000000'}`
                       }}>
@@ -73,28 +98,40 @@ export const SectionProfessions = ({data}: any) => {
                       </span>
                   </li>)}
               </ul>
-              <div className={styles.sysProfi}>
-                <ul className={styles.listSkills}>
-                   {/* {shiftSelection && shiftSelection[0].profi.card.map((item: any, index: any) => <li
-                        key={index}>
-                        {item.seats
-                            ? <span style={{background: '#30aa33'}} className={styles.onstock}>Есть места</span>
-                            : <span style={{background: '#eb3535'}} className={styles.onstock}>Нет места</span>}
-                        <div className={styles.boxAlex}>
-                            <A href={`/courses/${item.post_slug}`} text={
-                                <div className={item.seats
-                                    ? styles.titleGreen
-                                    : styles.titleRed}>
+                {smena.receivedData && <>
+                  <div className={styles.sysProfi}>
+                    <span className={styles.sistems}>Система PROFI</span>
+                    <ul className={styles.listSkills}>
+                        {smena.receivedData.profi.card.map((item: any, index: any) => <li
+                            key={index}>
+                            {item.seats
+                                ? <span style={{background: '#30aa33'}} className={styles.onstock}>Есть места</span>
+                                : <span style={{background: '#eb3535'}} className={styles.onstock}>Нет места</span>}
+                            <div className={styles.boxAlex}>
+                                <A href={`/courses/${item.post_slug}`} text={
+                                    <div className={item.seats
+                                        ? styles.titleGreen
+                                        : styles.titleRed}>
                                               <span style={{textDecoration: 'underline'}}>
                                                   {item.title}
                                               </span>
-                                    <span>{item.age_title}</span>
-                                </div>
-                            }/>
-                        </div>
-                    </li>)}*/}
-                </ul>
-              </div>
+                                        <span>{item.age_title}</span>
+                                    </div>
+                                }/>
+                            </div>
+                        </li>)}
+                    </ul>
+                    <div
+                      className={styles.sistemsDescription}>{smena.receivedData.profi.description}</div>
+                  </div>
+                 {/* <div className={styles.bottomTab}>
+                    <span className={styles.price}>Цена без учета сертификата — {+smena.receivedData.profi.price + +smena.receivedData.profi.price_certificate} рублей</span>
+                    <span className={styles.price}>Размер компенсации (сертификата) — {smena.receivedData.profi.price_certificate}</span>
+                  </div>*/}
+                  <div className={styles.bottomTab}>
+                    <span className={styles.price}>{smena.receivedData.price} руб</span>
+                  </div>
+                </>}
             </div>}
             <div className={styles.reasonsProgram}>
                 <h3 className={styles.titleInner}>5 причин, почему нужно поехать в лагерь:</h3>
@@ -157,10 +194,10 @@ export const SectionProfessions = ({data}: any) => {
                 <div className={styles.priceIclude}
                      dangerouslySetInnerHTML={{__html: data.includ_content}}/>
             </div>
-            <div className={styles.faqBox}>
-                <h3 className={styles.titleInner}>Часто задаваемые вопросы</h3>
-                <CustomAccordion data={data.faq}/>
-            </div>
+            {data.faq && <div className={styles.faqBox}>
+              <h3 className={styles.titleInner}>Часто задаваемые вопросы</h3>
+              <CustomAccordion data={data.faq}/>
+            </div>}
             <div className={styles.reasonsProgram}>
                 <h3 className={styles.titleInner}>Оформить заявку</h3>
                 <div className={styles.formOrderBox}>
@@ -211,7 +248,7 @@ export const SectionProfessions = ({data}: any) => {
                             </div>}/>
                             <div className={styles.boxLink}>
                                 <h3 className={styles.postTitle}>{el.title}</h3>
-                                <A href={`/camp/${programs}/smena/${el.slug}`} text={'Узнать больше'}/>
+                                <A href={`/camp/smena/${el.slug}`} text={'Узнать больше'}/>
                             </div>
                         </div>
                     )}

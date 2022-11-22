@@ -50,7 +50,7 @@ export const Navbar = () => {
 }
 
 const campMenu = [
-    {path: '/camp/[programs]', text: 'Лагерь профессий',},
+    {path: '/camp/professions', text: 'Лагерь профессий',},
     {path:  '/camp/skills', text: 'Лагерь навыков'},
     {path: '/camp/tourist-holidays', text: 'Туристические каникулы'},
     {path: '/merch', text: 'Мерч'},]

@@ -69,11 +69,16 @@ const Program = ({data}: any) => {
                               itemClass="image-item"
                               infinite
                               responsive={responsive}>
-                        {data.camp_card.map((el: any, index: any) => <Card key={index} carouselCard={true} data={el}/>)}
+                        {data.camp_card.map((el: any, index: any) => <Card key={index}
+                                                                           term_id={data.term_id}
+                                                                           carouselCard={true}
+                                                                           data={el}/>)}
                     </Carousel>
                 </div>
                 : <div className={styles.cards}>
-                    {data.camp_card.map((el: any, index: any) => <Card key={index} data={el}/>)}
+                    {data.camp_card.map((el: any, index: any) => <Card key={index}
+                                                                       term_id={data.term_id}
+                                                                       data={el}/>)}
                 </div>}
         </div>
     )

@@ -118,10 +118,10 @@
 }
 
 .modal{
-    background-color: #30aa33;
+    background-color: #ffffff;
     max-width: 350px;
     height: 200px;
-    color: #FFFFFF;
+    color: #000000;
     padding: 30px;
     text-align: center;
     display: flex;

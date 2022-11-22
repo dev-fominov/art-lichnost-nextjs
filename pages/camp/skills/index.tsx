@@ -8,7 +8,7 @@ const Skills = ({data}: any) => {
         <>
             <Head>
                 <title>
-                    Центр развития детей и выбора профессии АртЛичность
+                   Лагерь навыков - Центр развития детей и выбора профессии АртЛичность
                 </title>
             </Head>
             <HeaderVideo banner={data.background_img.url}

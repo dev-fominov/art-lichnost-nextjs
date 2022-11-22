@@ -10,6 +10,11 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import {ButtonGroup} from "../common/button-group";
 import {useRouter} from "next/router";
+import load from "../common/img/load.gif";
+import Image from "next/image";
+import logo from "../common/img/logo.png";
+import {Modal} from "react-responsive-modal";
+import "react-responsive-modal/styles.css";
 
 export const SectionProfessions = ({data}: any) => {
     const router = useRouter()
@@ -17,6 +22,8 @@ export const SectionProfessions = ({data}: any) => {
 
     const [slugProfi, setSlugProfi] = useState(data.shift_selection[0].slug)
     const [smena, setSmena] = useState({receivedData: false as any, loading: false})
+    const [showModal, updateShowModal] = useState('');
+    const [hiddenText, setHiddenText] = useState('');
 
     const responsive = {
         desktopFull: {
@@ -102,29 +109,67 @@ export const SectionProfessions = ({data}: any) => {
                   <div className={styles.sysProfi}>
                     <span className={styles.sistems}>Система PROFI</span>
                     <ul className={styles.listSkills}>
-                        {smena.receivedData.profi.card.map((item: any, index: any) => <li
-                            key={index}>
-                            {item.seats
-                                ? <span style={{background: '#30aa33'}} className={styles.onstock}>Есть места</span>
-                                : <span style={{background: '#eb3535'}} className={styles.onstock}>Нет места</span>}
-                            <div className={styles.boxAlex}>
-                                <A href={`/courses/${item.post_slug}`} text={
-                                    <div className={item.seats
-                                        ? styles.titleGreen
-                                        : styles.titleRed}>
+                        {smena.loading
+                            ? <div className={styles.load}>
+                                <Image width={100}
+                                       priority={true}
+                                       height={115}
+                                       src={load}
+                                       alt={'logo'}/>
+                            </div>
+                            : smena.receivedData.profi.card.map((item: any, index: any) => <li
+                                key={index}>
+                                {item.seats
+                                    ? <span style={{background: '#30aa33'}} className={styles.onstock}>Есть места</span>
+                                    : <span style={{background: '#eb3535'}} className={styles.onstock}>Нет места</span>}
+                                <div className={styles.boxAlex}>
+                                    <div onClick={() => updateShowModal(item.title)}
+                                         className={item.seats
+                                             ? styles.titleGreen
+                                             : styles.titleRed}>
                                               <span style={{textDecoration: 'underline'}}>
                                                   {item.title}
                                               </span>
                                         <span>{item.age_title}</span>
                                     </div>
-                                }/>
-                            </div>
-                        </li>)}
+                                </div>
+                                {showModal === item.title && <Modal styles={{
+                                    modal: {position: 'relative', borderRadius: '40px', padding: 0},
+                                    closeButton: {position: "absolute", top: '15px', right: '15px'}
+                                }}
+                                                                    open={showModal === item.title}
+                                                                    onClose={() => updateShowModal('')}
+                                                                    closeOnEsc
+                                                                    center>
+                                  <div className={styles.modalFlex}>
+                                    <div className={styles.boxImgModal}>
+                                      <img src={item.thumbnail_url.url} alt={item.thumbnail_url.alt}/>
+                                    </div>
+                                    <div className={styles.desc}>
+                                      <div className={styles.boxAges}>
+                                          {item.ages.map((item: any, index: any) => <div key={index} className={styles.ageMiniBox}>
+                                              {item} лет
+                                          </div>)}
+                                      </div>
+                                      <h6>Навык</h6>
+                                      <h4>{item.title}</h4>
+                                      <ul className={styles.descUl}>
+                                        <li className={styles.descLi}>{item.period}</li>
+                                        <li className={styles.descLi}>{item.location}</li>
+                                      </ul>
+                                      <p><div dangerouslySetInnerHTML={{__html: item.description}}/></p>
+                                    </div>
+                                  </div>
+                                    {/*  <Forms confirm={data.link_to_oferta} hiddenText={`Заявка на ${data.id_page === 54
+                  ? 'онлайн-тестирование'
+                  : 'офлайн-тестирование'} для ${hiddenText}`}/>*/}
+                                </Modal>}
+                            </li>)}
                     </ul>
                     <div
                       className={styles.sistemsDescription}>{smena.receivedData.profi.description}</div>
                   </div>
-                 {/* <div className={styles.bottomTab}>
+                    {/* <div className={styles.bottomTab}>
                     <span className={styles.price}>Цена без учета сертификата — {+smena.receivedData.profi.price + +smena.receivedData.profi.price_certificate} рублей</span>
                     <span className={styles.price}>Размер компенсации (сертификата) — {smena.receivedData.profi.price_certificate}</span>
                   </div>*/}

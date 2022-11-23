@@ -60,6 +60,35 @@ export const SectionProfessions = ({data}: any) => {
         }
     }
 
+    const [showButton, setShowButton] = useState(false)
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            let width = window.innerWidth
+            console.log(data.past_shifts.length)
+            if (data.past_shifts.length < 2) {
+                if (width < 708) {
+                    setShowButton(true)
+                }
+            } else {
+                if (data.past_shifts.length < 3) {
+                    if (width < 1023) {
+                        setShowButton(true)
+                    }
+                } else {
+                    if (data.past_shifts.length < 4) {
+                        if (width < 1199) {
+                            setShowButton(true)
+                        }
+                    } else {
+                        setShowButton(true)
+                    }
+                }
+            }
+        }
+    },)
+
+
     useEffect(() => {
         data.shift_selection[0].slug && getSmena(data.shift_selection[0].slug)
         if (typeof slug !== 'undefined') {
@@ -147,7 +176,8 @@ export const SectionProfessions = ({data}: any) => {
                                     </div>
                                     <div className={styles.desc}>
                                       <div className={styles.boxAges}>
-                                          {item.ages.map((item: any, index: any) => <div key={index} className={styles.ageMiniBox}>
+                                          {item.ages.map((item: any, index: any) => <div key={index}
+                                                                                         className={styles.ageMiniBox}>
                                               {item} лет
                                           </div>)}
                                       </div>
@@ -157,7 +187,9 @@ export const SectionProfessions = ({data}: any) => {
                                         <li className={styles.descLi}>{item.period}</li>
                                         <li className={styles.descLi}>{item.location}</li>
                                       </ul>
-                                      <p><div dangerouslySetInnerHTML={{__html: item.description}}/></p>
+                                      <p>
+                                        <div dangerouslySetInnerHTML={{__html: item.description}}/>
+                                      </p>
                                     </div>
                                   </div>
                                     {/*  <Forms confirm={data.link_to_oferta} hiddenText={`Заявка на ${data.id_page === 54
@@ -274,8 +306,8 @@ export const SectionProfessions = ({data}: any) => {
                           swipeable
                           focusOnSelect={false}
                           arrows={false}
-                          renderButtonGroupOutside={true}
-                          customButtonGroup={<ButtonGroup/>}
+                          renderButtonGroupOutside={showButton}
+                          customButtonGroup={showButton ? <ButtonGroup/> : <></>}
                           ssr
                           itemClass="image-item"
                           infinite

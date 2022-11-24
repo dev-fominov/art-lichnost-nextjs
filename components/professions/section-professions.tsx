@@ -23,6 +23,7 @@ export const SectionProfessions = ({data}: any) => {
     const [slugProfi, setSlugProfi] = useState(data.shift_selection[0].slug)
     const [smena, setSmena] = useState({receivedData: false as any, loading: false})
     const [showModal, updateShowModal] = useState('');
+    const [showInnerModal, updateInnerShowModal] = useState(false);
     const [hiddenText, setHiddenText] = useState('');
 
     const responsive = {
@@ -65,7 +66,6 @@ export const SectionProfessions = ({data}: any) => {
     useEffect(() => {
         if (typeof window !== 'undefined') {
             let width = window.innerWidth
-            console.log(data.past_shifts.length)
             if (data.past_shifts.length < 2) {
                 if (width < 708) {
                     setShowButton(true)
@@ -187,26 +187,48 @@ export const SectionProfessions = ({data}: any) => {
                                         <li className={styles.descLi}>{item.period}</li>
                                         <li className={styles.descLi}>{item.location}</li>
                                       </ul>
-                                      <p>
-                                        <div dangerouslySetInnerHTML={{__html: item.description}}/>
-                                      </p>
+                                      <div className={styles.descP}
+                                           dangerouslySetInnerHTML={{__html: item.description}}/>
+                                      <button className={styles.redBtn} onClick={()=>updateInnerShowModal(true)}>
+                                        Оставить заявку
+                                      </button>
+                                      <div className={styles.modalPriceBox}>
+                                        <p>{item.price}</p>
+                                        <span>Цена без учета сертификата и кэшбэка — {item.price} рублей</span>
+                                          {item.price_certificate &&
+                                          <span>Цена с учетом сертификата — {(Number(item.price.replaceAll(' ', '').replaceAll(',', '.')) - Number(item.price_certificate.replaceAll(' ', '').replaceAll(',', '.'))).toString()} рублей</span>}
+                                          {item.price_certificate &&
+                                          <span>Размер компенсации (сертификата) — {item.price_certificate} рублей</span>}
+                                      </div>
                                     </div>
+                                      {showInnerModal && <Modal styles={{
+                                          modal: {position: 'relative', borderRadius: '40px', padding: 0},
+                                          closeButton: {position: "absolute", top: '15px', right: '15px'}
+                                      }}
+                                                           open={showInnerModal}
+                                                           onClose={()=>updateInnerShowModal(false)}
+                                                           closeOnEsc
+                                                           center>
+                                        <Forms confirm={data.link_to_oferta} hiddenText={`${hiddenText}`}/>
+                                      </Modal>}
                                   </div>
-                                    {/*  <Forms confirm={data.link_to_oferta} hiddenText={`Заявка на ${data.id_page === 54
-                  ? 'онлайн-тестирование'
-                  : 'офлайн-тестирование'} для ${hiddenText}`}/>*/}
                                 </Modal>}
                             </li>)}
                     </ul>
-                    <div
-                      className={styles.sistemsDescription}>{smena.receivedData.profi.description}</div>
+                    <div className={styles.sistemsDescription}>
+                        {smena.receivedData.profi.description}
+                    </div>
                   </div>
-                    {/* <div className={styles.bottomTab}>
-                    <span className={styles.price}>Цена без учета сертификата — {+smena.receivedData.profi.price + +smena.receivedData.profi.price_certificate} рублей</span>
-                    <span className={styles.price}>Размер компенсации (сертификата) — {smena.receivedData.profi.price_certificate}</span>
-                  </div>*/}
                   <div className={styles.bottomTab}>
                     <span className={styles.price}>{smena.receivedData.price} руб</span>
+                    <div className={styles.priceDes}>
+                        {smena.receivedData.price && <span>
+                      Цена без учета сертификата — {smena.receivedData.price} рублей
+                    </span>}
+                        {smena.receivedData.price_certificate && <span>
+                      Размер компенсации (сертификата) — {smena.receivedData.price_certificate} рублей
+                    </span>}
+                    </div>
                   </div>
                 </>}
             </div>}

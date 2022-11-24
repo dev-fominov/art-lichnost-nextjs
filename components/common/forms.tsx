@@ -143,8 +143,9 @@ export const Forms = ({confirm, hiddenText}: any) => {
                                 />
                             </div>
                             <button className={styles.submitButton}
+                                    style={{cursor: `${!values.assent || !values.confirm ? 'no-drop': 'pointer'}`}}
                                     type={'submit'}
-                                    disabled={isSubmitting}>
+                                    disabled={!values.assent || !values.confirm}>
                                 {showLoading ? 'Загрузка...' : 'Оставить заявку'}
                             </button>
                             <div className={styles.confirmForm} onClick={() => {

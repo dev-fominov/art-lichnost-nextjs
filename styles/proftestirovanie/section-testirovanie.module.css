@@ -20,6 +20,14 @@
     padding-left: 50px;
     margin-bottom: 12px;
     position: relative;
+    text-align: justify;
+}
+
+@media (max-width: 400px) {
+    .medicalBlock li {
+        background: url('../../components/common/img/red-arr.svg') no-repeat left 5px top 5px;
+        padding-left: 30px;
+    }
 }
 
 .testBlock {
@@ -72,7 +80,7 @@
 @media (max-width: 1000px) {
     .orderTest {
         width: auto;
-        margin-bottom: 15px;
+        margin: 0 0 15px 0;
     }
 }
 

@@ -118,7 +118,7 @@ export const SectionProfessions = ({data}: any) => {
                   {data.shift_selection.map((el: any, index: number) => <li key={index}
                                                                             style={{
                                                                                 backgroundColor: `${el.slug === slugProfi
-                                                                                    ? '#30aa33'
+                                                                                    ? data.id_page === 11 ? '#FF822E' : '#30aa33'
                                                                                     : '#ffffff'}`
                                                                             }}
                                                                             onClick={() => {
@@ -135,8 +135,8 @@ export const SectionProfessions = ({data}: any) => {
                   </li>)}
               </ul>
                 {smena.receivedData && <>
-                  <div className={styles.sysProfi}>
-                    <span className={styles.sistems}>Система PROFI</span>
+                  <div className={styles.sysProfi} style={{minHeight: `${data.id_page !== 10 ? '116px': '240px'}`}}>
+                      {data.id_page === 10 && <span className={styles.sistems}>Система PROFI</span>}
                     <ul className={styles.listSkills}>
                         {smena.loading
                             ? <div className={styles.load}>
@@ -189,7 +189,7 @@ export const SectionProfessions = ({data}: any) => {
                                       </ul>
                                       <div className={styles.descP}
                                            dangerouslySetInnerHTML={{__html: item.description}}/>
-                                      <button className={styles.redBtn} onClick={()=>updateInnerShowModal(true)}>
+                                      <button className={styles.redBtn} onClick={() => updateInnerShowModal(true)}>
                                         Оставить заявку
                                       </button>
                                       <div className={styles.modalPriceBox}>
@@ -205,19 +205,19 @@ export const SectionProfessions = ({data}: any) => {
                                           modal: {position: 'relative', borderRadius: '40px', padding: 0},
                                           closeButton: {position: "absolute", top: '15px', right: '15px'}
                                       }}
-                                                           open={showInnerModal}
-                                                           onClose={()=>updateInnerShowModal(false)}
-                                                           closeOnEsc
-                                                           center>
+                                                                open={showInnerModal}
+                                                                onClose={() => updateInnerShowModal(false)}
+                                                                closeOnEsc
+                                                                center>
                                         <Forms confirm={data.link_to_oferta} hiddenText={`${hiddenText}`}/>
                                       </Modal>}
                                   </div>
                                 </Modal>}
                             </li>)}
                     </ul>
-                    <div className={styles.sistemsDescription}>
-                        {smena.receivedData.profi.description}
-                    </div>
+                      {data.id_page === 10 && <div className={styles.sistemsDescription}>
+                          {smena.receivedData.profi.description}
+                      </div>}
                   </div>
                   <div className={styles.bottomTab}>
                     <span className={styles.price}>{smena.receivedData.price} руб</span>
@@ -238,7 +238,9 @@ export const SectionProfessions = ({data}: any) => {
                     <div className={styles.answerBlock}>
                         <div className={styles.answerFor}>
                             <h2>
-                            <span className={styles.circleForParents}>
+                            <span className={styles.circleForParents} style={{
+                                backgroundColor: `${data.id_page === 11 ? '#FF822E' : '#30aa33'}`
+                            }}>
                                 {data.benefits_parents.length}
                             </span>
                                 Для родителей

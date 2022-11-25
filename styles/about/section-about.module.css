@@ -130,6 +130,7 @@
 @media (max-width: 700px) {
     .leftBox {
         padding-bottom: 15px;
+        padding-right: 0;
     }
 }
 

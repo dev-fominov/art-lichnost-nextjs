@@ -70,3 +70,18 @@
     color: #000000;
 
 }
+
+@media (max-width: 700px) {
+    .contentBoxCard {
+        margin: 0;
+        padding: 0;
+    }
+    .card{
+        margin: 0;
+        width: auto;
+    }
+    .card img{
+        height: 220px;
+        width: 100%;
+    }
+}

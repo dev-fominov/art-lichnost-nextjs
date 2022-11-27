@@ -111,7 +111,8 @@
         -webkit-box-pack: center;
         -ms-flex-pack: center;
     }
-    .itemArr{
+
+    .itemArr {
         width: 100%;
     }
 }
@@ -229,6 +230,13 @@
 @media (max-width: 1440px) {
     .contentBoxCard {
         justify-content: space-evenly;
+    }
+}
+
+@media (max-width: 700px) {
+    .contentBoxCard {
+        margin: 0;
+        padding: 0;
     }
 }
 

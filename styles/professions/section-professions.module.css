@@ -110,7 +110,7 @@
     padding: 0 !important;
     margin: 0 !important;
     min-height: auto !important;
-    height: 720px !important;
+    height: 720px;
     width: 100% !important;
     max-width: 1021px;
     border-radius: 40px;
@@ -154,6 +154,7 @@
     line-height: 27px;
     margin-bottom: 42px;
     padding-left: 35px;
+    max-width: 400px;
 }
 
 .descUl {
@@ -721,5 +722,55 @@
 
     .reasonBox {
         padding: 20px;
+    }
+}
+
+@media (max-width: 820px) {
+    .modalFlex {
+        flex-direction: column;
+        height: initial;
+    }
+
+    .boxImgModal {
+        width: 100%;
+        height: 280px;
+        align-items: center;
+    }
+
+    .boxImgModal img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .desc {
+        padding: 20px;
+        max-width: 100%;
+        max-height: fit-content;
+    }
+
+    .desc h6{
+        padding-left: 0;
+    }
+
+    .desc h4{
+        padding-left: 0;
+    }
+
+    .descP {
+        text-align: justify;
+        padding-left: 0;
+    }
+
+    .modalPriceBox {
+        padding-left: 0;
+    }
+
+    .redBtn {
+        margin: 0 auto;
+    }
+
+    .boxAges {
+        display: none;
     }
 }

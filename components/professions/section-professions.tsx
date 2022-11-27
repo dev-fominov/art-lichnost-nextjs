@@ -135,7 +135,7 @@ export const SectionProfessions = ({data}: any) => {
                   </li>)}
               </ul>
                 {smena.receivedData && <>
-                  <div className={styles.sysProfi} style={{minHeight: `${data.id_page !== 10 ? '116px': '240px'}`}}>
+                  <div className={styles.sysProfi} style={{minHeight: `${data.id_page !== 10 ? '116px' : '240px'}`}}>
                       {data.id_page === 10 && <span className={styles.sistems}>Система PROFI</span>}
                     <ul className={styles.listSkills}>
                         {smena.loading
@@ -189,7 +189,10 @@ export const SectionProfessions = ({data}: any) => {
                                       </ul>
                                       <div className={styles.descP}
                                            dangerouslySetInnerHTML={{__html: item.description}}/>
-                                      <button className={styles.redBtn} onClick={() => updateInnerShowModal(true)}>
+                                      <button className={styles.redBtn} onClick={() => {
+                                          updateInnerShowModal(true)
+                                          setHiddenText(item.title)
+                                      }}>
                                         Оставить заявку
                                       </button>
                                       <div className={styles.modalPriceBox}>
@@ -202,14 +205,19 @@ export const SectionProfessions = ({data}: any) => {
                                       </div>
                                     </div>
                                       {showInnerModal && <Modal styles={{
-                                          modal: {position: 'relative', borderRadius: '40px', padding: 0},
+                                          modal: {
+                                              position: 'relative',
+                                              borderRadius: '40px',
+                                              padding: 0,
+                                          },
                                           closeButton: {position: "absolute", top: '15px', right: '15px'}
                                       }}
                                                                 open={showInnerModal}
                                                                 onClose={() => updateInnerShowModal(false)}
                                                                 closeOnEsc
                                                                 center>
-                                        <Forms confirm={data.link_to_oferta} hiddenText={`${hiddenText}`}/>
+                                        <Forms confirm={data.link_to_oferta}
+                                               hiddenText={`Заявка навык (${hiddenText})`}/>
                                       </Modal>}
                                   </div>
                                 </Modal>}

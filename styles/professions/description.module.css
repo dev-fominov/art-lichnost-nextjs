@@ -62,6 +62,15 @@
     background: url('../../components/common/img/circle.svg') no-repeat left top 4px;
 }
 
+@media (max-width: 700px) {
+    .descriptionText p{
+        text-align: justify;
+    }
+    .descriptionText li{
+        text-align: justify;
+    }
+}
+
 .whatImg {
     width: 100%;
     max-width: 529px;

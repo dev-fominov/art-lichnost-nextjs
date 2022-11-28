@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Section} from "../common/section";
 import {Description} from "./description";
 import styles from '../../styles/professions/section-professions.module.css'
@@ -8,13 +8,23 @@ import {Forms} from "../common/forms";
 import {A} from "../common/A";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import {useRouter} from "next/router";
 import {ButtonGroup} from "../common/button-group";
+import {useRouter} from "next/router";
+import load from "../common/img/load.gif";
+import Image from "next/image";
+import logo from "../common/img/logo.png";
+import {Modal} from "react-responsive-modal";
+import "react-responsive-modal/styles.css";
 
 export const SectionProfessions = ({data}: any) => {
     const router = useRouter()
-    const {programs} = router.query
-    const [idProfi, setIdProfi] = useState(12320)
+    const {slug} = router.query
+
+    const [slugProfi, setSlugProfi] = useState(data.shift_selection[0].slug)
+    const [smena, setSmena] = useState({receivedData: false as any, loading: false})
+    const [showModal, updateShowModal] = useState('');
+    const [showInnerModal, updateInnerShowModal] = useState(false);
+    const [hiddenText, setHiddenText] = useState('');
 
     const responsive = {
         desktopFull: {
@@ -50,6 +60,54 @@ export const SectionProfessions = ({data}: any) => {
             partialVisibilityGutter: 30
         }
     }
+
+    const [showButton, setShowButton] = useState(false)
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            let width = window.innerWidth
+            if (data.past_shifts.length < 2) {
+                if (width < 708) {
+                    setShowButton(true)
+                }
+            } else {
+                if (data.past_shifts.length < 3) {
+                    if (width < 1023) {
+                        setShowButton(true)
+                    }
+                } else {
+                    if (data.past_shifts.length < 4) {
+                        if (width < 1199) {
+                            setShowButton(true)
+                        }
+                    } else {
+                        setShowButton(true)
+                    }
+                }
+            }
+        }
+    },)
+
+
+    useEffect(() => {
+        data.shift_selection[0].slug && getSmena(data.shift_selection[0].slug)
+        if (typeof slug !== 'undefined') {
+            setSlugProfi(slug)
+            getSmena(slug)
+        }
+    }, [slug])
+
+
+    const getSmena = async (slug: any) => {
+        setSmena({...smena, loading: true})
+        const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/camp-changes/?camp=${data.id_page === 10
+            ? 'professions'
+            : data.id_page === 11
+                ? 'skills'
+                : 'tourist-holidays'}&slug=${slug}`)
+        setSmena({receivedData: await res.json(), loading: false})
+    }
+
     return (<Section>
             <Description img={data.description_img}
                          video={data.description_video}
@@ -59,13 +117,16 @@ export const SectionProfessions = ({data}: any) => {
               <ul className={styles.tablist}>
                   {data.shift_selection.map((el: any, index: number) => <li key={index}
                                                                             style={{
-                                                                                backgroundColor: `${el.id === idProfi
-                                                                                    ? '#30aa33'
+                                                                                backgroundColor: `${el.slug === slugProfi
+                                                                                    ? data.id_page === 11 ? '#FF822E' : '#30aa33'
                                                                                     : '#ffffff'}`
                                                                             }}
-                                                                            onClick={() => setIdProfi(el.id)}>
+                                                                            onClick={() => {
+                                                                                setSlugProfi(el.slug)
+                                                                                getSmena(el.slug)
+                                                                            }}>
                       <span style={{
-                          color: `${el.id === idProfi
+                          color: `${el.slug === slugProfi
                               ? '#ffffff'
                               : '#000000'}`
                       }}>
@@ -73,28 +134,111 @@ export const SectionProfessions = ({data}: any) => {
                       </span>
                   </li>)}
               </ul>
-              <div className={styles.sysProfi}>
-                <ul className={styles.listSkills}>
-                   {/* {shiftSelection && shiftSelection[0].profi.card.map((item: any, index: any) => <li
-                        key={index}>
-                        {item.seats
-                            ? <span style={{background: '#30aa33'}} className={styles.onstock}>Есть места</span>
-                            : <span style={{background: '#eb3535'}} className={styles.onstock}>Нет места</span>}
-                        <div className={styles.boxAlex}>
-                            <A href={`/courses/${item.post_slug}`} text={
-                                <div className={item.seats
-                                    ? styles.titleGreen
-                                    : styles.titleRed}>
+                {smena.receivedData && <>
+                  <div className={styles.sysProfi} style={{minHeight: `${data.id_page !== 10 ? '116px' : '240px'}`}}>
+                      {data.id_page === 10 && <span className={styles.sistems}>Система PROFI</span>}
+                    <ul className={styles.listSkills}>
+                        {smena.loading
+                            ? <div className={styles.load}>
+                                <Image width={100}
+                                       priority={true}
+                                       height={115}
+                                       src={load}
+                                       alt={'logo'}/>
+                            </div>
+                            : smena.receivedData.profi.card.map((item: any, index: any) => <li
+                                key={index}>
+                                {item.seats
+                                    ? <span style={{background: '#30aa33'}} className={styles.onstock}>Есть места</span>
+                                    : <span style={{background: '#eb3535'}} className={styles.onstock}>Нет места</span>}
+                                <div className={styles.boxAlex}>
+                                    <div onClick={() => updateShowModal(item.title)}
+                                         className={item.seats
+                                             ? styles.titleGreen
+                                             : styles.titleRed}>
                                               <span style={{textDecoration: 'underline'}}>
                                                   {item.title}
                                               </span>
-                                    <span>{item.age_title}</span>
+                                        <span>{item.age_title}</span>
+                                    </div>
                                 </div>
-                            }/>
-                        </div>
-                    </li>)}*/}
-                </ul>
-              </div>
+                                {showModal === item.title && <Modal styles={{
+                                    modal: {position: 'relative', borderRadius: '40px', padding: 0},
+                                    closeButton: {position: "absolute", top: '15px', right: '15px'}
+                                }}
+                                                                    open={showModal === item.title}
+                                                                    onClose={() => updateShowModal('')}
+                                                                    closeOnEsc
+                                                                    center>
+                                  <div className={styles.modalFlex}>
+                                    <div className={styles.boxImgModal}>
+                                      <img src={item.thumbnail_url.url} alt={item.thumbnail_url.alt}/>
+                                    </div>
+                                    <div className={styles.desc}>
+                                      <div className={styles.boxAges}>
+                                          {item.ages.map((item: any, index: any) => <div key={index}
+                                                                                         className={styles.ageMiniBox}>
+                                              {item} лет
+                                          </div>)}
+                                      </div>
+                                      <h6>Навык</h6>
+                                      <h4>{item.title}</h4>
+                                      <ul className={styles.descUl}>
+                                        <li className={styles.descLi}>{item.period}</li>
+                                        <li className={styles.descLi}>{item.location}</li>
+                                      </ul>
+                                      <div className={styles.descP}
+                                           dangerouslySetInnerHTML={{__html: item.description}}/>
+                                      <button className={styles.redBtn} onClick={() => {
+                                          updateInnerShowModal(true)
+                                          setHiddenText(item.title)
+                                      }}>
+                                        Оставить заявку
+                                      </button>
+                                      <div className={styles.modalPriceBox}>
+                                        <p>{item.price}</p>
+                                        <span>Цена без учета сертификата и кэшбэка — {item.price} рублей</span>
+                                          {item.price_certificate &&
+                                          <span>Цена с учетом сертификата — {(Number(item.price.replaceAll(' ', '').replaceAll(',', '.')) - Number(item.price_certificate.replaceAll(' ', '').replaceAll(',', '.'))).toString()} рублей</span>}
+                                          {item.price_certificate &&
+                                          <span>Размер компенсации (сертификата) — {item.price_certificate} рублей</span>}
+                                      </div>
+                                    </div>
+                                      {showInnerModal && <Modal styles={{
+                                          modal: {
+                                              position: 'relative',
+                                              borderRadius: '40px',
+                                              padding: 0,
+                                          },
+                                          closeButton: {position: "absolute", top: '15px', right: '15px'}
+                                      }}
+                                                                open={showInnerModal}
+                                                                onClose={() => updateInnerShowModal(false)}
+                                                                closeOnEsc
+                                                                center>
+                                        <Forms confirm={data.link_to_oferta}
+                                               hiddenText={`Заявка навык (${hiddenText})`}/>
+                                      </Modal>}
+                                  </div>
+                                </Modal>}
+                            </li>)}
+                    </ul>
+                      {data.id_page === 10 && <div className={styles.sistemsDescription}>
+                          {smena.receivedData.profi.description}
+                      </div>}
+                  </div>
+                  <div className={styles.bottomTab}>
+                    <span className={styles.price}>{smena.receivedData.price} руб</span>
+                    <div className={styles.priceDes}>
+                        {smena.receivedData.price && <span>
+                      Цена без учета сертификата — {smena.receivedData.price} рублей
+                    </span>}
+                        {smena.receivedData.price_certificate && <span>
+                      Размер компенсации (сертификата) — {smena.receivedData.price_certificate} рублей
+                    </span>}
+                    </div>
+                  </div>
+                </>}
             </div>}
             <div className={styles.reasonsProgram}>
                 <h3 className={styles.titleInner}>5 причин, почему нужно поехать в лагерь:</h3>
@@ -102,7 +246,9 @@ export const SectionProfessions = ({data}: any) => {
                     <div className={styles.answerBlock}>
                         <div className={styles.answerFor}>
                             <h2>
-                            <span className={styles.circleForParents}>
+                            <span className={styles.circleForParents} style={{
+                                backgroundColor: `${data.id_page === 11 ? '#FF822E' : '#30aa33'}`
+                            }}>
                                 {data.benefits_parents.length}
                             </span>
                                 Для родителей
@@ -157,10 +303,10 @@ export const SectionProfessions = ({data}: any) => {
                 <div className={styles.priceIclude}
                      dangerouslySetInnerHTML={{__html: data.includ_content}}/>
             </div>
-            <div className={styles.faqBox}>
-                <h3 className={styles.titleInner}>Часто задаваемые вопросы</h3>
-                <CustomAccordion data={data.faq}/>
-            </div>
+            {data.faq && <div className={styles.faqBox}>
+              <h3 className={styles.titleInner}>Часто задаваемые вопросы</h3>
+              <CustomAccordion data={data.faq}/>
+            </div>}
             <div className={styles.reasonsProgram}>
                 <h3 className={styles.titleInner}>Оформить заявку</h3>
                 <div className={styles.formOrderBox}>
@@ -192,8 +338,8 @@ export const SectionProfessions = ({data}: any) => {
                           swipeable
                           focusOnSelect={false}
                           arrows={false}
-                          renderButtonGroupOutside={true}
-                          customButtonGroup={<ButtonGroup/>}
+                          renderButtonGroupOutside={showButton}
+                          customButtonGroup={showButton ? <ButtonGroup/> : <></>}
                           ssr
                           itemClass="image-item"
                           infinite
@@ -211,7 +357,7 @@ export const SectionProfessions = ({data}: any) => {
                             </div>}/>
                             <div className={styles.boxLink}>
                                 <h3 className={styles.postTitle}>{el.title}</h3>
-                                <A href={`/camp/${programs}/smena/${el.slug}`} text={'Узнать больше'}/>
+                                <A href={`/camp/smena/${el.slug}`} text={'Узнать больше'}/>
                             </div>
                         </div>
                     )}

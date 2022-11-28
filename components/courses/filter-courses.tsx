@@ -77,7 +77,9 @@ const FilterCourses = ({data}: any) => {
                     <div className={styles.resFilter}>
                         {!!resFilter.resFilter
                             ? ((resFilter.resFilter as Array<any>).length
-                                ? (resFilter.resFilter as Array<any>).map((el: any) => <Card key={el.id} data={el}/>)
+                                ? (resFilter.resFilter as Array<any>).map((el: any) => <Card key={el.id}
+                                                                                             filter={true}
+                                                                                             data={el}/>)
                                 : <span>Нет результатов</span>)
                             : null}
                     </div>

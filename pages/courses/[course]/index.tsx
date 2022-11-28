@@ -11,7 +11,7 @@ const Course: NextPage = ({data}: any) => {
         <>
             <Head>
                 <title>
-                    {data.background_img.alt + '- Центр развития детей и выбора профессии АртЛичность'}
+                    {/* {data.background_img.alt + '- Центр развития детей и выбора профессии АртЛичность'} */}
                 </title>
             </Head>
             <HeaderGreen title={data.title}/>

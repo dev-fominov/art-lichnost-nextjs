@@ -1,11 +1,37 @@
 import styles from './../../styles/courses/section-courses.module.css'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Card from "../camp/card";
 import {ButtonGroup} from "../common/button-group";
 
 const CarouselCourses = ({data}: any) => {
+    const [showButton, setShowButton] = useState(false)
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            let width = window.innerWidth
+            if (data.length < 2) {
+                if (width < 709) {
+                    setShowButton(true)
+                }
+            } else {
+                if (data.length < 3) {
+                    if (width < 1024) {
+                        setShowButton(true)
+                    }
+                } else {
+                    if (data.length < 4) {
+                        if (width < 1200) {
+                            setShowButton(true)
+                        }
+                    } else {
+                        setShowButton(true)
+                    }
+                }
+            }
+        }
+    },)
+
     const responsive = {
         desktopFull: {
             breakpoint: {
@@ -54,8 +80,8 @@ const CarouselCourses = ({data}: any) => {
                               swipeable
                               focusOnSelect={false}
                               arrows={false}
-                              renderButtonGroupOutside={true}
-                              customButtonGroup={<ButtonGroup/>}
+                              renderButtonGroupOutside={showButton}
+                              customButtonGroup={showButton ? <ButtonGroup/> : <></>}
                               ssr
                               itemClass={styles.carousel}
                               infinite

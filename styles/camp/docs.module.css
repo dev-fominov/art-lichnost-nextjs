@@ -72,6 +72,7 @@
     padding-left: 50px;
     margin-bottom: 12px;
     position: relative;
+    text-align: justify;
 }
 
 .medicalBlock p {
@@ -92,6 +93,8 @@
 .containerBtn {
     position: relative;
 }
+
+
 
 
 

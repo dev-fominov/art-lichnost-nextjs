@@ -192,3 +192,9 @@
 .containerBtn {
     position: relative;
 }
+
+@media (max-width: 600px) {
+    .item {
+       margin-right: 0;
+    }
+}

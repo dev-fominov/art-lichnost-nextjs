@@ -3,8 +3,36 @@ import styles from '../../styles/professions/slide-prozhivaniya.module.css'
 import "react-multi-carousel/lib/styles.css";
 import {SlideItem} from "./slide-item";
 import {ButtonGroup} from "../common/button-group";
+import {useEffect, useState} from "react";
 
 const SliderTeamPsihologs = ({data}: any) => {
+    const [showButton, setShowButton] = useState(false)
+
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            let width = window.innerWidth
+            if (data.length < 2) {
+                if (width < 709) {
+                    setShowButton(true)
+                }
+            } else {
+                if (data.length < 3) {
+                    if (width < 1024) {
+                        setShowButton(true)
+                    }
+                } else {
+                    if (data.length < 4) {
+                        if (width < 1200) {
+                            setShowButton(true)
+                        }
+                    } else {
+                        setShowButton(true)
+                    }
+                }
+            }
+        }
+    },)
 
     const responsive = {
         desktopFull: {
@@ -48,8 +76,8 @@ const SliderTeamPsihologs = ({data}: any) => {
                       focusOnSelect={false}
                       className={styles.container}
                       arrows={false}
-                      renderButtonGroupOutside={true}
-                      customButtonGroup={<ButtonGroup/>}
+                      renderButtonGroupOutside={showButton}
+                      customButtonGroup={showButton ? <ButtonGroup/> : <></>}
                       ssr
                       itemClass="image-item"
                       infinite

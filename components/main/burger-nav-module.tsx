@@ -12,9 +12,7 @@ interface BurgerNavModuleType {
 export const BurgerNavModule = ({title, children, menuIsOpen}: BurgerNavModuleType) => {
     let [itemIsOpen, setItemIsOpen] = useState(false)
 
-    const itemBtnClick = () => {
-        setItemIsOpen(!itemIsOpen)
-    }
+    const itemBtnClick = () => setItemIsOpen(!itemIsOpen)
 
     useEffect(() => {
         if (!menuIsOpen) {
@@ -25,13 +23,15 @@ export const BurgerNavModule = ({title, children, menuIsOpen}: BurgerNavModuleTy
 
     return (
         <div className={styles.burgerNav}>
-                <div className={styles.itemTitle}>
-                    {title}
-                    <div onClick={itemBtnClick}>{itemIsOpen ? <AiOutlineUp/> : <AiOutlineDown/>}</div>
+            <div className={styles.itemTitle}>
+                {title}
+                <div onClick={itemBtnClick}>
+                    {itemIsOpen ? <AiOutlineUp/> : <AiOutlineDown/>}
                 </div>
-                {itemIsOpen && <div className={styles.itemLink}>
-                    {children}
-                </div>}
+            </div>
+            {itemIsOpen && <div className={styles.itemLink}>
+                {children}
+            </div>}
         </div>
     )
 }

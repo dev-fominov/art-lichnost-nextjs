@@ -560,12 +560,13 @@
     .stepImg img {
         max-width: 100%;
     }
-    .needItem{
+
+    .needItem {
         max-width: 100%;
         margin-right: 0;
     }
 
-    .formSteps{
+    .formSteps {
         margin-left: 0;
     }
 

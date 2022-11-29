@@ -334,15 +334,18 @@
         width: 69%;
 
     }
+
     .leftBox {
-         margin-right: 15px;
-      }
+        margin-right: 15px;
+    }
+
     .leftContent {
         margin-right: 15px;
         flex-direction: column;
     }
+
     .rightBox {
-       width: 100%;
+        width: 100%;
     }
 
 }

@@ -3,7 +3,8 @@ import {Section} from "../common/section";
 import styles from '../../styles/project/section-proforientatsionnyj.module.css'
 
 export const SectionProforientatsionnyj = ({data}: any) => {
-    return (<Section>
+    return (
+        <Section>
             <div className={styles.boxList}>
                 <div className={styles.title}>{data.project_numbers.title}</div>
                 <div className={styles.contentBox}>

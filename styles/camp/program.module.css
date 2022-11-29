@@ -32,11 +32,11 @@
     flex-direction: row;
     justify-content: start;
     width: 100%;
-    flex-wrap: wrap ;
+    flex-wrap: wrap;
 
 }
 
-.cardCamp{
+.cardCamp {
     margin: auto;
 }
 
@@ -44,6 +44,6 @@
     position: relative;
 }
 
-.programBox{
+.programBox {
     margin-bottom: 60px;
 }

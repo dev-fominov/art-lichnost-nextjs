@@ -5,7 +5,9 @@ const Merch = ({data}: any) => {
     return (
         <div className={styles.merch}>
             <div className={styles.leftBox}>
-                <div className={styles.title}>{data.title}</div>
+                <div className={styles.title}>
+                    {data.title}
+                </div>
                 <p>{data.description}</p>
                 <A href={`/merch`} text={'Узнать больше'}/>
             </div>

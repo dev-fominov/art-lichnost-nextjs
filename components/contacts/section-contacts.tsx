@@ -4,17 +4,20 @@ import Link from "next/link";
 import {SliderContacts} from "./slider-contacts";
 import {MyPlacemark} from "./map";
 
-
 export const SectionContacts = ({data}: any) => {
     return (
         <Section>
             <div className={styles.titleInner} dangerouslySetInnerHTML={{__html: data.content}}/>
             <div className={styles.contactFields}>
                 <div className={styles.itemField}>
-                    <Link href={data.phone}><a target="_blank">{data.phone}</a></Link>
+                    <Link href={data.phone}>
+                        <a target="_blank">{data.phone}</a>
+                    </Link>
                 </div>
                 <div className={styles.itemField}>
-                    <Link href={data.e_mail}><a target="_blank">{data.e_mail}</a></Link>
+                    <Link href={data.e_mail}>
+                        <a target="_blank">{data.e_mail}</a>
+                    </Link>
                 </div>
                 <div className={styles.itemField}>
                     {data.working_hours}

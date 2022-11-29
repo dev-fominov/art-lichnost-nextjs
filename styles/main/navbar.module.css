@@ -17,7 +17,7 @@
     flex-wrap: wrap;
 }
 
-.logo img{
+.logo img {
     display: inline-block;
     width: 158px;
     height: auto;
@@ -85,11 +85,11 @@
     margin-top: 15px;
 }
 
-.socialHead a{
-   font-size: 20px;
+.socialHead a {
+    font-size: 20px;
 }
 
-.socialHead a:hover{
+.socialHead a:hover {
     color: #b2b2b2;
 }
 

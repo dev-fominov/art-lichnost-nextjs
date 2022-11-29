@@ -5,19 +5,29 @@ import React from "react";
 
 export const SectionCourse = ({data}: any) => {
 
-    return (<Section>
+    return (
+        <Section>
             <div className={styles.boxContent}>
-                <div className={styles.title}>{data.description_course.title}</div>
-                <div className={styles.description}>{data.description_course.description}</div>
-                <div className={styles.age}>{data.description_course.ages}</div>
+                <div className={styles.title}>
+                    {data.description_course.title}
+                </div>
+                <div className={styles.description}>
+                    {data.description_course.description}
+                </div>
+                <div className={styles.age}>
+                    {data.description_course.ages}
+                </div>
             </div>
             <div className={styles.boxContent}>
                 <div className={styles.boxCoursesDots}>
                     <div className={styles.left}>
-                        <div className={styles.title}>В этом семестре участники:</div>
+                        <div className={styles.title}>
+                            В этом семестре участники:
+                        </div>
                         <ul>
-                            {data.description_course.list_problem.map((item: any, index: any) => <li
-                                key={index}>{item}</li>)}
+                            {data.description_course.list_problem.map((item: any, index: any) => <li key={index}>
+                                {item}
+                            </li>)}
                         </ul>
                     </div>
                     <div className={styles.right}>
@@ -28,25 +38,31 @@ export const SectionCourse = ({data}: any) => {
             <div className={styles.boxContent}>
                 <div className={styles.boxCoursesProgramm}>
                     <div className={styles.leftProgramm}>
-                        <div className={styles.title}>{data.what_we_do.to_do_title}</div>
+                        <div className={styles.title}>
+                            {data.what_we_do.to_do_title}
+                        </div>
                         <ul>
                             {data.what_we_do.to_do_list.map((item: any, index: any) => <li
                                 key={index}>— {item}</li>)}
                         </ul>
                     </div>
                     <div className={styles.rightProgramm}>
-                        <div className={styles.title}>{data.what_we_do.course_outcome_title}</div>
+                        <div className={styles.title}>
+                            {data.what_we_do.course_outcome_title}
+                        </div>
                         <ul>
-                            {data.what_we_do.course_outcome_list.map((item: any, index: any) => <li
-                                key={index}><span>{index + 1}</span> {item}</li>)}
+                            {data.what_we_do.course_outcome_list.map((item: any, index: any) => <li key={index}>
+                                <span>{index + 1}</span> {item}
+                            </li>)}
                         </ul>
                     </div>
                 </div>
             </div>
             <div className={styles.boxContent}>
                 <ul className={styles.aboutCourse}>
-                    {data.what_we_do.about_course.map((item: any, index: any) => <li
-                        key={index}>{item}</li>)}
+                    {data.what_we_do.about_course.map((item: any, index: any) => <li key={index}>
+                        {item}
+                    </li>)}
                 </ul>
             </div>
             <div className={styles.boxContent}>
@@ -57,17 +73,26 @@ export const SectionCourse = ({data}: any) => {
                                 <img src={data.educator.photo.url} alt={data.educator.photo.alt}/>
                             </div>
                             <div className={styles.rightBox}>
-                                <div className={styles.title}>{data.educator.name}</div>
-                                <div className={styles.description}>{data.educator.position}</div>
+                                <div className={styles.title}>
+                                    {data.educator.name}
+                                </div>
+                                <div className={styles.description}>
+                                    {data.educator.position}
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div className={styles.rightUser}>
-                        <div className={styles.title}>Стоимость</div>
-                        <div className={styles.price}>{data.educator.price} рублей</div>
-                        <div className={styles.description}>{data.educator.one_time_fee
-                            ? '*стоимость можно разбить на две равные части'
-                            : ''}
+                        <div className={styles.title}>
+                            Стоимость
+                        </div>
+                        <div className={styles.price}>
+                            {data.educator.price} рублей
+                        </div>
+                        <div className={styles.description}>
+                            {data.educator.one_time_fee
+                                ? '*стоимость можно разбить на две равные части'
+                                : ''}
                         </div>
                     </div>
                 </div>
@@ -79,9 +104,7 @@ export const SectionCourse = ({data}: any) => {
                     <div className={styles.formSteps}>
                         <h4>{data.step_form.steps_form_title}</h4>
                         <ul>
-                            {data.step_form.steps_form_items.map((el: any, index: number) => {
-                                return <li key={index}>{el}</li>
-                            })}
+                            {data.step_form.steps_form_items.map((el: any, index: number) => <li key={index}>{el}</li>)}
                         </ul>
                         <div style={{
                             background: `url(${data.step_form.img_steps_form.url}) no-repeat center center`,

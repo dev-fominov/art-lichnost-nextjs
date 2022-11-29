@@ -14,11 +14,12 @@ const OfflineTest: NextPage = ({data}: any) => {
     const VIDEO_HEIGHT = 1080;
 
     return (
-        <> <Head>
-            <title>
-                Офлайн-тест - Центр развития детей и выбора профессии АртЛичность
-            </title>
-        </Head>
+        <>
+            <Head>
+                <title>
+                    Офлайн-тест - Центр развития детей и выбора профессии АртЛичность
+                </title>
+            </Head>
             {data.id_video
                 ? <div className="video-background">
                     <iframe

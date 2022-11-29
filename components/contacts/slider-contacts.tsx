@@ -30,26 +30,27 @@ export const SliderContacts = ({arrImg}: any) => {
             partialVisibilityGutter: 30
         }
     }
-    return <div className={styles.containerBtn}>
-        <Carousel slidesToSlide={1}
-                  className={styles.carousel}
-                  swipeable
-                  focusOnSelect={false}
-                  arrows={false}
-                  renderButtonGroupOutside={true}
-                  customButtonGroup={<ButtonGroup/>}
-                  ssr
-                  itemClass="image-item"
-                  infinite
-                  responsive={responsive}
-                  deviceType={"tablet"}>
-            {arrImg.map((img: any, index: number) => <img style={{width: "100%", height: "100%"}}
-                                                          draggable={false}
-                                                          key={index}
-                                                          src={img.url}
-                                                          alt={img.alt}/>
-            )}
-        </Carousel>
-    </div>
+    return (
+        <div className={styles.containerBtn}>
+            <Carousel slidesToSlide={1}
+                      className={styles.carousel}
+                      swipeable
+                      focusOnSelect={false}
+                      arrows={false}
+                      renderButtonGroupOutside={true}
+                      customButtonGroup={<ButtonGroup/>}
+                      ssr
+                      itemClass="image-item"
+                      infinite
+                      responsive={responsive}
+                      deviceType={"tablet"}>
+                {arrImg.map((img: any, index: number) => <img style={{width: "100%", height: "100%"}}
+                                                              draggable={false}
+                                                              key={index}
+                                                              src={img.url}
+                                                              alt={img.alt}/>
+                )}
+            </Carousel>
+        </div>)
 }
 

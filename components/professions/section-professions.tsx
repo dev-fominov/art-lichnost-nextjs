@@ -88,7 +88,6 @@ export const SectionProfessions = ({data}: any) => {
         }
     },)
 
-
     useEffect(() => {
         data.shift_selection[0].slug && getSmena(data.shift_selection[0].slug)
         if (typeof slug !== 'undefined') {
@@ -96,7 +95,6 @@ export const SectionProfessions = ({data}: any) => {
             getSmena(slug)
         }
     }, [slug])
-
 
     const getSmena = async (slug: any) => {
         setSmena({...smena, loading: true})
@@ -108,7 +106,8 @@ export const SectionProfessions = ({data}: any) => {
         setSmena({receivedData: await res.json(), loading: false})
     }
 
-    return (<Section>
+    return (
+        <Section>
             <Description img={data.description_img}
                          video={data.description_video}
                          text={data.description_text}/>

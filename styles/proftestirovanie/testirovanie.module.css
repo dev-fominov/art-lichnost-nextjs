@@ -1,4 +1,4 @@
-.benefits{
+.benefits {
     margin-top: 80px;
     z-index: 1000;
     position: relative;
@@ -32,6 +32,7 @@
     .benefits {
         margin-top: 20px;
     }
+
     .itemLabel {
         font-weight: 800;
         font-size: 16px;

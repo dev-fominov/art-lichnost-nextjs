@@ -76,11 +76,13 @@
         margin: 0;
         padding: 0;
     }
-    .card{
+
+    .card {
         margin: 0;
         width: auto;
     }
-    .card img{
+
+    .card img {
         height: 220px;
         width: 100%;
     }

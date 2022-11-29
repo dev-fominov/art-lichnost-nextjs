@@ -6,7 +6,6 @@ import {SlideImage} from "./slide-image";
 import {ButtonGroup} from "../common/button-group";
 
 const Reviews = ({data}: any) => {
-
     const responsive = {
         desktopFull: {
             breakpoint: {

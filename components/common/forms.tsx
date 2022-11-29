@@ -82,10 +82,8 @@ export const Forms = ({confirm, hiddenText}: any) => {
                             }
                         )
                         setSubmitting(false)
-                    }}
-                    /* validationSchema={loginFormSchema}*/>
+                    }}>
                     {({
-                          isSubmitting,
                           values,
                           setFieldValue,
                           errors,
@@ -108,8 +106,9 @@ export const Forms = ({confirm, hiddenText}: any) => {
                                        placeholder={'Фамилия и имя ребенка'}/>
                             </div>
                             <div>
-                                <label className={styles.birthdateLabel} htmlFor="birthdate">Дата рождения
-                                    ребенка</label>
+                                <label className={styles.birthdateLabel} htmlFor="birthdate">
+                                    Дата рождения ребенка
+                                </label>
                                 <Field className={styles.form}
                                        required
                                        type={'date'}
@@ -143,21 +142,22 @@ export const Forms = ({confirm, hiddenText}: any) => {
                                 />
                             </div>
                             <button className={styles.submitButton}
-                                    style={{cursor: `${!values.assent || !values.confirm ? 'no-drop': 'pointer'}`}}
+                                    style={{cursor: `${!values.assent || !values.confirm ? 'no-drop' : 'pointer'}`}}
                                     type={'submit'}
                                     disabled={!values.assent || !values.confirm}>
                                 {showLoading ? 'Загрузка...' : 'Оставить заявку'}
                             </button>
-                            <div className={styles.confirmForm} onClick={() => {
-                                setFieldValue('assent', !values.assent)
-                            }}>
-                                <div className={styles.radioLabel}> {values.assent === true
-                                    ? <div className={styles.radioTrue}/>
-                                    : <div className={styles.radioFalse}/>}
+                            <div className={styles.confirmForm}
+                                 onClick={() => setFieldValue('assent', !values.assent)}>
+                                <div className={styles.radioLabel}>
+                                    {values.assent === true
+                                        ? <div className={styles.radioTrue}/>
+                                        : <div className={styles.radioFalse}/>}
                                 </div>
                                 <label className={styles.checkboxLabel} htmlFor={'assent'}>
                                     Я согласен с обработкой и
-                                    хранением указанных здесь персональных данных</label>
+                                    хранением указанных здесь персональных данных
+                                </label>
                                 <br/>
                             </div>
                             {confirm && <div className={styles.confirmForm}
@@ -165,9 +165,10 @@ export const Forms = ({confirm, hiddenText}: any) => {
                                              onClick={() => {
                                                  setFieldValue('confirm', !values.confirm)
                                              }}>
-                              <div className={styles.radioLabel}> {values.confirm === true
-                                  ? <div className={styles.radioTrue}/>
-                                  : <div className={styles.radioFalse}/>}
+                              <div className={styles.radioLabel}>
+                                  {values.confirm === true
+                                      ? <div className={styles.radioTrue}/>
+                                      : <div className={styles.radioFalse}/>}
                               </div>
                               <label className={styles.checkboxLabel} htmlFor={'assent'}>
                                 <p>Нажимая на кнопку, вы соглашаетесь с</p>
@@ -201,6 +202,4 @@ export const Forms = ({confirm, hiddenText}: any) => {
             </Modal>}
         </div>
     )
-
-
 }

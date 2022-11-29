@@ -19,7 +19,7 @@
     justify-content: space-between;
 }
 
-.contentBoxImportant{
+.contentBoxImportant {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -181,7 +181,8 @@
     .itemDescriptionRedBorder {
         width: 100%;
     }
-    .leftBox{
+
+    .leftBox {
         padding: 0;
     }
 }
@@ -283,12 +284,14 @@
         margin: 0;
         padding: 0;
     }
-    .card{
+
+    .card {
         margin: 0;
         width: auto;
     }
-    .card img{
-      height: 220px;
+
+    .card img {
+        height: 220px;
         width: 100%;
     }
 }

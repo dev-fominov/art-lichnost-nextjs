@@ -29,7 +29,8 @@ export const MerchForm = ({hiddenText}: any) => {
         /\d/
     ];
 
-    return (<div className={styles.formBlock}>
+    return (
+        <div className={styles.formBlock}>
             <h4 className={styles.titleInnerForm}>Заполните форму заявки</h4>
             <div>
                 <Formik
@@ -57,8 +58,7 @@ export const MerchForm = ({hiddenText}: any) => {
                                 hiddenText: hiddenText,
                             }),
                         })
-                    }}
-                    /* validationSchema={loginFormSchema}*/>
+                    }}>
                     {({
                           setFieldValue,
                           values,
@@ -107,16 +107,16 @@ export const MerchForm = ({hiddenText}: any) => {
                                 Оставить
                                 заявку
                             </button>
-                            <div className={styles.confirmForm} onClick={() => {
-                                setFieldValue('assent', !values.assent)
-                            }}>
-                                <div className={styles.radioLabel}> {values.assent === true
-                                    ? <div className={styles.radioTrue}/>
-                                    : <div className={styles.radioFalse}/>}
+                            <div className={styles.confirmForm} onClick={() => setFieldValue('assent', !values.assent)}>
+                                <div className={styles.radioLabel}>
+                                    {values.assent === true
+                                        ? <div className={styles.radioTrue}/>
+                                        : <div className={styles.radioFalse}/>}
                                 </div>
                                 <label className={styles.checkboxLabel} htmlFor={'assent'}>
                                     Я согласен с обработкой и
-                                    хранением указанных здесь персональных данных</label>
+                                    хранением указанных здесь персональных данных
+                                </label>
                                 <br/>
                             </div>
                             <span
@@ -139,6 +139,4 @@ export const MerchForm = ({hiddenText}: any) => {
             </Modal>}
         </div>
     )
-
-
 }

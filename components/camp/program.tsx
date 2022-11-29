@@ -55,7 +55,9 @@ const Program = ({data}: any) => {
                         {data.name.toUpperCase()}
                         <span>Программа</span>
                     </h2>}/>
-                <p className={styles.description}>{data.description}</p>
+                <p className={styles.description}>
+                    {data.description}
+                </p>
             </div>
             {data.count >= 3
                 ? <div className={styles.containerBtn}>

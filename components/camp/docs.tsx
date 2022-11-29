@@ -39,8 +39,11 @@ const Docs = ({data, title}: any) => {
             partialVisibilityGutter: 30
         }
     }
-    return (<div className={styles.docs}>
-            <h2 className={styles.title}>{title}</h2>
+    return (
+        <div className={styles.docs}>
+            <h2 className={styles.title}>
+                {title}
+            </h2>
             <div className={styles.containerBtn}>
                 <Carousel slidesToSlide={1}
                           className={styles.carousel}
@@ -54,9 +57,14 @@ const Docs = ({data, title}: any) => {
                           infinite
                           responsive={responsive}
                 >
-                    {data.map((el: any) => <div key={el.id} className={styles.boxItem}>
-                        <h3>{el.title}</h3>
-                        <p>{el.subtitle}</p>
+                    {data.map((el: any) => <div key={el.id}
+                                                className={styles.boxItem}>
+                        <h3>
+                            {el.title}
+                        </h3>
+                        <p>
+                            {el.subtitle}
+                        </p>
                         <A href={{
                             pathname: '/camp/docs/[docs]',
                             query: {docs: el.slug,},

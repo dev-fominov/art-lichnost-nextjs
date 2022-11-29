@@ -14,11 +14,12 @@ const Proftestirovanie: NextPage = ({data}: any) => {
     const VIDEO_HEIGHT = 1080;
 
     return (
-        <> <Head>
-            <title>
-                Профтестирование - Центр развития детей и выбора профессии АртЛичность
-            </title>
-        </Head>
+        <>
+            <Head>
+                <title>
+                    Профтестирование - Центр развития детей и выбора профессии АртЛичность
+                </title>
+            </Head>
             {data.id_video
                 ? <div className="video-background">
                     <iframe

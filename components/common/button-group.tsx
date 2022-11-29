@@ -1,7 +1,5 @@
 import "react-multi-carousel/lib/styles.css";
 import styles from '../../styles/common/button-group.module.css'
-import {useEffect} from "react";
-
 
 export const ButtonGroup = ({next, previous, goToSlide, ...rest}: any) => {
     const CustomRightArrow = ({onClick, ...rest}: any) => {

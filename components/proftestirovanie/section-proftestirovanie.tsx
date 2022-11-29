@@ -7,7 +7,8 @@ import {Forms} from "../common/forms";
 
 const SectionProftestirovanie = ({data}: any) => {
 
-    return (<Section>
+    return (
+        <Section>
             <div className={styles.testsBox}>
                 {data.tests.map((item: any, index: any) => <Test key={index} data={item}/>)}
             </div>

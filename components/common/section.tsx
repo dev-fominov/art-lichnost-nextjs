@@ -1,15 +1,16 @@
 import React from "react";
 import styles from "../../styles/common/section.module.css";
-import { Container } from "./container";
+import {Container} from "./container";
 
-interface SectionProps  {
+interface SectionProps {
     children: React.ReactNode
 }
 
-export const Section = ({children}:SectionProps) => {
-    return (<section className={styles.homeBoxes}>
+export const Section = ({children}: SectionProps) => {
+    return (
+        <section className={styles.homeBoxes}>
             <Container>
-            {children}
+                {children}
             </Container>
         </section>
     )

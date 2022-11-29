@@ -6,7 +6,6 @@ import {useState} from "react";
 import Card from "./card";
 
 const Filter = ({data}: any) => {
-
     const [resFilter, setResFilter] = useState({resFilter: null, loading: false})
 
     const formik = useFormik({
@@ -27,8 +26,8 @@ const Filter = ({data}: any) => {
             <h2 className={styles.title}>Подобрать смену</h2>
             <Container>
                 <div className={styles.filterBox}>
-
-                    <form className={styles.programsFilter} onSubmit={formik.handleSubmit}>
+                    <form className={styles.programsFilter}
+                          onSubmit={formik.handleSubmit}>
                         <div className={styles.programsFilterLeft}>
                             <div className={styles.programsFilterItem}>
                                 <label className={styles.programsFilterTitle}>
@@ -63,20 +62,22 @@ const Filter = ({data}: any) => {
                         </div>
                         <div className={styles.programsFilterRight}>
                             <div className={styles.certificate}>
-                                <div className={styles.certificateTitle}>Наличие сертификата</div>
+                                <div className={styles.certificateTitle}>
+                                    Наличие сертификата
+                                </div>
                                 <ul className={styles.certificateCheckboxes}>
-                                    <li className={styles.radioLabel} onClick={() => {
-                                        formik.setFieldValue('certificate', 1)
-                                    }}> {formik.values.certificate === 1
-                                        ? <div className={styles.radioTrue}/>
-                                        : <div className={styles.radioFalse}/>}
+                                    <li className={styles.radioLabel}
+                                        onClick={() => formik.setFieldValue('certificate', 1)}>
+                                        {formik.values.certificate === 1
+                                            ? <div className={styles.radioTrue}/>
+                                            : <div className={styles.radioFalse}/>}
                                         С сертификатом
                                     </li>
-                                    <li className={styles.radioLabel} onClick={() => {
-                                        formik.setFieldValue('certificate', 2)
-                                    }}>{formik.values.certificate === 2
-                                        ? <div className={styles.radioTrue}/>
-                                        : <div className={styles.radioFalse}/>}
+                                    <li className={styles.radioLabel}
+                                        onClick={() => formik.setFieldValue('certificate', 2)}>
+                                        {formik.values.certificate === 2
+                                            ? <div className={styles.radioTrue}/>
+                                            : <div className={styles.radioFalse}/>}
                                         Без сертификата
                                     </li>
                                 </ul>
@@ -89,7 +90,8 @@ const Filter = ({data}: any) => {
                                     formik.resetForm()
                                     setResFilter({resFilter: null, loading: false})
                                 }}
-                                        className={styles.btnGrey}>Сбросить фильтр
+                                        className={styles.btnGrey}>
+                                    Сбросить фильтр
                                 </button>
                             </div>
                         </div>

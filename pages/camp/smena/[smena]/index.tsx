@@ -46,7 +46,8 @@ const Smena: NextPage = ({data}: any) => {
         }
     }
 
-    return (<>
+    return (
+        <>
             <Head>
                 <title>
                     {data.title + '- Центр развития детей и выбора профессии АртЛичность'}

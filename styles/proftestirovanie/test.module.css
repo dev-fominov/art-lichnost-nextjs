@@ -10,7 +10,7 @@
 
 @media (max-width: 991px) {
     .test {
-      margin: 20px 0 0 0;
+        margin: 20px 0 0 0;
     }
 }
 
@@ -45,7 +45,7 @@
     display: inline-block;
 }
 
-.testLabelColor{
+.testLabelColor {
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
@@ -86,7 +86,7 @@
     margin-bottom: 22px;
 }
 
-.link{
+.link {
     font-weight: 600;
     font-size: 15px;
     line-height: 18px;
@@ -97,6 +97,6 @@
     background: url('../../components/common/img/red-arr.svg') no-repeat right center;
 }
 
-.link:hover{
+.link:hover {
     text-decoration: underline;
 }

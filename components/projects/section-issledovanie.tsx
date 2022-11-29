@@ -3,7 +3,8 @@ import {Section} from "../common/section";
 import styles from '../../styles/project/section-issledovanie.module.css'
 
 export const SectionIssledovanie = ({data}: any) => {
-    return (<Section>
+    return (
+        <Section>
             <div className={styles.boxList}>
                 <div className={styles.list}>
                     <div className={styles.titleRed}>{data.studies.title_hh}</div>
@@ -121,7 +122,8 @@ export const SectionIssledovanie = ({data}: any) => {
             </div>
             <div className={styles.boxList}>
                 <div className={styles.titleBlack}>{data.popular_skills.title}</div>
-                <div className={styles.description} dangerouslySetInnerHTML={{__html: data.popular_skills.description}}/>
+                <div className={styles.description}
+                     dangerouslySetInnerHTML={{__html: data.popular_skills.description}}/>
             </div>
             <div className={styles.boxList}>
                 <div className={styles.titleBlack}>{data.where_to_work.title}</div>
@@ -186,12 +188,16 @@ export const SectionIssledovanie = ({data}: any) => {
                 <div className={styles.contentBox}>
                     <div className={styles.leftBox}>
                         <div className={styles.titleBlack}>{data.teenager_at_work.title}</div>
-                        <div className={styles.description} dangerouslySetInnerHTML={{__html: data.teenager_at_work.description}}/>
+                        <div className={styles.description}
+                             dangerouslySetInnerHTML={{__html: data.teenager_at_work.description}}/>
                     </div>
                     <div className={styles.rightBoxImg}>
-                        <img className={styles.img1} src={data.teenager_at_work.img1.url} alt={data.teenager_at_work.img1.alt}/>
-                        <img className={styles.img2}  src={data.teenager_at_work.img2.url} alt={data.teenager_at_work.img2.alt}/>
-                        <img className={styles.img3}  src={data.teenager_at_work.img3.url} alt={data.teenager_at_work.img3.alt}/>
+                        <img className={styles.img1} src={data.teenager_at_work.img1.url}
+                             alt={data.teenager_at_work.img1.alt}/>
+                        <img className={styles.img2} src={data.teenager_at_work.img2.url}
+                             alt={data.teenager_at_work.img2.alt}/>
+                        <img className={styles.img3} src={data.teenager_at_work.img3.url}
+                             alt={data.teenager_at_work.img3.alt}/>
                     </div>
                 </div>
             </div>

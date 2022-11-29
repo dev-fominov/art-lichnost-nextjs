@@ -4,7 +4,8 @@ import {ItemMerch} from "./item-merch";
 
 export const SectionMerch = ({data}: any) => {
 
-    return (<Section>
+    return (
+        <Section>
             <div className={styles.merchPage}>
                 <h3 className={styles.titleMerch}>{data.description.title_merch}</h3>
                 <ul className={styles.merchDescription}>
@@ -12,7 +13,7 @@ export const SectionMerch = ({data}: any) => {
                 </ul>
             </div>
             <div className={styles.pageCard}>
-                  {data.merch.map((item: any, index: any) => <ItemMerch key={index} data={item}/>)}
+                {data.merch.map((item: any, index: any) => <ItemMerch key={index} data={item}/>)}
             </div>
         </Section>
     )

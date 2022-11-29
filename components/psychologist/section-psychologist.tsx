@@ -4,15 +4,15 @@ import styles from '../../styles/psychologist/section-psychologist.module.css'
 import {Forms} from "../common/forms";
 import "react-responsive-modal/styles.css";
 import {Modal} from "react-responsive-modal/dist";
+import Image from 'next/image'
 
 export const SectionPsychologist = ({data}: any) => {
     const [showModal, updateShowModal] = useState(false);
     const [hiddenText, setHiddenText] = useState('');
-    const showModalHandler = () => {
-        updateShowModal(!showModal);
-    }
+    const showModalHandler = () => updateShowModal(!showModal);
 
-    return (<Section>
+    return (
+        <Section>
             <div className={styles.questionBlock}>
                 <div className={styles.questionTitle}>
                     {data.title_first}
@@ -79,8 +79,10 @@ export const SectionPsychologist = ({data}: any) => {
                     <div className={styles.itemPsychologist}>
                         <div className={styles.itemPsychologistTop}>
                             <div className={styles.itemPsychologistTopImage}>
-                                <img src={data.psihologi_art_lichnosti[0].image.url}
-                                     alt={data.psihologi_art_lichnosti[0].image.alt}/>
+                                <Image layout="fill"
+                                       quality={30}
+                                       src={data.psihologi_art_lichnosti[0].image.url}
+                                       alt={data.psihologi_art_lichnosti[0].image.alt}/>
                             </div>
                             <div className={styles.itemPsychologistTopRightInfo}>
                                 <div
@@ -96,8 +98,10 @@ export const SectionPsychologist = ({data}: any) => {
                     <div className={styles.itemPsychologist}>
                         <div className={styles.itemPsychologistTop}>
                             <div className={styles.itemPsychologistTopImage}>
-                                <img src={data.psihologi_art_lichnosti[1].image.url}
-                                     alt={data.psihologi_art_lichnosti[1].image.alt}/>
+                                <Image layout="fill"
+                                       quality={30}
+                                       src={data.psihologi_art_lichnosti[1].image.url}
+                                       alt={data.psihologi_art_lichnosti[1].image.alt}/>
                             </div>
                             <div className={styles.itemPsychologistTopRightInfo}>
                                 <div

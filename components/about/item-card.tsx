@@ -1,7 +1,8 @@
 import styles from "../../styles/about/item-card.module.css";
 
 const ItemCard = ({data, index}: any) => {
-    return (<div className={styles.card}>
+    return (
+        <div className={styles.card}>
             <div className={styles.itemTitleCard}>
                 <span className={styles.count}>{index}</span>
                 <span className={styles.titleCard}> {data.title}</span>

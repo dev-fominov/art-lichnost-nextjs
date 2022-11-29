@@ -1,11 +1,11 @@
-.titleInner{
+.titleInner {
     position: relative;
     font-weight: 600;
     font-size: 22px;
     margin-bottom: 35px;
 }
 
-.contactFields{
+.contactFields {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     margin-bottom: 45px;
@@ -20,7 +20,7 @@
     flex-wrap: wrap;
 }
 
-.itemField{
+.itemField {
     padding: 10px 22px;
     border: 1px solid #eb3535;
     -webkit-box-sizing: border-box;
@@ -30,7 +30,7 @@
     margin-top: 10px;
 }
 
-.mapBox{
+.mapBox {
     margin-top: 30px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -52,19 +52,20 @@
     }
 }
 
-.itemMapBg{
+.itemMapBg {
     width: 100%;
     height: auto;
     max-width: 506px;
     border-radius: 40px;
     overflow: hidden;
 }
-.itemMapBg img{
+
+.itemMapBg img {
     height: auto;
     max-width: 506px;
 }
 
-.itemMap{
+.itemMap {
     border-radius: 40px;
     overflow: hidden;
 }

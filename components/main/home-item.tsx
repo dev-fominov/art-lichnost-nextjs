@@ -2,14 +2,14 @@ import styles from "../../styles/main/home-item.module.css";
 import {A} from "../common/A";
 
 export const HomeItem = ({item, id}: any) => {
-    return (<div className={styles.boxHomeItem}>
+    return (
+        <div className={styles.boxHomeItem}>
             <div className={styles.boxHomeItemLeft}>
-                <A href={'/camp'} text={<div
-                    className={styles.boxHomeItemLeftImg}
-                    style={{
-                        background: `url(${item.image_section.url}) no-repeat center center`,
-                        backgroundSize: `cover`
-                    }}/>}/>
+                <A href={'/camp'} text={<div className={styles.boxHomeItemLeftImg}
+                                             style={{
+                                                 background: `url(${item.image_section.url}) no-repeat center center`,
+                                                 backgroundSize: `cover`
+                                             }}/>}/>
                 <div className={styles.boxHomeItemLink}>
                     {id === 0 ? <span>Программа</span> : null}
                     <h3>

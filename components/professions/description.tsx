@@ -4,7 +4,9 @@ import React from "react";
 
 export const Description = ({img, text, video}: any) => {
     const [openVideo, setOpenVideo] = React.useState(false)
-    return (<div className={styles.descriptionBox}>
+
+    return (
+        <div className={styles.descriptionBox}>
             <div className={styles.whatText}>
                 <div className={styles.descriptionText} dangerouslySetInnerHTML={{__html: text}}/>
             </div>
@@ -17,7 +19,9 @@ export const Description = ({img, text, video}: any) => {
                     : <div className={styles.descriptionImg} style={{
                         background: `url(${img.url}) no-repeat center center`,
                         backgroundSize: `cover`
-                    }}><BsFillPlayCircleFill className={styles.play}/></div>}
+                    }}>
+                        <BsFillPlayCircleFill className={styles.play}/>
+                    </div>}
             </div>
         </div>
     )

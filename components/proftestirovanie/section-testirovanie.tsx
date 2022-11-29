@@ -8,13 +8,12 @@ import "react-responsive-modal/styles.css";
 
 
 const SectionTestirovanie = ({data}: any) => {
-    const [showModal, updateShowModal] = useState(false);
-    const [hiddenText, setHiddenText] = useState('');
+    const [showModal, updateShowModal] = useState(false)
+    const [hiddenText, setHiddenText] = useState('')
     let color = data.id_page === 54 ? {color: '#FF822E'} : {}
 
-    const showModalHandler = () => {
-        updateShowModal(!showModal);
-    }
+    const showModalHandler = () => updateShowModal(!showModal)
+
     return (<Section>
             <div className={styles.medicalBlock}>
                 <h3 className={styles.titleInner}>{data.need_test[0].title}</h3>
@@ -23,8 +22,7 @@ const SectionTestirovanie = ({data}: any) => {
                 </ul>
             </div>
             <div className={styles.testBlock}>
-                {data.type_of_test.map((item: any, index: any) => <div key={index}
-                                                                       className={styles.orderTest}>
+                {data.type_of_test.map((item: any, index: any) => <div key={index} className={styles.orderTest}>
                     <span style={color}>Тесты</span>
                     <h4 style={color}>{item.for_whom}</h4>
                     <p>{item.title}</p>
@@ -33,14 +31,21 @@ const SectionTestirovanie = ({data}: any) => {
                     </ul>
                     <div className={styles.btnPriceBox}>
                         <div className={styles.btnOrder}>
-                            <button className={styles.btnRed} onClick={() => {
-                                setHiddenText(item.for_whom)
-                                showModalHandler()
-                            }}>Записаться</button>
+                            <button className={styles.btnRed}
+                                    onClick={() => {
+                                        setHiddenText(item.for_whom)
+                                        showModalHandler()
+                                    }}>
+                                Записаться
+                            </button>
                         </div>
                         <div className={styles.priceTime}>
-                            <div className={styles.price}>{item.price}</div>
-                            <div className={styles.price}>{item.time}</div>
+                            <div className={styles.price}>
+                                {item.price}
+                            </div>
+                            <div className={styles.price}>
+                                {item.time}
+                            </div>
                         </div>
                     </div>
                 </div>)}
@@ -53,7 +58,9 @@ const SectionTestirovanie = ({data}: any) => {
                         <img src={item.img.url} alt={item.img.alt}/>
                     </div>
                     <div className={styles.stepDesc}>
-                        <div className={styles.stepTitle}>{item.title}</div>
+                        <div className={styles.stepTitle}>
+                            {item.title}
+                        </div>
                         <div className={data.id_page === 54 ? styles.stepTextColor : styles.stepText}>
                             <p>{item.description}</p>
                         </div>
@@ -64,8 +71,12 @@ const SectionTestirovanie = ({data}: any) => {
               <h3 className={styles.titleInner}>{data.what_need.title}</h3>
               <div className={styles.boxWhatNeed}>
                 <div className={styles.needItem}>
-                  <div className={styles.needInfo}>{data.what_need.description}</div>
-                  <div className={styles.needInfoSmall}>{data.what_need.description_2}</div>
+                  <div className={styles.needInfo}>
+                      {data.what_need.description}
+                  </div>
+                  <div className={styles.needInfoSmall}>
+                      {data.what_need.description_2}
+                  </div>
                 </div>
                 <ul>
                     {data.what_need.need_list.map((el: any, index: number) => <li key={index}>{el}</li>)}
@@ -125,7 +136,7 @@ const SectionTestirovanie = ({data}: any) => {
                                  onClose={showModalHandler}
                                  closeOnEsc
                                  center>
-              <Forms confirm={data.link_to_oferta} hiddenText={`Заявка на ${data.id_page === 54 
+              <Forms confirm={data.link_to_oferta} hiddenText={`Заявка на ${data.id_page === 54
                   ? 'онлайн-тестирование'
                   : 'офлайн-тестирование'} для ${hiddenText}`}/>
             </Modal>}

@@ -6,7 +6,6 @@ import {ButtonGroup} from "../common/button-group";
 import {useEffect, useState} from "react";
 
 const SliderProfessions = ({data}: any) => {
-
     const [showButton, setShowButton] = useState(false)
 
     useEffect(() => {
@@ -33,7 +32,6 @@ const SliderProfessions = ({data}: any) => {
             }
         }
     },)
-
 
     const responsive = {
         desktopFull: {
@@ -69,6 +67,7 @@ const SliderProfessions = ({data}: any) => {
             partialVisibilityGutter: 30
         }
     }
+
     return (
             <div className={styles.containerBtn}>
                 <Carousel slidesToSlide={1}

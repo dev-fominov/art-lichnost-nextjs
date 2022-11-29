@@ -7,7 +7,8 @@ import {A} from "../common/A";
 
 export const SectionCourses = ({data}: any) => {
 
-    return (<Section>
+    return (
+        <Section>
             <div className={styles.boxContent}>
                 <h3 className={styles.titleInner}>Старт запуска группы</h3>
                 <div className={styles.boxCourse}>
@@ -20,16 +21,16 @@ export const SectionCourses = ({data}: any) => {
                           <ul className={styles.listSkills}>
                               {item.camp_card.map((item: any, index: any) => <li key={index}>
                                   {item.availability_seats
-                                      ? <span style={{background: '#30aa33'}} className={styles.onstock}>Есть места</span>
-                                      : <span style={{background: '#eb3535'}} className={styles.onstock}>Нет места</span>}
+                                      ?
+                                      <span style={{background: '#30aa33'}} className={styles.onstock}>Есть места</span>
+                                      :
+                                      <span style={{background: '#eb3535'}} className={styles.onstock}>Нет места</span>}
                                   <div className={styles.boxAlex}>
                                       <A href={`/courses/${item.post_slug}`} text={
                                           <div className={item.availability_seats
-                                          ? styles.titleGreen
-                                          : styles.titleRed}>
-                                              <span style={{textDecoration: 'underline'}}>
-                                                  {item.post_title}
-                                              </span>
+                                              ? styles.titleGreen
+                                              : styles.titleRed}>
+                                              <span style={{textDecoration: 'underline'}}>{item.post_title}</span>
                                               <span>{item.ages}</span>
                                           </div>
                                       }/>
@@ -54,8 +55,7 @@ export const SectionCourses = ({data}: any) => {
                     <div className={styles.formSteps}>
                         <h4>{data.step_form.steps_form_title}</h4>
                         <ul>
-                            {data.step_form.steps_form_items.map((el: any, index: number) => <li
-                                key={index}>{el}</li>)}
+                            {data.step_form.steps_form_items.map((el: any, index: number) => <li key={index}>{el}</li>)}
                         </ul>
                         <div style={{
                             background: `url(${data.step_form.img_steps_form.url}) no-repeat center center`,

@@ -9,11 +9,9 @@ import {MerchForm} from "./merch-form";
 
 export const ItemMerch = ({data}: any) => {
     const [showModal, updateShowModal] = useState(false);
-
-    const showModalHandler = () => {
-        updateShowModal(!showModal);
-    }
+    const showModalHandler = () => updateShowModal(!showModal)
     const noSize = data.size.every((item: any) => item.stock === 0)
+
     const responsive = {
         desktop: {
             breakpoint: {
@@ -40,7 +38,9 @@ export const ItemMerch = ({data}: any) => {
             partialVisibilityGutter: 30
         }
     }
-    return (<div className={styles.item}>
+
+    return (
+        <div className={styles.item}>
             {data.gallery.length > 1
                 ? <div className={styles.containerBtn}>
                     <Carousel slidesToSlide={1}
@@ -62,13 +62,18 @@ export const ItemMerch = ({data}: any) => {
                                                                           }}/>)}
                     </Carousel>
                 </div>
-                : <div className={styles.slide} style={{
-                    background: `url(${data.gallery[0].url}) no-repeat center center`,
-                    backgroundSize: `cover`
-                }}/>}
+                : <div className={styles.slide}
+                       style={{
+                           background: `url(${data.gallery[0].url}) no-repeat center center`,
+                           backgroundSize: `cover`
+                       }}/>}
             <div className={styles.itemContent}>
-                <div className={styles.contentTitle}>{data.title}</div>
-                <div className={styles.contentDescription}>{data.description}</div>
+                <div className={styles.contentTitle}>
+                    {data.title}
+                </div>
+                <div className={styles.contentDescription}>
+                    {data.description}
+                </div>
                 <div className={styles.boxAbsolute}>
                     <div className={styles.sizes}>
                         {data.size.map((item: any, index: any) => {
@@ -83,8 +88,12 @@ export const ItemMerch = ({data}: any) => {
                             ? <span className={styles.noSizeAvailableTitle}>Нет в наличии</span>
                             : <span className={styles.availableTitle}>Есть в наличии</span>}
                     </div>
-                    <div className={styles.priceMerch}>{data.price}</div>
-                    <button onClick={() => showModalHandler()} className={styles.btn}>Оставить заявку</button>
+                    <div className={styles.priceMerch}>
+                        {data.price}
+                    </div>
+                    <button onClick={() => showModalHandler()} className={styles.btn}>
+                        Оставить заявку
+                    </button>
                 </div>
             </div>
             {showModal && <Modal styles={{

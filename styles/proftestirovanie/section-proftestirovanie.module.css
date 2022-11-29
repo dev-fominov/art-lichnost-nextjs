@@ -147,10 +147,12 @@
     .consName {
         margin-bottom: 7px;
     }
-    .consultantBox{
+
+    .consultantBox {
         justify-content: start;
     }
-    .consText{
+
+    .consText {
         max-width: 100%;
     }
 }
@@ -159,10 +161,12 @@
     .consultantBox {
         padding: 20px;
     }
-    .status{
+
+    .status {
         margin-bottom: 20px;
     }
-    .consultantBox{
+
+    .consultantBox {
         justify-content: center;
     }
 }

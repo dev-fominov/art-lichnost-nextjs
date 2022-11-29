@@ -4,7 +4,7 @@
 }
 
 @media (max-width: 991px) {
-    .boxItemBlogs  {
+    .boxItemBlogs {
         display: flex;
         width: 100%;
         justify-content: center;
@@ -12,7 +12,7 @@
 }
 
 @media (max-width: 991px) {
-    .boxItemBlogsColumn  {
+    .boxItemBlogsColumn {
         width: 550px;
     }
 }
@@ -47,7 +47,7 @@
     border: 1px solid #c4c4c4;
     border-radius: 40px;
     width: 100%;
-   min-height: 233px;
+    min-height: 233px;
 }
 
 .title {
@@ -66,7 +66,7 @@
     color: #000;
 }
 
-.more{
+.more {
     font-weight: 600;
     font-size: 15px;
     line-height: 18px;
@@ -77,6 +77,6 @@
     background: url('../../components/common/img/red-arr.svg') no-repeat right center;
 }
 
-.more:hover{
-    text-decoration: underline ;
+.more:hover {
+    text-decoration: underline;
 }

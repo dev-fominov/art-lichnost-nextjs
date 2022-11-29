@@ -45,7 +45,7 @@
     height: 327px;
 }
 
-.right img{
+.right img {
     width: 340px;
     height: 327px;
     max-width: 100%;
@@ -54,7 +54,7 @@
     object-position: center;
     object-fit: cover;
 
- }
+}
 
 .comment {
     font-weight: 500;
@@ -79,7 +79,7 @@
     margin-bottom: 10px;
 }
 
-.leftBox{
+.leftBox {
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -107,16 +107,19 @@
 
 @media (max-width: 740px) {
     .itemProject {
-       flex-direction: column-reverse;
+        flex-direction: column-reverse;
     }
+
     .left {
         width: 100%;
     }
+
     .right {
         margin-bottom: 20px;
         width: 100%;
     }
-    .right img{
+
+    .right img {
         width: 100%;
     }
 

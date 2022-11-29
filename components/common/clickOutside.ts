@@ -9,8 +9,6 @@ export function clickOutside(ref: any, onClickOutside: any) {
             }
         }
         document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [ref, onClickOutside]);
+        return () => document.removeEventListener("mousedown", handleClickOutside)
+    }, [ref, onClickOutside])
 }

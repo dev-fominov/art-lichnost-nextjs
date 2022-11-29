@@ -179,8 +179,8 @@
 
 @media (max-width: 550px) {
 
-    .listSkills li  {
-      width: 100%;
+    .listSkills li {
+        width: 100%;
     }
 }
 
@@ -232,14 +232,14 @@
     transition: all 300ms ease;
 }
 
-.titleGreen:hover span{
+.titleGreen:hover span {
     color: #30aa33;
 }
 
-.titleRed:hover span{
+.titleRed:hover span {
     color: #eb3535;
 }
 
-.containerBtn{
+.containerBtn {
     position: relative;
 }

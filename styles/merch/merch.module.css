@@ -1,20 +1,20 @@
-.merchPage{
+.merchPage {
     margin-bottom: 60px;
 }
 
-.titleMerch{
+.titleMerch {
     position: relative;
     font-weight: 600;
     font-size: 22px;
     margin-bottom: 35px;
 }
 
-.contentTitle{
+.contentTitle {
     font-weight: 800;
     font-size: 20px;
 }
 
-.merchDescription{
+.merchDescription {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     display: -webkit-box;
@@ -23,7 +23,7 @@
     list-style: none;
 }
 
-.merchDescription li{
+.merchDescription li {
     background: url('../../components/common/img/red-arr.svg') no-repeat left top 4px;
     padding-left: 35px;
     padding-right: 30px;
@@ -37,7 +37,7 @@
     text-align: justify;
 }
 
-.pageCard{
+.pageCard {
     display: flex;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -54,11 +54,13 @@
         -ms-flex-direction: column;
         flex-direction: column;
     }
-    .merchDescription li{
+
+    .merchDescription li {
         width: 100%;
         padding-right: 0;
     }
-    .pageCard{
-       justify-content: space-evenly;
+
+    .pageCard {
+        justify-content: space-evenly;
     }
 }

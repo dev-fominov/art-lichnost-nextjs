@@ -7,6 +7,7 @@ import {ButtonGroup} from "../common/button-group";
 
 const CarouselCourses = ({data}: any) => {
     const [showButton, setShowButton] = useState(false)
+
     useEffect(() => {
         if (typeof window !== 'undefined') {
             let width = window.innerWidth
@@ -66,7 +67,9 @@ const CarouselCourses = ({data}: any) => {
             partialVisibilityGutter: 30
         }
     }
-    return (<div className={styles.box}>
+
+    return (
+        <div className={styles.box}>
             <h2 className={styles.titleProf}
                 style={{color: `${data.name.toUpperCase() === 'HARD SKILLS' ? '#FF822E' : '#30AA33'}`}}>
                 {data.name.toUpperCase()}

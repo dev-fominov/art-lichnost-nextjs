@@ -1,11 +1,11 @@
-import React, {useRef, useState} from 'react';
+import {useRef, useState} from 'react';
 import {GiHamburgerMenu} from 'react-icons/gi';
 import {AiOutlineClose} from 'react-icons/ai'
 import styles from '../../styles/main/burger-nav.module.css'
 import {A} from "../common/A";
 import Link from "next/link";
 import {BurgerNavModule} from "./burger-nav-module";
-import {clickOutside} from "../common/clickOutside";
+import {useOutsideClick} from "../../hooks/useOutsideClick";
 
 
 function BurgerNav() {
@@ -13,7 +13,7 @@ function BurgerNav() {
     const wrapperRef = useRef(null);
     let [menuIsOpen, setMenuIsOpen] = useState(false)
     const burgerBtnClick = () => setMenuIsOpen(!menuIsOpen)
-    clickOutside(wrapperRef, () => setMenuIsOpen(false))
+    useOutsideClick(wrapperRef, () => setMenuIsOpen(false))
 
     return (
         <div className={styles.burgerNav}>

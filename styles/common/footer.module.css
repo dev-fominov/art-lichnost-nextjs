@@ -68,11 +68,14 @@
 }
 
 .footMenu::marker {
+    unicode-bidi: -webkit-isolate;
+    unicode-bidi: -moz-isolate;
     unicode-bidi: isolate;
     font-variant-numeric: tabular-nums;
     text-transform: none;
     text-indent: 0 !important;
     text-align: start !important;
+    -moz-text-align-last: start !important;
     text-align-last: start !important;
 }
 
@@ -89,6 +92,9 @@
 
 @media (max-width: 991px) {
     .footMenu ul {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         margin: 10px 0 20px 0;
     }
@@ -168,6 +174,8 @@
     .footContact {
         margin-left: 0;
         margin-right: auto;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
         align-items: start;
     }
 }
@@ -177,6 +185,8 @@
         position: absolute;
         top: 0;
         right: 0;
+        -webkit-box-align: end;
+        -ms-flex-align: end;
         align-items: end;
     }
 }
@@ -239,4 +249,3 @@
         display: none;
     }
 }
-

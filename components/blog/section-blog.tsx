@@ -1,4 +1,3 @@
-import React from "react";
 import {Section} from "../common/section";
 import styles from '../../styles/blog/section-blog.module.css'
 import {ItemBlog} from "./item-blog";

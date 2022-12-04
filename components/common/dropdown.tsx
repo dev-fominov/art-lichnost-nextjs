@@ -16,8 +16,8 @@ export const Dropdown = ({title, path, itemMenu}: any) => {
             {itemMenu && click && <ul className={click ? styles.dropdownMenuClicked : styles.dropdownMenu}>
                 {itemMenu.map((item: any, index: number) => <li className={styles.itemlink}
                                                                 key={index}>
-                        <A href={item.path} text={item.text}/>
-                    </li>
+                                  <A href={item.path} text={item.text}/>
+                              </li>
                 )}
             </ul>}
         </div>)

@@ -5,8 +5,12 @@
 
 @media (max-width: 991px) {
     .boxItemBlogs {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         width: 100%;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
     }
 }

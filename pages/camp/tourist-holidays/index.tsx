@@ -1,16 +1,12 @@
 import {Footer} from "../../../components/common/footer";
 import {HeaderVideo} from "../../../components/common/header-video";
 import {SectionProfessions} from "../../../components/professions/section-professions";
-import Head from "next/head";
+import Meta from "../../../services/Meta";
 
 const TouristHolidays = ({data}: any) => {
     return (
         <>
-            <Head>
-                <title>
-                  Туристические каникулы - Центр развития детей и выбора профессии АртЛичность
-                </title>
-            </Head>
+            <Meta meta={{}}/>
             <HeaderVideo banner={data.background_img.url}
                          content={data.content}
                          video={data.background_video}/>
@@ -22,7 +18,7 @@ const TouristHolidays = ({data}: any) => {
 
 export default TouristHolidays
 
-export async function getStaticProps () {
+export async function getStaticProps() {
     const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/tourist-holidays`)
     const data = await res.json();
 

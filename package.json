@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@ramonak/react-progress-bar": "^5.0.2",
-    "@types/react-icons": "^3.0.0",
     "formik": "^2.2.9",
     "next": "12.2.5",
     "react": "18.2.0",
@@ -23,6 +22,7 @@
     "react-yandex-maps": "^4.6.0"
   },
   "devDependencies": {
+    "@types/react-icons": "^3.0.0",
     "@types/node": "18.7.3",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",

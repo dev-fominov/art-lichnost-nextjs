@@ -4,17 +4,12 @@ import {HeaderVideo} from "../../components/common/header-video";
 import {Section} from "../../components/common/section";
 import styles from '../../styles/projects/projects.module.css'
 import {A} from "../../components/common/A";
-import React from "react";
-import Head from "next/head";
+import Meta from "../../services/Meta";
 
 const Projects: NextPage = ({data}: any) => {
     return (
         <>
-            <Head>
-                <title>
-                    Проекты - Центр развития детей и выбора профессии АртЛичность
-                </title>
-            </Head>
+            <Meta meta={{}}/>
             <HeaderVideo banner={data.banner.url}
                          content={data.content}
                          video={data.id_video}/>

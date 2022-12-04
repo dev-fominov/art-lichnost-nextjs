@@ -1,4 +1,3 @@
-import React from "react";
 import {Section} from "../common/section";
 import styles from "../../styles/vacancies/section-vacancies.module.css";
 import {A} from "../common/A";

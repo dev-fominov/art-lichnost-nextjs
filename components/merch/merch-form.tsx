@@ -1,13 +1,13 @@
 import {Field, Form, Formik} from "formik";
 import styles from "../../styles/common/forms.module.css";
-import React from "react";
 import {Modal} from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 // @ts-ignore
 import MaskedInput from "react-text-mask";
+import {useState} from "react";
 
 export const MerchForm = ({hiddenText}: any) => {
-    const [showModal, setShowModal] = React.useState(false)
+    const [showModal, setShowModal] = useState(false)
     const showModalHandler = () => setShowModal(false)
 
     const phoneNumberMask = [

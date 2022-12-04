@@ -5,9 +5,8 @@ import {Header} from "../../../components/common/header";
 import styles from "../../../styles/proftestirovanie/testirovanie.module.css";
 import {Container} from "../../../components/common/container";
 import SectionTestirovanie from "../../../components/proftestirovanie/section-testirovanie";
-import Head from "next/head";
-import React from "react";
 import {NextPage} from "next";
+import Meta from "../../../services/Meta";
 
 const OnlineTest: NextPage = ({data}: any) => {
 
@@ -15,11 +14,8 @@ const OnlineTest: NextPage = ({data}: any) => {
     const VIDEO_HEIGHT = 1080;
 
     return (
-        <> <Head>
-            <title>
-                Онлайн-тест 7-11 класс - Центр развития детей и выбора профессии АртЛичность
-            </title>
-        </Head>
+        <>
+            <Meta meta={{}}/>
             {data.id_video
                 ? <div className="video-background">
                     <iframe

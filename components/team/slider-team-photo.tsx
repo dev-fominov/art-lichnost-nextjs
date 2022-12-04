@@ -3,34 +3,34 @@ import styles from '../../styles/team/slider-team-photo.module.css'
 import "react-multi-carousel/lib/styles.css";
 import {ButtonGroup} from "../common/button-group";
 
-const SliderTeamPhoto = ({data}: any) => {
-
-    const responsive = {
-        desktop: {
-            breakpoint: {
-                max: 3000,
-                min: 1024
-            },
-            items: 1,
-            partialVisibilityGutter: 40
+const responsive = {
+    desktop: {
+        breakpoint: {
+            max: 3000,
+            min: 1024
         },
-        mobile: {
-            breakpoint: {
-                max: 709,
-                min: 0
-            },
-            items: 1,
-            partialVisibilityGutter: 30,
+        items: 1,
+        partialVisibilityGutter: 40
+    },
+    mobile: {
+        breakpoint: {
+            max: 709,
+            min: 0
         },
-        tablet: {
-            breakpoint: {
-                max: 1024,
-                min: 709
-            },
-            items: 1,
-            partialVisibilityGutter: 30
-        }
+        items: 1,
+        partialVisibilityGutter: 30,
+    },
+    tablet: {
+        breakpoint: {
+            max: 1024,
+            min: 709
+        },
+        items: 1,
+        partialVisibilityGutter: 30
     }
+}
+
+const SliderTeamPhoto = ({data}: any) => {
     return (data.lenght > 1
             ? <div className={styles.containerBtn}>
                 <Carousel slidesToSlide={1}

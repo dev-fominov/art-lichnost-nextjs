@@ -6,53 +6,49 @@ import styles from "../../../../styles/camp/smena.module.css";
 import Carousel from "react-multi-carousel";
 import React from "react";
 import "react-multi-carousel/lib/styles.css";
-import Head from "next/head";
 import {ButtonGroup} from "../../../../components/common/button-group";
+import Meta from "../../../../services/Meta";
+
+const responsive = {
+    desktopFull: {
+        breakpoint: {
+            max: 3000,
+            min: 1200
+        },
+        items: 4,
+        partialVisibilityGutter: 40
+    },
+    desktop: {
+        breakpoint: {
+            max: 1200,
+            min: 1024
+        },
+        items: 3,
+        partialVisibilityGutter: 40
+    },
+    mobile: {
+        breakpoint: {
+            max: 700,
+            min: 0
+        },
+        items: 1,
+        partialVisibilityGutter: 20,
+        centerMode: false
+    },
+    tablet: {
+        breakpoint: {
+            max: 1024,
+            min: 700
+        },
+        items: 3,
+        partialVisibilityGutter: 30
+    }
+}
 
 const Smena: NextPage = ({data}: any) => {
-    const responsive = {
-        desktopFull: {
-            breakpoint: {
-                max: 3000,
-                min: 1200
-            },
-            items: 4,
-            partialVisibilityGutter: 40
-        },
-        desktop: {
-            breakpoint: {
-                max: 1200,
-                min: 1024
-            },
-            items: 3,
-            partialVisibilityGutter: 40
-        },
-        mobile: {
-            breakpoint: {
-                max: 700,
-                min: 0
-            },
-            items: 1,
-            partialVisibilityGutter: 20,
-            centerMode: false
-        },
-        tablet: {
-            breakpoint: {
-                max: 1024,
-                min: 700
-            },
-            items: 3,
-            partialVisibilityGutter: 30
-        }
-    }
-
     return (
         <>
-            <Head>
-                <title>
-                    {data.title + '- Центр развития детей и выбора профессии АртЛичность'}
-                </title>
-            </Head>
+            <Meta meta={{}}/>
             <HeaderGreen title={data.title}/>
             <Section>
                 <div className={styles.containerBtn}

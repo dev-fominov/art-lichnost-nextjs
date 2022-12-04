@@ -3,18 +3,13 @@ import {Section} from "../../../../components/common/section";
 import {Footer} from "../../../../components/common/footer";
 import Docs from "../../../../components/camp/docs";
 import styles from "../../../../styles/camp/docs.module.css";
-import Head from "next/head";
-import React from "react";
+import Meta from "../../../../services/Meta";
 
 const DocsPage = ({data}: any) => {
 
     return (
         <>
-            <Head>
-                <title>
-                    {data.title + '- Центр развития детей и выбора профессии АртЛичность'}
-                </title>
-            </Head>
+            <Meta meta={{}}/>
             <HeaderGreen title={data.title}/>
             <Section>
                 <div className={styles.docs}>

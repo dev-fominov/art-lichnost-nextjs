@@ -2,16 +2,12 @@ import type {NextPage} from 'next'
 import {Footer} from "../components/common/footer";
 import {SectionContacts} from "../components/contacts/section-contacts";
 import {HeaderGreen} from "../components/common/header-green";
-import Head from "next/head";
+import Meta from "../services/Meta";
 
 const Contacts: NextPage = ({data}: any) => {
     return (
         <>
-            <Head>
-                <title>
-                    Контакты - Центр развития детей и выбора профессии АртЛичность
-                </title>
-            </Head>
+            <Meta meta={{}}/>
             <HeaderGreen title={'Контакты'}/>
             <SectionContacts data={data}/>
             <Footer/>

@@ -2,19 +2,14 @@ import {HeaderGreen} from "../../../components/common/header-green";
 import {Section} from "../../../components/common/section";
 import styles from '../../../styles/vacancies/job.module.css';
 import {Footer} from "../../../components/common/footer";
-import React from "react";
 import {A} from "../../../components/common/A";
 import SliderJobPhoto from "../../../components/vacancies/slider-job-photo";
-import Head from "next/head";
+import Meta from "../../../services/Meta";
 
 const Job = ({data}: any) => {
     return (
         <>
-            <Head>
-                <title>
-                    {data.title + '- Центр развития детей и выбора профессии АртЛичность'}
-                </title>
-            </Head>
+            <Meta meta={{}}/>
             <HeaderGreen title={data.title}/>
             <Section>
                 <div className={styles.boxContent}>

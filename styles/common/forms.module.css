@@ -61,6 +61,8 @@
 }
 
 .formDisclaimer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 8px 0 40px 22px;
     line-height: 8px;
@@ -130,7 +132,11 @@
     color: #000000;
     padding: 30px;
     text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     font-weight: 600;
     font-size: 22px;

@@ -1,11 +1,11 @@
 import styles from '../../styles/camp/slide-image.module.css'
-import React from "react";
 import {Modal} from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
+import {useState} from "react";
 
 export const SlideImage = ({data}: any) => {
-    const [openImage, setOpenImage] = React.useState(false)
-    const [openImage2, setOpenImage2] = React.useState(false)
+    const [openImage, setOpenImage] = useState(false);
+    const [openImage2, setOpenImage2] = useState(false)
 
     const showModalHandler = () => setOpenImage(!openImage)
     const showModalHandler2 = () => setOpenImage2(!openImage2)

@@ -3,33 +3,34 @@ import "react-multi-carousel/lib/styles.css";
 import styles from '../../styles/contacts/slider-contact.module.css'
 import {ButtonGroup} from "../common/button-group";
 
-export const SliderContacts = ({arrImg}: any) => {
-    const responsive = {
-        desktop: {
-            breakpoint: {
-                max: 3000,
-                min: 1024
-            },
-            items: 1,
-            partialVisibilityGutter: 40
+const responsive = {
+    desktop: {
+        breakpoint: {
+            max: 3000,
+            min: 1024
         },
-        mobile: {
-            breakpoint: {
-                max: 464,
-                min: 0
-            },
-            items: 1,
-            partialVisibilityGutter: 20
+        items: 1,
+        partialVisibilityGutter: 40
+    },
+    mobile: {
+        breakpoint: {
+            max: 464,
+            min: 0
         },
-        tablet: {
-            breakpoint: {
-                max: 1024,
-                min: 464
-            },
-            items: 1,
-            partialVisibilityGutter: 30
-        }
+        items: 1,
+        partialVisibilityGutter: 20
+    },
+    tablet: {
+        breakpoint: {
+            max: 1024,
+            min: 464
+        },
+        items: 1,
+        partialVisibilityGutter: 30
     }
+}
+
+export const SliderContacts = ({arrImg}: any) => {
     return (
         <div className={styles.containerBtn}>
             <Carousel slidesToSlide={1}

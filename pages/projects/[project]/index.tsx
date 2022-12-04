@@ -1,7 +1,6 @@
 import type {NextPage} from 'next'
 import {Footer} from "../../../components/common/footer";
 import {HeaderVideo} from "../../../components/common/header-video";
-import React from "react";
 import {HeaderGreen} from "../../../components/common/header-green";
 import {SectionIssledovanie} from "../../../components/projects/section-issledovanie";
 import {SectionProforientatsionnyj} from "../../../components/projects/section-proforientatsionnyj";

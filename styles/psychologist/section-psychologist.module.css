@@ -27,8 +27,15 @@
 
 @media (max-width: 1000px) {
     .answerBlock {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
     }
 }
@@ -140,24 +147,38 @@
 }
 
 .btnPriceBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
 @media (max-width: 520px) {
     .btnPriceBox {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
         flex-direction: column-reverse;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
     }
 }
 
 .btnOrder {
+    -ms-flex-item-align: end;
+    -ms-grid-row-align: end;
     align-self: end;
 }
 
 @media (max-width: 520px) {
     .btnOrder {
+        -ms-flex-item-align: auto;
         align-self: auto;
         margin-top: 15px;
     }
@@ -171,6 +192,7 @@
     text-align: center;
     font-size: 15px;
     -webkit-transition: all .25s ease;
+    -o-transition: all .25s ease;
     transition: all .25s ease;
     line-height: 45px;
     color: #fff;
@@ -236,7 +258,12 @@
 
 @media (max-width: 800px) {
     .contentBlock {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         -webkit-box-align: center;
         -ms-flex-align: center;
@@ -355,11 +382,14 @@
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    -ms-flex-line-pack: center;
     align-content: center;
 }
 
 @media (max-width: 1000px) {
     .formOrderBox {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -409,7 +439,6 @@
     width: auto;
     z-index: 1000;
 }
-
 
 
 

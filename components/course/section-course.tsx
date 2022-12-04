@@ -1,7 +1,6 @@
 import {Section} from "../common/section";
 import styles from '../../styles/course/section-course.module.css'
 import {Forms} from "../common/forms";
-import React from "react";
 
 export const SectionCourse = ({data}: any) => {
 

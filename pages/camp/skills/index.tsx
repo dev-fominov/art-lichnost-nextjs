@@ -1,16 +1,12 @@
 import {Footer} from "../../../components/common/footer";
 import {HeaderVideo} from "../../../components/common/header-video";
 import {SectionProfessions} from "../../../components/professions/section-professions";
-import Head from "next/head";
+import Meta from "../../../services/Meta";
 
 const Skills = ({data}: any) => {
     return (
         <>
-            <Head>
-                <title>
-                   Лагерь навыков - Центр развития детей и выбора профессии АртЛичность
-                </title>
-            </Head>
+            <Meta meta={{}}/>
             <HeaderVideo banner={data.background_img.url}
                          content={data.content}
                          video={data.background_video}/>
@@ -22,7 +18,7 @@ const Skills = ({data}: any) => {
 
 export default Skills
 
-export async function getStaticProps () {
+export async function getStaticProps() {
     const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/skills`)
     const data = await res.json();
 

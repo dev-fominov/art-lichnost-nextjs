@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../../styles/common/footer.module.css";
 import {A} from "./A";
 import {Container} from "./container";
@@ -20,13 +19,13 @@ export const Footer = () => {
                                         alt={'logo'}/>}/>
                         <div className={styles.footLogolinks}>
                             <A href={{
-                                pathname: '/documents/[slag]',
-                                query: {slag: 'privacy-policy',},
+                                pathname: '/documents/[slug]',
+                                query: {slug: 'privacy-policy',},
                             }}
                                text={'Политика конфиденциальности'}/>
                             <A href={{
-                                pathname: '/documents/[slag]',
-                                query: {slag: 'user-agreement',},
+                                pathname: '/documents/[slug]',
+                                query: {slug: 'user-agreement',},
                             }}
                                text={'Пользовательское соглашение'}/>
                         </div>

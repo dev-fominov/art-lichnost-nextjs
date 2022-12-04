@@ -3,16 +3,12 @@ import styles from '../../styles/common/button-group.module.css'
 
 export const ButtonGroup = ({next, previous, goToSlide, ...rest}: any) => {
     const CustomRightArrow = ({onClick, ...rest}: any) => {
-        const {
-            onMove,
-        } = rest;
+        const {onMove} = rest;
         return <button className={styles.customRightArrow} onClick={() => onClick()}/>;
     };
 
     const CustomLeftArrow = ({onClick, ...rest}: any) => {
-        const {
-            onMove,
-        } = rest;
+        const {onMove} = rest;
         return <button className={styles.customLeftArrow} onClick={() => onClick()}/>;
     };
     const {carouselState: {currentSlide}} = rest;

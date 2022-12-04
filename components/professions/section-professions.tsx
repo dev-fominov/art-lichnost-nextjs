@@ -16,6 +16,42 @@ import logo from "../common/img/logo.png";
 import {Modal} from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 
+const responsive = {
+    desktopFull: {
+        breakpoint: {
+            max: 3000,
+            min: 1200
+        },
+        items: 4,
+        partialVisibilityGutter: 40
+    },
+    desktop: {
+        breakpoint: {
+            max: 1200,
+            min: 1024
+        },
+        items: 3,
+        partialVisibilityGutter: 40
+    },
+    mobile: {
+        breakpoint: {
+            max: 709,
+            min: 0
+        },
+        items: 1,
+        partialVisibilityGutter: 30,
+    },
+    tablet: {
+        breakpoint: {
+            max: 1024,
+            min: 709
+        },
+        items: 2,
+        partialVisibilityGutter: 30
+    }
+}
+
+
 export const SectionProfessions = ({data}: any) => {
     const router = useRouter()
     const {slug} = router.query
@@ -25,42 +61,6 @@ export const SectionProfessions = ({data}: any) => {
     const [showModal, updateShowModal] = useState('');
     const [showInnerModal, updateInnerShowModal] = useState(false);
     const [hiddenText, setHiddenText] = useState('');
-
-    const responsive = {
-        desktopFull: {
-            breakpoint: {
-                max: 3000,
-                min: 1200
-            },
-            items: 4,
-            partialVisibilityGutter: 40
-        },
-        desktop: {
-            breakpoint: {
-                max: 1200,
-                min: 1024
-            },
-            items: 3,
-            partialVisibilityGutter: 40
-        },
-        mobile: {
-            breakpoint: {
-                max: 709,
-                min: 0
-            },
-            items: 1,
-            partialVisibilityGutter: 30,
-        },
-        tablet: {
-            breakpoint: {
-                max: 1024,
-                min: 709
-            },
-            items: 2,
-            partialVisibilityGutter: 30
-        }
-    }
-
     const [showButton, setShowButton] = useState(false)
 
     useEffect(() => {
@@ -86,7 +86,7 @@ export const SectionProfessions = ({data}: any) => {
                 }
             }
         }
-    },)
+    },[data.length])
 
     useEffect(() => {
         data.shift_selection[0].slug && getSmena(data.shift_selection[0].slug)

@@ -300,7 +300,11 @@
 }
 
 .rightBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: end;
     width: 50%;
 }
@@ -357,6 +361,7 @@
     top: 180px;
     left: 50%;
     -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     height: auto;
     max-width: 100%;
@@ -372,6 +377,7 @@
     }
 
     .image {
+        -ms-flex-negative: 0;
         flex-shrink: 0;
         display: block;
         max-width: 100%;
@@ -433,6 +439,7 @@
     }
 
     .contentList {
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     }
 

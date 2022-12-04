@@ -3,23 +3,19 @@ import {Section} from "../../../components/common/section";
 import styles from '../../../styles/documents/documents.module.css'
 import {Footer} from "../../../components/common/footer";
 import {NextPage} from "next";
-import Head from "next/head";
 import React from "react";
+import Meta from "../../../services/Meta";
 
-const Slag: NextPage = ({data}:any) => {
+const Slug: NextPage = ({data}: any) => {
 
     return (
         <>
-            <Head>
-                <title>
-                    {data.title + '- Центр развития детей и выбора профессии АртЛичность'}
-                </title>
-            </Head>
+            <Meta meta={{}}/>
             <HeaderGreen title={data.title}/>
             <Section>
                 <div>
                     <h1 className={styles.title}>{data.title}</h1>
-                     <div className={styles.content} dangerouslySetInnerHTML={{__html: data.content}}/>
+                    <div className={styles.content} dangerouslySetInnerHTML={{__html: data.content}}/>
                 </div>
             </Section>
             <Footer/>
@@ -27,10 +23,10 @@ const Slag: NextPage = ({data}:any) => {
     )
 }
 
-export default Slag
+export default Slug
 
-export async function getServerSideProps (context: any) {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/${context.params.slag}`)
+export async function getServerSideProps(context: any) {
+    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/${context.params.slug}`)
     const data = await res.json();
 
     return {

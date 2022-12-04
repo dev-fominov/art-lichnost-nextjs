@@ -3,17 +3,13 @@ import {Section} from "../../../components/common/section";
 import styles from '../../../styles/blog/post.module.css'
 import {Footer} from "../../../components/common/footer";
 import {NextPage} from "next";
-import Head from "next/head";
-import React from "react";
+import Meta from "../../../services/Meta";
 
 const Post: NextPage = ({data}: any) => {
 
     return (
-        <> <Head>
-            <title>
-                {data.title + '- Центр развития детей и выбора профессии АртЛичность'}
-            </title>
-        </Head>
+        <>
+            <Meta meta={{}}/>
             <HeaderGreen title={data.title}/>
             <Section>
                 <div>

@@ -5,8 +5,8 @@ import {Header} from "../../../components/common/header";
 import styles from "../../../styles/proftestirovanie/testirovanie.module.css";
 import {Container} from "../../../components/common/container";
 import SectionTestirovanie from "../../../components/proftestirovanie/section-testirovanie";
-import Head from "next/head";
 import {NextPage} from "next";
+import Meta from "../../../services/Meta";
 
 const OfflineTest: NextPage = ({data}: any) => {
 
@@ -15,11 +15,7 @@ const OfflineTest: NextPage = ({data}: any) => {
 
     return (
         <>
-            <Head>
-                <title>
-                    Офлайн-тест - Центр развития детей и выбора профессии АртЛичность
-                </title>
-            </Head>
+            <Meta meta={{}}/>
             {data.id_video
                 ? <div className="video-background">
                     <iframe

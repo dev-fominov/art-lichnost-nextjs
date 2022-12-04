@@ -1,14 +1,14 @@
 import styles from "../../styles/camp/filter.module.css";
 import {useRef, useState} from "react";
 import {IoIosArrowRoundDown, IoIosArrowRoundUp} from "react-icons/io";
-import {clickOutside} from "../common/clickOutside";
+import {useOutsideClick} from "../../hooks/useOutsideClick";
 
 export const Select = ({data, setFieldValue, name, title}: any) => {
     const wrapperRef = useRef(null);
 
     const [openSelect, setOpenSelect] = useState(false)
 
-    clickOutside(wrapperRef, () => setOpenSelect(false))
+    useOutsideClick(wrapperRef, () => setOpenSelect(false))
 
     return (
         <div className={styles.filterSelect}>

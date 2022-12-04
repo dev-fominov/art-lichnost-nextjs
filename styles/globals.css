@@ -22,6 +22,7 @@ a {
 }
 
 * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -61,7 +62,8 @@ a {
     left: 50%;
     width: var(--video-width);
     height: var(--video-height);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
-
 

@@ -5,9 +5,44 @@ import {SlideItem} from "./slide-item";
 import {ButtonGroup} from "../common/button-group";
 import {useEffect, useState} from "react";
 
+const responsive = {
+    desktopFull: {
+        breakpoint: {
+            max: 3000,
+            min: 1200
+        },
+        items: 4,
+        partialVisibilityGutter: 40,
+    },
+    desktop: {
+        breakpoint: {
+            max: 1200,
+            min: 1024
+        },
+        items: 3,
+        partialVisibilityGutter: 40
+    },
+    mobile: {
+        breakpoint: {
+            max: 709,
+            min: 0
+        },
+        items: 1,
+        partialVisibilityGutter: 30,
+    },
+    tablet: {
+        breakpoint: {
+            max: 1024,
+            min: 709
+        },
+        items: 2,
+        partialVisibilityGutter: 30
+    }
+}
+
+
 const SliderTeamPsihologs = ({data}: any) => {
     const [showButton, setShowButton] = useState(false)
-
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -32,42 +67,7 @@ const SliderTeamPsihologs = ({data}: any) => {
                 }
             }
         }
-    },)
-
-    const responsive = {
-        desktopFull: {
-            breakpoint: {
-                max: 3000,
-                min: 1200
-            },
-            items: 4,
-            partialVisibilityGutter: 40,
-        },
-        desktop: {
-            breakpoint: {
-                max: 1200,
-                min: 1024
-            },
-            items: 3,
-            partialVisibilityGutter: 40
-        },
-        mobile: {
-            breakpoint: {
-                max: 709,
-                min: 0
-            },
-            items: 1,
-            partialVisibilityGutter: 30,
-        },
-        tablet: {
-            breakpoint: {
-                max: 1024,
-                min: 709
-            },
-            items: 2,
-            partialVisibilityGutter: 30
-        }
-    }
+    },[data.length])
 
     return (
         <div className={styles.containerBtn}>

@@ -1,12 +1,11 @@
 import type {NextPage} from 'next'
 import {Footer} from "../../components/common/footer";
-import React from "react";
 import {Navbar} from "../../components/main/navbar";
 import {InfoHead} from "../../components/main/info-head";
 import {Header} from "../../components/common/header";
 import {BigLinksProf} from "../../components/proftestirovanie/big-links-prof";
 import SectionProftestirovanie from "../../components/proftestirovanie/section-proftestirovanie";
-import Head from "next/head";
+import Meta from "../../services/Meta";
 
 const Proftestirovanie: NextPage = ({data}: any) => {
 
@@ -15,11 +14,7 @@ const Proftestirovanie: NextPage = ({data}: any) => {
 
     return (
         <>
-            <Head>
-                <title>
-                    Профтестирование - Центр развития детей и выбора профессии АртЛичность
-                </title>
-            </Head>
+            <Meta meta={{}}/>
             {data.id_video
                 ? <div className="video-background">
                     <iframe

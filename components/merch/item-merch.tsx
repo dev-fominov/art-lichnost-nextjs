@@ -4,40 +4,41 @@ import "react-multi-carousel/lib/styles.css";
 import {CgArrowLongRight} from "react-icons/cg";
 import {Modal} from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
-import React, {useState} from "react";
+import {useState} from "react";
 import {MerchForm} from "./merch-form";
+
+const responsive = {
+    desktop: {
+        breakpoint: {
+            max: 3000,
+            min: 1024
+        },
+        items: 1,
+        partialVisibilityGutter: 40
+    },
+    mobile: {
+        breakpoint: {
+            max: 709,
+            min: 0
+        },
+        items: 1,
+        partialVisibilityGutter: 30,
+    },
+    tablet: {
+        breakpoint: {
+            max: 1024,
+            min: 709
+        },
+        items: 1,
+        partialVisibilityGutter: 30
+    }
+}
+
 
 export const ItemMerch = ({data}: any) => {
     const [showModal, updateShowModal] = useState(false);
     const showModalHandler = () => updateShowModal(!showModal)
     const noSize = data.size.every((item: any) => item.stock === 0)
-
-    const responsive = {
-        desktop: {
-            breakpoint: {
-                max: 3000,
-                min: 1024
-            },
-            items: 1,
-            partialVisibilityGutter: 40
-        },
-        mobile: {
-            breakpoint: {
-                max: 709,
-                min: 0
-            },
-            items: 1,
-            partialVisibilityGutter: 30,
-        },
-        tablet: {
-            breakpoint: {
-                max: 1024,
-                min: 709
-            },
-            items: 1,
-            partialVisibilityGutter: 30
-        }
-    }
 
     return (
         <div className={styles.item}>

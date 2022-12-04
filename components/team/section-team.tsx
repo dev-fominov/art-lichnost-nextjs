@@ -1,6 +1,5 @@
 import {Section} from "../common/section";
 import styles from "../../styles/team/section-team.module.css";
-import {IoIosArrowRoundDown} from "react-icons/io";
 import SliderTeam from "./slider-team";
 import SliderTeamPhoto from "./slider-team-photo";
 import {A} from "../common/A";

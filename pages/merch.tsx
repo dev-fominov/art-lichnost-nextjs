@@ -3,16 +3,12 @@ import {Footer} from "../components/common/footer";
 import {HeaderGreen} from "../components/common/header-green";
 import {SectionMerch} from "../components/merch/section-merch";
 import styles from "./../styles/merch/merch.module.css";
-import Head from "next/head";
+import Meta from "../services/Meta";
 
 const Merch: NextPage = ({data}: any) => {
     return (
         <>
-            <Head>
-                <title>
-                    Мерч - Центр развития детей и выбора профессии АртЛичность
-                </title>
-            </Head>
+            <Meta meta={{title: ' Мерч - Центр развития детей и выбора профессии АртЛичность'}}/>
             <HeaderGreen title={<div className={styles.contentTitle} dangerouslySetInnerHTML={{__html: data.title}}/>}/>
             <SectionMerch data={data}/>
             <Footer/>

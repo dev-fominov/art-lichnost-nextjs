@@ -1,4 +1,3 @@
-import React from "react";
 import {Section} from "../common/section";
 import Program from "./program";
 import Reviews from "./reviews";

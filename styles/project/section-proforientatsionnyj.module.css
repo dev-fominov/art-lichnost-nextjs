@@ -23,6 +23,9 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     -webkit-box-pack: start;
     -ms-flex-pack: start;
@@ -46,6 +49,7 @@
 @media (max-width: 1200px) {
     .contentBox {
         justify-content: space-evenly;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     }
 }
@@ -121,6 +125,9 @@
 
 @media (max-width: 700px) {
     .history {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         justify-content: center;
         -webkit-box-pack: center;
@@ -264,7 +271,12 @@
 }
 
 .itemDescriptionCard {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
@@ -295,4 +307,3 @@
         width: 100%;
     }
 }
-

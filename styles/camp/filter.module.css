@@ -127,7 +127,11 @@
     height: 25px;
     margin-top: 5px;
     cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
@@ -136,9 +140,10 @@
     top: 25px;
     left: 0;
     z-index: 999;
-    max-height: 0%;
+    max-height: 0;
     overflow: hidden;
     -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
     transition: all .3s ease;
     width: 310px;
     background-color: #fff;
@@ -155,6 +160,7 @@
     z-index: 999;
     overflow: hidden;
     -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
     transition: all .3s ease;
     width: 310px;
     background-color: #fff;
@@ -256,6 +262,7 @@
     text-align: center;
     font-size: 15px;
     -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
     transition: all 0.25s ease;
     line-height: 45px;
     margin-right: 15px;
@@ -291,7 +298,10 @@
 }
 
 .resFilter {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
 

@@ -1,5 +1,4 @@
 import styles from "../../styles/common/header-green.module.css";
-import React from "react";
 import {Navbar} from "../main/navbar";
 import {Container} from "./container";
 

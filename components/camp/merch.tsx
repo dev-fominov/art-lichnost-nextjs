@@ -1,5 +1,6 @@
 import styles from './../../styles/camp/merch.module.css'
 import {A} from "../common/A";
+import Image from 'next/image'
 
 const Merch = ({data}: any) => {
     return (
@@ -12,7 +13,10 @@ const Merch = ({data}: any) => {
                 <A href={`/merch`} text={'Узнать больше'}/>
             </div>
             <div className={styles.rightBox}>
-                <img src={data.image.url} alt={data.image.alt}/>
+                <Image  layout="fill"
+                        quality={50}
+                        src={data.image.url}
+                        alt={data.image.alt}/>
             </div>
         </div>
     )

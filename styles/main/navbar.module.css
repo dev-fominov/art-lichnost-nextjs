@@ -1,4 +1,3 @@
-
 .headTop {
     padding-top: 31px;
     padding-bottom: 31px;
@@ -35,11 +34,14 @@
 }
 
 .menu::marker {
+    unicode-bidi: -webkit-isolate;
+    unicode-bidi: -moz-isolate;
     unicode-bidi: isolate;
     font-variant-numeric: tabular-nums;
     text-transform: none;
     text-indent: 0 !important;
     text-align: start !important;
+    -moz-text-align-last: start !important;
     text-align-last: start !important;
 }
 
@@ -92,5 +94,4 @@
 .socialHead a:hover {
     color: #b2b2b2;
 }
-
 

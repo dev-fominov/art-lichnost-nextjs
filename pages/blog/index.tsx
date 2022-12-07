@@ -1,7 +1,7 @@
 import type {NextPage} from 'next'
-import {Footer} from "../../components/common/footer";
-import {HeaderVideo} from "../../components/common/header-video";
-import {SectionBlog} from "../../components/blog/section-blog";
+import {Footer} from "../../components/common/Footer";
+import {HeaderVideo} from "../../components/common/HeaderVideo";
+import {SectionBlog} from "../../components/blog/SectionBlog";
 import Meta from "../../services/Meta";
 
 const Blog: NextPage = ({data}: any) => {

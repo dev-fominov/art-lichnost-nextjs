@@ -1,7 +1,7 @@
 import type {NextPage} from 'next'
-import {Footer} from "../components/common/footer";
-import {SectionPsychologist} from "../components/psychologist/section-psychologist";
-import {HeaderVideo} from "../components/common/header-video";
+import {Footer} from "../components/common/Footer";
+import {SectionPsychologist} from "../components/psychologist/SectionPsychologist";
+import {HeaderVideo} from "../components/common/HeaderVideo";
 import Meta from "../services/Meta";
 
 const Psychologist: NextPage = ({data}: any) => {

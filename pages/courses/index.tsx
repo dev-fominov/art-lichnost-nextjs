@@ -1,9 +1,9 @@
 import type {NextPage} from 'next'
-import {Footer} from "../../components/common/footer";
-import FilterCourses from "../../components/courses/filter-courses";
-import {HeaderVideo} from "../../components/common/header-video";
-import {Container} from "../../components/common/container";
-import {SectionCourses} from "../../components/courses/section-courses";
+import {Footer} from "../../components/common/Footer";
+import FilterCourses from "../../components/courses/FilterCourses";
+import {HeaderVideo} from "../../components/common/HeaderVideo";
+import {Container} from "../../components/common/Container";
+import {SectionCourses} from "../../components/courses/SectionCourses";
 import styles from '../../styles/courses/section-courses.module.css';
 import Meta from "../../services/Meta";
 

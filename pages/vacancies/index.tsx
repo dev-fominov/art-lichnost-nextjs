@@ -1,7 +1,7 @@
 import type {NextPage} from 'next'
-import {Footer} from "../../components/common/footer";
-import {HeaderVideo} from "../../components/common/header-video";
-import {SectionVacancies} from "../../components/vacancies/section-vacancies";
+import {Footer} from "../../components/common/Footer";
+import {HeaderVideo} from "../../components/common/HeaderVideo";
+import {SectionVacancies} from "../../components/vacancies/SectionVacancies";
 import Meta from "../../services/Meta";
 
 const Vacancies: NextPage = ({data}: any) => {

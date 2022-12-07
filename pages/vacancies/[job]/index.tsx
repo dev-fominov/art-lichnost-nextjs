@@ -1,9 +1,9 @@
-import {HeaderGreen} from "../../../components/common/header-green";
-import {Section} from "../../../components/common/section";
+import {HeaderGreen} from "../../../components/common/HeaderGreen";
+import {Section} from "../../../components/common/Section";
 import styles from '../../../styles/vacancies/job.module.css';
-import {Footer} from "../../../components/common/footer";
+import {Footer} from "../../../components/common/Footer";
 import {A} from "../../../components/common/A";
-import SliderJobPhoto from "../../../components/vacancies/slider-job-photo";
+import SliderJobPhoto from "../../../components/vacancies/SliderJobPhoto";
 import Meta from "../../../services/Meta";
 
 const Job = ({data}: any) => {

@@ -1,9 +1,8 @@
 import type {NextPage} from 'next'
-import {Footer} from "../../components/common/footer";
-import {SectionCamp} from "../../components/camp/section-camp";
-import Filter from "../../components/camp/filter";
-import React from "react";
-import {HeaderVideo} from "../../components/common/header-video";
+import {Footer} from "../../components/common/Footer";
+import {SectionCamp} from "../../components/camp/SectionCamp";
+import Filter from "../../components/camp/Filter";
+import {HeaderVideo} from "../../components/common/HeaderVideo";
 import Meta from "../../services/Meta";
 
 const Camp: NextPage = ({data}: any) => {

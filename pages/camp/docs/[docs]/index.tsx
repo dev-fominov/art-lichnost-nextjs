@@ -1,9 +1,9 @@
-import {HeaderGreen} from "../../../../components/common/header-green";
-import {Section} from "../../../../components/common/section";
-import {Footer} from "../../../../components/common/footer";
-import Docs from "../../../../components/camp/docs";
-import styles from "../../../../styles/camp/docs.module.css";
+import {HeaderGreen} from "../../../../components/common/HeaderGreen";
+import {Section} from "../../../../components/common/Section";
+import {Footer} from "../../../../components/common/Footer";
+import Docs from "../../../../components/camp/Docs";
 import Meta from "../../../../services/Meta";
+import styles from "../../../../styles/camp/docs.module.css";
 
 const DocsPage = ({data}: any) => {
 

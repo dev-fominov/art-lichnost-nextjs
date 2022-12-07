@@ -1,6 +1,6 @@
-import {Footer} from "../../../components/common/footer";
-import {HeaderVideo} from "../../../components/common/header-video";
-import {SectionProfessions} from "../../../components/professions/section-professions";
+import {Footer} from "../../../components/common/Footer";
+import {HeaderVideo} from "../../../components/common/HeaderVideo";
+import {SectionProfessions} from "../../../components/professions/SectionProfessions";
 import Meta from "../../../services/Meta";
 
 const Professions = ({data}: any) => {

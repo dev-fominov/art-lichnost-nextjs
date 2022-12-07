@@ -1,7 +1,7 @@
 import type {NextPage} from 'next'
-import {Footer} from "../components/common/footer";
-import {SectionContacts} from "../components/contacts/section-contacts";
-import {HeaderGreen} from "../components/common/header-green";
+import {Footer} from "../components/common/Footer";
+import {SectionContacts} from "../components/contacts/SectionContacts";
+import {HeaderGreen} from "../components/common/HeaderGreen";
 import Meta from "../services/Meta";
 
 const Contacts: NextPage = ({data}: any) => {

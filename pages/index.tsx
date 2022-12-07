@@ -1,11 +1,11 @@
 import type {NextPage} from 'next'
-import {Header} from "../components/common/header";
-import {Navbar} from "../components/main/navbar";
-import {BigLinks} from "../components/main/big-links";
-import {InfoHead} from "../components/main/info-head";
-import {Section} from "../components/common/section";
-import {HomeItem} from "../components/main/home-item";
-import {Footer} from "../components/common/footer";
+import {Header} from "../components/common/Header";
+import {Navbar} from "../components/main/Navbar";
+import {BigLinks} from "../components/main/BigLinks";
+import {InfoHead} from "../components/main/InfoHead";
+import {Section} from "../components/common/Section";
+import {HomeItem} from "../components/main/HomeItem";
+import {Footer} from "../components/common/Footer";
 import Meta from "../services/Meta";
 
 const Home: NextPage = ({data}: any) => {

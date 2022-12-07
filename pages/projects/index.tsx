@@ -1,7 +1,7 @@
 import type {NextPage} from 'next'
-import {Footer} from "../../components/common/footer";
-import {HeaderVideo} from "../../components/common/header-video";
-import {Section} from "../../components/common/section";
+import {Footer} from "../../components/common/Footer";
+import {HeaderVideo} from "../../components/common/HeaderVideo";
+import {Section} from "../../components/common/Section";
 import styles from '../../styles/projects/projects.module.css'
 import {A} from "../../components/common/A";
 import Meta from "../../services/Meta";

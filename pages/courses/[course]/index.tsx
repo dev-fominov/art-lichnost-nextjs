@@ -1,7 +1,7 @@
-import {HeaderGreen} from "../../../components/common/header-green";
-import {Footer} from "../../../components/common/footer";
+import {HeaderGreen} from "../../../components/common/HeaderGreen";
+import {Footer} from "../../../components/common/Footer";
 import {NextPage} from "next";
-import {SectionCourse} from "../../../components/course/section-course";
+import {SectionCourse} from "../../../components/course/SectionCourse";
 import Meta from "../../../services/Meta";
 
 const Course: NextPage = ({data}: any) => {

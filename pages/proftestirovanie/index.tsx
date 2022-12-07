@@ -1,10 +1,10 @@
 import type {NextPage} from 'next'
-import {Footer} from "../../components/common/footer";
-import {Navbar} from "../../components/main/navbar";
-import {InfoHead} from "../../components/main/info-head";
-import {Header} from "../../components/common/header";
-import {BigLinksProf} from "../../components/proftestirovanie/big-links-prof";
-import SectionProftestirovanie from "../../components/proftestirovanie/section-proftestirovanie";
+import {Footer} from "../../components/common/Footer";
+import {Navbar} from "../../components/main/Navbar";
+import {InfoHead} from "../../components/main/InfoHead";
+import {Header} from "../../components/common/Header";
+import {BigLinksProf} from "../../components/proftestirovanie/BigLinksProf";
+import SectionProftestirovanie from "../../components/proftestirovanie/SectionProftestirovanie";
 import Meta from "../../services/Meta";
 
 const Proftestirovanie: NextPage = ({data}: any) => {

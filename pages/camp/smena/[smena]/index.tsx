@@ -1,12 +1,12 @@
-import {HeaderGreen} from "../../../../components/common/header-green";
-import {Footer} from "../../../../components/common/footer";
+import {HeaderGreen} from "../../../../components/common/HeaderGreen";
+import {Footer} from "../../../../components/common/Footer";
 import {NextPage} from "next";
-import {Section} from "../../../../components/common/section";
+import {Section} from "../../../../components/common/Section";
 import styles from "../../../../styles/camp/smena.module.css";
 import Carousel from "react-multi-carousel";
 import React from "react";
 import "react-multi-carousel/lib/styles.css";
-import {ButtonGroup} from "../../../../components/common/button-group";
+import {ButtonGroup} from "../../../../components/common/ButtonGroup";
 import Meta from "../../../../services/Meta";
 
 const responsive = {

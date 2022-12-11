@@ -3,6 +3,7 @@ import {Footer} from "../components/common/Footer";
 import {SectionContacts} from "../components/contacts/SectionContacts";
 import {HeaderGreen} from "../components/common/HeaderGreen";
 import Meta from "../services/Meta";
+import {pageAPI} from "../api/api";
 
 const Contacts: NextPage = ({data}: any) => {
     return (
@@ -18,9 +19,7 @@ const Contacts: NextPage = ({data}: any) => {
 export default Contacts
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/contacts`)
-    const data = await res.json();
-
+    const data =  await pageAPI.contacts()
     return {
         props: {
             data

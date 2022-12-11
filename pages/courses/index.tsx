@@ -6,6 +6,7 @@ import {Container} from "../../components/common/Container";
 import {SectionCourses} from "../../components/courses/SectionCourses";
 import styles from '../../styles/courses/section-courses.module.css';
 import Meta from "../../services/Meta";
+import {pageAPI} from "../../api/api";
 
 const Courses: NextPage = ({data}: any) => {
     return (
@@ -29,9 +30,7 @@ const Courses: NextPage = ({data}: any) => {
 export default Courses
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/courses`)
-    const data = await res.json();
-
+    const data =  await pageAPI.courses()
     return {
         props: {
             data

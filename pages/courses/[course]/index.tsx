@@ -3,6 +3,7 @@ import {Footer} from "../../../components/common/Footer";
 import {NextPage} from "next";
 import {SectionCourse} from "../../../components/course/SectionCourse";
 import Meta from "../../../services/Meta";
+import {pageAPI} from "../../../api/api";
 
 const Course: NextPage = ({data}: any) => {
 
@@ -19,9 +20,7 @@ const Course: NextPage = ({data}: any) => {
 export default Course
 
 export async function getServerSideProps(context: any) {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/courses/${context.params.course}`)
-    const data = await res.json();
-
+    const data =  await pageAPI.course(context.params.course)
     return {
         props: {
             data

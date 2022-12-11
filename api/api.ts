@@ -1,14 +1,14 @@
 import axios from "axios"
 
 export const instance = axios.create({
-    baseURL: 'https://alex-volkov.ru/wp-json/art/v1/',
-    withCredentials: true,
-})
+                                         baseURL: 'https://alex-volkov.ru/wp-json/art/v1/',
+                                         withCredentials: true,
+                                     })
 
 
 export const pageAPI = {
     team() {
-        return instance.get(`page/team`).then(res => res)
+        return instance.get(`page/team`).then(res => res.data)
     },
     psychologist() {
         return instance.get(`page/psychologist`).then(res => res.data)
@@ -47,7 +47,7 @@ export const pageAPI = {
         return instance.get(`page/offline-test`).then(res => res.data)
     },
     slug(slug: string) {
-        return instance.get(`page/slug`).then(res => res.data)
+        return instance.get(`page/${slug}`).then(res => res.data)
     },
     courses() {
         return instance.get(`page/courses`).then(res => res.data)
@@ -80,167 +80,25 @@ export const pageAPI = {
         return instance.get(`page/blogs/${post}`).then(res => res.data)
     },
 }
-/*
 
-export const packsAPI = {
-    getPacks(min?: number,
-        max?: number,
-        searchName?: string,
-        page?: number,
-        pageCount?: number,
-        sortPacks?: string,
-        userId?: string) {
-        return instance.get<GetPacksResponseType>(`cards/pack?`
-            + (max ? `min=${min}&max=${max}&` : '')
-            + (searchName ? `packName=${searchName}&` : '')
-            + (page ? `page=${page}&` : '')
-            + (pageCount ? `pageCount=${pageCount}&` : '')
-            + (sortPacks ? `sortPacks=${sortPacks}&` : '')
-            + (userId ? `user_id=${userId}&` : '')).then(res => res.data)
+export const filterAPI = {
+    camp(certificate: any, age: any, section: any, period: any) {
+        return instance.get(`camp/filter?certificate=${certificate}&age=${age}&section=${section}&period=${period}`).then(res => res.data)
     },
-    addPack(name?: string, privateValue?: boolean, cover?: string) {
-        return instance.post(`cards/pack`, {
-            cardsPack:
-                {name, deckCover: cover, private: privateValue}
-        })
+    courses(category: any, age: any, presenter: any) {
+        return instance.get(`courses/filter?course=${category}&age=${age}&presenter=${presenter}`).then(res => res.data)
     },
-    deletePack(packId: string) {
-        return instance.delete(`cards/pack?id=${packId}`)
-    },
-    updatePack(packId: string, name?: string, privateValue?: boolean) {
-        return instance.put(`cards/pack`, { cardsPack: { _id: packId, name,  private: privateValue} })
-    },
-    getCard(cardsPack_id: string | undefined, searchName?:string, page?: number, pageCount?: number) {
-        return instance.get<GetCardsResponseType>(`cards/card?cardsPack_id=${cardsPack_id}`
-            + (searchName ? `&cardQuestion=${searchName}` : '')
-            + (page ? `&page=${page}` : '')
-            + (pageCount ? `&pageCount=${pageCount}` : ''))
-            .then(res => res.data)
-    },
-    addCard(cardsPack_id: string, question?: string, answer?: string) {
-        return instance.post(`cards/card`, { card: { cardsPack_id, question, answer } })
-    },
-    updateCard(_id: string, question?: string, answer?: string) {
-        return instance.put(`cards/card`, { card: { _id, question, answer } })
-    },
-    deleteCard(_id: string) {
-        return instance.delete(`cards/card?id=${_id}`)
-    },
-    updateGrade(grade: number, card_id: string) {
-        return instance.put(`cards/grade`, { grade, card_id })
-    }
 }
 
-*/
-
-/*
-
-// types
-export type LoginParamsType = {
-    email: string
-    password: string
-    rememberMe: boolean
+export const appAPI = {
+    commonForm(body: any) {
+        return instance.post(`send-mail/`, body).then(res => res.data)
+    },
+    smena(id_page: any, slug: any) {
+        return instance.get(`camp-changes/?camp=${id_page === 10
+            ? 'professions'
+            : id_page === 11
+                ? 'skills'
+                : 'tourist-holidays'}&slug=${slug}`).then(res => res.data)
+    },
 }
-export type ResetPasswordParamsType = {
-    email: string
-    from: "test-front-admin <ai73a@yandex.by>"
-    message: string
-}
-export type LoginResponseType = {
-    _id: string;
-    email: string;
-    name: string;
-    avatar?: string | undefined;
-    publicCardPacksCount: number; // количество колод
-    created: Date;
-    updated: Date;
-    isAdmin: boolean;
-    verified: boolean; // подтвердил ли почту
-    rememberMe: boolean;
-    error?: string;
-}
-export type ResponseType = {
-    info: string
-    error?: string
-}
-export type ChangeNameResponseType = {
-    updatedUser: LoginResponseType
-    error?: string
-}
-export type ChangeName = {
-    name: string
-    avatar: unknown | string | undefined
-}
-type RegisterResponseType = {
-    created: Date;
-    email: string;
-    isAdmin: boolean;
-    name: string;
-    publicCardPacksCount: number; // количество колод
-    rememberMe: boolean;
-    updated: Date;
-    verified: boolean; // подтвердил ли почту
-    __v: number
-    _id: string;
-}
-type SetNewPassword = {
-    info: string
-    error: string
-}
-
-export type GetPacksResponseType = {
-    cardPacks: Array<PackType>
-    cardPacksTotalCount: number// количество колод
-    maxCardsCount: number
-    minCardsCount: number
-    page: number// выбранная страница
-    pageCount: number // количество элементов на странице
-    token: string
-    tokenDeathTime: number
-}
-export type PackType = {
-    cardsCount: number
-    created: string
-    grade: number
-    more_id: string
-    name: string
-    path: string
-    private: boolean
-    rating: number
-    shots: number
-    type: string
-    updated: string
-    user_id: string
-    user_name: string
-    __v: number
-    _id: string
-}
-
-export type GetCardsResponseType = {
-    cards: Array<CardType>
-    cardsTotalCount: number
-    maxGrade: number
-    minGrade: number
-    packUserId: string
-    page: number
-    pageCount: number
-    token: string
-    tokenDeathTime: number
-}
-
-export type CardType = {
-    answer: string
-    cardsPack_id: string
-    comments: string
-    created: string
-    grade: number
-    more_id: string
-    question: string
-    rating: number
-    shots: number
-    type: string
-    updated: string
-    user_id: string
-    __v: number
-    _id: string
-}*/

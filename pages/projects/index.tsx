@@ -5,6 +5,7 @@ import {Section} from "../../components/common/Section";
 import styles from '../../styles/projects/projects.module.css'
 import {A} from "../../components/common/A";
 import Meta from "../../services/Meta";
+import {pageAPI} from "../../api/api";
 
 const Projects: NextPage = ({data}: any) => {
     return (
@@ -42,9 +43,7 @@ const Projects: NextPage = ({data}: any) => {
 export default Projects
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/projects`)
-    const data = await res.json();
-
+    const data =  await pageAPI.projects()
     return {
         props: {
             data

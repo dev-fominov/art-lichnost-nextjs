@@ -3,6 +3,7 @@ import {Footer} from "../components/common/Footer";
 import {HeaderVideo} from "../components/common/HeaderVideo";
 import SectionAbout from "../components/about/SectionAbout";
 import Meta from "../services/Meta";
+import {pageAPI} from "../api/api";
 
 const About: NextPage = ({data}: any) => {
     return (
@@ -20,9 +21,7 @@ const About: NextPage = ({data}: any) => {
 export default About
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/about`)
-    const data = await res.json();
-
+    const data =  await pageAPI.about()
     return {
         props: {
             data

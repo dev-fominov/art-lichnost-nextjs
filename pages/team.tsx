@@ -1,8 +1,9 @@
 import type {NextPage} from 'next'
-import {Footer} from "../components/common/footer";
-import {HeaderVideo} from "../components/common/header-video";
-import SectionTeam from "../components/team/section-team";
+import {Footer} from "../components/common/Footer";
+import {HeaderVideo} from "../components/common/HeaderVideo";
+import SectionTeam from "../components/team/SectionTeam";
 import Meta from "../services/Meta";
+import {pageAPI} from "../api/api";
 
 const Team: NextPage = ({data}: any) => {
     return (
@@ -20,9 +21,7 @@ const Team: NextPage = ({data}: any) => {
 export default Team
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/team`)
-    const data = await res.json();
-
+    const data =  await pageAPI.team()
     return {
         props: {
             data

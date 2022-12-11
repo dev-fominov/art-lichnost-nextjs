@@ -7,6 +7,7 @@ import {Container} from "../../../components/common/Container";
 import SectionTestirovanie from "../../../components/proftestirovanie/SectionTestirovanie";
 import {NextPage} from "next";
 import Meta from "../../../services/Meta";
+import {pageAPI} from "../../../api/api";
 
 const OnlineTest: NextPage = ({data}: any) => {
 
@@ -69,9 +70,7 @@ const OnlineTest: NextPage = ({data}: any) => {
 export default OnlineTest
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/online-test`)
-    const data = await res.json();
-
+    const data =  await pageAPI.onlineTest()
     return {
         props: {
             data

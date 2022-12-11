@@ -8,6 +8,7 @@ import React from "react";
 import "react-multi-carousel/lib/styles.css";
 import {ButtonGroup} from "../../../../components/common/ButtonGroup";
 import Meta from "../../../../services/Meta";
+import {pageAPI} from "../../../../api/api";
 
 const responsive = {
     desktopFull: {
@@ -91,9 +92,7 @@ const Smena: NextPage = ({data}: any) => {
 export default Smena
 
 export async function getServerSideProps(context: any) {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/camp/${context.params.smena}`)
-    const data = await res.json();
-
+    const data =  await pageAPI.smena(context.params.smena)
     return {
         props: {
             data

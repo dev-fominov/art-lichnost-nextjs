@@ -4,6 +4,7 @@ import {SectionCamp} from "../../components/camp/SectionCamp";
 import Filter from "../../components/camp/Filter";
 import {HeaderVideo} from "../../components/common/HeaderVideo";
 import Meta from "../../services/Meta";
+import {pageAPI} from "../../api/api";
 
 const Camp: NextPage = ({data}: any) => {
     return (
@@ -22,9 +23,7 @@ const Camp: NextPage = ({data}: any) => {
 export default Camp
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/camp`)
-    const data = await res.json();
-
+    const data =  await pageAPI.camp()
     return {
         props: {
             data

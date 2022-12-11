@@ -5,6 +5,7 @@ import {HeaderGreen} from "../../../components/common/HeaderGreen";
 import {SectionIssledovanie} from "../../../components/projects/SectionIssledovanie";
 import {SectionProforientatsionnyj} from "../../../components/projects/SectionProforientatsionnyj";
 import Meta from "../../../services/Meta";
+import {pageAPI} from "../../../api/api";
 
 const Project: NextPage = ({data}: any) => {
     return (
@@ -28,9 +29,7 @@ const Project: NextPage = ({data}: any) => {
 export default Project
 
 export async function getServerSideProps(context: any) {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/projects/${context.params.project}`)
-    const data = await res.json();
-
+    const data =  await pageAPI.project(context.params.project)
     return {
         props: {
             data

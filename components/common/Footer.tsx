@@ -35,7 +35,8 @@ export const Footer = () => {
                             <li>
                                 <A href={"/camp"} text={'Лагерь'}/>
                                 <ul>
-                                    <li><A href={'/camp/professions'}
+                                    <li>
+                                        <A href={'/camp/professions'}
                                            text={'Лагерь профессий'}/>
                                     </li>
                                     <li>

@@ -3,6 +3,7 @@ import {Footer} from "../components/common/Footer";
 import {SectionPsychologist} from "../components/psychologist/SectionPsychologist";
 import {HeaderVideo} from "../components/common/HeaderVideo";
 import Meta from "../services/Meta";
+import {pageAPI} from "../api/api";
 
 const Psychologist: NextPage = ({data}: any) => {
     return (
@@ -20,9 +21,7 @@ const Psychologist: NextPage = ({data}: any) => {
 export default Psychologist
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/psychologist`)
-    const data = await res.json();
-
+    const data =  await pageAPI.psychologist()
     return {
         props: {
             data

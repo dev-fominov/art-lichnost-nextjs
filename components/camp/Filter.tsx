@@ -4,23 +4,27 @@ import {Select} from "./Select";
 import {Container} from "../common/Container";
 import {useState} from "react";
 import Card from "./Card";
+import {filterAPI} from "../../api/api";
 
 const Filter = ({data}: any) => {
     const [resFilter, setResFilter] = useState({resFilter: null, loading: false})
 
     const formik = useFormik({
-        initialValues: {
-            age: {name: "Выберите возраст", slug: ''},
-            section: {name: "Выберите профессию или навык", slug: ''},
-            period: {name: "Выберите даты", slug: ''},
-            certificate: 1
-        },
-        onSubmit: async values => {
-            setResFilter({...resFilter, loading: true})
-            const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/camp/filter?certificate=${values.certificate}&age=${values.age.slug}&section=${values.section.slug}&period=${values.period.slug}`)
-            await setResFilter({resFilter: await res.json(), loading: false})
-        },
-    })
+                                 initialValues: {
+                                     age: {name: "Выберите возраст", slug: ''},
+                                     section: {name: "Выберите профессию или навык", slug: ''},
+                                     period: {name: "Выберите даты", slug: ''},
+                                     certificate: 1
+                                 },
+                                 onSubmit: async values => {
+                                     setResFilter({...resFilter, loading: true})
+                                     const res = await filterAPI.camp(values.certificate,
+                                                                      values.age.slug,
+                                                                      values.section.slug,
+                                                                      values.period.slug)
+                                     await setResFilter({resFilter:  res, loading: false})
+                                 },
+                             })
     return (
         <div className={styles.filter}>
             <h2 className={styles.title}>Подобрать смену</h2>

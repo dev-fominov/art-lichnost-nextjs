@@ -2,6 +2,7 @@ import {Footer} from "../../../components/common/Footer";
 import {HeaderVideo} from "../../../components/common/HeaderVideo";
 import {SectionProfessions} from "../../../components/professions/SectionProfessions";
 import Meta from "../../../services/Meta";
+import {pageAPI} from "../../../api/api";
 
 const Professions = ({data}: any) => {
     return (
@@ -19,9 +20,7 @@ const Professions = ({data}: any) => {
 export default Professions
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/professions`)
-    const data = await res.json();
-
+    const data =  await pageAPI.professions()
     return {
         props: {
             data

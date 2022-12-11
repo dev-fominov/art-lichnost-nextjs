@@ -4,6 +4,7 @@ import {Footer} from "../../../../components/common/Footer";
 import Docs from "../../../../components/camp/Docs";
 import Meta from "../../../../services/Meta";
 import styles from "../../../../styles/camp/docs.module.css";
+import {pageAPI} from "../../../../api/api";
 
 const DocsPage = ({data}: any) => {
 
@@ -27,9 +28,7 @@ const DocsPage = ({data}: any) => {
 export default DocsPage
 
 export async function getServerSideProps(context: any) {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/docs/${context.params.docs}`)
-    const data = await res.json();
-
+    const data =  await pageAPI.docs(context.params.docs)
     return {
         props: {
             data

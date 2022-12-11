@@ -3,6 +3,7 @@ import {Footer} from "../../components/common/Footer";
 import {HeaderVideo} from "../../components/common/HeaderVideo";
 import {SectionBlog} from "../../components/blog/SectionBlog";
 import Meta from "../../services/Meta";
+import {pageAPI} from "../../api/api";
 
 const Blog: NextPage = ({data}: any) => {
     return (
@@ -18,9 +19,7 @@ const Blog: NextPage = ({data}: any) => {
 export default Blog
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/blogs`)
-    const data = await res.json();
-
+    const data =  await pageAPI.blogs()
     return {
         props: {
             data

@@ -5,6 +5,7 @@ import {Footer} from "../../../components/common/Footer";
 import {NextPage} from "next";
 import React from "react";
 import Meta from "../../../services/Meta";
+import {pageAPI} from "../../../api/api";
 
 const Slug: NextPage = ({data}: any) => {
 
@@ -26,9 +27,7 @@ const Slug: NextPage = ({data}: any) => {
 export default Slug
 
 export async function getServerSideProps(context: any) {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/${context.params.slug}`)
-    const data = await res.json();
-
+    const data =  await pageAPI.slug(context.params.slug)
     return {
         props: {
             data

@@ -4,6 +4,7 @@ import {Select} from "../camp/Select";
 import {Container} from "../common/Container";
 import {useState} from "react";
 import Card from "../camp/Card";
+import {filterAPI} from "../../api/api";
 
 const FilterCourses = ({data}: any) => {
 
@@ -17,8 +18,8 @@ const FilterCourses = ({data}: any) => {
         },
         onSubmit: async values => {
             setResFilter({...resFilter, loading: true})
-            const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/courses/filter?course=${values.category.slug}&age=${values.age.slug}&presenter=${values.presenter.slug}`)
-            await setResFilter({resFilter: await res.json(), loading: false})
+            const res = await filterAPI.courses(values.category.slug, values.age.slug, values.presenter.slug)
+            await setResFilter({resFilter: await res, loading: false})
         },
     })
     return (

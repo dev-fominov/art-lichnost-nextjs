@@ -5,6 +5,7 @@ import {Footer} from "../../../components/common/Footer";
 import {A} from "../../../components/common/A";
 import SliderJobPhoto from "../../../components/vacancies/SliderJobPhoto";
 import Meta from "../../../services/Meta";
+import {pageAPI} from "../../../api/api";
 
 const Job = ({data}: any) => {
     return (
@@ -64,9 +65,7 @@ const Job = ({data}: any) => {
 export default Job
 
 export async function getServerSideProps(context: any) {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/vacancies/${context.params.job}`)
-    const data = await res.json();
-
+    const data =  await pageAPI.job(context.params.job)
     return {
         props: {
             data

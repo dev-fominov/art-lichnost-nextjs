@@ -1,10 +1,11 @@
 import {Field, Form, Formik} from "formik";
+import {useState} from "react";
 import styles from "../../styles/common/forms.module.css";
 import {Modal} from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 // @ts-ignore
 import MaskedInput from "react-text-mask";
-import {useState} from "react";
+import {appAPI} from "../../api/api";
 
 export const MerchForm = ({hiddenText}: any) => {
     const [showModal, setShowModal] = useState(false)
@@ -43,21 +44,24 @@ export const MerchForm = ({hiddenText}: any) => {
                             userPhone: '',
                             assent: true,
                         }}
-                    onSubmit={async (values, {setSubmitting}) => {
-                        const res = await fetch('https://alex-volkov.ru/wp-json/art/v1/send-mail/', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify({
-                                parentsName: values.parentsName,
-                                childName: values.childName,
-                                birthdate: values.birthdate,
-                                userEmail: values.userEmail,
-                                userPhone: values.userPhone,
-                                hiddenText: hiddenText,
-                            }),
-                        })
+                    onSubmit={async (values, {resetForm}) => {
+                        resetForm()
+                        await appAPI.commonForm(JSON.stringify({
+                                                                     parentsName: values.parentsName,
+                                                                     childName: values.childName,
+                                                                     birthdate: values.birthdate,
+                                                                     userEmail: values.userEmail,
+                                                                     userPhone: values.userPhone,
+                                                                     hiddenText: hiddenText,
+                                                                 })
+                        ).then(() => {
+                                   setShowModal(true)
+                                   setTimeout(() => {
+                                       setShowModal(false)
+                                       return
+                                   }, 3000)
+                               }
+                        )
                     }}>
                     {({
                           setFieldValue,

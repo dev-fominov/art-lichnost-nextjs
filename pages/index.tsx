@@ -7,6 +7,7 @@ import {Section} from "../components/common/Section";
 import {HomeItem} from "../components/main/HomeItem";
 import {Footer} from "../components/common/Footer";
 import Meta from "../services/Meta";
+import {pageAPI} from "../api/api";
 
 const Home: NextPage = ({data}: any) => {
     return (
@@ -28,9 +29,7 @@ const Home: NextPage = ({data}: any) => {
 export default Home
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/home`)
-    const data = await res.json();
-
+    const data =  await pageAPI.home()
     return {
         props: {
             data

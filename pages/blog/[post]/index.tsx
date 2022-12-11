@@ -4,9 +4,9 @@ import styles from '../../../styles/blog/post.module.css'
 import {Footer} from "../../../components/common/Footer";
 import {NextPage} from "next";
 import Meta from "../../../services/Meta";
+import {pageAPI} from "../../../api/api";
 
 const Post: NextPage = ({data}: any) => {
-
     return (
         <>
             <Meta meta={{}}/>
@@ -25,9 +25,7 @@ const Post: NextPage = ({data}: any) => {
 export default Post
 
 export async function getServerSideProps(context: any) {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/blogs/${context.params.post}`)
-    const data = await res.json();
-
+    const data =  await pageAPI.post(context.params.post)
     return {
         props: {
             data

@@ -4,6 +4,7 @@ import {HeaderGreen} from "../components/common/HeaderGreen";
 import {SectionMerch} from "../components/merch/SectionMerch";
 import styles from "./../styles/merch/merch.module.css";
 import Meta from "../services/Meta";
+import {pageAPI} from "../api/api";
 
 const Merch: NextPage = ({data}: any) => {
     return (
@@ -19,9 +20,7 @@ const Merch: NextPage = ({data}: any) => {
 export default Merch
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/merch`)
-    const data = await res.json();
-
+    const data =  await pageAPI.merch()
     return {
         props: {
             data

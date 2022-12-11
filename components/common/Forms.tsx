@@ -6,6 +6,7 @@ import "react-responsive-modal/styles.css";
 import React from "react";
 // @ts-ignore
 import MaskedInput from "react-text-mask";
+import {appAPI} from "../../api/api";
 
 export const Forms = ({confirm, hiddenText}: any) => {
     const [showModal, setShowModal] = React.useState(false)
@@ -59,27 +60,22 @@ export const Forms = ({confirm, hiddenText}: any) => {
                     onSubmit={async (values, {setSubmitting, resetForm}) => {
                         setShowLoading(true)
                         resetForm()
-                        const res = await fetch('https://alex-volkov.ru/wp-json/art/v1/send-mail/', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify({
-                                parentsName: values.parentsName,
-                                childName: values.childName,
-                                birthdate: values.birthdate,
-                                userEmail: values.userEmail,
-                                userPhone: values.userPhone,
-                                hiddenText: hiddenText,
-                            }),
-                        }).then((res) => {
-                                setShowLoading(false)
-                                setShowModal(true)
-                                setTimeout(() => {
-                                    setShowModal(false)
-                                    return
-                                }, 3000)
-                            }
+                        await appAPI.commonForm(JSON.stringify({
+                                                                     parentsName: values.parentsName,
+                                                                     childName: values.childName,
+                                                                     birthdate: values.birthdate,
+                                                                     userEmail: values.userEmail,
+                                                                     userPhone: values.userPhone,
+                                                                     hiddenText: hiddenText,
+                                                                 })
+                        ).then(() => {
+                                   setShowLoading(false)
+                                   setShowModal(true)
+                                   setTimeout(() => {
+                                       setShowModal(false)
+                                       return
+                                   }, 3000)
+                               }
                         )
                         setSubmitting(false)
                     }}>

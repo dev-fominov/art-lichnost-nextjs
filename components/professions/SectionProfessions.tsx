@@ -15,6 +15,7 @@ import Image from "next/image";
 import logo from "../common/img/logo.png";
 import {Modal} from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
+import {appAPI} from "../../api/api";
 
 const responsive = {
     desktopFull: {
@@ -51,7 +52,6 @@ const responsive = {
     }
 }
 
-
 export const SectionProfessions = ({data}: any) => {
     const router = useRouter()
     const {slug} = router.query
@@ -86,7 +86,7 @@ export const SectionProfessions = ({data}: any) => {
                 }
             }
         }
-    },[data.length])
+    }, [data.length])
 
     useEffect(() => {
         data.shift_selection[0].slug && getSmena(data.shift_selection[0].slug)
@@ -98,12 +98,10 @@ export const SectionProfessions = ({data}: any) => {
 
     const getSmena = async (slug: any) => {
         setSmena({...smena, loading: true})
-        const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/camp-changes/?camp=${data.id_page === 10
-            ? 'professions'
-            : data.id_page === 11
-                ? 'skills'
-                : 'tourist-holidays'}&slug=${slug}`)
-        setSmena({receivedData: await res.json(), loading: false})
+        await appAPI.smena(data.id_page, slug).then((res) => {
+            setSmena({receivedData: res, loading: false})
+        })
+
     }
 
     return (
@@ -346,19 +344,19 @@ export const SectionProfessions = ({data}: any) => {
                 >
                     {data.past_shifts.map((el: any, index: number) => <div key={index}
                                                                            className={styles.carouselCard}>
-                            <A href={`/camp/smena/${el.slug}`} text={<div
-                                className={styles.boxImg}
-                                draggable={false}
-                                style={{
-                                    background: `url(${el.thumbnail_url.url}) no-repeat center center`,
-                                    backgroundSize: `cover`
-                                }}>
-                            </div>}/>
-                            <div className={styles.boxLink}>
-                                <h3 className={styles.postTitle}>{el.title}</h3>
-                                <A href={`/camp/smena/${el.slug}`} text={'Узнать больше'}/>
-                            </div>
-                        </div>
+                                              <A href={`/camp/smena/${el.slug}`} text={<div
+                                                  className={styles.boxImg}
+                                                  draggable={false}
+                                                  style={{
+                                                      background: `url(${el.thumbnail_url.url}) no-repeat center center`,
+                                                      backgroundSize: `cover`
+                                                  }}>
+                                              </div>}/>
+                                              <div className={styles.boxLink}>
+                                                  <h3 className={styles.postTitle}>{el.title}</h3>
+                                                  <A href={`/camp/smena/${el.slug}`} text={'Узнать больше'}/>
+                                              </div>
+                                          </div>
                     )}
                 </Carousel>
               </div>

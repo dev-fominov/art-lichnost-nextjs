@@ -6,6 +6,7 @@ import {Header} from "../../components/common/Header";
 import {BigLinksProf} from "../../components/proftestirovanie/BigLinksProf";
 import SectionProftestirovanie from "../../components/proftestirovanie/SectionProftestirovanie";
 import Meta from "../../services/Meta";
+import {pageAPI} from "../../api/api";
 
 const Proftestirovanie: NextPage = ({data}: any) => {
 
@@ -42,9 +43,7 @@ const Proftestirovanie: NextPage = ({data}: any) => {
 export default Proftestirovanie
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/proftestirovanie`)
-    const data = await res.json();
-
+    const data =  await pageAPI.proftestirovanie()
     return {
         props: {
             data

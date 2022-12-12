@@ -24,7 +24,15 @@ const Post: NextPage = ({data}: any) => {
 
 export default Post
 
-export async function getServerSideProps(context: any) {
+export async function getStaticPaths() {
+    const data =  await pageAPI.blogs()
+    const paths = data.posts.map((item: any) => ({
+        params: { post: item.slug },
+    }))
+    return { paths, fallback: false }
+}
+
+export async function getStaticProps(context: any) {
     const data =  await pageAPI.post(context.params.post)
     return {
         props: {

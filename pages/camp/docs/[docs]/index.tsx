@@ -7,7 +7,6 @@ import styles from "../../../../styles/camp/docs.module.css";
 import {pageAPI} from "../../../../api/api";
 
 const DocsPage = ({data}: any) => {
-
     return (
         <>
             <Meta meta={{}}/>
@@ -27,8 +26,16 @@ const DocsPage = ({data}: any) => {
 
 export default DocsPage
 
-export async function getServerSideProps(context: any) {
-    const data =  await pageAPI.docs(context.params.docs)
+export async function getStaticPaths() {
+    const data = await pageAPI.camp()
+    const paths = data.docs.map((item: any) => ({
+        params: {docs: item.slug},
+    }))
+    return {paths, fallback: false}
+}
+
+export async function getStaticProps(context: any) {
+    const data = await pageAPI.docs(context.params.docs)
     return {
         props: {
             data

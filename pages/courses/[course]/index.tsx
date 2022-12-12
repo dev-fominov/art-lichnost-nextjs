@@ -6,7 +6,6 @@ import Meta from "../../../services/Meta";
 import {pageAPI} from "../../../api/api";
 
 const Course: NextPage = ({data}: any) => {
-
     return (
         <>
             <Meta meta={{}}/>
@@ -19,7 +18,18 @@ const Course: NextPage = ({data}: any) => {
 
 export default Course
 
-export async function getServerSideProps(context: any) {
+export async function getStaticPaths() {
+    const data = await pageAPI.courses()
+    const pathsArr = data.launch_group.map((item: any) => (
+        item.camp_card.map((el: any)=>({
+            params: {course: el.post_slug},
+        }))
+      ))
+    const paths = pathsArr.flat()
+    return {paths, fallback: false}
+}
+
+export async function getStaticProps(context: any) {
     const data =  await pageAPI.course(context.params.course)
     return {
         props: {

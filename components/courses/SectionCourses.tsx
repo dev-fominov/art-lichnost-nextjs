@@ -6,7 +6,6 @@ import {Forms} from "../common/Forms";
 import {A} from "../common/A";
 
 export const SectionCourses = ({data}: any) => {
-
     return (
         <Section>
             <div className={styles.boxContent}>

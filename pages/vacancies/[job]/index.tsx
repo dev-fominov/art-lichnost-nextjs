@@ -64,8 +64,16 @@ const Job = ({data}: any) => {
 
 export default Job
 
-export async function getServerSideProps(context: any) {
-    const data =  await pageAPI.job(context.params.job)
+export async function getStaticPaths() {
+    const data = await pageAPI.vacancies()
+    const paths = data.vacancies.map((item: any) => ({
+        params: {job: item.slug},
+    }))
+    return {paths, fallback: false}
+}
+
+export async function getStaticProps(context: any) {
+    const data = await pageAPI.job(context.params.job)
     return {
         props: {
             data

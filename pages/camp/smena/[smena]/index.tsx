@@ -74,12 +74,12 @@ const Smena: NextPage = ({data}: any) => {
                               deviceType={"tablet"}
                     >
                         {data.photo_slider.map((img: any, index: number) =>
-                            <div key={index} className={styles.slideBox}>
-                                <img style={{width: "100%", height: "100%"}}
-                                     src={img[0]}
-                                     draggable={false}
-                                     alt={img[1]}/>
-                            </div>
+                                                   <div key={index} className={styles.slideBox}>
+                                                       <img style={{width: "100%", height: "100%"}}
+                                                            src={img[0]}
+                                                            draggable={false}
+                                                            alt={img[1]}/>
+                                                   </div>
                         )}
                     </Carousel>
                 </div>
@@ -91,8 +91,28 @@ const Smena: NextPage = ({data}: any) => {
 
 export default Smena
 
-export async function getServerSideProps(context: any) {
-    const data =  await pageAPI.smena(context.params.smena)
+export async function getStaticPaths() {
+    const data1 = await pageAPI.professions()
+    const data2 = await pageAPI.skills()
+    const data3 = await pageAPI.touristHolidays()
+    const paths1 = data1.past_shifts.map((item: any) => ({
+            params: {smena: item.slug},
+        }
+    ))
+    const paths2 = data2.past_shifts.map((item: any) => ({
+            params: {smena: item.slug},
+        }
+    ))
+    const paths3 = data3.past_shifts.map((item: any) => ({
+            params: {smena: item.slug},
+        }
+    ))
+    const paths = [...paths1,...paths2,...paths3]
+    return {paths, fallback: false}
+}
+
+export async function getStaticProps(context: any) {
+    const data = await pageAPI.smena(context.params.smena)
     return {
         props: {
             data

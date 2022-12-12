@@ -8,7 +8,6 @@ import Meta from "../../../services/Meta";
 import {pageAPI} from "../../../api/api";
 
 const Slug: NextPage = ({data}: any) => {
-
     return (
         <>
             <Meta meta={{}}/>
@@ -27,7 +26,7 @@ const Slug: NextPage = ({data}: any) => {
 export default Slug
 
 export async function getServerSideProps(context: any) {
-    const data =  await pageAPI.slug(context.params.slug)
+    const data = await pageAPI.slug(context.params.slug)
     return {
         props: {
             data

@@ -62,7 +62,7 @@ const Docs = ({data, title}: any) => {
                         <p>{el.subtitle}</p>
                         <A href={{
                             pathname: '/camp/docs/[docs]',
-                            query: {docs: el.slug,},
+                            query: {docs: el.slug}
                         }}
                            text={'Узнать больше'}/>
                     </div>)}

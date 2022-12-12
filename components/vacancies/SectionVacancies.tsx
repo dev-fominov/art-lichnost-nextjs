@@ -15,7 +15,8 @@ export const SectionVacancies = ({data}: any) => {
                             <div className={styles.rightBox}>
                                 {item.benefits.map((item: any, index: any) => <div key={index}
                                                                                    className={styles.benefit}>
-                                    {item}</div>)}
+                                    {item}
+                                </div>)}
                             </div>
                         </div>
                         <A className={styles.link}

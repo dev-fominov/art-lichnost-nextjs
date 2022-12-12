@@ -28,7 +28,15 @@ const Project: NextPage = ({data}: any) => {
 
 export default Project
 
-export async function getServerSideProps(context: any) {
+export async function getStaticPaths() {
+    const data = await pageAPI.projects()
+    const paths = data.projects.map((item: any) => ({
+        params: {project: item.slug},
+    }))
+    return {paths, fallback: false}
+}
+
+export async function getStaticProps(context: any) {
     const data =  await pageAPI.project(context.params.project)
     return {
         props: {

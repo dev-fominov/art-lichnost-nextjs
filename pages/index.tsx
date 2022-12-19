@@ -12,7 +12,7 @@ import {pageAPI} from "../api/api";
 const Home: NextPage = ({data}: any) => {
     return (
         <>
-            <Meta meta={{}}/>
+            <Meta meta={data.metadata}/>
             <Header banner={data.banner.url}>
                 <Navbar/>
                 <BigLinks/>

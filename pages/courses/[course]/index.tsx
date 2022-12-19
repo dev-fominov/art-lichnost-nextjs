@@ -8,7 +8,7 @@ import {pageAPI} from "../../../api/api";
 const Course: NextPage = ({data}: any) => {
     return (
         <>
-            <Meta meta={{}}/>
+            <Meta meta={data.metadata}/>
             <HeaderGreen title={data.title}/>
             <SectionCourse data={data}/>
             <Footer/>

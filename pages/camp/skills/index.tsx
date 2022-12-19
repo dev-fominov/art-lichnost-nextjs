@@ -7,7 +7,7 @@ import {pageAPI} from "../../../api/api";
 const Skills = ({data}: any) => {
     return (
         <>
-            <Meta meta={{}}/>
+            <Meta meta={data.metadata}/>
             <HeaderVideo banner={data.background_img.url}
                          content={data.content}
                          video={data.background_video}/>

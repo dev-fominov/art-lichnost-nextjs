@@ -10,7 +10,7 @@ import {pageAPI} from "../../../api/api";
 const Slug: NextPage = ({data}: any) => {
     return (
         <>
-            <Meta meta={{}}/>
+            <Meta meta={data.metadata}/>
             <HeaderGreen title={data.title}/>
             <Section>
                 <div>

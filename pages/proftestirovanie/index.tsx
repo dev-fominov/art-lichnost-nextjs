@@ -15,7 +15,7 @@ const Proftestirovanie: NextPage = ({data}: any) => {
 
     return (
         <>
-            <Meta meta={{}}/>
+            <Meta meta={data.metadata}/>
             {data.id_video
                 ? <div className="video-background">
                     <iframe

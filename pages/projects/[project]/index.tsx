@@ -12,13 +12,13 @@ const Project: NextPage = ({data}: any) => {
         <>
             {data.id_page === 12056
                 ? <>
-                    <Meta meta={{}}/>
+                    <Meta meta={data.metadata}/>
                     <HeaderVideo banner={data.banner.url} content={data.content} video={data.id_video}/>
                     <SectionIssledovanie data={data}/>
                     <Footer/>
                 </>
                 : <>
-                    <Meta meta={{}}/>
+                    <Meta meta={data.metadata}/>
                     <HeaderGreen title={data.title}/>
                     <SectionProforientatsionnyj data={data}/>
                     <Footer/>

@@ -10,7 +10,7 @@ import {pageAPI} from "../../../api/api";
 const Job = ({data}: any) => {
     return (
         <>
-            <Meta meta={{}}/>
+            <Meta meta={data.metadata}/>
             <HeaderGreen title={data.title}/>
             <Section>
                 <div className={styles.boxContent}>

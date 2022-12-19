@@ -8,7 +8,7 @@ import {pageAPI} from "../api/api";
 const Team: NextPage = ({data}: any) => {
     return (
         <>
-            <Meta meta={{}}/>
+            <Meta meta={data.metadata}/>
             <HeaderVideo banner={data.banner.url}
                          content={data.content}
                          video={data.id_video}/>

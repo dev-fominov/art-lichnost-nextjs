@@ -9,7 +9,7 @@ import {pageAPI} from "../api/api";
 const Merch: NextPage = ({data}: any) => {
     return (
         <>
-            <Meta meta={{title: ' Мерч - Центр развития детей и выбора профессии АртЛичность'}}/>
+            <Meta meta={data.metadata}/>
             <HeaderGreen title={<div className={styles.contentTitle} dangerouslySetInnerHTML={{__html: data.title}}/>}/>
             <SectionMerch data={data}/>
             <Footer/>

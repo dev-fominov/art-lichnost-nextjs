@@ -8,7 +8,7 @@ import {pageAPI} from "../api/api";
 const Contacts: NextPage = ({data}: any) => {
     return (
         <>
-            <Meta meta={{}}/>
+            <Meta meta={data.metadata}/>
             <HeaderGreen title={'Контакты'}/>
             <SectionContacts data={data}/>
             <Footer/>

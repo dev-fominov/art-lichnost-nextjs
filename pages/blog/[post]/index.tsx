@@ -9,7 +9,7 @@ import {pageAPI} from "../../../api/api";
 const Post: NextPage = ({data}: any) => {
     return (
         <>
-            <Meta meta={{}}/>
+            <Meta meta={data.metadata}/>
             <HeaderGreen title={data.title}/>
             <Section>
                 <div>

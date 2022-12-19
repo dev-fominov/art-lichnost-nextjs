@@ -8,7 +8,7 @@ import {pageAPI} from "../../api/api";
 const Blog: NextPage = ({data}: any) => {
     return (
         <>
-            <Meta meta={{}}/>
+            <Meta meta={data.metadata}/>
             <HeaderVideo banner={data.background_img.url} content={data.content} video={data.background_video}/>
             <SectionBlog data={data}/>
             <Footer/>

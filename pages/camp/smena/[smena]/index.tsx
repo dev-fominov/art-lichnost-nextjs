@@ -49,7 +49,7 @@ const responsive = {
 const Smena: NextPage = ({data}: any) => {
     return (
         <>
-            <Meta meta={{}}/>
+            <Meta meta={data.metadata}/>
             <HeaderGreen title={data.title}/>
             <Section>
                 <div className={styles.containerBtn}

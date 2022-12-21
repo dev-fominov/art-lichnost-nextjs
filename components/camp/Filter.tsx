@@ -104,6 +104,7 @@ const Filter = ({data}: any) => {
                         {!!resFilter.resFilter
                             ? ((resFilter.resFilter as Array<any>).length
                                 ? (resFilter.resFilter as Array<any>).map((el: any) => <Card key={el.id}
+                                                                                             term_id={el.term_id}
                                                                                              filter={true}
                                                                                              data={el}/>)
                                 : <span>Нет результатов</span>)

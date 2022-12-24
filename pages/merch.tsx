@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { Footer } from "../components/common/Footer";
+import { Footer } from "../components/common/Footter";
 import { HeaderGreen } from "../components/common/HeaderGreen";
 import { SectionMerch } from "../components/merch/SectionMerch";
 import styles from "./../styles/merch/merch.module.css";

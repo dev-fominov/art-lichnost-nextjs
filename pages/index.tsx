@@ -5,7 +5,7 @@ import { BigLinks } from "../components/main/BigLinks";
 import { InfoHead } from "../components/main/InfoHead";
 import { Section } from "../components/common/Section";
 import { HomeItem } from "../components/main/HomeItem";
-import { Footer } from "../components/common/Footer";
+import { Footer } from "../components/common/Footter";
 import Meta from "../services/Meta";
 import { pageAPI } from "../api/api";
 

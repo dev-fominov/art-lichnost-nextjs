@@ -1,5 +1,5 @@
 import { HeaderGreen } from "../../../components/common/HeaderGreen";
-import { Footer } from "../../../components/common/Footer";
+import { Footer } from "../../../components/common/Footter";
 import { NextPage } from "next";
 import { SectionCourse } from "../../../components/course/SectionCourse";
 import Meta from "../../../services/Meta";

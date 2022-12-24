@@ -1,7 +1,7 @@
 import { HeaderGreen } from "../../../components/common/HeaderGreen";
 import { Section } from "../../../components/common/Section";
 import styles from '../../../styles/documents/documents.module.css'
-import { Footer } from "../../../components/common/Footer";
+import { Footer } from "../../../components/common/Footter";
 import { NextPage } from "next";
 import React from "react";
 import Meta from "../../../services/Meta";

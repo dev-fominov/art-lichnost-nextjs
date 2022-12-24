@@ -1,4 +1,4 @@
-import { Footer } from "../../../components/common/Footer";
+import { Footer } from "../../../components/common/Footter";
 import { Navbar } from "../../../components/main/Navbar";
 import { InfoHead } from "../../../components/main/InfoHead";
 import { Header } from "../../../components/common/Header";

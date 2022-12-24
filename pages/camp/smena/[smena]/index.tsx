@@ -1,5 +1,5 @@
 import { HeaderGreen } from "../../../../components/common/HeaderGreen";
-import { Footer } from "../../../../components/common/Footer";
+import { Footer } from "../../../../components/common/Footter";
 import { NextPage } from "next";
 import { Section } from "../../../../components/common/Section";
 import styles from "../../../../styles/camp/smena.module.css";

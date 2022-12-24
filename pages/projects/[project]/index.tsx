@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { Footer } from "../../../components/common/Footer";
+import { Footer } from "../../../components/common/Footter";
 import { HeaderVideo } from "../../../components/common/HeaderVideo";
 import { HeaderGreen } from "../../../components/common/HeaderGreen";
 import { SectionIssledovanie } from "../../../components/projects/SectionIssledovanie";

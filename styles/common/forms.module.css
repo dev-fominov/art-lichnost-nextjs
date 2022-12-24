@@ -58,6 +58,7 @@
     display: block;
     margin: 5px auto 20px auto;
     cursor: pointer;
+    outline:none;
 }
 
 .formDisclaimer {

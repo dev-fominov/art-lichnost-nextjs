@@ -35,7 +35,7 @@ const FilterCourses = ({data}: any) => {
                                     <span>1</span>
                                     Возраст
                                 </label>
-                                <Select data={data.age}
+                                <Select data={[{name: 'Все возрасты', slug: 'all'},...data.age]}
                                         setFieldValue={formik.setFieldValue}
                                         name={formik.values.age.name}
                                         title={'age'}/>
@@ -45,7 +45,7 @@ const FilterCourses = ({data}: any) => {
                                     <span>2</span>
                                     Ведущий программы
                                 </label>
-                                <Select data={data.presenter}
+                                <Select data={[{name: 'Все ведущие', slug: 'all'},...data.presenter]}
                                         setFieldValue={formik.setFieldValue}
                                         name={formik.values.presenter.name}
                                         title={'presenter'}/>
@@ -57,7 +57,7 @@ const FilterCourses = ({data}: any) => {
                                     <span>3</span>
                                     Курс
                                 </label>
-                                <Select data={data.category}
+                                <Select data={[{name: 'Все курсы', slug: 'all'},...data.category]}
                                         setFieldValue={formik.setFieldValue}
                                         name={formik.values.category.name}
                                         title={'category'}/>

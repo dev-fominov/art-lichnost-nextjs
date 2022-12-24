@@ -49,6 +49,9 @@ export const pageAPI = {
     slug(slug: string) {
         return instance.get(`page/${slug}`).then(res => res.data)
     },
+    contract(slug: string) {
+        return instance.get(`page/contract/${slug}`).then(res => res.data)
+    },
     courses() {
         return instance.get(`page/courses`).then(res => res.data)
     },

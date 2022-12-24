@@ -195,6 +195,7 @@
     color: #FFFFFF;
     background-color: #eb2731;
     border-radius: 30px;
+    outline:none;
 }
 
 .modalPriceBox {

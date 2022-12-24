@@ -47,8 +47,15 @@
 
 @media (max-width: 1000px) {
     .testBlock {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
     }
 }
@@ -129,24 +136,38 @@
 }
 
 .btnPriceBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
 @media (max-width: 520px) {
     .btnPriceBox {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
         flex-direction: column-reverse;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
     }
 }
 
 .btnOrder {
+    -ms-flex-item-align: end;
+    -ms-grid-row-align: end;
     align-self: end;
 }
 
 @media (max-width: 520px) {
     .btnOrder {
+        -ms-flex-item-align: auto;
         align-self: auto;
         margin-top: 15px;
     }
@@ -160,6 +181,7 @@
     text-align: center;
     font-size: 15px;
     -webkit-transition: all .25s ease;
+    -o-transition: all .25s ease;
     transition: all .25s ease;
     line-height: 45px;
     color: #fff;
@@ -209,11 +231,14 @@
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    -ms-flex-line-pack: center;
     align-content: center;
 }
 
 @media (max-width: 1000px) {
     .formOrderBox {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -346,6 +371,8 @@
     background: url('../../components/common/img/green-arr.svg') no-repeat center center;
     width: 16px;
     height: 10px;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
     transform: rotate(90deg);
 }
 
@@ -369,6 +396,8 @@
 }
 
 .boxWhatNeed {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: start;
     -ms-flex-pack: start;
@@ -418,6 +447,7 @@
 
 @media (max-width: 890px) {
     .boxWhatNeed {
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     }
 
@@ -510,6 +540,8 @@
     }
 
     .consultantBox {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
         justify-content: start;
     }
 
@@ -528,6 +560,8 @@
     }
 
     .consultantBox {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
     }
 }
@@ -570,5 +604,4 @@
     }
 
 }
-
 

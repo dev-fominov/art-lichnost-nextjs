@@ -1,17 +1,14 @@
 import type {NextPage} from 'next'
-import {Footer} from "../components/common/footer";
-import {HeaderVideo} from "../components/common/header-video";
-import SectionAbout from "../components/about/section-about";
-import Head from "next/head";
+import {Footer} from "../components/common/Footer";
+import {HeaderVideo} from "../components/common/HeaderVideo";
+import SectionAbout from "../components/about/SectionAbout";
+import Meta from "../services/Meta";
+import {pageAPI} from "../api/api";
 
 const About: NextPage = ({data}: any) => {
     return (
         <>
-            <Head>
-                <title>
-                    О нас - Центр развития детей и выбора профессии АртЛичность
-                </title>
-            </Head>
+            <Meta meta={data.metadata}/>
             <HeaderVideo banner={data.banner.url}
                          content={data.content}
                          video={data.id_video}/>
@@ -24,9 +21,7 @@ const About: NextPage = ({data}: any) => {
 export default About
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/about`)
-    const data = await res.json();
-
+    const data =  await pageAPI.about()
     return {
         props: {
             data

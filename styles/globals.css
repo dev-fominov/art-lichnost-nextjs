@@ -2,66 +2,68 @@
 
 html,
 body {
-  font-family: 'Montserrat',sans-serif;
-  font-size: 17px;
-  font-weight: 400;
-  color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: #000;
 
 }
 
 html, body, div, dl, dt, dd, ul, ol, li, h1,
 h2, h3, h4, h5, h6, pre, code, form, fieldset, legend,
 input, textarea, p, blockquote, th, td {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-.wrapper{
-  display: none;
+.wrapper {
+    display: none;
 }
 
 
 :root {
-  --video-width: 100vw;
-  --video-height: 100vh;
+    --video-width: 100vw;
+    --video-height: 100vh;
 }
 
 @media (min-aspect-ratio: 16/9) {
-  :root {
-    --video-height: 56.25vw;
-  }
+    :root {
+        --video-height: 56.25vw;
+    }
 }
 
 @media (max-aspect-ratio: 16/9) {
-  :root {
-    --video-width: 177.78vh;
-  }
+    :root {
+        --video-width: 177.78vh;
+    }
 }
 
 .video-background {
-  background: rgba(0,0,0,.5);
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
 }
 
 .video-background iframe {
-  z-index: -99;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: var(--video-width);
-  height: var(--video-height);
-  transform: translate(-50%, -50%);
+    z-index: -99;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--video-width);
+    height: var(--video-height);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
-
 

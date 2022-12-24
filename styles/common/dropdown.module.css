@@ -6,7 +6,7 @@
     cursor: pointer;
 }
 
-.dropdownMenuTitle{
+.dropdownMenuTitle {
     padding: 0 15px 25px 15px;
 }
 
@@ -50,6 +50,7 @@
     text-decoration: none;
     font-weight: 600;
     font-size: 17px;
+    width: -moz-max-content;
     width: max-content;
 }
 

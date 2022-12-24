@@ -1,32 +1,24 @@
 import type {NextPage} from 'next'
-import {Footer} from "../../../components/common/footer";
-import {HeaderVideo} from "../../../components/common/header-video";
-import React from "react";
-import {HeaderGreen} from "../../../components/common/header-green";
-import {SectionIssledovanie} from "../../../components/projects/section-issledovanie";
-import {SectionProforientatsionnyj} from "../../../components/projects/section-proforientatsionnyj";
-import Head from "next/head";
+import {Footer} from "../../../components/common/Footer";
+import {HeaderVideo} from "../../../components/common/HeaderVideo";
+import {HeaderGreen} from "../../../components/common/HeaderGreen";
+import {SectionIssledovanie} from "../../../components/projects/SectionIssledovanie";
+import {SectionProforientatsionnyj} from "../../../components/projects/SectionProforientatsionnyj";
+import Meta from "../../../services/Meta";
+import {pageAPI} from "../../../api/api";
 
 const Project: NextPage = ({data}: any) => {
     return (
         <>
             {data.id_page === 12056
                 ? <>
-                    <Head>
-                        <title>
-                            Ценности современных подростков ожидание работадателей
-                        </title>
-                    </Head>
+                    <Meta meta={data.metadata}/>
                     <HeaderVideo banner={data.banner.url} content={data.content} video={data.id_video}/>
                     <SectionIssledovanie data={data}/>
                     <Footer/>
                 </>
                 : <>
-                    <Head>
-                        <title>
-                            {data.title + '- Центр развития детей и выбора профессии АртЛичность'}
-                        </title>
-                    </Head>
+                    <Meta meta={data.metadata}/>
                     <HeaderGreen title={data.title}/>
                     <SectionProforientatsionnyj data={data}/>
                     <Footer/>
@@ -36,10 +28,16 @@ const Project: NextPage = ({data}: any) => {
 
 export default Project
 
-export async function getServerSideProps(context: any) {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/projects/${context.params.project}`)
-    const data = await res.json();
+export async function getStaticPaths() {
+    const data = await pageAPI.projects()
+    const paths = data.projects.map((item: any) => ({
+        params: {project: item.slug},
+    }))
+    return {paths, fallback: false}
+}
 
+export async function getStaticProps(context: any) {
+    const data =  await pageAPI.project(context.params.project)
     return {
         props: {
             data

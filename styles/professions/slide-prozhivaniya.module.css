@@ -15,11 +15,15 @@
     margin: auto;
     border-radius: 40px;
     background-size: cover;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
     transition: .5s;
     cursor: pointer;
 }
 
 .slideBox:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
     transform: scale(1.05)
 }
 

@@ -1,20 +1,17 @@
 import type {NextPage} from 'next'
-import {Footer} from "../../components/common/footer";
-import FilterCourses from "../../components/courses/filter-courses";
-import {HeaderVideo} from "../../components/common/header-video";
-import {Container} from "../../components/common/container";
-import {SectionCourses} from "../../components/courses/section-courses";
+import {Footer} from "../../components/common/Footer";
+import FilterCourses from "../../components/courses/FilterCourses";
+import {HeaderVideo} from "../../components/common/HeaderVideo";
+import {Container} from "../../components/common/Container";
+import {SectionCourses} from "../../components/courses/SectionCourses";
 import styles from '../../styles/courses/section-courses.module.css';
-import Head from "next/head";
+import Meta from "../../services/Meta";
+import {pageAPI} from "../../api/api";
 
 const Courses: NextPage = ({data}: any) => {
     return (
         <>
-            <Head>
-                <title>
-                    Курсы - Центр развития детей и выбора профессии АртЛичность
-                </title>
-            </Head>
+            <Meta meta={data.metadata}/>
             <HeaderVideo banner={data.background_img.url}
                          content={data.content}
                          video={data.background_video}/>
@@ -33,9 +30,7 @@ const Courses: NextPage = ({data}: any) => {
 export default Courses
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/courses`)
-    const data = await res.json();
-
+    const data =  await pageAPI.courses()
     return {
         props: {
             data

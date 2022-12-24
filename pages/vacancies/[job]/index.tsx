@@ -1,20 +1,16 @@
-import {HeaderGreen} from "../../../components/common/header-green";
-import {Section} from "../../../components/common/section";
+import {HeaderGreen} from "../../../components/common/HeaderGreen";
+import {Section} from "../../../components/common/Section";
 import styles from '../../../styles/vacancies/job.module.css';
-import {Footer} from "../../../components/common/footer";
-import React from "react";
+import {Footer} from "../../../components/common/Footer";
 import {A} from "../../../components/common/A";
-import SliderJobPhoto from "../../../components/vacancies/slider-job-photo";
-import Head from "next/head";
+import SliderJobPhoto from "../../../components/vacancies/SliderJobPhoto";
+import Meta from "../../../services/Meta";
+import {pageAPI} from "../../../api/api";
 
 const Job = ({data}: any) => {
     return (
         <>
-            <Head>
-                <title>
-                    {data.title + '- Центр развития детей и выбора профессии АртЛичность'}
-                </title>
-            </Head>
+            <Meta meta={data.metadata}/>
             <HeaderGreen title={data.title}/>
             <Section>
                 <div className={styles.boxContent}>
@@ -68,10 +64,16 @@ const Job = ({data}: any) => {
 
 export default Job
 
-export async function getServerSideProps(context: any) {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/vacancies/${context.params.job}`)
-    const data = await res.json();
+export async function getStaticPaths() {
+    const data = await pageAPI.vacancies()
+    const paths = data.vacancies.map((item: any) => ({
+        params: {job: item.slug},
+    }))
+    return {paths, fallback: false}
+}
 
+export async function getStaticProps(context: any) {
+    const data = await pageAPI.job(context.params.job)
     return {
         props: {
             data

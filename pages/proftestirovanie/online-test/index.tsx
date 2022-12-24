@@ -1,13 +1,13 @@
-import {Footer} from "../../../components/common/footer";
-import {Navbar} from "../../../components/main/navbar";
-import {InfoHead} from "../../../components/main/info-head";
-import {Header} from "../../../components/common/header";
+import {Footer} from "../../../components/common/Footer";
+import {Navbar} from "../../../components/main/Navbar";
+import {InfoHead} from "../../../components/main/InfoHead";
+import {Header} from "../../../components/common/Header";
 import styles from "../../../styles/proftestirovanie/testirovanie.module.css";
-import {Container} from "../../../components/common/container";
-import SectionTestirovanie from "../../../components/proftestirovanie/section-testirovanie";
-import Head from "next/head";
-import React from "react";
+import {Container} from "../../../components/common/Container";
+import SectionTestirovanie from "../../../components/proftestirovanie/SectionTestirovanie";
 import {NextPage} from "next";
+import Meta from "../../../services/Meta";
+import {pageAPI} from "../../../api/api";
 
 const OnlineTest: NextPage = ({data}: any) => {
 
@@ -15,11 +15,8 @@ const OnlineTest: NextPage = ({data}: any) => {
     const VIDEO_HEIGHT = 1080;
 
     return (
-        <> <Head>
-            <title>
-                Онлайн-тест 7-11 класс - Центр развития детей и выбора профессии АртЛичность
-            </title>
-        </Head>
+        <>
+            <Meta meta={data.metadata}/>
             {data.id_video
                 ? <div className="video-background">
                     <iframe
@@ -73,9 +70,7 @@ const OnlineTest: NextPage = ({data}: any) => {
 export default OnlineTest
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/online-test`)
-    const data = await res.json();
-
+    const data =  await pageAPI.onlineTest()
     return {
         props: {
             data

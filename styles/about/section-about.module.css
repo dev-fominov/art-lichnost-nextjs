@@ -36,6 +36,7 @@
 @media (max-width: 1200px) {
     .contentBox {
         justify-content: space-evenly;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     }
 }
@@ -106,6 +107,9 @@
 
 @media (max-width: 700px) {
     .history {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         justify-content: center;
         -webkit-box-pack: center;
@@ -182,7 +186,7 @@
 
 .awardsItem {
     border-bottom: 1px solid #C4C4C4;
-    padding: 15px 20px 15px 0px;
+    padding: 15px 20px 15px 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -239,4 +243,3 @@
         padding: 0;
     }
 }
-

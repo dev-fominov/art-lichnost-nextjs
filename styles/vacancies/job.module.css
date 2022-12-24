@@ -97,6 +97,9 @@
 
 @media (max-width: 650px) {
     .content {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
 
@@ -108,7 +111,8 @@
         margin-bottom: 15px;
         width: 100%;
     }
-    .right{
-       width:  100%;
+
+    .right {
+        width: 100%;
     }
 }

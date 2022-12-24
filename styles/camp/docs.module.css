@@ -1,6 +1,3 @@
-.docs {
-}
-
 .title {
     font-weight: 600;
     font-size: 22px;
@@ -57,7 +54,8 @@
     font-size: 22px;
     margin-bottom: 35px;
 }
-.medicalBlock  {
+
+.medicalBlock {
     margin-bottom: 70px;
 }
 
@@ -82,18 +80,17 @@
     color: #000000;
 }
 
-.medicalBlock h3{
- margin-bottom: 10px;
+.medicalBlock h3 {
+    margin-bottom: 10px;
 }
 
-.medicalBlock ol{
+.medicalBlock ol {
     list-style: none;
 }
 
 .containerBtn {
     position: relative;
 }
-
 
 
 

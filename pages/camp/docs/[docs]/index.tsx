@@ -1,20 +1,15 @@
-import {HeaderGreen} from "../../../../components/common/header-green";
-import {Section} from "../../../../components/common/section";
-import {Footer} from "../../../../components/common/footer";
-import Docs from "../../../../components/camp/docs";
+import {HeaderGreen} from "../../../../components/common/HeaderGreen";
+import {Section} from "../../../../components/common/Section";
+import {Footer} from "../../../../components/common/Footer";
+import Docs from "../../../../components/camp/Docs";
+import Meta from "../../../../services/Meta";
 import styles from "../../../../styles/camp/docs.module.css";
-import Head from "next/head";
-import React from "react";
+import {pageAPI} from "../../../../api/api";
 
 const DocsPage = ({data}: any) => {
-
     return (
         <>
-            <Head>
-                <title>
-                    {data.title + '- Центр развития детей и выбора профессии АртЛичность'}
-                </title>
-            </Head>
+            <Meta meta={data.metadata}/>
             <HeaderGreen title={data.title}/>
             <Section>
                 <div className={styles.docs}>
@@ -31,10 +26,16 @@ const DocsPage = ({data}: any) => {
 
 export default DocsPage
 
-export async function getServerSideProps(context: any) {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/docs/${context.params.docs}`)
-    const data = await res.json();
+export async function getStaticPaths() {
+    const data = await pageAPI.camp()
+    const paths = data.docs.map((item: any) => ({
+        params: {docs: item.slug},
+    }))
+    return {paths, fallback: false}
+}
 
+export async function getStaticProps(context: any) {
+    const data = await pageAPI.docs(context.params.docs)
     return {
         props: {
             data

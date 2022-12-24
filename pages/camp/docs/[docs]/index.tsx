@@ -1,6 +1,6 @@
 import { HeaderGreen } from "../../../../components/common/HeaderGreen";
 import { Section } from "../../../../components/common/Section";
-import { Footer } from "../../../../components/common/Footter";
+import { Footer } from "../../../../components/common/Footer";
 import Docs from "../../../../components/camp/Docs";
 import Meta from "../../../../services/Meta";
 import styles from "../../../../styles/camp/docs.module.css";

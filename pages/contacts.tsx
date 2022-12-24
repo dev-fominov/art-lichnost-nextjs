@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { Footer } from "../components/common/Footter";
+import { Footer } from "../components/common/Footer";
 import { SectionContacts } from "../components/contacts/SectionContacts";
 import { HeaderGreen } from "../components/common/HeaderGreen";
 import Meta from "../services/Meta";

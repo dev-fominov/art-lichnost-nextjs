@@ -1,7 +1,7 @@
 import { HeaderGreen } from "../../../components/common/HeaderGreen";
 import { Section } from "../../../components/common/Section";
 import styles from '../../../styles/vacancies/job.module.css';
-import { Footer } from "../../../components/common/Footter";
+import { Footer } from "../../../components/common/Footer";
 import { A } from "../../../components/common/A";
 import SliderJobPhoto from "../../../components/vacancies/SliderJobPhoto";
 import Meta from "../../../services/Meta";

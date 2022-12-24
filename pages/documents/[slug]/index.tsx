@@ -1,24 +1,24 @@
-import {HeaderGreen} from "../../../components/common/HeaderGreen";
-import {Section} from "../../../components/common/Section";
+import { HeaderGreen } from "../../../components/common/HeaderGreen";
+import { Section } from "../../../components/common/Section";
 import styles from '../../../styles/documents/documents.module.css'
-import {Footer} from "../../../components/common/Footer";
-import {NextPage} from "next";
+import { Footer } from "../../../components/common/Footer";
+import { NextPage } from "next";
 import React from "react";
 import Meta from "../../../services/Meta";
-import {pageAPI} from "../../../api/api";
+import { pageAPI } from "../../../api/api";
 
-const Slug: NextPage = ({data}: any) => {
+const Slug: NextPage = ({ data }: any) => {
     return (
         <>
-            <Meta meta={data.metadata}/>
-            <HeaderGreen title={data.title}/>
+            <Meta meta={data.metadata} />
+            <HeaderGreen title={data.title} />
             <Section>
                 <div>
                     <h1 className={styles.title}>{data.title}</h1>
-                    <div className={styles.content} dangerouslySetInnerHTML={{__html: data.content}}/>
+                    <div className={styles.content} dangerouslySetInnerHTML={{ __html: data.content }} />
                 </div>
             </Section>
-            <Footer/>
+            <Footer />
         </>
     )
 }

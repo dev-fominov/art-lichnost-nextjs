@@ -1,30 +1,27 @@
-import type { NextPage } from 'next'
-import { Header } from "../components/common/header";
-import { Navbar } from "../components/main/navbar";
-import { BigLinks } from "../components/main/big-links";
-import { InfoHead } from "../components/main/info-head";
-import { Section } from "../components/common/section";
-import { HomeItem } from "../components/main/home-item";
-import { Footer } from "../components/common/footer";
-import Head from "next/head";
+import type {NextPage} from 'next'
+import {Header} from "../components/common/Header";
+import {Navbar} from "../components/main/Navbar";
+import {BigLinks} from "../components/main/BigLinks";
+import {InfoHead} from "../components/main/InfoHead";
+import {Section} from "../components/common/Section";
+import {HomeItem} from "../components/main/HomeItem";
+import {Footer} from "../components/common/Footer";
+import Meta from "../services/Meta";
+import {pageAPI} from "../api/api";
 
-const Home: NextPage = ({ data }: any) => {
+const Home: NextPage = ({data}: any) => {
     return (
         <>
-            <Head>
-                <title>
-                    Профориентация в центре развития детей АртЛичность в Санкт-Петербурге
-                </title>
-            </Head>
+            <Meta meta={data.metadata}/>
             <Header banner={data.banner.url}>
-                <Navbar />
-                <BigLinks />
-                <InfoHead content={data.content} />
+                <Navbar/>
+                <BigLinks/>
+                <InfoHead content={data.content}/>
             </Header>
             <Section>
-                {data.sections.map((item: any, index: number) => <HomeItem key={index} id={index} item={item} />)}
+                {data.sections.map((item: any, index: number) => <HomeItem key={index} id={index} item={item}/>)}
             </Section>
-            <Footer />
+            <Footer/>
         </>
     )
 }
@@ -32,42 +29,10 @@ const Home: NextPage = ({ data }: any) => {
 export default Home
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/home`)
-    const data = await res.json();
-
+    const data =  await pageAPI.home()
     return {
         props: {
             data
-        },
-        revalidate: 10,
+        }
     };
 }
-
-
-// export const getStaticProps = async () => {
-//     try {
-//         const response = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/home`)
-//         const data = await response.json()
-
-//         if (!data) {
-//             return {
-//                 notFound: true,
-//             }
-//         }
-//         return {
-//             props: { data }
-//         }
-//     } catch {
-//         return {
-//             props: {data: null}
-//         }
-//     }
-// }
-// =======
-//     return {
-//         props: {
-//             data
-//         }
-//     };
-// }
-// >>>>>>> mainPage

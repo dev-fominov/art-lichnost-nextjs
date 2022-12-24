@@ -56,7 +56,12 @@
 }
 
 .itemDescriptionCard {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
@@ -76,11 +81,13 @@
         margin: 0;
         padding: 0;
     }
-    .card{
+
+    .card {
         margin: 0;
         width: auto;
     }
-    .card img{
+
+    .card img {
         height: 220px;
         width: 100%;
     }

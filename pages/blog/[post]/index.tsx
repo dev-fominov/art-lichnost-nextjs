@@ -1,19 +1,15 @@
-import {HeaderGreen} from "../../../components/common/header-green";
-import {Section} from "../../../components/common/section";
+import {HeaderGreen} from "../../../components/common/HeaderGreen";
+import {Section} from "../../../components/common/Section";
 import styles from '../../../styles/blog/post.module.css'
-import {Footer} from "../../../components/common/footer";
+import {Footer} from "../../../components/common/Footer";
 import {NextPage} from "next";
-import Head from "next/head";
-import React from "react";
+import Meta from "../../../services/Meta";
+import {pageAPI} from "../../../api/api";
 
 const Post: NextPage = ({data}: any) => {
-
     return (
-        <> <Head>
-            <title>
-                {data.title + '- Центр развития детей и выбора профессии АртЛичность'}
-            </title>
-        </Head>
+        <>
+            <Meta meta={data.metadata}/>
             <HeaderGreen title={data.title}/>
             <Section>
                 <div>
@@ -28,10 +24,16 @@ const Post: NextPage = ({data}: any) => {
 
 export default Post
 
-export async function getServerSideProps(context: any) {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/blogs/${context.params.post}`)
-    const data = await res.json();
+export async function getStaticPaths() {
+    const data =  await pageAPI.blogs()
+    const paths = data.posts.map((item: any) => ({
+        params: { post: item.slug },
+    }))
+    return { paths, fallback: false }
+}
 
+export async function getStaticProps(context: any) {
+    const data =  await pageAPI.post(context.params.post)
     return {
         props: {
             data

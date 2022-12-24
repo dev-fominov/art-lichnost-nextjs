@@ -1,9 +1,9 @@
-.title{
+.title {
     margin-bottom: 30px;
     font-size: 40px;
 }
 
-.content p{
+.content p {
     font-weight: normal;
     font-size: 14px;
     line-height: 20px;
@@ -11,11 +11,11 @@
     margin-bottom: 25px;
 }
 
-.content ol  li{
+.content ol li {
     list-style: none;
 }
 
-.content ul li{
+.content ul li {
     margin-bottom: 10px;
     list-style: none;
     font-weight: normal;
@@ -23,12 +23,11 @@
     line-height: 20px;
 }
 
-.content ol>li{
+.content ol > li {
     margin-bottom: 30px;
- }
+}
 
-.content a{
+.content a {
     color: -webkit-link;
     text-decoration: underline;
 }
-

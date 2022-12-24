@@ -1,19 +1,15 @@
 import type {NextPage} from 'next'
-import {Footer} from "../../components/common/footer";
-import {SectionCamp} from "../../components/camp/section-camp";
-import Filter from "../../components/camp/filter";
-import React from "react";
-import {HeaderVideo} from "../../components/common/header-video";
-import Head from "next/head";
+import {Footer} from "../../components/common/Footer";
+import {SectionCamp} from "../../components/camp/SectionCamp";
+import Filter from "../../components/camp/Filter";
+import {HeaderVideo} from "../../components/common/HeaderVideo";
+import Meta from "../../services/Meta";
+import {pageAPI} from "../../api/api";
 
 const Camp: NextPage = ({data}: any) => {
     return (
         <>
-            <Head>
-                <title>
-                     Лагерь для детей в Ленинградской области - АртЛичность
-                </title>
-            </Head>
+            <Meta meta={data.metadata}/>
             <HeaderVideo banner={data.background_img.url}
                          content={data.content}
                          video={data.background_video}/>
@@ -27,9 +23,7 @@ const Camp: NextPage = ({data}: any) => {
 export default Camp
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/camp`)
-    const data = await res.json();
-
+    const data =  await pageAPI.camp()
     return {
         props: {
             data

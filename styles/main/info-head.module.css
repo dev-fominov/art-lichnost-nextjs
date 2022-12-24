@@ -1,4 +1,3 @@
-
 .boxInfoHead {
     margin-top: 50vh;
     position: relative;
@@ -26,6 +25,7 @@
         position: relative;
     }
 }
+
 .boxInfoHead p {
     font-weight: 500;
     font-size: 13px;

@@ -1,12 +1,12 @@
 import type {NextPage} from 'next'
-import {Footer} from "../../components/common/footer";
-import React from "react";
-import {Navbar} from "../../components/main/navbar";
-import {InfoHead} from "../../components/main/info-head";
-import {Header} from "../../components/common/header";
-import {BigLinksProf} from "../../components/proftestirovanie/big-links-prof";
-import SectionProftestirovanie from "../../components/proftestirovanie/section-proftestirovanie";
-import Head from "next/head";
+import {Footer} from "../../components/common/Footer";
+import {Navbar} from "../../components/main/Navbar";
+import {InfoHead} from "../../components/main/InfoHead";
+import {Header} from "../../components/common/Header";
+import {BigLinksProf} from "../../components/proftestirovanie/BigLinksProf";
+import SectionProftestirovanie from "../../components/proftestirovanie/SectionProftestirovanie";
+import Meta from "../../services/Meta";
+import {pageAPI} from "../../api/api";
 
 const Proftestirovanie: NextPage = ({data}: any) => {
 
@@ -14,11 +14,8 @@ const Proftestirovanie: NextPage = ({data}: any) => {
     const VIDEO_HEIGHT = 1080;
 
     return (
-        <> <Head>
-            <title>
-                Профтестирование - Центр развития детей и выбора профессии АртЛичность
-            </title>
-        </Head>
+        <>
+            <Meta meta={data.metadata}/>
             {data.id_video
                 ? <div className="video-background">
                     <iframe
@@ -46,9 +43,7 @@ const Proftestirovanie: NextPage = ({data}: any) => {
 export default Proftestirovanie
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/proftestirovanie`)
-    const data = await res.json();
-
+    const data =  await pageAPI.proftestirovanie()
     return {
         props: {
             data

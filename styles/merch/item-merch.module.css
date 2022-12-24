@@ -48,6 +48,8 @@
 }
 
 .sizes {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     justify-content: left;
     margin-bottom: 20px;
@@ -112,6 +114,7 @@
     top: 11px;
     left: -1px;
     -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
 
@@ -135,7 +138,7 @@
     color: #30AA33;
 }
 
-.noSizeAvailableTitle{
+.noSizeAvailableTitle {
     font-weight: 500;
     font-size: 13px;
     line-height: 16px;
@@ -195,6 +198,6 @@
 
 @media (max-width: 600px) {
     .item {
-       margin-right: 0;
+        margin-right: 0;
     }
 }

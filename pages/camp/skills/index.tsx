@@ -1,21 +1,18 @@
-import { Footer } from "../../../components/common/footer";
-import { HeaderVideo } from "../../../components/common/header-video";
-import { SectionProfessions } from "../../../components/professions/section-professions";
-import Head from "next/head";
+import {Footer} from "../../../components/common/Footer";
+import {HeaderVideo} from "../../../components/common/HeaderVideo";
+import {SectionProfessions} from "../../../components/professions/SectionProfessions";
+import Meta from "../../../services/Meta";
+import {pageAPI} from "../../../api/api";
 
-const Skills = ({ data }: any) => {
+const Skills = ({data}: any) => {
     return (
         <>
-            <Head>
-                <title>
-                    Лагерь навыков - Центр развития детей и выбора профессии АртЛичность
-                </title>
-            </Head>
+            <Meta meta={data.metadata}/>
             <HeaderVideo banner={data.background_img.url}
-                content={data.content}
-                video={data.background_video} />
-            <SectionProfessions data={data} />
-            <Footer />
+                         content={data.content}
+                         video={data.background_video}/>
+            <SectionProfessions data={data}/>
+            <Footer/>
         </>
     )
 }
@@ -23,9 +20,7 @@ const Skills = ({ data }: any) => {
 export default Skills
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/skills`)
-    const data = await res.json();
-
+    const data =  await pageAPI.skills()
     return {
         props: {
             data

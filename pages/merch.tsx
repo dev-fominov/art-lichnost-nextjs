@@ -1,18 +1,15 @@
 import type {NextPage} from 'next'
-import {Footer} from "../components/common/footer";
-import {HeaderGreen} from "../components/common/header-green";
-import {SectionMerch} from "../components/merch/section-merch";
+import {Footer} from "../components/common/Footer";
+import {HeaderGreen} from "../components/common/HeaderGreen";
+import {SectionMerch} from "../components/merch/SectionMerch";
 import styles from "./../styles/merch/merch.module.css";
-import Head from "next/head";
+import Meta from "../services/Meta";
+import {pageAPI} from "../api/api";
 
 const Merch: NextPage = ({data}: any) => {
     return (
         <>
-            <Head>
-                <title>
-                    Мерч - Центр развития детей и выбора профессии АртЛичность
-                </title>
-            </Head>
+            <Meta meta={data.metadata}/>
             <HeaderGreen title={<div className={styles.contentTitle} dangerouslySetInnerHTML={{__html: data.title}}/>}/>
             <SectionMerch data={data}/>
             <Footer/>
@@ -23,9 +20,7 @@ const Merch: NextPage = ({data}: any) => {
 export default Merch
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/merch`)
-    const data = await res.json();
-
+    const data =  await pageAPI.merch()
     return {
         props: {
             data

@@ -1,4 +1,4 @@
-.slideBox{
+.slideBox {
     position: relative;
     overflow: hidden;
     max-width: 286px;
@@ -20,14 +20,18 @@
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
     transition: .5s;
 }
 
 .slideBox:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
     transform: scale(1.05)
 }
 
-.slideBox:before{
+.slideBox:before {
     content: '';
     position: absolute;
     bottom: 70px;
@@ -39,7 +43,7 @@
     z-index: 10;
 }
 
-.slideBox img{
+.slideBox img {
     width: 286px;
     height: 440px;
     border-radius: 40px;
@@ -53,7 +57,7 @@
     z-index: 0;
 }
 
-.name{
+.name {
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
@@ -62,7 +66,7 @@
     z-index: 10;
 }
 
-.description{
+.description {
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;

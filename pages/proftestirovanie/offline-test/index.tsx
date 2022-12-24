@@ -1,12 +1,13 @@
-import {Footer} from "../../../components/common/footer";
-import {Navbar} from "../../../components/main/navbar";
-import {InfoHead} from "../../../components/main/info-head";
-import {Header} from "../../../components/common/header";
+import {Footer} from "../../../components/common/Footer";
+import {Navbar} from "../../../components/main/Navbar";
+import {InfoHead} from "../../../components/main/InfoHead";
+import {Header} from "../../../components/common/Header";
 import styles from "../../../styles/proftestirovanie/testirovanie.module.css";
-import {Container} from "../../../components/common/container";
-import SectionTestirovanie from "../../../components/proftestirovanie/section-testirovanie";
-import Head from "next/head";
+import {Container} from "../../../components/common/Container";
+import SectionTestirovanie from "../../../components/proftestirovanie/SectionTestirovanie";
 import {NextPage} from "next";
+import Meta from "../../../services/Meta";
+import {pageAPI} from "../../../api/api";
 
 const OfflineTest: NextPage = ({data}: any) => {
 
@@ -14,11 +15,8 @@ const OfflineTest: NextPage = ({data}: any) => {
     const VIDEO_HEIGHT = 1080;
 
     return (
-        <> <Head>
-            <title>
-                Офлайн-тест - Центр развития детей и выбора профессии АртЛичность
-            </title>
-        </Head>
+        <>
+            <Meta meta={data.metadata}/>
             {data.id_video
                 ? <div className="video-background">
                     <iframe
@@ -72,9 +70,7 @@ const OfflineTest: NextPage = ({data}: any) => {
 export default OfflineTest
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/offline-test`)
-    const data = await res.json();
-
+    const data =  await pageAPI.offlineTest()
     return {
         props: {
             data

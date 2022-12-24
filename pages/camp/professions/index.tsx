@@ -1,16 +1,13 @@
-import {Footer} from "../../../components/common/footer";
-import {HeaderVideo} from "../../../components/common/header-video";
-import {SectionProfessions} from "../../../components/professions/section-professions";
-import Head from "next/head";
+import {Footer} from "../../../components/common/Footer";
+import {HeaderVideo} from "../../../components/common/HeaderVideo";
+import {SectionProfessions} from "../../../components/professions/SectionProfessions";
+import Meta from "../../../services/Meta";
+import {pageAPI} from "../../../api/api";
 
 const Professions = ({data}: any) => {
     return (
         <>
-            <Head>
-                <title>
-                    Лагерь профессий - Центр развития детей и выбора профессии АртЛичность
-                </title>
-            </Head>
+            <Meta meta={data.metadata}/>
             <HeaderVideo banner={data.background_img.url}
                          content={data.content}
                          video={data.background_video}/>
@@ -22,10 +19,8 @@ const Professions = ({data}: any) => {
 
 export default Professions
 
-export async function getStaticProps () {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/professions`)
-    const data = await res.json();
-
+export async function getStaticProps() {
+    const data =  await pageAPI.professions()
     return {
         props: {
             data

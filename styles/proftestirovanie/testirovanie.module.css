@@ -1,4 +1,4 @@
-.benefits{
+.benefits {
     margin-top: 80px;
     z-index: 1000;
     position: relative;
@@ -24,7 +24,11 @@
     box-sizing: border-box;
     border-radius: 100px;
     padding: 14px 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -32,6 +36,7 @@
     .benefits {
         margin-top: 20px;
     }
+
     .itemLabel {
         font-weight: 800;
         font-size: 16px;

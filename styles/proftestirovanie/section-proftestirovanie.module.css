@@ -12,7 +12,12 @@
 
 @media (max-width: 991px) {
     .testsBox {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -147,10 +152,14 @@
     .consName {
         margin-bottom: 7px;
     }
-    .consultantBox{
+
+    .consultantBox {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
         justify-content: start;
     }
-    .consText{
+
+    .consText {
         max-width: 100%;
     }
 }
@@ -159,10 +168,14 @@
     .consultantBox {
         padding: 20px;
     }
-    .status{
+
+    .status {
         margin-bottom: 20px;
     }
-    .consultantBox{
+
+    .consultantBox {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
     }
 }
@@ -184,12 +197,17 @@
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    -ms-flex-line-pack: center;
     align-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
 @media (max-width: 1000px) {
     .formOrderBox {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -233,4 +251,3 @@
     height: 281px;
     border-radius: 40px;
 }
-

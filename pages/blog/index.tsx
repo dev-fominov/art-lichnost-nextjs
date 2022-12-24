@@ -1,18 +1,14 @@
 import type {NextPage} from 'next'
-import {Footer} from "../../components/common/footer";
-import {HeaderVideo} from "../../components/common/header-video";
-import {SectionBlog} from "../../components/blog/section-blog";
-import Head from "next/head";
-import React from "react";
+import {Footer} from "../../components/common/Footer";
+import {HeaderVideo} from "../../components/common/HeaderVideo";
+import {SectionBlog} from "../../components/blog/SectionBlog";
+import Meta from "../../services/Meta";
+import {pageAPI} from "../../api/api";
 
 const Blog: NextPage = ({data}: any) => {
     return (
         <>
-            <Head>
-                <title>
-                    Блоги - Центр развития детей и выбора профессии АртЛичность
-                </title>
-            </Head>
+            <Meta meta={data.metadata}/>
             <HeaderVideo banner={data.background_img.url} content={data.content} video={data.background_video}/>
             <SectionBlog data={data}/>
             <Footer/>
@@ -23,9 +19,7 @@ const Blog: NextPage = ({data}: any) => {
 export default Blog
 
 export async function getStaticProps() {
-    const res = await fetch(`https://alex-volkov.ru/wp-json/art/v1/page/blogs`)
-    const data = await res.json();
-
+    const data =  await pageAPI.blogs()
     return {
         props: {
             data

@@ -1,7 +1,13 @@
 .boxHomeItem {
     margin-bottom: 55px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -40,7 +46,7 @@
 }
 
 .boxHomeItemLink a:hover {
-   text-decoration: underline;
+    text-decoration: underline;
 }
 
 .boxHomeItemLink span {
@@ -125,7 +131,6 @@
         text-align: justify;
     }
 }
-
 
 
 

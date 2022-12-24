@@ -12,13 +12,13 @@
 }
 
 @media (max-width: 991px) {
-    .headerGreen  {
+    .headerGreen {
         height: auto;
     }
 }
 
 @media (max-width: 991px) {
-    .title  {
+    .title {
         font-size: 30px;
         padding-bottom: 31px;
     }

@@ -38,7 +38,7 @@ const Filter = ({data}: any) => {
                                     <span>1</span>
                                     Возраст
                                 </label>
-                                <Select data={data.age}
+                                <Select data={[{name: 'Все возрасты', slug: 'all'},...data.age]}
                                         setFieldValue={formik.setFieldValue}
                                         name={formik.values.age.name}
                                         title={'age'}/>
@@ -48,7 +48,7 @@ const Filter = ({data}: any) => {
                                     <span>2</span>
                                     Период
                                 </label>
-                                <Select data={data.period}
+                                <Select data={[{name: 'Все периоды', slug: 'all'},...data.period]}
                                         setFieldValue={formik.setFieldValue}
                                         name={formik.values.period.name}
                                         title={'period'}/>
@@ -58,7 +58,7 @@ const Filter = ({data}: any) => {
                                     <span>3</span>
                                     Профессия или навык
                                 </label>
-                                <Select data={data.section}
+                                <Select data={[{name: 'Все смены', slug: 'all'},...data.section]}
                                         setFieldValue={formik.setFieldValue}
                                         name={formik.values.section.name}
                                         title={'section'}/>

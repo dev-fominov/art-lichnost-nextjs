@@ -170,7 +170,7 @@ export const Forms = ({ confirm, hiddenText }: any) => {
                                 <label className={styles.checkboxLabel} htmlFor={'assent'}>
                                     <p>Нажимая на кнопку, вы соглашаетесь с</p>
                                     <A href={{
-                                        pathname: '/documents/[slug]',
+                                        pathname: '/contract/[slug]',
                                         query: { slug: confirm, },
                                     }}
                                         text={'договором оферты'} />

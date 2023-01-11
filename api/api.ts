@@ -1,9 +1,9 @@
 import axios from "axios"
 
 export const instance = axios.create({
-                                         baseURL: 'https://alex-volkov.ru/wp-json/art/v1/',
-                                         withCredentials: true,
-                                     })
+    baseURL: 'https://alex-volkov.ru/wp-json/art/v1/',
+    withCredentials: true,
+})
 
 
 export const pageAPI = {
@@ -48,6 +48,9 @@ export const pageAPI = {
     },
     slug(slug: string) {
         return instance.get(`page/${slug}`).then(res => res.data)
+    },
+    contract(slug: string) {
+        return instance.get(`page/contract/${slug}`).then(res => res.data)
     },
     courses() {
         return instance.get(`page/courses`).then(res => res.data)

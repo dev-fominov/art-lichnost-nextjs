@@ -4,6 +4,7 @@ import Card from "./Card";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import {ButtonGroup} from "../common/ButtonGroup";
+import React, {useEffect, useState} from "react";
 
 const responsive = {
     desktopFull: {
@@ -41,6 +42,34 @@ const responsive = {
 }
 
 const Program = ({data}: any) => {
+    const [showButton, setShowButton] = useState(false)
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            let width = window.innerWidth
+            if (data.count < 2) {
+                if (width < 708) {
+                    setShowButton(true)
+                }
+            } else {
+                if (data.count < 3) {
+                    if (width < 1023) {
+                        setShowButton(true)
+                    }
+                } else {
+                    if (data.count < 4) {
+                        if (width < 1199) {
+                            setShowButton(true)
+                        }
+                    } else {
+                        setShowButton(true)
+                    }
+                }
+            }
+        }
+    }, [data.length])
+
+
     return (
         <div className={styles.programBox}>
             <div>
@@ -66,8 +95,8 @@ const Program = ({data}: any) => {
                               swipeable
                               focusOnSelect={false}
                               arrows={false}
-                              renderButtonGroupOutside={true}
-                              customButtonGroup={<ButtonGroup/>}
+                              renderButtonGroupOutside={showButton}
+                              customButtonGroup={showButton ? <ButtonGroup/> : <></>}
                               ssr
                               itemClass="image-item"
                               infinite

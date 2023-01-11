@@ -132,8 +132,7 @@ export const SectionProfessions = ({data}: any) => {
                   </li>)}
               </ul>
                 {smena.receivedData && <>
-                  <div className={styles.sysProfi} style={{minHeight: `${data.id_page !== 10 ? '116px' : '240px'}`}}>
-                      {data.id_page === 10 && <span className={styles.sistems}>Система PROFI</span>}
+                  <div className={styles.sysProfi} style={{minHeight: `116px`}}>
                     <ul className={styles.listSkills}>
                         {smena.loading
                             ? <div className={styles.load}>
@@ -143,7 +142,7 @@ export const SectionProfessions = ({data}: any) => {
                                        src={load}
                                        alt={'logo'}/>
                             </div>
-                            : smena.receivedData.profi.card.map((item: any, index: any) => <li
+                            : smena.receivedData.profstart.card.map((item: any, index: any) => <li
                                 key={index}>
                                 {item.seats
                                     ? <span style={{background: '#30aa33'}} className={styles.onstock}>Есть места</span>
@@ -220,9 +219,6 @@ export const SectionProfessions = ({data}: any) => {
                                 </Modal>}
                             </li>)}
                     </ul>
-                      {data.id_page === 10 && <div className={styles.sistemsDescription}>
-                          {smena.receivedData.profi.description}
-                      </div>}
                   </div>
                   <div className={styles.bottomTab}>
                     <span className={styles.price}>{smena.receivedData.price} руб</span>

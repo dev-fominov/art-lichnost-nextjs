@@ -3,7 +3,6 @@ import {Section} from "../../../components/common/Section";
 import styles from '../../../styles/documents/documents.module.css'
 import {Footer} from "../../../components/common/Footer";
 import {NextPage} from "next";
-import React from "react";
 import Meta from "../../../services/Meta";
 import {pageAPI} from "../../../api/api";
 

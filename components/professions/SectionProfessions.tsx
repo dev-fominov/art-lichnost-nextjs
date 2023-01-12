@@ -101,7 +101,6 @@ export const SectionProfessions = ({ data }: any) => {
         await appAPI.smena(data.id_page, slug).then((res) => {
             setSmena({ receivedData: res, loading: false })
         })
-
     }
 
     return (

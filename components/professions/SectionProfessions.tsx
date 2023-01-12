@@ -51,6 +51,7 @@ const responsive = {
         partialVisibilityGutter: 30
     }
 }
+
 export const SectionProfessions = ({ data }: any) => {
     const router = useRouter()
     const { slug } = router.query

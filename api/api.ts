@@ -1,9 +1,9 @@
 import axios from "axios"
 
 export const instance = axios.create({
-    baseURL: 'https://alex-volkov.ru/wp-json/art/v1/',
-    withCredentials: true,
-})
+                                         baseURL: 'https://alex-volkov.ru/wp-json/art/v1/',
+                                         withCredentials: true,
+                                     })
 
 
 export const pageAPI = {

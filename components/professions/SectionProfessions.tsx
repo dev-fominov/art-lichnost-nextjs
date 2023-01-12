@@ -56,7 +56,7 @@ export const SectionProfessions = ({data}: any) => {
     const router = useRouter()
     const {slug} = router.query
 
-    const [slugProfi, setSlugProfi] = useState(data.shift_selection[0].slug)
+    const [slugProfi, setSlugProfi] = useState(data.shift_selection[0]?.slug)
     const [smena, setSmena] = useState({receivedData: false as any, loading: false})
     const [showModal, updateShowModal] = useState('');
     const [showInnerModal, updateInnerShowModal] = useState(false);
@@ -89,7 +89,7 @@ export const SectionProfessions = ({data}: any) => {
     }, [data.length])
 
     useEffect(() => {
-        data.shift_selection[0].slug && getSmena(data.shift_selection[0].slug)
+        data.shift_selection[0]?.slug && getSmena(data.shift_selection[0].slug)
         if (typeof slug !== 'undefined') {
             setSlugProfi(slug)
             getSmena(slug)
@@ -109,7 +109,7 @@ export const SectionProfessions = ({data}: any) => {
             <Description img={data.description_img}
                          video={data.description_video}
                          text={data.description_text}/>
-            {data.shift_selection && <div className={styles.reasonsProgram}>
+            {data.shift_selection.length!==0 && <div className={styles.reasonsProgram}>
               <h1 className={styles.titleInner}>Выбрать смену и профессию</h1>
               <ul className={styles.tablist}>
                   {data.shift_selection.map((el: any, index: number) => <li key={index}

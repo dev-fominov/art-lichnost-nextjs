@@ -69,7 +69,6 @@ const Program = ({data}: any) => {
         }
     }, [data.length])
 
-
     return (
         <div className={styles.programBox}>
             <div>

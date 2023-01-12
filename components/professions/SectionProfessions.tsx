@@ -62,7 +62,7 @@ export const SectionProfessions = ({ data }: any) => {
     const [showInnerModal, updateInnerShowModal] = useState(false);
     const [hiddenText, setHiddenText] = useState('');
     const [showButton, setShowButton] = useState(false)
-
+ 
     useEffect(() => {
         if (typeof window !== 'undefined') {
             let width = window.innerWidth

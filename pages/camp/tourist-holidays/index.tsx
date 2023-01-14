@@ -19,7 +19,7 @@ const TouristHolidays = ({data}: any) => {
 
 export default TouristHolidays
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const data =  await pageAPI.touristHolidays()
     return {
         props: {

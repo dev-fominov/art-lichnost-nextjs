@@ -69,7 +69,7 @@ const OnlineTest: NextPage = ({data}: any) => {
 
 export default OnlineTest
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const data =  await pageAPI.onlineTest()
     return {
         props: {

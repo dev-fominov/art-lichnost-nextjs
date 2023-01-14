@@ -19,7 +19,7 @@ const Merch: NextPage = ({data}: any) => {
 
 export default Merch
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const data =  await pageAPI.merch()
     return {
         props: {

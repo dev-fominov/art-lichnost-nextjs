@@ -69,7 +69,7 @@ const OfflineTest: NextPage = ({data}: any) => {
 
 export default OfflineTest
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const data =  await pageAPI.offlineTest()
     return {
         props: {

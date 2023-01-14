@@ -29,7 +29,7 @@ const Courses: NextPage = ({data}: any) => {
 
 export default Courses
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const data =  await pageAPI.courses()
     return {
         props: {

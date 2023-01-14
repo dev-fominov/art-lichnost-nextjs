@@ -18,7 +18,7 @@ const Course: NextPage = ({data}: any) => {
 
 export default Course
 
-export async function getStaticPaths() {
+/*export async function getStaticPaths() {
     const data = await pageAPI.courses()
     const pathsArr = data.launch_group.map((item: any) => (
         item.camp_card.map((el: any)=>({
@@ -27,9 +27,9 @@ export async function getStaticPaths() {
       ))
     const paths = pathsArr.flat()
     return {paths, fallback: false}
-}
+}*/
 
-export async function getStaticProps(context: any) {
+export async function getServerSideProps(context: any) {
     const data =  await pageAPI.course(context.params.course)
     return {
         props: {

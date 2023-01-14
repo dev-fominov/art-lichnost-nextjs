@@ -26,15 +26,15 @@ const DocsPage = ({data}: any) => {
 
 export default DocsPage
 
-export async function getStaticPaths() {
+/*export async function getStaticPaths() {
     const data = await pageAPI.camp()
     const paths = data.docs.map((item: any) => ({
         params: {docs: item.slug},
     }))
     return {paths, fallback: false}
-}
+}*/
 
-export async function getStaticProps(context: any) {
+export async function getServerSideProps(context: any) {
     const data = await pageAPI.docs(context.params.docs)
     return {
         props: {

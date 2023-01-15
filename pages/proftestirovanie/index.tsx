@@ -42,7 +42,7 @@ const Proftestirovanie: NextPage = ({data}: any) => {
 
 export default Proftestirovanie
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const data =  await pageAPI.proftestirovanie()
     return {
         props: {

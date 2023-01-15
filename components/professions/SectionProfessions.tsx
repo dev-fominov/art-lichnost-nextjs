@@ -56,7 +56,7 @@ export const SectionProfessions = ({data}: any) => {
     const router = useRouter()
     const {slug} = router.query
 
-    const [slugProfi, setSlugProfi] = useState(data.shift_selection[0].slug)
+    const [slugProfi, setSlugProfi] = useState(data.shift_selection[0]?.slug)
     const [smena, setSmena] = useState({receivedData: false as any, loading: false})
     const [showModal, updateShowModal] = useState('');
     const [showInnerModal, updateInnerShowModal] = useState(false);
@@ -89,7 +89,7 @@ export const SectionProfessions = ({data}: any) => {
     }, [data.length])
 
     useEffect(() => {
-        data.shift_selection[0].slug && getSmena(data.shift_selection[0].slug)
+        data.shift_selection[0]?.slug && getSmena(data.shift_selection[0].slug)
         if (typeof slug !== 'undefined') {
             setSlugProfi(slug)
             getSmena(slug)
@@ -109,7 +109,7 @@ export const SectionProfessions = ({data}: any) => {
             <Description img={data.description_img}
                          video={data.description_video}
                          text={data.description_text}/>
-            {data.shift_selection && <div className={styles.reasonsProgram}>
+            {data.shift_selection.length!==0 && <div className={styles.reasonsProgram}>
               <h1 className={styles.titleInner}>Выбрать смену и профессию</h1>
               <ul className={styles.tablist}>
                   {data.shift_selection.map((el: any, index: number) => <li key={index}
@@ -132,8 +132,7 @@ export const SectionProfessions = ({data}: any) => {
                   </li>)}
               </ul>
                 {smena.receivedData && <>
-                  <div className={styles.sysProfi} style={{minHeight: `${data.id_page !== 10 ? '116px' : '240px'}`}}>
-                      {data.id_page === 10 && <span className={styles.sistems}>Система PROFI</span>}
+                  <div className={styles.sysProfi} style={{minHeight: `116px`}}>
                     <ul className={styles.listSkills}>
                         {smena.loading
                             ? <div className={styles.load}>
@@ -143,7 +142,7 @@ export const SectionProfessions = ({data}: any) => {
                                        src={load}
                                        alt={'logo'}/>
                             </div>
-                            : smena.receivedData.profi.card.map((item: any, index: any) => <li
+                            : smena.receivedData.profstart.card.map((item: any, index: any) => <li
                                 key={index}>
                                 {item.seats
                                     ? <span style={{background: '#30aa33'}} className={styles.onstock}>Есть места</span>
@@ -220,9 +219,6 @@ export const SectionProfessions = ({data}: any) => {
                                 </Modal>}
                             </li>)}
                     </ul>
-                      {data.id_page === 10 && <div className={styles.sistemsDescription}>
-                          {smena.receivedData.profi.description}
-                      </div>}
                   </div>
                   <div className={styles.bottomTab}>
                     <span className={styles.price}>{smena.receivedData.price} руб</span>

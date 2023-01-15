@@ -28,7 +28,7 @@ const Home: NextPage = ({data}: any) => {
 
 export default Home
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const data =  await pageAPI.home()
     return {
         props: {

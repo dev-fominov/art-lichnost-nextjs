@@ -1,8 +1,8 @@
-import {Footer} from "../../../components/common/Footer";
-import {HeaderVideo} from "../../../components/common/HeaderVideo";
-import {SectionProfessions} from "../../../components/professions/SectionProfessions";
+import { Footer } from "../../../components/common/Footer";
+import { HeaderVideo } from "../../../components/common/HeaderVideo";
+import { SectionProfessions } from "../../../components/professions/SectionProfessions";
 import Meta from "../../../services/Meta";
-import {pageAPI} from "../../../api/api";
+import { pageAPI } from "../../../api/api";
 
 const Skills = ({ data }: any) => {
     return (
@@ -19,7 +19,7 @@ const Skills = ({ data }: any) => {
 
 export default Skills
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const data = await pageAPI.skills()
     return {
         props: {

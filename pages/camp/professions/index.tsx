@@ -19,7 +19,7 @@ const Professions = ({data}: any) => {
 
 export default Professions
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const data =  await pageAPI.professions()
     return {
         props: {

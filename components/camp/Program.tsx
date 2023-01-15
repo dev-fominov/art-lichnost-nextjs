@@ -1,10 +1,10 @@
 import styles from './../../styles/camp/program.module.css'
-import {A} from "../common/A";
+import { A } from "../common/A";
 import Card from "./Card";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import {ButtonGroup} from "../common/ButtonGroup";
-import React, {useEffect, useState} from "react";
+import { ButtonGroup } from "../common/ButtonGroup";
+import React, { useEffect, useState } from "react";
 
 const responsive = {
     desktopFull: {
@@ -41,7 +41,7 @@ const responsive = {
     }
 }
 
-const Program = ({data}: any) => {
+const Program = ({ data }: any) => {
     const [showButton, setShowButton] = useState(false)
 
     useEffect(() => {
@@ -69,10 +69,6 @@ const Program = ({data}: any) => {
         }
     }, [data.length])
 
-<<<<<<< HEAD
-
-=======
->>>>>>> mainPage
     return (
         <div className={styles.programBox}>
             <div>
@@ -87,7 +83,7 @@ const Program = ({data}: any) => {
                         }}>
                         {data.name.toUpperCase()}
                         <span>Программа</span>
-                    </h2>}/>
+                    </h2>} />
                 <p className={styles.description}>
                     {data.description}
                 </p>
@@ -95,25 +91,25 @@ const Program = ({data}: any) => {
             {data.count >= 3
                 ? <div className={styles.containerBtn}>
                     <Carousel slidesToSlide={1}
-                              swipeable
-                              focusOnSelect={false}
-                              arrows={false}
-                              renderButtonGroupOutside={showButton}
-                              customButtonGroup={showButton ? <ButtonGroup/> : <></>}
-                              ssr
-                              itemClass="image-item"
-                              infinite
-                              responsive={responsive}>
+                        swipeable
+                        focusOnSelect={false}
+                        arrows={false}
+                        renderButtonGroupOutside={showButton}
+                        customButtonGroup={showButton ? <ButtonGroup /> : <></>}
+                        ssr
+                        itemClass="image-item"
+                        infinite
+                        responsive={responsive}>
                         {data.camp_card.map((el: any, index: any) => <Card key={index}
-                                                                           term_id={data.term_id}
-                                                                           carouselCard={true}
-                                                                           data={el}/>)}
+                            term_id={data.term_id}
+                            carouselCard={true}
+                            data={el} />)}
                     </Carousel>
                 </div>
                 : <div className={styles.cards}>
                     {data.camp_card.map((el: any, index: any) => <Card key={index}
-                                                                       term_id={data.term_id}
-                                                                       data={el}/>)}
+                        term_id={data.term_id}
+                        data={el} />)}
                 </div>}
         </div>
     )

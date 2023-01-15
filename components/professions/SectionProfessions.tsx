@@ -57,16 +57,12 @@ export const SectionProfessions = ({ data }: any) => {
     const { slug } = router.query
 
     const [slugProfi, setSlugProfi] = useState(data.shift_selection[0]?.slug)
-<<<<<<< HEAD
     const [smena, setSmena] = useState({ receivedData: false as any, loading: false })
-=======
-    const [smena, setSmena] = useState({receivedData: false as any, loading: false})
->>>>>>> mainPage
     const [showModal, updateShowModal] = useState('');
     const [showInnerModal, updateInnerShowModal] = useState(false);
     const [hiddenText, setHiddenText] = useState('');
     const [showButton, setShowButton] = useState(false)
- 
+
     useEffect(() => {
         if (typeof window !== 'undefined') {
             let width = window.innerWidth
@@ -105,12 +101,12 @@ export const SectionProfessions = ({ data }: any) => {
         await appAPI.smena(data.id_page, slug).then((res) => {
             setSmena({ receivedData: res, loading: false })
         })
+
     }
 
     return (
         <Section>
             <Description img={data.description_img}
-<<<<<<< HEAD
                 video={data.description_video}
                 text={data.description_text} />
             {data.shift_selection.length !== 0 && <div className={styles.reasonsProgram}>
@@ -145,58 +141,6 @@ export const SectionProfessions = ({ data }: any) => {
                                         height={115}
                                         src={load}
                                         alt={'logo'} />
-=======
-                         video={data.description_video}
-                         text={data.description_text}/>
-            {data.shift_selection.length!==0 && <div className={styles.reasonsProgram}>
-              <h1 className={styles.titleInner}>Выбрать смену и профессию</h1>
-              <ul className={styles.tablist}>
-                  {data.shift_selection.map((el: any, index: number) => <li key={index}
-                                                                            style={{
-                                                                                backgroundColor: `${el.slug === slugProfi
-                                                                                    ? data.id_page === 11 ? '#FF822E' : '#30aa33'
-                                                                                    : '#ffffff'}`
-                                                                            }}
-                                                                            onClick={() => {
-                                                                                setSlugProfi(el.slug)
-                                                                                getSmena(el.slug)
-                                                                            }}>
-                      <span style={{
-                          color: `${el.slug === slugProfi
-                              ? '#ffffff'
-                              : '#000000'}`
-                      }}>
-                          {el.title}
-                      </span>
-                  </li>)}
-              </ul>
-                {smena.receivedData && <>
-                  <div className={styles.sysProfi} style={{minHeight: `116px`}}>
-                    <ul className={styles.listSkills}>
-                        {smena.loading
-                            ? <div className={styles.load}>
-                                <Image width={100}
-                                       priority={true}
-                                       height={115}
-                                       src={load}
-                                       alt={'logo'}/>
-                            </div>
-                            : smena.receivedData.profstart.card.map((item: any, index: any) => <li
-                                key={index}>
-                                {item.seats
-                                    ? <span style={{background: '#30aa33'}} className={styles.onstock}>Есть места</span>
-                                    : <span style={{background: '#eb3535'}} className={styles.onstock}>Нет места</span>}
-                                <div className={styles.boxAlex}>
-                                    <div onClick={() => updateShowModal(item.title)}
-                                         className={item.seats
-                                             ? styles.titleGreen
-                                             : styles.titleRed}>
-                                              <span style={{textDecoration: 'underline'}}>
-                                                  {item.title}
-                                              </span>
-                                        <span>{item.age_title}</span>
-                                    </div>
->>>>>>> mainPage
                                 </div>
                                 : smena.receivedData.profstart.card.map((item: any, index: any) => <li
                                     key={index}>
@@ -214,7 +158,6 @@ export const SectionProfessions = ({ data }: any) => {
                                             <span>{item.age_title}</span>
                                         </div>
                                     </div>
-<<<<<<< HEAD
                                     {showModal === item.title && <Modal styles={{
                                         modal: { position: 'relative', borderRadius: '40px', padding: 0 },
                                         closeButton: { position: "absolute", top: '15px', right: '15px' }
@@ -287,37 +230,6 @@ export const SectionProfessions = ({ data }: any) => {
                                 Размер компенсации (сертификата) — {smena.receivedData.price_certificate} рублей
                             </span>}
                         </div>
-=======
-                                      {showInnerModal && <Modal styles={{
-                                          modal: {
-                                              position: 'relative',
-                                              borderRadius: '40px',
-                                              padding: 0,
-                                          },
-                                          closeButton: {position: "absolute", top: '15px', right: '15px'}
-                                      }}
-                                                                open={showInnerModal}
-                                                                onClose={() => updateInnerShowModal(false)}
-                                                                closeOnEsc
-                                                                center>
-                                        <Forms confirm={data.link_to_oferta}
-                                               hiddenText={`Заявка навык (${hiddenText})`}/>
-                                      </Modal>}
-                                  </div>
-                                </Modal>}
-                            </li>)}
-                    </ul>
-                  </div>
-                  <div className={styles.bottomTab}>
-                    <span className={styles.price}>{smena.receivedData.price} руб</span>
-                    <div className={styles.priceDes}>
-                        {smena.receivedData.price && <span>
-                      Цена без учета сертификата — {smena.receivedData.price} рублей
-                    </span>}
-                        {smena.receivedData.price_certificate && <span>
-                      Размер компенсации (сертификата) — {smena.receivedData.price_certificate} рублей
-                    </span>}
->>>>>>> mainPage
                     </div>
                 </>}
             </div>}

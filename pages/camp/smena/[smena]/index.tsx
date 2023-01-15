@@ -91,7 +91,7 @@ const Smena: NextPage = ({data}: any) => {
 
 export default Smena
 
-export async function getStaticPaths() {
+/*export async function getStaticPaths() {
     const data1 = await pageAPI.professions()
     const data2 = await pageAPI.skills()
     const data3 = await pageAPI.touristHolidays()
@@ -109,9 +109,9 @@ export async function getStaticPaths() {
     ))
     const paths = [...paths1,...paths2,...paths3]
     return {paths, fallback: false}
-}
+}*/
 
-export async function getStaticProps(context: any) {
+export async function getServerSideProps(context: any) {
     const data = await pageAPI.smena(context.params.smena)
     return {
         props: {

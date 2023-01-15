@@ -69,7 +69,10 @@ const Program = ({data}: any) => {
         }
     }, [data.length])
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> mainPage
     return (
         <div className={styles.programBox}>
             <div>

@@ -19,7 +19,7 @@ const Skills = ({data}: any) => {
 
 export default Skills
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const data =  await pageAPI.skills()
     return {
         props: {

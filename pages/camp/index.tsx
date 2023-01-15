@@ -22,7 +22,7 @@ const Camp: NextPage = ({data}: any) => {
 
 export default Camp
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const data =  await pageAPI.camp()
     return {
         props: {

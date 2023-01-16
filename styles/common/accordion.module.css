@@ -9,10 +9,16 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: 100px;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 12px;
     line-height: 18px;
     margin-bottom: 10px;
+}
+
+.itemHeading h3 {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
 }
 
 .icon {
@@ -26,7 +32,7 @@
 .accordionItem p {
     opacity: 1;
     font-size: 14px;
-    padding: 0 15px 5px 15px;
+    padding: 0 0px 5px 0px;
     margin-bottom: 15px;
 }
 

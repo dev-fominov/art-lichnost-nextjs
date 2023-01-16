@@ -112,24 +112,28 @@ export const SectionProfessions = ({ data }: any) => {
             {data.shift_selection.length !== 0 && <div className={styles.reasonsProgram}>
                 <h1 className={styles.titleInner}>Выбрать смену и профессию</h1>
                 <ul className={styles.tablist}>
-                    {data.shift_selection.map((el: any, index: number) => <li key={index}
-                        style={{
-                            backgroundColor: `${el.slug === slugProfi
-                                ? data.id_page === 11 ? '#FF822E' : '#30aa33'
-                                : '#ffffff'}`
-                        }}
-                        onClick={() => {
-                            setSlugProfi(el.slug)
-                            getSmena(el.slug)
-                        }}>
-                        <span style={{
-                            color: `${el.slug === slugProfi
-                                ? '#ffffff'
-                                : '#000000'}`
-                        }}>
-                            {el.title}
-                        </span>
-                    </li>)}
+                    {data.shift_selection.map((el: any, index: number) => {
+                        return (
+                            <li key={index}
+                                style={{
+                                    backgroundColor: `${el.slug === slugProfi
+                                        ? data.id_page === 11 ? '#FF822E' : '#30aa33'
+                                        : '#ffffff'}`
+                                }}
+                                onClick={() => {
+                                    setSlugProfi(el.slug)
+                                    getSmena(el.slug)
+                                }}>
+                                <span style={{
+                                    color: `${el.slug === slugProfi
+                                        ? '#ffffff'
+                                        : '#000000'}`
+                                }}>
+                                    {el.title}
+                                </span>
+                            </li>
+                        )
+                    })}
                 </ul>
                 {smena.receivedData && <>
                     <div className={styles.sysProfi} style={{ minHeight: `116px` }}>
@@ -142,7 +146,7 @@ export const SectionProfessions = ({ data }: any) => {
                                         src={load}
                                         alt={'logo'} />
                                 </div>
-                                : smena.receivedData.profstart.card.map((item: any, index: any) => <li
+                                : (smena.receivedData.profstart.card.length !== 0) ? smena.receivedData.profstart.card.map((item: any, index: any) => <li
                                     key={index}>
                                     {item.seats
                                         ? <span style={{ background: '#30aa33' }} className={styles.onstock}>Есть места</span>
@@ -217,7 +221,7 @@ export const SectionProfessions = ({ data }: any) => {
                                             </Modal>}
                                         </div>
                                     </Modal>}
-                                </li>)}
+                                </li>) : 'Пусто'}
                         </ul>
                     </div>
                     <div className={styles.bottomTab}>
@@ -284,22 +288,26 @@ export const SectionProfessions = ({ data }: any) => {
                     backgroundSize: `cover`
                 }} />
             </div>
-            {data.daily_regime && <div className={styles.modeDay}>
-                <h3 className={styles.titleInner}>{data.daily_regime_title}</h3>
-                <div className={styles.modeItem}>
-                    {data.daily_regime && data.daily_regime.map((item: any, index: number) => <p key={index}>{item}<br />
-                    </p>)}
+            {
+                data.daily_regime && <div className={styles.modeDay}>
+                    <h3 className={styles.titleInner}>{data.daily_regime_title}</h3>
+                    <div className={styles.modeItem}>
+                        {data.daily_regime && data.daily_regime.map((item: any, index: number) => <p key={index}>{item}<br />
+                        </p>)}
+                    </div>
                 </div>
-            </div>}
+            }
             <div className={styles.priceBox}>
                 <h3 className={styles.titleInner}>{data.includ_title}</h3>
                 <div className={styles.priceIclude}
                     dangerouslySetInnerHTML={{ __html: data.includ_content }} />
             </div>
-            {data.faq && <div className={styles.faqBox}>
-                <h3 className={styles.titleInner}>Часто задаваемые вопросы</h3>
-                <CustomAccordion data={data.faq} />
-            </div>}
+            {
+                data.faq && <div className={styles.faqBox}>
+                    <h3 className={styles.titleInner}>Часто задаваемые вопросы</h3>
+                    <CustomAccordion data={data.faq} />
+                </div>
+            }
             <div className={styles.reasonsProgram}>
                 <h3 className={styles.titleInner}>Оформить заявку</h3>
                 <div className={styles.formOrderBox}>
@@ -323,41 +331,43 @@ export const SectionProfessions = ({ data }: any) => {
                     </div>
                 </div>
             </div>
-            {data.past_shifts.length > 0 && <div className={styles.reasonsProgram}>
-                <h1 className={styles.titleInner}>Прошедшие смены</h1>
-                <div className={styles.containerBtn}>
-                    <Carousel slidesToSlide={1}
-                        className={styles.carousel}
-                        swipeable
-                        focusOnSelect={false}
-                        arrows={false}
-                        renderButtonGroupOutside={showButton}
-                        customButtonGroup={showButton ? <ButtonGroup /> : <></>}
-                        ssr
-                        itemClass="image-item"
-                        infinite
-                        responsive={responsive}
-                    >
-                        {data.past_shifts.map((el: any, index: number) => <div key={index}
-                            className={styles.carouselCard}>
-                            <A href={`/camp/smena/${el.slug}`} text={<div
-                                className={styles.boxImg}
-                                draggable={false}
-                                style={{
-                                    background: `url(${el.thumbnail_url.url}) no-repeat center center`,
-                                    backgroundSize: `cover`
-                                }}>
-                            </div>} />
-                            <div className={styles.boxLink}>
-                                <h3 className={styles.postTitle}>{el.title}</h3>
-                                <A href={`/camp/smena/${el.slug}`} text={'Узнать больше'} />
+            {
+                data.past_shifts.length > 0 && <div className={styles.reasonsProgram}>
+                    <h1 className={styles.titleInner}>Прошедшие смены</h1>
+                    <div className={styles.containerBtn}>
+                        <Carousel slidesToSlide={1}
+                            className={styles.carousel}
+                            swipeable
+                            focusOnSelect={false}
+                            arrows={false}
+                            renderButtonGroupOutside={showButton}
+                            customButtonGroup={showButton ? <ButtonGroup /> : <></>}
+                            ssr
+                            itemClass="image-item"
+                            infinite
+                            responsive={responsive}
+                        >
+                            {data.past_shifts.map((el: any, index: number) => <div key={index}
+                                className={styles.carouselCard}>
+                                <A href={`/camp/smena/${el.slug}`} text={<div
+                                    className={styles.boxImg}
+                                    draggable={false}
+                                    style={{
+                                        background: `url(${el.thumbnail_url.url}) no-repeat center center`,
+                                        backgroundSize: `cover`
+                                    }}>
+                                </div>} />
+                                <div className={styles.boxLink}>
+                                    <h3 className={styles.postTitle}>{el.title}</h3>
+                                    <A href={`/camp/smena/${el.slug}`} text={'Узнать больше'} />
+                                </div>
                             </div>
-                        </div>
-                        )}
-                    </Carousel>
+                            )}
+                        </Carousel>
+                    </div>
                 </div>
-            </div>}
-        </Section>
+            }
+        </Section >
     )
 }
 

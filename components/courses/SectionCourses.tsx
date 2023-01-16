@@ -11,7 +11,7 @@ export const SectionCourses = ({ data }: any) => {
             <div className={styles.boxContent}>
                 <h3 className={styles.titleInner}>Старт запуска группы</h3>
                 <div className={styles.boxCourse}>
-                    {data.launch_group.reverse().map((item: any, index: any) => {
+                    {data.launch_group.map((item: any, index: any) => {
                         return item.count && <div key={index}
                             className={styles.itemSkill}>
                             <div className={styles.title}>
@@ -40,7 +40,7 @@ export const SectionCourses = ({ data }: any) => {
                     })}
                 </div>
             </div>
-            {data.courses.reverse().map((item: any) => <CarouselCourses key={item.term_id} data={item} />)}
+            {data.courses.map((item: any) => <CarouselCourses key={item.term_id} data={item} />)}
             <div className={styles.boxContent}>
                 <h3 className={styles.titleInner}>О курсах</h3>
                 <div className={styles.prozhivanieDescription}

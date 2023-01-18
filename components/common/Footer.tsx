@@ -41,11 +41,11 @@ export const Footer = () => {
                                     </li>
                                     <li>
                                         <A href={'/camp/skills'}
-                                           text={'Лагерь навыков'}/>
+                                           text={'Академия навыков'}/>
                                     </li>
                                     <li>
-                                        <A href={'/camp/tourist-holidays'}
-                                           text={'Туристические каникулы'}/>
+                                        <A href={'/camp/art-community'}
+                                           text={'ART Community'}/>
                                     </li>
                                     <li>
                                         <A href={"/merch"} text={'Мерч'}/>

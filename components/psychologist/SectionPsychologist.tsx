@@ -119,7 +119,7 @@ export const SectionPsychologist = ({data}: any) => {
             <div>
                 <h3 className={styles.titleInner}>Оформить заявку</h3>
                 <div className={styles.formOrderBox}>
-                    <Forms confirm={data.link_to_oferta} hiddenText={"Заявка на общую консультацию психолога"}/>
+                    <Forms titleForForm={'Психолог'} confirm={data.link_to_oferta} hiddenText={"Заявка на общую консультацию психолога"}/>
                     <div className={styles.formSteps}>
                         <h4>{data.steps_form_title}</h4>
                         <ul>
@@ -143,7 +143,7 @@ export const SectionPsychologist = ({data}: any) => {
                                  onClose={showModalHandler}
                                  closeOnEsc
                                  center>
-              <Forms confirm={data.link_to_oferta} hiddenText={`Заявка на консультацию психолога для ${hiddenText}`}/>
+              <Forms titleForForm={`Психолог для ${hiddenText}`} confirm={data.link_to_oferta} hiddenText={`Заявка на консультацию психолога для ${hiddenText}`}/>
             </Modal>}
         </Section>
     )

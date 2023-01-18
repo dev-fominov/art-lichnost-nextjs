@@ -83,6 +83,28 @@ const Smena: NextPage = ({data}: any) => {
                         )}
                     </Carousel>
                 </div>
+                <div className={styles.aboutBox}>
+                    <div className={styles.title}>
+                        {data.our_history.title}
+                    </div>
+                    <div className={styles.history}>
+                        <div className={styles.leftBox}>
+                            <div dangerouslySetInnerHTML={{__html: data.our_history.description}}/>
+                        </div>
+                        <div className={styles.rightBox}>
+                            <img src={data.our_history.img.url} alt={data.our_history.img.alt}/>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.aboutBox}>
+                    <div className={styles.title}>
+                        Цели компании
+                    </div>
+                    {data.our_targets.map((item: any, index: any) => <div key={index}
+                                                                          className={styles.contentBox}>
+                        <div className={styles.itemDescriptionRedBorder}>{item}</div>
+                    </div>)}
+                </div>
             </Section>
             <Footer/>
         </>

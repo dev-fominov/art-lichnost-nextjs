@@ -33,3 +33,103 @@
 .containerBtn {
     position: relative;
 }
+
+.aboutBox {
+    margin-top: 50px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.contentBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+@media (max-width: 1200px) {
+    .contentBox {
+        justify-content: space-evenly;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+}
+
+.history {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+@media (max-width: 700px) {
+    .history {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        justify-content: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+    }
+}
+
+.leftBox {
+    max-width: 613px;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.rightBox {
+    max-width: 527px;
+    width: 100%;
+}
+
+@media (max-width: 700px) {
+    .leftBox {
+        padding-bottom: 15px;
+        padding-right: 0;
+    }
+}
+
+.leftBox p {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: justify;
+    color: #000;
+    margin-bottom: 17px;
+}
+
+.rightBox img {
+    width: 100%;
+    height: 215px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.itemDescriptionRedBorder {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    border: 1px solid #EB3535;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 40px;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+}

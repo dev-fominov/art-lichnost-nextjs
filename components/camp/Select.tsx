@@ -21,8 +21,8 @@ export const Select = ({data, setFieldValue, name, title}: any) => {
                     : <IoIosArrowRoundDown className={styles.arrow}/>}
             </div>
             <ul className={openSelect ? styles.ulSortActive : styles.ulSort}>
-                {data.map((el: any) => <li onClick={() => setFieldValue(title, {name: el.name, slug: el.slug})}
-                                           key={el.id}>
+                {data.map((el: any, index: any) => <li onClick={() => setFieldValue(title, {name: el.name, slug: el.slug})}
+                                           key={index}>
                     <label className={styles.radioLabel}>
                         {name === el.name
                             ? <div className={styles.radioTrue}/>

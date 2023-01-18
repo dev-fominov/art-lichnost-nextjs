@@ -25,10 +25,10 @@ function BurgerNav() {
                                  title={<A text={'Лагерь'} href={'/camp'}/>}>
                     <A text={'Лагерь профессий'}
                        href={'/camp/professions'}/>
-                    <A text={'Лагерь навыков'}
+                    <A text={'Академия навыков'}
                        href={'/camp/skills'}/>
-                    <A text={'Туристические каникулы'}
-                       href={'/camp/tourist-holidays'}/>
+                    <A text={'ART Community'}
+                       href={'/camp/art-community'}/>
                     <A text={'Мерч'} href={'/merch'}/>
                 </BurgerNavModule>
                 <div className={styles.itemTitle}>

@@ -1,5 +1,7 @@
 import axios from "axios"
 
+
+export const baseURL = 'https://alex-volkov.ru/wp-json/art/v1'
 export const instance = axios.create({
                                          baseURL: 'https://alex-volkov.ru/wp-json/art/v1/',
                                          withCredentials: true,
@@ -61,8 +63,8 @@ export const pageAPI = {
     camp() {
         return instance.get(`page/camp`).then(res => res.data)
     },
-    touristHolidays() {
-        return instance.get(`page/tourist-holidays`).then(res => res.data)
+    artCommunity() {
+        return instance.get(`page/art-community`).then(res => res.data)
     },
     skills() {
         return instance.get(`page/skills`).then(res => res.data)
@@ -102,6 +104,6 @@ export const appAPI = {
             ? 'professions'
             : id_page === 11
                 ? 'skills'
-                : 'tourist-holidays'}&slug=${slug}`).then(res => res.data)
+                : 'art-community'}&slug=${slug}`).then(res => res.data)
     },
 }

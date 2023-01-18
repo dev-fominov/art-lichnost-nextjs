@@ -6,11 +6,13 @@ import "react-responsive-modal/styles.css";
 import React from "react";
 // @ts-ignore
 import MaskedInput from "react-text-mask";
-import {appAPI} from "../../api/api";
+import {appAPI, baseURL} from "../../api/api";
+import {useRouter} from "next/router";
 
-export const Forms = ({confirm, hiddenText}: any) => {
+export const Forms = ({confirm, hiddenText, titleForForm}: any) => {
     const [showModal, setShowModal] = React.useState(false)
     const [showLoading, setShowLoading] = React.useState(false)
+    const { asPath } = useRouter();
     const showModalHandler = () => setShowModal(false)
 
     const phoneNumberMask = [
@@ -61,13 +63,15 @@ export const Forms = ({confirm, hiddenText}: any) => {
                         setShowLoading(true)
                         resetForm()
                         await appAPI.commonForm(JSON.stringify({
-                                                                     parentsName: values.parentsName,
-                                                                     childName: values.childName,
-                                                                     birthdate: values.birthdate,
-                                                                     userEmail: values.userEmail,
-                                                                     userPhone: values.userPhone,
-                                                                     hiddenText: hiddenText,
-                                                                 })
+                                                                   parentsName: values.parentsName,
+                                                                   childName: values.childName,
+                                                                   birthdate: values.birthdate,
+                                                                   userEmail: values.userEmail,
+                                                                   userPhone: values.userPhone,
+                                                                   hiddenText: hiddenText,
+                                                                   titleForForm: titleForForm,
+                                                                   linkForForm: baseURL + asPath
+                                                               })
                         ).then(() => {
                                    setShowLoading(false)
                                    setShowModal(true)

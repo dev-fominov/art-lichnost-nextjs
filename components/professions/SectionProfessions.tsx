@@ -101,8 +101,13 @@ export const SectionProfessions = ({data}: any) => {
         await appAPI.smena(data.id_page, slug).then((res) => {
             setSmena({receivedData: res, loading: false})
         })
-
     }
+
+    const pageName = data.id_page === 12
+        ? 'ART COMMUNITY'
+        : data.id_page === 11
+            ? 'АКАДЕМИЯ НАВЫКОВ'
+            : 'ЛАГЕРЬ ПРОФЕССИЙ'
 
     return (
         <Section>
@@ -212,8 +217,7 @@ export const SectionProfessions = ({data}: any) => {
                                                                 onClose={() => updateInnerShowModal(false)}
                                                                 closeOnEsc
                                                                 center>
-                                        <Forms confirm={data.link_to_oferta}
-                                               hiddenText={`Заявка навык (${hiddenText})`}/>
+                                        <Forms titleForForm={hiddenText} confirm={data.link_to_oferta} hiddenText={`Заявка навык (${hiddenText})`}/>
                                       </Modal>}
                                   </div>
                                 </Modal>}
@@ -303,11 +307,7 @@ export const SectionProfessions = ({data}: any) => {
             <div className={styles.reasonsProgram}>
                 <h3 className={styles.titleInner}>Оформить заявку</h3>
                 <div className={styles.formOrderBox}>
-                    <Forms confirm={data.link_to_oferta} hiddenText={`Общая заявка со страницы ${data.id_page === 12
-                        ? 'ТУРИСТИЧЕСКИЕ КАНИКУЛЫ'
-                        : data.id_page === 11
-                            ? 'ЛАГЕРЬ НАВЫКОВ'
-                            : 'ЛАГЕРЬ ПРОФЕССИЙ'}`}/>
+                    <Forms titleForForm={pageName} confirm={data.link_to_oferta} hiddenText={`Общая заявка со страницы ${pageName}`}/>
                     <div className={styles.formSteps}>
                         <h4>{data.request_title}</h4>
                         <ul>

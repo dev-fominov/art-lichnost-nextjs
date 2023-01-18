@@ -14,6 +14,8 @@ const SectionTestirovanie = ({data}: any) => {
 
     const showModalHandler = () => updateShowModal(!showModal)
 
+    const pageName = data.id_page === 54 ? 'Онлайн-тестирование' : 'Офлайн-тестирование'
+
     return (<Section>
             <div className={styles.medicalBlock}>
                 <h3 className={styles.titleInner}>{data.need_test[0].title}</h3>
@@ -112,9 +114,7 @@ const SectionTestirovanie = ({data}: any) => {
             <div className={styles.formStepsBox}>
                 <h3 className={styles.titleInner}>Оформить заявку</h3>
                 <div className={styles.formOrderBox}>
-                    <Forms confirm={data.link_to_oferta} hiddenText={`Общая заявка на ${data.id_page === 54
-                        ? 'онлайн-тестирование'
-                        : 'офлайн-тестирование'}`}/>
+                    <Forms titleForForm={pageName} confirm={data.link_to_oferta} hiddenText={`Общая заявка на ${pageName}`}/>
                     <div className={styles.formSteps}>
                         <h4>{data.step_form.steps_form_title}</h4>
                         <ul>
@@ -136,9 +136,7 @@ const SectionTestirovanie = ({data}: any) => {
                                  onClose={showModalHandler}
                                  closeOnEsc
                                  center>
-              <Forms confirm={data.link_to_oferta} hiddenText={`Заявка на ${data.id_page === 54
-                  ? 'онлайн-тестирование'
-                  : 'офлайн-тестирование'} для ${hiddenText}`}/>
+              <Forms titleForForm={`${pageName} для ${hiddenText}`} confirm={data.link_to_oferta} hiddenText={`Заявка на ${pageName} для ${hiddenText}`}/>
             </Modal>}
         </Section>
     )

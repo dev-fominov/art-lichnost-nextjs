@@ -3,9 +3,9 @@ import axios from "axios"
 
 export const baseURL = 'https://api.art-lichnost.ru/wp-json/art/v1'
 export const instance = axios.create({
-                                         baseURL: 'https://alex-volkov.ru/wp-json/art/v1/',
-                                         withCredentials: true,
-                                     })
+    baseURL: baseURL,
+    withCredentials: true,
+})
 
 
 export const pageAPI = {
@@ -65,7 +65,7 @@ export const pageAPI = {
     },
     artCommunity() {
         return instance.get(`page/art-community`).then(res => res.data)
-    }, 
+    },
     skills() {
         return instance.get(`page/skills`).then(res => res.data)
     },

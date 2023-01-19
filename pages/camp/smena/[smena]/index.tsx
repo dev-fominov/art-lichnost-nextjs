@@ -1,14 +1,14 @@
-import {HeaderGreen} from "../../../../components/common/HeaderGreen";
-import {Footer} from "../../../../components/common/Footer";
-import {NextPage} from "next";
-import {Section} from "../../../../components/common/Section";
+import { HeaderGreen } from "../../../../components/common/HeaderGreen";
+import { Footer } from "../../../../components/common/Footer";
+import { NextPage } from "next";
+import { Section } from "../../../../components/common/Section";
 import styles from "../../../../styles/camp/smena.module.css";
 import Carousel from "react-multi-carousel";
 import React from "react";
 import "react-multi-carousel/lib/styles.css";
-import {ButtonGroup} from "../../../../components/common/ButtonGroup";
+import { ButtonGroup } from "../../../../components/common/ButtonGroup";
 import Meta from "../../../../services/Meta";
-import {pageAPI} from "../../../../api/api";
+import { pageAPI } from "../../../../api/api";
 
 const responsive = {
     desktopFull: {
@@ -46,45 +46,67 @@ const responsive = {
     }
 }
 
-const Smena: NextPage = ({data}: any) => {
+const Smena: NextPage = ({ data }: any) => {
     return (
         <>
-            <Meta meta={data.metadata}/>
-            <HeaderGreen title={data.title}/>
+            <Meta meta={data.metadata} />
+            <HeaderGreen title={data.title} />
             <Section>
                 <div className={styles.containerBtn}
-                     style={{
-                         paddingBottom: '30px',
-                         position: 'relative'
-                     }}
+                    style={{
+                        paddingBottom: '30px',
+                        position: 'relative'
+                    }}
                 >
                     <Carousel slidesToSlide={1}
-                              swipeable
-                              focusOnSelect={true}
-                              arrows={false}
-                              renderButtonGroupOutside={true}
-                              customButtonGroup={<ButtonGroup/>}
-                              showDots
-                              renderDotsOutside
-                              dotListClass={styles.dots}
-                              itemClass={styles.carousel}
-                              ssr
-                              infinite
-                              responsive={responsive}
-                              deviceType={"tablet"}
+                        swipeable
+                        focusOnSelect={true}
+                        arrows={false}
+                        renderButtonGroupOutside={true}
+                        customButtonGroup={<ButtonGroup />}
+                        showDots
+                        renderDotsOutside
+                        dotListClass={styles.dots}
+                        itemClass={styles.carousel}
+                        ssr
+                        infinite
+                        responsive={responsive}
+                        deviceType={"tablet"}
                     >
                         {data.photo_slider.map((img: any, index: number) =>
-                                                   <div key={index} className={styles.slideBox}>
-                                                       <img style={{width: "100%", height: "100%"}}
-                                                            src={img[0]}
-                                                            draggable={false}
-                                                            alt={img[1]}/>
-                                                   </div>
+                            <div key={index} className={styles.slideBox}>
+                                <img style={{ width: "100%", height: "100%" }}
+                                    src={img[0]}
+                                    draggable={false}
+                                    alt={img[1]} />
+                            </div>
                         )}
                     </Carousel>
                 </div>
+                <div className={styles.aboutBox}>
+                    <div className={styles.title}>
+                        {data.our_history.title}
+                    </div>
+                    <div className={styles.history}>
+                        <div className={styles.leftBox}>
+                            <div dangerouslySetInnerHTML={{ __html: data.our_history.description }} />
+                        </div>
+                        <div className={styles.rightBox}>
+                            {data.our_history.img.url && <img src={data.our_history.img.url} alt={data.our_history.img.alt} />}
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.aboutBox}>
+                    <div className={styles.title}>
+                        {data.zagolovok_dlya_spiska}
+                    </div>
+                    {data.our_targets.map((item: any, index: any) => <div key={index}
+                        className={styles.contentBox}>
+                        <div className={styles.itemDescriptionRedBorder}>{item}</div>
+                    </div>)}
+                </div>
             </Section>
-            <Footer/>
+            <Footer />
         </>
     )
 }

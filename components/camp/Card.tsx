@@ -10,7 +10,7 @@ const Card = ({data, carouselCard, filter, term_id}: any) => {
                         ? 'professions'
                         : term_id === 11
                             ? 'skills'
-                            : 'tourist-holidays'}`,
+                            : 'art-community'}`,
                     query: {slug: data.post_slug},
                 } : `courses/${data.post_slug}`}
                    text={<div className={styles.boxImg}
@@ -32,7 +32,7 @@ const Card = ({data, carouselCard, filter, term_id}: any) => {
                             ? 'professions'
                             : term_id === 11
                                 ? 'skills'
-                                : 'tourist-holidays'}`,
+                                : 'art-community'}`,
                         query: {slug: data.post_slug},
                     } : `courses/${data.post_slug}`}
                        text={'Узнать больше'}/>

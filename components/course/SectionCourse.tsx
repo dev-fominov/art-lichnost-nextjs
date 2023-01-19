@@ -99,7 +99,7 @@ export const SectionCourse = ({data}: any) => {
             <div className={styles.boxContent}>
                 <h3 className={styles.title}>Оформить заявку</h3>
                 <div className={styles.formOrderBox}>
-                    <Forms confirm={data.link_to_oferta} hiddenText={`Заявка на курс '${data.title}'`}/>
+                    <Forms titleForForm={data.title} confirm={data.link_to_oferta} hiddenText={`Заявка на курс '${data.title}'`}/>
                     <div className={styles.formSteps}>
                         <h4>{data.step_form.steps_form_title}</h4>
                         <ul>

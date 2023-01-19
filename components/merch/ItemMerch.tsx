@@ -105,7 +105,7 @@ export const ItemMerch = ({data}: any) => {
                                  onClose={showModalHandler}
                                  closeOnEsc
                                  center>
-              <MerchForm hiddenText={`Заявка на мерч (${data.title})`}/>
+              <MerchForm hiddenText={data.title} />
             </Modal>}
         </div>
     )

@@ -1,63 +1,63 @@
 import React from "react";
-import { Section } from "../common/Section";
+import {Section} from "../common/Section";
 import styles from '../../styles/proftestirovanie/section-proftestirovanie.module.css'
-import { Test } from "./Test";
+import {Test} from "./Test";
 import Reviews from "../camp/Reviews";
-import { Forms } from "../common/Forms";
+import {Forms} from "../common/Forms";
 
-const SectionProftestirovanie = ({ data }: any) => {
+const SectionProftestirovanie = ({data}: any) => {
 
     return (
         <Section>
             <div className={styles.testsBox}>
-                {data.tests.map((item: any, index: any) => <Test key={index} data={item} />)}
+                {data.tests.map((item: any, index: any) => <Test key={index} data={item}/>)}
             </div>
             <div className={styles.testingBox}>
                 <h3 className={styles.titleInner}>{data.why_title}</h3>
                 <div>
                     {data.list_questions.map((item: any, index: any) => {
-                        return <div key={index} className={styles.whyItem}>
-                            <div className={styles.whyNumber}>
-                                <span>{index + 1}</span>
-                            </div>
-                            <div className={styles.whyText}>
-                                <div className={styles.whyTitle}>
-                                    {item.question}
+                            return <div key={index} className={styles.whyItem}>
+                                <div className={styles.whyNumber}>
+                                    <span>{index + 1}</span>
                                 </div>
-                                <p>{item.answer}</p>
+                                <div className={styles.whyText}>
+                                    <div className={styles.whyTitle}>
+                                        {item.question}
+                                    </div>
+                                    <p>{item.answer}</p>
+                                </div>
                             </div>
-                        </div>
-                    }
+                        }
                     )}
                 </div>
             </div>
             <div className={styles.testingBox}>
                 <h3 className={styles.titleInner}>Консультанты выбора профессий</h3>
                 {data.consultants.map((item: any, index: any) => {
-                    return <div key={index} className={styles.consultantBox}>
-                        <div className={styles.consImg}>
-                            <img src={item.img.url} alt={item.img.alt} />
-                        </div>
-                        <div className={styles.consName}>
-                            <div className={styles.name}>
-                                {item.title}
+                        return <div key={index} className={styles.consultantBox}>
+                            <div className={styles.consImg}>
+                                <img src={item.img.url} alt={item.img.alt}/>
                             </div>
-                            <div className={styles.status}>
-                                {item.job_title}
+                            <div className={styles.consName}>
+                                <div className={styles.name}>
+                                    {item.title}
+                                </div>
+                                <div className={styles.status}>
+                                    {item.job_title}
+                                </div>
+                            </div>
+                            <div className={styles.consText}>
+                                <p>{item.description}</p>
                             </div>
                         </div>
-                        <div className={styles.consText}>
-                            <p>{item.description}</p>
-                        </div>
-                    </div>
-                }
+                    }
                 )}
             </div>
-            <Reviews data={data.reviews} />
+            <Reviews data={data.reviews}/>
             <div className={styles.formStepsBox}>
                 <h3 className={styles.titleInner}>Оформить заявку</h3>
                 <div className={styles.formOrderBox}>
-                    <Forms confirm={data.link_to_oferta} hiddenText={`Общая заявка на профтестирование`} />
+                    <Forms titleForForm={'Профтестирование'} confirm={data.link_to_oferta} hiddenText={`Общая заявка на профтестирование`}/>
                     <div className={styles.formSteps}>
                         <h4>{data.step_form.steps_form_title}</h4>
                         <ul>
@@ -69,7 +69,7 @@ const SectionProftestirovanie = ({ data }: any) => {
                             background: `url(${data.step_form.img_steps_form.url}) no-repeat center center`,
                             backgroundSize: 'cover'
                         }}
-                            className={styles.formStepImg} />
+                             className={styles.formStepImg}/>
                     </div>
                 </div>
             </div>

@@ -3,13 +3,15 @@ import {useState} from "react";
 import styles from "../../styles/common/forms.module.css";
 import {Modal} from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
+import {appAPI, baseURL} from "../../api/api";
+import {useRouter} from "next/router";
 // @ts-ignore
 import MaskedInput from "react-text-mask";
-import {appAPI} from "../../api/api";
 
 export const MerchForm = ({hiddenText}: any) => {
     const [showModal, setShowModal] = useState(false)
     const showModalHandler = () => setShowModal(false)
+    const { asPath } = useRouter();
 
     const phoneNumberMask = [
         '+',
@@ -47,13 +49,15 @@ export const MerchForm = ({hiddenText}: any) => {
                     onSubmit={async (values, {resetForm}) => {
                         resetForm()
                         await appAPI.commonForm(JSON.stringify({
-                                                                     parentsName: values.parentsName,
-                                                                     childName: values.childName,
-                                                                     birthdate: values.birthdate,
-                                                                     userEmail: values.userEmail,
-                                                                     userPhone: values.userPhone,
-                                                                     hiddenText: hiddenText,
-                                                                 })
+                                                                   parentsName: values.parentsName,
+                                                                   childName: values.childName,
+                                                                   birthdate: values.birthdate,
+                                                                   userEmail: values.userEmail,
+                                                                   userPhone: values.userPhone,
+                                                                   hiddenText: `Заявка на мерч (${hiddenText})`,
+                                                                   titleForForm: hiddenText,
+                                                                   linkForForm: baseURL+asPath
+                                                               })
                         ).then(() => {
                                    setShowModal(true)
                                    setTimeout(() => {
@@ -75,14 +79,7 @@ export const MerchForm = ({hiddenText}: any) => {
                                        className={styles.form}
                                        type={'text'}
                                        name={'parentsName'}
-                                       placeholder={'Имя родителя'}/>
-                            </div>
-                            <div>
-                                <Field required
-                                       className={styles.form}
-                                       type={'text'}
-                                       name={'childName'}
-                                       placeholder={'Фамилия родителя'}/>
+                                       placeholder={'Фамилия и имя родителя'}/>
                             </div>
                             <div>
                                 <Field required

@@ -4,7 +4,7 @@ import {SectionProfessions} from "../../../components/professions/SectionProfess
 import Meta from "../../../services/Meta";
 import {pageAPI} from "../../../api/api";
 
-const TouristHolidays = ({data}: any) => {
+const ArtCommunity = ({data}: any) => {
     return (
         <>
             <Meta meta={data.metadata}/>
@@ -17,10 +17,10 @@ const TouristHolidays = ({data}: any) => {
     )
 }
 
-export default TouristHolidays
+export default ArtCommunity
 
 export async function getServerSideProps() {
-    const data =  await pageAPI.touristHolidays()
+    const data =  await pageAPI.artCommunity()
     return {
         props: {
             data

@@ -1,6 +1,6 @@
 import axios from "axios"
 
-
+export const baseURLSite = 'https://api.art-lichnost.ru'
 export const baseURL = 'https://api.art-lichnost.ru/wp-json/art/v1'
 export const instance = axios.create({
     baseURL: baseURL,

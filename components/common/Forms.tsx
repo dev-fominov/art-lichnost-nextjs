@@ -6,7 +6,7 @@ import "react-responsive-modal/styles.css";
 import React from "react";
 // @ts-ignore
 import MaskedInput from "react-text-mask";
-import {appAPI, baseURL} from "../../api/api";
+import {appAPI, baseURLSite} from "../../api/api";
 import {useRouter} from "next/router";
 
 export const Forms = ({confirm, hiddenText, titleForForm}: any) => {
@@ -70,7 +70,7 @@ export const Forms = ({confirm, hiddenText, titleForForm}: any) => {
                                                                    userPhone: values.userPhone,
                                                                    hiddenText: hiddenText,
                                                                    titleForForm: titleForForm,
-                                                                   linkForForm: baseURL + asPath
+                                                                   linkForForm: baseURLSite + asPath
                                                                })
                         ).then(() => {
                                    setShowLoading(false)

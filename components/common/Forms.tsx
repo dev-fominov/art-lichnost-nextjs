@@ -70,7 +70,7 @@ export const Forms = ({confirm, hiddenText, titleForForm}: any) => {
                                                                    userPhone: values.userPhone,
                                                                    hiddenText: hiddenText,
                                                                    titleForForm: titleForForm,
-                                                                   linkForForm: baseURL + asPath
+                                                                   linkForForm: baseURL + asPath.split('?')[0]
                                                                })
                         ).then(() => {
                                    setShowLoading(false)

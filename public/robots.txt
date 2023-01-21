@@ -1,5 +1,4 @@
 User-agent: Yandex
-Host: art-lichnost.ru
 Disallow: 
 
 User-agent: Googlebot

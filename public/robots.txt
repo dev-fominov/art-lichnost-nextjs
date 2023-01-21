@@ -1,2 +1,8 @@
-User-agent: *
+User-agent: Yandex
+Host: art-lichnost.ru
 Disallow: 
+
+User-agent: Googlebot
+Allow: *.css
+Allow: *.js
+Host: art-lichnost.ru

@@ -51,6 +51,7 @@ const Meta: FC<MetaProps> = ({ meta }) => {
                 name="description"
                 content={description ?? DEFAULT_META.description}
             />
+            
         </Head>
     );
 };

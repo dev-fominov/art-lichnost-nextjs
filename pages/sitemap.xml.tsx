@@ -45,6 +45,7 @@ const staticPaths = fs
 			"api",
 			"_app.tsx",
 			"404.tsx",
+			"_document.js",
 			"sitemap.xml.tsx",
 		].includes(staticPage)
 	})

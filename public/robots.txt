@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://art-lichnost.ru/sitemap.xml

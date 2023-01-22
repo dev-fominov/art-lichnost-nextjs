@@ -28,6 +28,7 @@ const Meta: FC<MetaProps> = ({ meta }) => {
             <meta httpEquiv="X-UA-Compatible" content="IE=Edge" />
             <meta httpEquiv="X-DNS-Prefetch-Control" content="on" />
             <meta httpEquiv="cleartype" content="on" />
+            <meta name="yandex-verification" content="0ed1b9903be3747d" />
             <meta name="google-site-verification" content="_hxRc6xmVeOICnB6EIb8q405wLFT4cwuQghFJ6WovKM" />
             <meta property="og:title" content={title ?? DEFAULT_META.title} />
             <meta

@@ -29,7 +29,7 @@ export const Navbar = () => {
                             <Dropdown title={'Профтестирование'} path={'/proftestirovanie'}
                                       itemMenu={programmesMenu}/>
                             <Dropdown title={'О нас'} path={'/about'} itemMenu={aboutMenu}/>
-                            <Dropdown title={'Ещё'} path={'#!'} itemMenu={blogsMenu}/>
+                            <Dropdown title={'Ещё'} path={'/psychologist'} itemMenu={blogsMenu}/>
                             <Dropdown title={'Контакты'} path={"/contacts"}/>
                         </div>
                     </div>

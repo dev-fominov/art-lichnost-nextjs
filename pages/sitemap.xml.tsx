@@ -5,7 +5,7 @@ import { baseURLSite, pageAPI } from "../api/api";
 const Sitemap = () => {
 	return null
 }
-export default Sitemap
+
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
 	const otherPaths = [
@@ -93,3 +93,5 @@ async function getAllProducts() {
 		...pathsVacancies
 	]
 }
+
+export default Sitemap

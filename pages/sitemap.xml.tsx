@@ -44,7 +44,6 @@ const staticPaths = fs
 		return ![
 			"api",
 			"_app.tsx",
-			"_document.tsx",
 			"404.tsx",
 			"sitemap.xml.tsx",
 		].includes(staticPage)

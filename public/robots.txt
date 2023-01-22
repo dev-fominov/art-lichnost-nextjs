@@ -1,7 +1,2 @@
 User-agent: *
-Disallow: 
-Allow: *.css
-Allow: *.js
-Host: art-lichnost.ru
-
-Sitemap: https://art-lichnost.ru/sitemap.xml
+Allow: /

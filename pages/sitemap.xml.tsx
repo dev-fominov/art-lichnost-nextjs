@@ -23,7 +23,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
 		`<url>
         <loc>${url}</loc>
         <lastmod>${new Date().toISOString()}</lastmod>
-        <changefreq>monthly</changefreq>
+        <changefreq>daily</changefreq>
         <priority>1.0</priority>
       </url>`
 	)).join("")}

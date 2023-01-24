@@ -6,11 +6,7 @@ const Sitemap1 = () => {
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
 	const otherPaths = [
-		'https://art-lichnost.ru/camp/skills',
-		'https://art-lichnost.ru/camp/art-community',
-		'https://art-lichnost.ru/camp/professions',
-		'https://art-lichnost.ru/proftestirovanie/online-test',
-		'https://art-lichnost.ru/proftestirovanie/offline-test',
+		'https://art-lichnost.ru'
 	]
 
 	const allPaths = [...otherPaths]

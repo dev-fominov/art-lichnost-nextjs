@@ -11,18 +11,22 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
 	const staticPaths = [
 		'https://art-lichnost.ru/about',
 		'https://art-lichnost.ru/blog',
-		'https://art-lichnost.ru/camp',
 		'https://art-lichnost.ru/contacts',
 		'https://art-lichnost.ru/contract',
 		'https://art-lichnost.ru/courses',
 		'https://art-lichnost.ru/documents',
-		'https://art-lichnost.ru',
 		'https://art-lichnost.ru/merch',
-		'https://art-lichnost.ru/proftestirovanie',
 		'https://art-lichnost.ru/projects',
 		'https://art-lichnost.ru/psychologist',
 		'https://art-lichnost.ru/team',
 		'https://art-lichnost.ru/vacancies',
+		'https://art-lichnost.ru/camp',
+		'https://art-lichnost.ru/camp/skills',
+		'https://art-lichnost.ru/camp/art-community',
+		'https://art-lichnost.ru/camp/professions',
+		'https://art-lichnost.ru/proftestirovanie',
+		'https://art-lichnost.ru/proftestirovanie/online-test',
+		'https://art-lichnost.ru/proftestirovanie/offline-test',
 	]
 
 	const allPaths = [...staticPaths]
@@ -33,7 +37,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
         <loc>${url}</loc>
         <lastmod>${new Date().toISOString()}</lastmod>
         <changefreq>daily</changefreq>
-        <priority>1.0</priority>
+        <priority>0.8</priority>
       </url>`
 	)).join("")}
   </urlset>

@@ -39,13 +39,22 @@ async function getAllProducts() {
 	const pathsDocs = await dataDocs.docs.map((item: any) => `${baseURLSite}/camp/docs/${item.slug}`)
 
 	const dataProfessions = await pageAPI.professions()
-	const pathsProfessions = await dataProfessions.past_shifts.map((item: any) => `${baseURLSite}/professions/${item.slug}`)
+	const pathsProfessions = await dataProfessions.past_shifts.map((item: any) => `${baseURLSite}/camp/smena/${item.slug}`)
+
+	const dataProfessionsPage = await pageAPI.professions()
+	const pathsProfessionsPage = await dataProfessionsPage.shift_selection.map((item: any) => `${baseURLSite}/camp/professions?slug=${item.slug}`)
 
 	const dataSkills = await pageAPI.skills()
-	const pathsSkills = await dataSkills.past_shifts.map((item: any) => `${baseURLSite}/skills/${item.slug}`)
+	const pathsSkills = await dataSkills.past_shifts.map((item: any) => `${baseURLSite}/camp/smena/${item.slug}`)
+
+	const dataSkillsPage = await pageAPI.skills()
+	const pathsSkillsPage = await dataSkillsPage.shift_selection.map((item: any) => `${baseURLSite}/camp/skills?slug=${item.slug}`)
 
 	const dataArtCommunity = await pageAPI.artCommunity()
-	const pathsArtCommunity = await dataArtCommunity.past_shifts.map((item: any) => `${baseURLSite}/art-community/${item.slug}`)
+	const pathsArtCommunity = await dataArtCommunity.past_shifts.map((item: any) => `${baseURLSite}/camp/smena/${item.slug}`)
+
+	const dataArtCommunityPage = await pageAPI.artCommunity()
+	const pathsArtCommunityPage = await dataArtCommunityPage.shift_selection.map((item: any) => `${baseURLSite}/camp/art-community?slug=${item.slug}`)
 
 	const dataCourses = await pageAPI.courses()
 	const pathsArrCourses = await dataCourses.launch_group.map((item: any) => {
@@ -63,8 +72,11 @@ async function getAllProducts() {
 		...pathsBlogs,
 		...pathsDocs,
 		...pathsProfessions,
+		...pathsProfessionsPage,
 		...pathsSkills,
+		...pathsSkillsPage,
 		...pathsArtCommunity,
+		...pathsArtCommunityPage,
 		...pathsCourses,
 		...pathsProjects,
 		...pathsVacancies

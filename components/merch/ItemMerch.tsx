@@ -4,7 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import {CgArrowLongRight} from "react-icons/cg";
 import {Modal} from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {MerchForm} from "./MerchForm";
 
 const responsive = {
@@ -37,30 +37,43 @@ const responsive = {
 
 export const ItemMerch = ({data}: any) => {
     const [showModal, updateShowModal] = useState(false);
+    const [showCarousel, setShowCarousel] = useState(false);
     const showModalHandler = () => updateShowModal(!showModal)
     const noSize = data.size.every((item: any) => item.stock === 0)
+
+    useEffect(() => {
+        setTimeout(() => {
+            setShowCarousel(true)
+            return
+        }, 1500)
+        return
+    }, [])
 
     return (
         <div className={styles.item}>
             {data.gallery.length > 1
-                ? <div className={styles.containerBtn}>
-                    <Carousel slidesToSlide={1}
-                              containerClass="carousel-container"
-                              className={styles.carousel}
-                              swipeable
-                              focusOnSelect={false}
-                              arrows={false}
-                              showDots={true}
-                              ssr
-                              itemClass="image-item"
-                              infinite
-                              responsive={responsive}
-                    >
-                        {data.gallery.map((item: any, index: any) => <div key={index} className={styles.slide}>
-                            <img draggable={false} src={item.url} alt={item.alt}/>
-                        </div>)}
-                    </Carousel>
-                </div>
+                ? showCarousel
+                    ? <div className={styles.containerBtn}>
+                        <Carousel slidesToSlide={1}
+                                  containerClass="carousel-container"
+                                  className={styles.carousel}
+                                  swipeable
+                                  focusOnSelect={false}
+                                  arrows={false}
+                                  showDots={true}
+                                  ssr
+                                  itemClass="image-item"
+                                  infinite
+                                  responsive={responsive}
+                        >
+                            {data.gallery.map((item: any, index: any) => <div key={index} className={styles.slide}>
+                                <img draggable={false} src={item.url} alt={item.alt}/>
+                            </div>)}
+                        </Carousel>
+                    </div>
+                    : <div className={styles.slide}>
+                        <img draggable={false} src={data.gallery[0].url} alt={data.gallery[0].alt}/>
+                    </div>
                 : <div className={styles.slide}>
                     <img draggable={false} src={data.gallery[0].url} alt={data.gallery[0].alt}/>
                 </div>}

@@ -4,13 +4,23 @@
     max-width: 285px;
 }
 
+.carousel{
+    height: 177px;
+}
+
 .slide {
     height: 177px;
+    overflow: hidden;
+    border-radius: 40px;
+}
+
+.slide img {
     -o-object-fit: cover;
     object-fit: cover;
     -o-object-position: center;
     object-position: center;
-    border-radius: 40px;
+    width: 100%;
+    height: 100%;
 }
 
 .itemContent {

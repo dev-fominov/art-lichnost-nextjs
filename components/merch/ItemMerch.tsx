@@ -45,6 +45,7 @@ export const ItemMerch = ({data}: any) => {
             {data.gallery.length > 1
                 ? <div className={styles.containerBtn}>
                     <Carousel slidesToSlide={1}
+                              containerClass="carousel-container"
                               className={styles.carousel}
                               swipeable
                               focusOnSelect={false}
@@ -55,19 +56,14 @@ export const ItemMerch = ({data}: any) => {
                               infinite
                               responsive={responsive}
                     >
-                        {data.gallery.map((item: any, index: any) => <div key={index} className={styles.slide}
-                                                                          draggable={false}
-                                                                          style={{
-                                                                              background: `url(${item.url}) no-repeat center center`,
-                                                                              backgroundSize: `cover`
-                                                                          }}/>)}
+                        {data.gallery.map((item: any, index: any) => <div key={index} className={styles.slide}>
+                            <img draggable={false} src={item.url} alt={item.alt}/>
+                        </div>)}
                     </Carousel>
                 </div>
-                : <div className={styles.slide}
-                       style={{
-                           background: `url(${data.gallery[0].url}) no-repeat center center`,
-                           backgroundSize: `cover`
-                       }}/>}
+                : <div className={styles.slide}>
+                    <img draggable={false} src={data.gallery[0].url} alt={data.gallery[0].alt}/>
+                </div>}
             <div className={styles.itemContent}>
                 <div className={styles.contentTitle}>
                     {data.title}
@@ -105,7 +101,7 @@ export const ItemMerch = ({data}: any) => {
                                  onClose={showModalHandler}
                                  closeOnEsc
                                  center>
-              <MerchForm hiddenText={data.title} />
+              <MerchForm hiddenText={data.title}/>
             </Modal>}
         </div>
     )

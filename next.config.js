@@ -16,6 +16,35 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
+  async redirects() {
+    return [
+      {
+        source: '/index',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/job/vakansija',
+        destination: '/vacancies',
+        permanent: true,
+      },
+      {
+        source: '/camp_archive',
+        destination: '/camp/professions',
+        permanent: true,
+      },
+      {
+        source: '/testing',
+        destination: '/proftestirovanie',
+        permanent: true,
+      },
+      {
+        source: '/docs/dokumenty-dlya-dogovora',
+        destination: '/about',
+        permanent: true,
+      }
+    ]
+  },
 }
 
 module.exports = nextConfig

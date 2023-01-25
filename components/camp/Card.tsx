@@ -1,7 +1,7 @@
 import styles from './../../styles/camp/card.module.css'
-import {A} from "../common/A";
+import { A } from "../common/A";
 
-const Card = ({data, carouselCard, filter, term_id}: any) => {
+const Card = ({ data, carouselCard, filter, term_id }: any) => {
     return (
         <div className={filter ? styles.filter : ''}>
             <div className={carouselCard ? styles.carouselCard : styles.card}>
@@ -11,15 +11,15 @@ const Card = ({data, carouselCard, filter, term_id}: any) => {
                         : term_id === 11
                             ? 'skills'
                             : 'art-community'}`,
-                    query: {slug: data.post_slug},
+                    query: { slug: data.post_slug },
                 } : `courses/${data.post_slug}`}
-                   text={<div className={styles.boxImg}
-                              style={{
-                                  background: `url(${data.thumbnail.url}) no-repeat center center`,
-                                  backgroundSize: `cover`
-                              }}>
-                       {data.info && <div className={styles.days}>{data.info}</div>}
-                   </div>}/>
+                    text={<div className={styles.boxImg}
+                        style={{
+                            background: `url(${data.thumbnail.url}) no-repeat center center`,
+                            backgroundSize: `cover`
+                        }}>
+                        {data.info && <div className={styles.days}>{data.info}</div>}
+                    </div>} />
                 <div className={styles.boxLink}>
                     <h3 className={styles.postTitle}>
                         {data.post_title}
@@ -33,9 +33,9 @@ const Card = ({data, carouselCard, filter, term_id}: any) => {
                             : term_id === 11
                                 ? 'skills'
                                 : 'art-community'}`,
-                        query: {slug: data.post_slug},
+                        query: { slug: data.post_slug },
                     } : `courses/${data.post_slug}`}
-                       text={'Узнать больше'}/>
+                        text={'Узнать больше'} />
                 </div>
             </div>
         </div>

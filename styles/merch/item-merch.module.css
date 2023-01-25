@@ -6,6 +6,7 @@
 
 .slide {
     height: 177px;
+    width: 100%;
     -o-object-fit: cover;
     object-fit: cover;
     -o-object-position: center;

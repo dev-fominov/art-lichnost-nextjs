@@ -268,9 +268,10 @@
     margin-right: 15px;
     color: #fff;
     border-radius: 30px;
-    font-weight: normal;
+    font-weight: 500;
     border: none;
     margin-bottom: 10px;
+		font-family: 'Montserrat', sans-serif;
 }
 
 .btnRed:active {
@@ -288,9 +289,10 @@
     font-size: 15px;
     color: #fff;
     border-radius: 30px;
-    font-weight: normal;
+    font-weight: 500;
     border: none;
     cursor: pointer;
+		font-family: 'Montserrat', sans-serif;
 }
 
 .btnGrey:active {

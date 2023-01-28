@@ -14,14 +14,17 @@ const Filter = ({ data }: any) => {
 			age: { name: "Выберите возраст", slug: '' },
 			section: { name: "Направление", slug: '' },
 			period: { name: "Выберите даты", slug: '' },
-			certificate: 1
+			certificate: true,
+			nocertificate: true,
 		},
 		onSubmit: async values => {
 			setResFilter({ ...resFilter, loading: true })
 			const res = await filterAPI.camp(values.certificate,
+				values.nocertificate,
 				values.age.slug,
 				values.section.slug,
 				values.period.slug)
+
 			await setResFilter({ resFilter: res, loading: false })
 		},
 	})
@@ -72,19 +75,20 @@ const Filter = ({ data }: any) => {
 								</div>
 								<ul className={styles.certificateCheckboxes}>
 									<li className={styles.radioLabel}
-										onClick={() => formik.setFieldValue('certificate', 1)}>
-										{formik.values.certificate === 1
+										onClick={() => formik.setFieldValue('nocertificate', !formik.values.nocertificate)}>
+										{formik.values.nocertificate
 											? <div className={styles.radioTrue} />
 											: <div className={styles.radioFalse} />}
-										С сертификатом
+										С сертификата
 									</li>
 									<li className={styles.radioLabel}
-										onClick={() => formik.setFieldValue('certificate', 2)}>
-										{formik.values.certificate === 2
+										onClick={() => formik.setFieldValue('certificate', !formik.values.certificate)}>
+										{formik.values.certificate
 											? <div className={styles.radioTrue} />
 											: <div className={styles.radioFalse} />}
-										Без сертификата
+										Без сертификатом
 									</li>
+
 								</ul>
 							</div>
 							<div>

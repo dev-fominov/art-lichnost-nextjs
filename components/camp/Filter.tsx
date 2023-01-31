@@ -79,14 +79,14 @@ const Filter = ({ data }: any) => {
 										{formik.values.nocertificate
 											? <div className={styles.radioTrue} />
 											: <div className={styles.radioFalse} />}
-										С сертификата
+										С сертификатом
 									</li>
 									<li className={styles.radioLabel}
 										onClick={() => formik.setFieldValue('certificate', !formik.values.certificate)}>
 										{formik.values.certificate
 											? <div className={styles.radioTrue} />
 											: <div className={styles.radioFalse} />}
-										Без сертификатом
+										Без сертификата
 									</li>
 
 								</ul>

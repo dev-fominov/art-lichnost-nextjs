@@ -38,7 +38,7 @@ const Camp: NextPage = ({data}: any) => {
     return (
         <div style={{overflow: "hidden"}}>
             <Meta meta={data.metadata}/>
-            {data.background_video.gg
+            {data.background_video
                 ? <div style={{position: "relative"}} className="video-background">
                     <iframe
                         width={VIDEO_WIDTH}

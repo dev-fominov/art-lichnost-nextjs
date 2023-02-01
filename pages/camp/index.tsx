@@ -1,19 +1,22 @@
 import type {NextPage} from 'next'
+import * as React from "react";
 import {Footer} from "../../components/common/Footer";
 import {SectionCamp} from "../../components/camp/SectionCamp";
 import Filter from "../../components/camp/Filter";
 import Meta from "../../services/Meta";
+import {ContentHeader} from "../../components/camp/ContentHeader";
 import {pageAPI} from "../../api/api";
 import Description from "../../components/camp/Description";
 import {Container} from "../../components/common/Container";
 import styles from "../../styles/camp/camp.module.css";
 import {Header} from "../../components/common/Header";
-import * as React from "react";
 import {useEffect, useState} from "react";
 import GreenLine from "../../components/common/img/green-line.svg";
 import BlueLine from "../../components/common/img/blue-line.svg";
 import RedLine from "../../components/common/img/red-line.svg";
-import {ContentHeader} from "../../components/camp/ContentHeader";
+import RedLineTop from "../../components/common/img/red-line-top.svg";
+import BlueLineTop from "../../components/common/img/blue-line-top.svg";
+import GreenLineTop from "../../components/common/img/green-line-top.svg";
 
 const Camp: NextPage = ({data}: any) => {
     const [height, setHeight] = useState(0)
@@ -35,7 +38,7 @@ const Camp: NextPage = ({data}: any) => {
     return (
         <div style={{overflow: "hidden"}}>
             <Meta meta={data.metadata}/>
-            {data.background_video
+            {data.background_video.gg
                 ? <div style={{position: "relative"}} className="video-background">
                     <iframe
                         width={VIDEO_WIDTH}
@@ -50,9 +53,15 @@ const Camp: NextPage = ({data}: any) => {
                     <ContentHeader/>
                 </Header>}
             <div id={'container'} className={styles.lineContainer}>
+                <div className={styles.lineBoxTop}>
+                    <RedLineTop className={styles.redLineTop}/>
+                    <BlueLineTop className={styles.blueLineTop}/>
+                    <GreenLineTop className={styles.greenLineTop}/>
+                </div>
                 <div className={styles.lineBox}>
                     <Container>
-                        {data.camps[0].count > 0 && <GreenLine className={styles.greenLine} height={`${height - 2800}`}/>}
+                        {data.camps[0].count > 0 &&
+                        <GreenLine className={styles.greenLine} height={`${height - 2800}`}/>}
                         {data.camps[1].count > 0 && <BlueLine className={styles.blueLine} height={`${height - 2470}`}/>}
                         {data.camps[2].count > 0 && <RedLine className={styles.redLine} height={`${height - 1700}`}/>}
                     </Container>

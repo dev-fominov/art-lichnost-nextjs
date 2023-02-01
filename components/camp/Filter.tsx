@@ -14,15 +14,17 @@ const Filter = ({data}: any) => {
                                      age: {name: "Выберите возраст", slug: ''},
                                      section: {name: "Выберите профессию или навык", slug: ''},
                                      period: {name: "Выберите даты", slug: ''},
-                                     certificate: 1
+                                     certificate: true,
+                                     nocertificate: true,
                                  },
                                  onSubmit: async values => {
                                      setResFilter({...resFilter, loading: true})
                                      const res = await filterAPI.camp(values.certificate,
+                                                                      values.nocertificate,
                                                                       values.age.slug,
                                                                       values.section.slug,
                                                                       values.period.slug)
-                                     await setResFilter({resFilter:  res, loading: false})
+                                     await setResFilter({resFilter: res, loading: false})
                                  },
                              })
     return (
@@ -38,7 +40,7 @@ const Filter = ({data}: any) => {
                                     <span>1</span>
                                     Возраст
                                 </label>
-                                <Select data={[{name: 'Все возрасты', slug: 'all'},...data.age]}
+                                <Select data={[{name: 'Все возрасты', slug: 'all'}, ...data.age]}
                                         setFieldValue={formik.setFieldValue}
                                         name={formik.values.age.name}
                                         title={'age'}/>
@@ -48,7 +50,7 @@ const Filter = ({data}: any) => {
                                     <span>2</span>
                                     Период
                                 </label>
-                                <Select data={[{name: 'Все периоды', slug: 'all'},...data.period]}
+                                <Select data={[{name: 'Все периоды', slug: 'all'}, ...data.period]}
                                         setFieldValue={formik.setFieldValue}
                                         name={formik.values.period.name}
                                         title={'period'}/>
@@ -58,7 +60,7 @@ const Filter = ({data}: any) => {
                                     <span>3</span>
                                     Профессия или навык
                                 </label>
-                                <Select data={[{name: 'Все смены', slug: 'all'},...data.section]}
+                                <Select data={[{name: 'Все смены', slug: 'all'}, ...data.section]}
                                         setFieldValue={formik.setFieldValue}
                                         name={formik.values.section.name}
                                         title={'section'}/>
@@ -71,15 +73,15 @@ const Filter = ({data}: any) => {
                                 </div>
                                 <ul className={styles.certificateCheckboxes}>
                                     <li className={styles.radioLabel}
-                                        onClick={() => formik.setFieldValue('certificate', 1)}>
-                                        {formik.values.certificate === 1
+                                        onClick={() => formik.setFieldValue('nocertificate', !formik.values.nocertificate)}>
+                                        {formik.values.nocertificate
                                             ? <div className={styles.radioTrue}/>
                                             : <div className={styles.radioFalse}/>}
                                         С сертификатом
                                     </li>
                                     <li className={styles.radioLabel}
-                                        onClick={() => formik.setFieldValue('certificate', 2)}>
-                                        {formik.values.certificate === 2
+                                        onClick={() => formik.setFieldValue('certificate', !formik.values.certificate)}>
+                                        {formik.values.certificate
                                             ? <div className={styles.radioTrue}/>
                                             : <div className={styles.radioFalse}/>}
                                         Без сертификата

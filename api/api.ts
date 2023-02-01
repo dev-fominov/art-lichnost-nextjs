@@ -87,12 +87,12 @@ export const pageAPI = {
 }
 
 export const filterAPI = {
-    camp(certificate: any, age: any, section: any, period: any) {
-        return instance.get(`camp/filter?certificate=${certificate}&age=${age}&section=${section}&period=${period}`).then(res => res.data)
+    camp(nocertificate: any, certificate: any, age: any, section: any, period: any) {
+        return instance.get(`camp/filter?certificate=${certificate}&nocertificate=${nocertificate}&age=${age}&section=${section}&period=${period}`).then(res => res.data)
     },
     courses(category: any, age: any, presenter: any) {
         return instance.get(`courses/filter?course=${category}&age=${age}&presenter=${presenter}`).then(res => res.data)
-    },
+    }
 }
 
 export const appAPI = {

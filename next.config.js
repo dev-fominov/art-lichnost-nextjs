@@ -1,5 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      issuer: /\.[jt]sx?$/,
+      use: ["@svgr/webpack"]
+    });
+    return config;
+  },
   reactStrictMode: false,
   swcMinify: true,
   crossOrigin: 'anonymous',
@@ -17,6 +25,7 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 }
+
 
 module.exports = nextConfig
 

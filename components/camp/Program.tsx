@@ -76,9 +76,9 @@ const Program = ({data}: any) => {
                     <h2 className={styles.title}
                         style={{
                             color: `${data.term_id === 11
-                                ? '#30AA33'
+                                ? '#7B8BFF'
                                 : data.term_id === 10
-                                    ? '#FF822E'
+                                    ? '#30AA33'
                                     : '#EB3535'}`
                         }}>
                         {data.name.toUpperCase()}
@@ -88,7 +88,7 @@ const Program = ({data}: any) => {
                     {data.description}
                 </p>
             </div>
-            {data.count >= 3
+            {data.count >= 2
                 ? <div className={styles.containerBtn}>
                     <Carousel slidesToSlide={1}
                               swipeable

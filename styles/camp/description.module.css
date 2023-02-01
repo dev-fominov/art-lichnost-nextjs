@@ -1,0 +1,70 @@
+.descriptionBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.itemBox {
+    width: 354px;
+    min-height: 147px;
+    border: 1px solid #30AA33;
+    border-radius: 20px;
+    margin: 0 5px;
+}
+
+.titleBox {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.title {
+    margin-top: -21px;
+    min-width: 204px;
+    height: 42px;
+    background: #7B8BFF;
+    border-radius: 100px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    color: #FFFFFF;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.description {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 30px 24px 30px 24px;
+}
+
+@media (max-width: 750px) {
+    .descriptionBox {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .itemBox {
+        width: 100%;
+        margin: 0 0 43px 0;
+    }
+}

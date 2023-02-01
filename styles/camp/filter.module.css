@@ -8,6 +8,12 @@
     }
 }
 
+@media (max-width: 750px) {
+    .filter {
+        margin: 40px 15px -10px 0;
+    }
+}
+
 .title {
     width: 100%;
     max-width: 1210px;
@@ -58,6 +64,7 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-bottom: 35px;
+    z-index: 9;
 }
 
 .programsFilterLeft {

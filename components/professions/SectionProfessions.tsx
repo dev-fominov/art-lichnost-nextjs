@@ -207,7 +207,7 @@ export const SectionProfessions = ({ data }: any) => {
 													<p>{item.price}</p>
 													<span>Цена без учета сертификата и кэшбэка — {item.price} рублей</span>
 													{item.price_certificate &&
-														<span>Цена с учетом сертификата — {(Number(item.price.replaceAll(' ', '').replaceAll(',', '.')) - Number(item.price_certificate.replaceAll(' ', '').replaceAll(',', '.'))).toString()} рублей</span>}
+														<span>Цена с учетом сертификата — {(Number(item.price.replaceAll(' ', '').replaceAll(',', '.')) + Number(item.price_certificate.replaceAll(' ', '').replaceAll(',', '.'))).toString()} рублей</span>}
 													{item.price_certificate &&
 														<span>Размер компенсации (сертификата) — {item.price_certificate} рублей</span>}
 												</div>}

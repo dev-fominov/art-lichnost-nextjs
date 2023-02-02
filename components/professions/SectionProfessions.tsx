@@ -204,7 +204,7 @@ export const SectionProfessions = ({ data }: any) => {
 													Оставить заявку
 												</button>
 												{item.price && <div className={styles.modalPriceBox}>
-													<p>{item.price}</p>
+													<p>{item.price} руб</p>
 													<span>Цена с учетом сертификата — {item.price} рублей</span>
 													{item.price_certificate &&
 														<span>Размер компенсации (сертификата) — {item.price_certificate} рублей</span>}

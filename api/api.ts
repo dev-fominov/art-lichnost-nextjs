@@ -92,7 +92,7 @@ export const filterAPI = {
     },
     courses(category: any, age: any, presenter: any) {
         return instance.get(`courses/filter?course=${category}&age=${age}&presenter=${presenter}`).then(res => res.data)
-    },
+    }
 }
 
 export const appAPI = {

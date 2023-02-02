@@ -8,10 +8,19 @@
     }
 }
 
+@media (max-width: 750px) {
+	.filter {
+			margin: 40px 15px -10px 0;
+	}
+}
+
 .title {
     width: 100%;
     max-width: 1210px;
-    margin: 0 auto 36px;
+		-ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+    z-index: 9;
 }
 
 @media (max-width: 1440px) {
@@ -293,6 +302,8 @@
     border: none;
     cursor: pointer;
 		font-family: 'Montserrat', sans-serif;
+		position: relative;
+		z-index: 10;
 }
 
 .btnGrey:active {

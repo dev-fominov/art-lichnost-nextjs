@@ -205,4 +205,16 @@
 	.lineBox {
 			display: none;
 	}
+	.redLine {
+		right: -90px;
+		width: 150px !important;
+	}
+	.blueLine {
+		right: 0;
+		width: 600px;
+	}
+	.greenLine {
+		left: -60px;
+    width: 80px;
+	}
 }

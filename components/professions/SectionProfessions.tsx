@@ -205,11 +205,12 @@ export const SectionProfessions = ({ data }: any) => {
 												</button>
 												{item.price && <div className={styles.modalPriceBox}>
 													<p>{item.price}</p>
-													<span>Цена без учета сертификата и кэшбэка — {item.price} рублей</span>
-													{item.price_certificate &&
-														<span>Цена с учетом сертификата — {(Number(item.price.replaceAll(' ', '').replaceAll(',', '.')) + Number(item.price_certificate.replaceAll(' ', '').replaceAll(',', '.'))).toString()} рублей</span>}
+													<span>Цена с учетом сертификата — {item.price} рублей</span>
 													{item.price_certificate &&
 														<span>Размер компенсации (сертификата) — {item.price_certificate} рублей</span>}
+													{item.price_certificate &&
+														<span>Цена без учета сертификата — {(Number(item.price.replaceAll(' ', '').replaceAll(',', '.')) + Number(item.price_certificate.replaceAll(' ', '').replaceAll(',', '.'))).toString()} рублей</span>}
+
 												</div>}
 											</div>
 											{showInnerModal && <Modal styles={{
@@ -235,11 +236,13 @@ export const SectionProfessions = ({ data }: any) => {
 						{smena.receivedData.price && <span className={styles.price}>{smena.receivedData.price} руб</span>}
 						<div className={styles.priceDes}>
 							{smena.receivedData.price && <span>
-								Цена без учета сертификата — {smena.receivedData.price} рублей
+								Цена c учетом сертификата — {smena.receivedData.price} рублей
 							</span>}
 							{smena.receivedData.price_certificate && <span>
 								Размер компенсации (сертификата) — {smena.receivedData.price_certificate} рублей
 							</span>}
+							{smena.receivedData.price_certificate && <>
+								<span>Цена без учета сертификата — {(Number(smena.receivedData.price.replaceAll(' ', '').replaceAll(',', '.')) + Number(smena.receivedData.price_certificate.replaceAll(' ', '').replaceAll(',', '.'))).toString()} рублей</span></>}
 						</div>
 					</div>
 				</>}

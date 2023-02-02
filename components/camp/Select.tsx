@@ -8,7 +8,11 @@ export const Select = ({data, setFieldValue, name, title}: any) => {
 
     const [openSelect, setOpenSelect] = useState(false)
 
-    useOutsideClick(wrapperRef, () => setOpenSelect(false))
+		useOutsideClick(wrapperRef, () => {
+			setTimeout(()=>{
+					setOpenSelect(false)
+			}, 500)
+	})
 
     return (
         <div className={styles.filterSelect}>

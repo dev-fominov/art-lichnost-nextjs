@@ -201,10 +201,7 @@
 	}
 }
 
-@media (max-width: 1350px) {
-	.lineBox {
-			display: none;
-	}
+@media (max-width: 1550px) {
 	.redLine {
 		right: -90px;
 		width: 150px !important;
@@ -216,5 +213,11 @@
 	.greenLine {
 		left: -60px;
     width: 80px;
+	}
+}
+
+@media (max-width: 1350px) {
+	.lineBox {
+			display: none;
 	}
 }

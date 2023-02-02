@@ -20,7 +20,7 @@ export const ContentHeader = () => {
 			</div>
 			<Container>
 				<div className={styles.contentBox}>
-					<h1 className={styles.heading}>Детский лагерь в Лен. области 7-17 лет</h1>
+					<h1 className={styles.heading}>Детский лагерь в Ленобласти 7-17 лет</h1>
 					<div className={styles.content}>
 						{titleArr.map((item: any, index: any) => {
 							const color = item === 'ПРОФЕССИИ'

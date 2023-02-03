@@ -55,6 +55,7 @@
 .title {
 	min-width: 204px;
 	height: 42px;
+	cursor: pointer;
 	background: #7B8BFF;
 	border-radius: 100px;
 	font-style: normal;

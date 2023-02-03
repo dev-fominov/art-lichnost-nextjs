@@ -36,6 +36,7 @@ const Description = ({ }: any) => {
 					</div>
 				})}
 			</div>
+			
 		</Section>
 	)
 }

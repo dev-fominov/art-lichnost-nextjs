@@ -41,8 +41,14 @@ const responsive = {
 	}
 }
 
-const Program = ({ data }: any) => {
+const Program = (props: any) => {
 	const [showButton, setShowButton] = useState(false)
+
+	const propsRef = props.propsRef
+	const propsRef1 = props.propsRef1
+	const propsRef2 = props.propsRef2
+	const index = props.index
+	const data = props.data
 
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
@@ -73,14 +79,18 @@ const Program = ({ data }: any) => {
 		<div className={styles.programBox}>
 			<div>
 				<A href={`camp/${data.slug}`} text={
-					<h2 className={styles.title}
+					<h2 
+						className={styles.title}
+						id={propsRef}
 						style={{
 							color: `${data.term_id === 11
 								? '#7B8BFF'
 								: data.term_id === 10
 									? '#30AA33'
 									: '#EB3535'}`
-						}}>
+						}}
+						ref={index === 0 ? propsRef : index === 1 ? propsRef1 : propsRef2}
+						>
 						{data.name.toUpperCase()}
 						<span>Программа</span>
 					</h2>} />

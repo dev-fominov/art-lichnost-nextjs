@@ -234,6 +234,7 @@ export const SectionProfessions = ({ data }: any) => {
 					</div>
 					<div className={styles.bottomTab}>
 						{smena.receivedData.price && <span className={styles.price}>{smena.receivedData.price} руб</span>}
+						{smena.receivedData.text_sale_camp && <p style={{fontWeight: '700', maxWidth: '450px'}}>{smena.receivedData.text_sale_camp}</p>}
 						<div className={styles.priceDes}>
 							{smena.receivedData.price && <span>
 								Цена c учетом сертификата — {smena.receivedData.price} рублей

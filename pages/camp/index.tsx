@@ -17,6 +17,7 @@ import RedLine from "../../components/common/img/red-line.svg";
 import RedLineTop from "../../components/common/img/red-line-top.svg";
 import BlueLineTop from "../../components/common/img/blue-line-top.svg";
 import GreenLineTop from "../../components/common/img/green-line-top.svg";
+import { useRef } from "react";
 
 const Camp: NextPage = ({ data }: any) => {
 	const [height, setHeight] = useState(0)
@@ -34,6 +35,23 @@ const Camp: NextPage = ({ data }: any) => {
 		}
 		return () => element?.removeEventListener("DOMSubtreeModified", handleClick);
 	}, [])
+
+	const ref = useRef<null | HTMLDivElement>(null);
+	const ref1 = useRef<null | HTMLDivElement>(null);
+	const ref2 = useRef<null | HTMLDivElement>(null);
+
+	const handleClick = (index: number) => {
+		if (index === 0) {
+			ref.current?.scrollIntoView({ behavior: 'smooth' })
+		}
+		if (index === 1) {
+			ref1.current?.scrollIntoView({ behavior: 'smooth' })
+		}
+		if (index === 2) {
+			ref2.current?.scrollIntoView({ behavior: 'smooth' })
+		}
+	}
+
 	return (
 		<div style={{ overflow: "hidden" }}>
 			<Meta meta={data.metadata} />
@@ -46,7 +64,7 @@ const Camp: NextPage = ({ data }: any) => {
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						src={`https://www.youtube.com/embed/${data.background_video}?autoplay=1&controls=0&rel=0&showinfo=0&mute=1&modestbranding=1&iv_load_policy=3&playsinline=1&enablejsapi=1&origin=https%3A%2F%2Fart-lichnost.ru&widgetid=1`}
 					/>
-					<ContentHeader />
+					<ContentHeader handleClick={handleClick} />
 				</div>
 				: <Header banner={data.background_img.url}>
 					<ContentHeader />
@@ -65,9 +83,12 @@ const Camp: NextPage = ({ data }: any) => {
 						{data.camps[2].count > 0 && <RedLine className={styles.redLine} height={`${height - 1700}`} />}
 					</Container>
 				</div>
+				{/* <div >rew0</div>
+				<div >rew1</div>
+				<div ref={ref2}>rew2</div> */}
 				<Description data={''} />
 				<Filter data={data.filter} />
-				<SectionCamp data={data} />
+				<SectionCamp propsRef={ref} propsRef1={ref1} propsRef2={ref2} data={data} />
 			</div>
 			<Footer />
 		</div>

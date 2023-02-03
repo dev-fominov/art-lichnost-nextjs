@@ -6,10 +6,14 @@ import RedLineMob from "../../components/common/img/red-line-mob.svg";
 import BlueLineMob from "../../components/common/img/blue-line-mob.svg";
 import * as React from "react";
 
-export const ContentHeader = () => {
-
+export const ContentHeader = (props: any) => {
+	
 	const titleArr = ['ПРОФЕССИИ', 'НАВЫКИ', 'COMMUNITY']
 
+	const handleClick = (index: number) => {
+		props.handleClick(index)
+	}
+	
 	return (
 		<>
 			<Navbar />
@@ -35,8 +39,11 @@ export const ContentHeader = () => {
 									: styles.titleRed
 							return <div key={index} className={styles.itemBox}>
 								<div className={styles.titleBox}>
-									<div className={`${styles.title} ${style}`}
-										style={{ backgroundColor: color }}>
+									<div
+										className={`${styles.title} ${style}`}
+										style={{ backgroundColor: color }}
+										onClick={() => handleClick(index)}
+									>
 										{item.toUpperCase()}
 									</div>
 								</div>

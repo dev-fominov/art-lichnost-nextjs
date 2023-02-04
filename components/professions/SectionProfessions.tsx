@@ -210,7 +210,16 @@ export const SectionProfessions = ({ data }: any) => {
 														<span>Размер компенсации (сертификата) — {item.price_certificate} рублей</span>}
 													{item.price_certificate &&
 														<span>Цена без учета сертификата — {(Number(item.price.replaceAll(' ', '').replaceAll(',', '.')) + Number(item.price_certificate.replaceAll(' ', '').replaceAll(',', '.'))).toString()} рублей</span>}
-
+													{smena.receivedData.text_sale_camp && <p style={
+														{
+															fontWeight: 'bold',
+															marginTop: '30px',
+															maxWidth: '500px',
+															fontSize: '14px',
+															lineHeight: '20px',
+															width: '100%'
+														}
+													}>{smena.receivedData.text_sale_camp}</p>}
 												</div>}
 											</div>
 											{showInnerModal && <Modal styles={{
@@ -234,7 +243,15 @@ export const SectionProfessions = ({ data }: any) => {
 					</div>
 					<div className={styles.bottomTab}>
 						{smena.receivedData.price && <span className={styles.price}>{smena.receivedData.price} руб</span>}
-						{smena.receivedData.text_sale_camp && <p style={{fontWeight: '700', maxWidth: '450px'}}>{smena.receivedData.text_sale_camp}</p>}
+						{smena.receivedData.text_sale_camp && <p style={
+							{
+								fontWeight: 'bold',
+								maxWidth: '500px',
+								fontSize: '14px',
+								lineHeight: '20px',
+								width: '100%'
+							}
+						}>{smena.receivedData.text_sale_camp}</p>}
 						<div className={styles.priceDes}>
 							{smena.receivedData.price && <span>
 								Цена c учетом сертификата — {smena.receivedData.price} рублей

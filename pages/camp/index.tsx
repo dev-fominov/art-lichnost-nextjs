@@ -83,9 +83,6 @@ const Camp: NextPage = ({ data }: any) => {
 						{data.camps[2].count > 0 && <RedLine className={styles.redLine} height={`${height - 1700}`} />}
 					</Container>
 				</div>
-				{/* <div >rew0</div>
-				<div >rew1</div>
-				<div ref={ref2}>rew2</div> */}
 				<Description data={''} />
 				<Filter data={data.filter} />
 				<SectionCamp propsRef={ref} propsRef1={ref1} propsRef2={ref2} data={data} />

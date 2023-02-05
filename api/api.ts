@@ -98,7 +98,7 @@ export const filterAPI = {
 export const appAPI = {
 	commonForm(body: any) {
 		let rew = JSON.parse(body)
-		let newUserEmail = rew.userEmail.split('.').join('#')
+		let newUserEmail = rew.userEmail.split('.').join('/')
 		let wer = {...rew, userEmail: newUserEmail}
 		let newBody = JSON.stringify(wer)
 		return instance.post(`send-mail/`, newBody).then(res => res.data)

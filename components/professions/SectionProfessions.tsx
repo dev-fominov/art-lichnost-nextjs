@@ -56,8 +56,6 @@ export const SectionProfessions = ({ data }: any) => {
 	const router = useRouter()
 	const { slug } = router.query
 
-	console.log(slug)
-
 	const [slugProfi, setSlugProfi] = useState(data.shift_selection[0]?.slug)
 	const [smena, setSmena] = useState({ receivedData: false as any, loading: false })
 	const [showModal, updateShowModal] = useState('');

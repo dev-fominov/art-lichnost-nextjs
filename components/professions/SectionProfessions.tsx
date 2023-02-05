@@ -56,6 +56,8 @@ export const SectionProfessions = ({ data }: any) => {
 	const router = useRouter()
 	const { slug } = router.query
 
+	console.log(slug)
+
 	const [slugProfi, setSlugProfi] = useState(data.shift_selection[0]?.slug)
 	const [smena, setSmena] = useState({ receivedData: false as any, loading: false })
 	const [showModal, updateShowModal] = useState('');
@@ -89,10 +91,11 @@ export const SectionProfessions = ({ data }: any) => {
 	}, [data.length])
 
 	useEffect(() => {
-		data.shift_selection[0]?.slug && getSmena(data.shift_selection[0].slug)
 		if (typeof slug !== 'undefined') {
 			setSlugProfi(slug)
 			getSmena(slug)
+		} else {
+			getSmena(data.shift_selection[0].slug)
 		}
 	}, [slug])
 
@@ -116,6 +119,12 @@ export const SectionProfessions = ({ data }: any) => {
 			? 'Навык'
 			: 'Профессия'
 
+
+	const priceName = data.id_page === 12
+		? 'Цена'
+		: data.id_page === 11
+			? 'Навык'
+			: 'Профессия'
 	return (
 		<Section>
 			<Description img={data.description_img}
@@ -205,7 +214,7 @@ export const SectionProfessions = ({ data }: any) => {
 												</button>
 												{item.price && <div className={styles.modalPriceBox}>
 													<p>{item.price} руб</p>
-													<span>Цена с учетом сертификата — {item.price} рублей</span>
+													{(data.id_page !== 12) && <span>Цена с учетом сертификата  — {item.price} рублей</span>}
 													{item.price_certificate &&
 														<span>Размер компенсации (сертификата) — {item.price_certificate} рублей</span>}
 													{item.price_certificate &&
@@ -254,7 +263,7 @@ export const SectionProfessions = ({ data }: any) => {
 						}>{smena.receivedData.text_sale_camp}</p>}
 						<div className={styles.priceDes}>
 							{smena.receivedData.price && <span>
-								Цена c учетом сертификата — {smena.receivedData.price} рублей
+								 {(data.id_page !== 12) && `Цена c учетом сертификата — ${smena.receivedData.price} рублей`} 
 							</span>}
 							{smena.receivedData.price_certificate && <span>
 								Размер компенсации (сертификата) — {smena.receivedData.price_certificate} рублей

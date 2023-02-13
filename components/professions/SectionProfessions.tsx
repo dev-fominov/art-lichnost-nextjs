@@ -204,12 +204,15 @@ export const SectionProfessions = ({ data }: any) => {
 												</ul>
 												<div className={styles.descP}
 													dangerouslySetInnerHTML={{ __html: item.description }} />
-												<button className={styles.redBtn} onClick={() => {
-													updateInnerShowModal(true)
-													setHiddenText(item.title)
-												}}>
-													Оставить заявку
-												</button>
+												{item.seats
+													? <button className={styles.redBtn} onClick={() => {
+														updateInnerShowModal(true)
+														setHiddenText(item.title)
+													}}>
+														Оставить заявку
+													</button>
+													: <span style={{ background: '#eb3535', width: '200px', fontSize: '14px', marginLeft: '35px' }} className={styles.onstock}>Нет места</span>}
+
 												{item.price && <div className={styles.modalPriceBox}>
 													<p>{item.price} руб</p>
 													{(data.id_page !== 12) && <span>Цена с учетом сертификата  — {item.price} рублей</span>}
@@ -261,7 +264,7 @@ export const SectionProfessions = ({ data }: any) => {
 						}>{smena.receivedData.text_sale_camp}</p>}
 						<div className={styles.priceDes}>
 							{smena.receivedData.price && <span>
-								 {(data.id_page !== 12) && `Цена c учетом сертификата — ${smena.receivedData.price} рублей`} 
+								{(data.id_page !== 12) && `Цена c учетом сертификата — ${smena.receivedData.price} рублей`}
 							</span>}
 							{smena.receivedData.price_certificate && <span>
 								Размер компенсации (сертификата) — {smena.receivedData.price_certificate} рублей

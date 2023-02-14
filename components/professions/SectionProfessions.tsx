@@ -236,7 +236,7 @@ export const SectionProfessions = ({ data }: any) => {
 												modal: {
 													position: 'relative',
 													borderRadius: '40px',
-													padding: 0,
+													padding: '30px'
 												},
 												closeButton: { position: "absolute", top: '15px', right: '15px' }
 											}}
@@ -244,7 +244,17 @@ export const SectionProfessions = ({ data }: any) => {
 												onClose={() => updateInnerShowModal(false)}
 												closeOnEsc
 												center>
-												<Forms titleForForm={hiddenText} confirm={data.link_to_oferta} hiddenText={`Заявка навык (${hiddenText})`} />
+												<div style={{ display: 'flex', justifyContent: 'center' }}>
+													<Forms titleForForm={hiddenText} confirm={data.link_to_oferta} hiddenText={`Заявка навык (${hiddenText})`} />
+												</div>
+
+												<div style={{ marginTop: '20px' }}>
+													<p style={{ marginBottom: '10px' }}><b>Обращаем ваше внимание,</b></p>
+													<p style={{ marginBottom: '10px' }}>1. Поданная заявка не является подтверждением бронирования места. Бронь места производится только после звонка администратора, получения подтверждения наличия места на электронную почту и осуществления предоплаты в размере 15 000 рублей.</p>
+													<p><b>2. Размещение в лагере формируется по гендерному признаку, поэтому наличие мест (зеленая кнопка) в группе может означать  в том числе свободные места либо только  для девочек, либо только для мальчиков.</b></p>
+												</div>
+
+
 											</Modal>}
 										</div>
 									</Modal>}

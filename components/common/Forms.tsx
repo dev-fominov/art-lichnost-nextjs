@@ -184,6 +184,7 @@ export const Forms = ({ confirm, hiddenText, titleForForm }: any) => {
                             Контактные данные не будут переданы третьим лицам
                         </span>
                         <div className={styles.formError}>{errors.userEmail}</div>
+												
                     </Form>
                 )}
             </Formik>

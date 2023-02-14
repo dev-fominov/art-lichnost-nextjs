@@ -176,7 +176,7 @@ export const Forms = ({ confirm, hiddenText, titleForForm }: any) => {
                                     pathname: '/contract/[slug]',
                                     query: { slug: confirm, },
                                 }}
-                                    text={'договором оферты'} />
+                                    text={'пользовательским соглашением'} />
                             </label>
                             <br />
                         </div>}

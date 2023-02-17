@@ -15,8 +15,6 @@ export const SectionCamp = (props: any) => {
 		<Section>
 			{data.camps.map((el: any, index: number) => {
 
-
-
 				return (
 					el.count > 0
 						? <Program

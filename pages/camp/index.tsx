@@ -52,6 +52,10 @@ const Camp: NextPage = ({ data }: any) => {
 		}
 	}
 
+	let testdrive1 = data.test_drive.checkbox ? 470 : 0
+	let testdrive2 = data.test_drive.checkbox ? 480 : 0
+	let testdrive3 = data.test_drive.checkbox ? 500 : 0
+
 	return (
 		<div style={{ overflow: "hidden" }}>
 			<Meta meta={data.metadata} />
@@ -78,9 +82,9 @@ const Camp: NextPage = ({ data }: any) => {
 				<div className={styles.lineBox}>
 					<Container>
 						{data.camps[0].count > 0 &&
-							<GreenLine className={styles.greenLine} height={`${height - 2800}`} />}
-						{data.camps[1].count > 0 && <BlueLine className={styles.blueLine} height={`${height - 2470}`} />}
-						{data.camps[2].count > 0 && <RedLine className={styles.redLine} height={`${height - 1700}`} />}
+							<GreenLine className={styles.greenLine} height={`${height - 2800 - testdrive1}`} />}
+						{data.camps[1].count > 0 && <BlueLine className={styles.blueLine} height={`${height - 2470 - testdrive2}`} />}
+						{data.camps[2].count > 0 && <RedLine className={styles.redLine} height={`${height - 1700 - testdrive3}`} />}
 					</Container>
 				</div>
 				<Description data={''} />

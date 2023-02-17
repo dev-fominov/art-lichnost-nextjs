@@ -3,12 +3,14 @@ import Program from "./Program";
 import Reviews from "./Reviews";
 import Merch from "./Merch";
 import Docs from "./Docs";
+import { Testdrive } from "./Testdrive";
 
 export const SectionCamp = (props: any) => {
 	const propsRef = props.propsRef
 	const propsRef1 = props.propsRef1
 	const propsRef2 = props.propsRef2
 	const data = props.data
+
 	return (
 		<Section>
 			{data.camps.map((el: any, index: number) => {
@@ -27,6 +29,8 @@ export const SectionCamp = (props: any) => {
 						/>
 						: <></>)
 			})}
+
+			{data.test_drive.checkbox && <Testdrive data={data.test_drive} />}
 			<Reviews data={data.reviews} />
 			<Merch data={data.merch} />
 			<Docs data={data.docs} title={'Забронировал, что дальше?'} />

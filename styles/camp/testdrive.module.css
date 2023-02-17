@@ -1,0 +1,144 @@
+.test_drive_section {
+	border: 1px solid #C4C4C4;
+	border-radius: 40px;
+	box-sizing: border-box;
+	padding: 34px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 50px;
+}
+
+.left {
+	width: calc(50% - 20px);
+}
+.right {
+	width: calc(50% - 20px);
+	margin-top: 47px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.subtitle {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 20px;
+	
+	color: #30AA33;
+}
+.title {
+	font-style: normal;
+	font-weight: 800;
+	font-size: 32px;
+	line-height: 39px;
+	text-transform: uppercase;
+	
+	color: #30AA33;
+	margin-bottom: 20px;
+}
+.description {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	/* or 143% */
+	
+	text-align: justify;
+	margin-bottom: 20px;
+	color: #000000;
+}
+.box1 {
+margin-bottom: 20px;
+}
+.title_box {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 20px;
+	margin-bottom: 10px;
+	color: #000000;
+	
+}
+.description_box {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	/* or 143% */
+	
+	text-align: justify;
+	
+	color: #000000;
+}
+.listForKids {
+	list-style-type: none;
+}
+.listForKids li {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: justify;
+	color: #000000;
+	background: url('../../components/common/img/green-arr.svg') no-repeat left top 6px;
+	padding-left: 35px;
+	font-size: 14px;
+	line-height: 20px;
+	margin-bottom: 15px;
+}
+.box3 .title_box {
+	padding-left: 35px;
+}
+.box4 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.btnRed {
+	background: #eb3535;
+	cursor: pointer;
+	width: 134px;
+	display: inline-block;
+	text-align: center;
+	font-size: 15px;
+	-webkit-transition: all .25s ease;
+	-o-transition: all .25s ease;
+	transition: all .25s ease;
+	line-height: 45px;
+	color: #fff;
+	border-radius: 30px;
+	font-weight: 400;
+	border: none;
+	margin-left: 35px;
+}
+
+.text {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 20px;
+
+	color: #000000;
+
+}
+
+@media (max-width: 520px) {
+	.test_drive_section {
+		flex-direction: column;
+	}
+	.left {
+		width: 100%;
+	}
+	.right {
+		width: 100%;
+	}
+	.box4 {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.text {
+		padding-left: 35px;
+		margin-top: 10px;
+	}
+}

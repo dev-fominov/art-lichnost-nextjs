@@ -50,6 +50,16 @@ const nextConfig = {
         source: '/docs/dokumenty-dlya-dogovora',
         destination: '/about',
         permanent: true,
+      },
+      {
+        source: '/psychology',
+        destination: '/psychologist',
+        permanent: true,
+      },
+      {
+        source: '/vocational',
+        destination: '/vacancies',
+        permanent: true,
       }
     ]
   },

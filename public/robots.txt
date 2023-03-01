@@ -36,6 +36,9 @@ Disallow: */xmlrpc.php
 Disallow: *utm*=
 Disallow: *openstat= 
 Disallow: /proftestirovanie?
+Disallow: /excursions/page/2
+Disallow: /excursions/page/3
+Disallow: /excursions/page/4
 Sitemap: https://art-lichnost.ru/sitemap.xml
 Sitemap: https://art-lichnost.ru/sitemap1.xml
 Sitemap: https://art-lichnost.ru/sitemap2.xml

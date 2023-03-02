@@ -60,6 +60,11 @@ const nextConfig = {
         source: '/vocational',
         destination: '/vacancies',
         permanent: true,
+      },
+      {
+        source: '/programmes/proftestirovanie_school',
+        destination: '/proftestirovanie',
+        permanent: true,
       }
     ]
   },

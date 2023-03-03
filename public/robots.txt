@@ -39,6 +39,7 @@ Disallow: /proftestirovanie?
 Disallow: /excursions/page/2
 Disallow: /excursions/page/3
 Disallow: /excursions/page/4
+Disallow: /camp/osen-2019-vystupleniya-marketing-prodazh
 Sitemap: https://art-lichnost.ru/sitemap.xml
 Sitemap: https://art-lichnost.ru/sitemap1.xml
 Sitemap: https://art-lichnost.ru/sitemap2.xml

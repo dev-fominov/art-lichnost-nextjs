@@ -45,8 +45,8 @@ export const Forms = ({ confirm, hiddenText, titleForForm }: any) => {
                         birthdate: '',
                         userEmail: '',
                         userPhone: '',
-                        assent: true,
-                        confirm: true,
+                        assent: false,
+                        confirm: false,
                     }}
                 validate={values => {
                     const errors = {} as any;

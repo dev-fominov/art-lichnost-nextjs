@@ -1,3 +1,4 @@
+User-agent: Yandex
 Allow: /
 User-agent: * 
 Disallow: /asdfsdf
@@ -40,6 +41,16 @@ Disallow: /excursions/page/2
 Disallow: /excursions/page/3
 Disallow: /excursions/page/4
 Disallow: /camp/osen-2019-vystupleniya-marketing-prodazh
+Disallow: /camp/zima-2015-perevodchik
+Disallow: /blog/kak-roditel-mozhet-pomoch-s-vyborom-professii
+Disallow: /blog/irina-kontoreva-sozdatel-resursa-vakansii-dlya-horoshih-lyudey-otvechaet-na-voprosy-o-ege-postuplenii-v-vuz-i-pervom-kurse
+Disallow: /camp/zima-2017-videobloger-astronom
+Disallow: /news/marafony
+Disallow: /camp/vesna-2014-spasatel
+Disallow: /camp/6-smena-leto-2015-korotkij-metr-i-robotototehnika-i-mobilnye-prilozheniya
+Disallow: /camp/page/10
+Disallow: /camp/6-smena-leto-2017-ya-vybirayu
+
 Sitemap: https://art-lichnost.ru/sitemap.xml
 Sitemap: https://art-lichnost.ru/sitemap1.xml
 Sitemap: https://art-lichnost.ru/sitemap2.xml

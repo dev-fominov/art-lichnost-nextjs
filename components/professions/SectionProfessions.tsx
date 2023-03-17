@@ -223,13 +223,13 @@ export const SectionProfessions = ({ data }: any) => {
 													{smena.receivedData.text_sale_camp && <p style={
 														{
 															fontWeight: 'bold',
-															marginTop: '30px',
+															marginTop: '10px',
 															maxWidth: '500px',
 															fontSize: '14px',
 															lineHeight: '20px',
 															width: '100%'
 														}
-													}>{smena.receivedData.text_sale_camp}</p>}
+													} dangerouslySetInnerHTML={{ __html: smena.receivedData.text_sale_camp }}></p>}
 												</div>}
 											</div>
 											{showInnerModal && <Modal styles={{
@@ -270,7 +270,7 @@ export const SectionProfessions = ({ data }: any) => {
 								lineHeight: '20px',
 								width: '100%'
 							}
-						}>{smena.receivedData.text_sale_camp}</p>}
+						} dangerouslySetInnerHTML={{ __html: smena.receivedData.text_sale_camp }}></p>}
 						<div className={styles.priceDes}>
 							{smena.receivedData.price && <span>
 								{(data.id_page !== 12) && `Цена c учетом сертификата — ${smena.receivedData.price} рублей`}

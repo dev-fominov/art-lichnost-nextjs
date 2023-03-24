@@ -165,7 +165,7 @@ export const SectionProfessions = ({ data }: any) => {
 									key={index}>
 									{item.seats
 										? <span style={{ background: '#30aa33' }} className={styles.onstock}>Есть места</span>
-										: <span style={{ background: '#eb3535' }} className={styles.onstock}>Нет места</span>}
+										: <span style={{ background: '#eb3535' }} className={styles.onstock}>Нет мест</span>}
 									<div className={styles.boxAlex}>
 										<div onClick={() => updateShowModal(item.title)}
 											className={item.seats
@@ -211,7 +211,7 @@ export const SectionProfessions = ({ data }: any) => {
 													}}>
 														Оставить заявку
 													</button>
-													: <span style={{ background: '#eb3535', width: '200px', fontSize: '14px', marginLeft: '35px' }} className={styles.onstock}>Нет места</span>}
+													: <span style={{ background: '#eb3535', width: '200px', fontSize: '14px', marginLeft: '35px' }} className={styles.onstock}>Нет мест</span>}
 
 												{item.price && <div className={styles.modalPriceBox}>
 													<p>{item.price} руб</p>

@@ -46,7 +46,7 @@ export const Forms = ({ confirm, hiddenText, titleForForm }: any) => {
                         userEmail: '',
                         userPhone: '',
                         assent: false,
-                        confirm: false,
+                        confirm: true,
                     }}
                 validate={values => {
                     const errors = {} as any;
@@ -142,7 +142,7 @@ export const Forms = ({ confirm, hiddenText, titleForForm }: any) => {
                             />
                         </div>
                         <button className={styles.submitButton}
-                            style={{ cursor: `${!values.assent || !values.confirm ? 'no-drop' : 'pointer'}` }}
+                            style={{ cursor: `${ !values.assent || !values.confirm ? 'no-drop' : 'pointer'}` }}
                             type={'submit'}
                             disabled={!values.assent || !values.confirm}>
                             {showLoading ? 'Загрузка...' : 'Оставить заявку'}

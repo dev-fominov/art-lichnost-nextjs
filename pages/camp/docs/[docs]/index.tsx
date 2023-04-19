@@ -39,37 +39,40 @@ const DocsPage = ({ data }: any) => {
 							<li className={styles['body-info-table']}>
 								<div className={styles['item-table-count']}>1</div>
 								<div className={styles['item-table-title']}>Форма 079 – У <br />Справка на школьника, отъезжающего в лагерь</div>
-								<div className={styles['item-table-loc']}>В школе (медкабинет)</div>
+								<div className={styles['item-table-loc']}>В школе (медкабинет) или у педиатра (поликлиника)</div>
 								<div className={styles['item-table-time']}>Последняя учебная неделя до выезда на смену</div>
-								<div className={styles['item-table-comm']}>Должно быть указано отсутствие карантина в школе и в классе. Печать медкабинета обязательна!</div>
+								<div className={styles['item-table-comm']}>Должно быть указано отсутствие карантина в школе и в классе. Печать медкабинета/поликлиники обязательна! Справка действительна все лето. </div>
 							</li>
 							<li className={styles['body-info-table']}>
 								<div className={styles['item-table-count']}>2</div>
 								<div className={styles['item-table-title']}>Форма 063 <br />Справка о прививках</div>
 								<div className={styles['item-table-loc']}>В школе или в поликлинике, к которой прикреплена школа</div>
 								<div className={styles['item-table-time']}>За несколько дней до выезда на смену.</div>
-								<div className={styles['item-table-comm']}>Особое внимание на реакцию Манту и Корь! Срок годности реакции на туберкулез – 1 год. Прививка от кори двухкратная вакцинация, для лагеря достаточно иметь первый этап (ставят ребенку в 6 месяцев)</div>
+								<div className={styles['item-table-comm']}>Особое внимание на реакцию Манту и Корь! Срок годности реакции на туберкулез (Манту или Диаскин тест) – 1 год.
+									Прививка от кори:
+									- двукратная вакцинация или вакцинация однократная + серологический тест (сделан не ранее 01.03.2023) или медотвод (выдан не ранее 01.03.2023)
+								</div>
 							</li>
 							<li className={styles['body-info-table']}>
 								<div className={styles['item-table-count']}>3</div>
 								<div className={styles['item-table-title']}>Результаты анализа на яйцеглист</div>
 								<div className={styles['item-table-loc']}>В платной или городской поликлинике</div>
-								<div className={styles['item-table-time']}>За несколько дней до выезда на смену. Справка действительна с летней смены.</div>
+								<div className={styles['item-table-time']}>За несколько дней до выезда на смену. Справка действительна всё лето.</div>
 								<div className={styles['item-table-comm']}>Необходимо предоставлять анализы для детей всех возрастов.</div>
 							</li>
 							<li className={styles['body-info-table']}>
 								<div className={styles['item-table-count']}>4</div>
 								<div className={styles['item-table-title']}>Результаты анализа на энтеробиоз</div>
 								<div className={styles['item-table-loc']}>В платной или городской поликлинике</div>
-								<div className={styles['item-table-time']}>За несколько дней до выезда на смену. Справка действительна с летней смены.</div>
+								<div className={styles['item-table-time']}>За несколько дней до выезда на смену. Справка действительна всё лето.</div>
 								<div className={styles['item-table-comm']}>Необходимо предоставлять анализы для детей всех возрастов.</div>
 							</li>
 							<li className={styles['body-info-table']}>
 								<div className={styles['item-table-count']}>5</div>
 								<div className={styles['item-table-title']}>Справка об эпидокружении по месту жительства</div>
 								<div className={styles['item-table-loc']}>Важно! Только в городской поликлинике!</div>
-								<div className={styles['item-table-time']}>За 72 часа до выезда.</div>
-								<div className={styles['item-table-comm']}>Обязательна фраза «инфекционных заболеваний не зарегистрировано, в том числе Сovid`19»</div>
+								<div className={styles['item-table-time']}>Не ранее, чем за 72 часа до выезда.</div>
+								<div className={styles['item-table-comm']}>Должна быть отметка об осмотре на чесотку и педикулез и обязательна фраза «инфекционных заболеваний не зарегистрировано, в том числе Сovid`19 и корь»</div>
 							</li>
 						</ul>
 					</div>

@@ -205,8 +205,7 @@ export const Forms = ({ confirm, hiddenText, titleForForm, transfer_po_marshrutu
 									pathname: '/contract/[slug]',
 									query: { slug: confirm, },
 								}}
-									text={'договора офферты'} />  ознакомлен и согласен</p>
-
+									text={'договора оферты'} />  ознакомлен и согласен</p>
 							</label>
 							<br />
 						</div>}

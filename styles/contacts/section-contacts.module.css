@@ -13,7 +13,24 @@
 	position: sticky;
 	top: 30px;
 } */
-
+.btn_title_down {
+	background: #eb3535;
+	border-radius: 100px;
+	border: none;
+	color: #fff;
+	text-align: left;
+	font-weight: 500;
+	font-size: 15px;
+	height: 43px;
+	line-height: 45px;
+	display: block;
+	cursor: pointer;
+	width: max-content;
+	display: flex;
+	justify-content: flex-start;
+	margin-bottom: 50px;
+	padding: 0 30px;
+}
 .transferBox {
 	margin-top: 50px;
 }

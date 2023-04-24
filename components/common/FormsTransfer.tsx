@@ -56,7 +56,7 @@ export const Forms = ({ confirm, hiddenText, titleForForm, transfer_po_marshrutu
 
 					} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.userEmail)) {
 						errors.userEmail = 'Некорректный email адрес';
-					} else if (values.transfer_po_marshrutu.length <= 0 || values.transfer_po_marshrutu_2.length <= 0 ) {
+					} else if (values.transfer_po_marshrutu.length <= 0 || values.transfer_po_marshrutu_2.length <= 0) {
 						errors.transfer_po_marshrutu = 'Заполните все поля'
 					}
 					return errors;
@@ -154,7 +154,7 @@ export const Forms = ({ confirm, hiddenText, titleForForm, transfer_po_marshrutu
 						</div>
 						<div className={styles.select}>
 							<label className={styles.birthdateLabel} htmlFor="transfer_po_marshrutu">
-								Трансфер по маршруту до лагеря (СПб, Выборгское шоссе, 5 до ДОЛ Золотая Долина)
+								Трансфер до лагеря (СПб, Выборгское шоссе, 5 до ДОЛ Золотая Долина)
 							</label>
 							<Field as="select" name="transfer_po_marshrutu">
 								<option value="no_route">Выберите смену</option>
@@ -163,7 +163,7 @@ export const Forms = ({ confirm, hiddenText, titleForForm, transfer_po_marshrutu
 						</div>
 						<div className={styles.select}>
 							<label className={styles.birthdateLabel} htmlFor="transfer_po_marshrutu_2">
-								Трансфер по маршруту в город (ДОЛ Золотая Долина до СПб, Выборгское шоссе, 5)
+								Трансфер в город (ДОЛ Золотая Долина до СПб, Выборгское шоссе, 5)
 							</label>
 							<Field as="select" name="transfer_po_marshrutu_2">
 								<option value="no_route">Выберите смену</option>
@@ -228,7 +228,7 @@ export const Forms = ({ confirm, hiddenText, titleForForm, transfer_po_marshrutu
 			closeOnEsc
 			center>
 			<div className={styles.modal}>
-				Заявка отправлена,<br /> мы свяжемся с Вами в ближайшее время
+				Ваша заявка принята.<br /> Информацию отправим вам на электронную почту.
 			</div>
 		</Modal>}
 	</div>

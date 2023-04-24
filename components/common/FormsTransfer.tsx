@@ -47,8 +47,6 @@ export const Forms = ({ confirm, hiddenText, titleForForm, transfer_po_marshrutu
 						userPhone: '',
 						transfer_po_marshrutu: '',
 						transfer_po_marshrutu_2: '',
-						transfer_po_marshrutu_3: '',
-						transfer_po_marshrutu_4: '',
 						assent: false,
 						confirm: false,
 					}}
@@ -56,15 +54,15 @@ export const Forms = ({ confirm, hiddenText, titleForForm, transfer_po_marshrutu
 					const errors = {} as any;
 					if (!values.userEmail) {
 
-					} else if ( !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.userEmail) ) {
+					} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.userEmail)) {
 						errors.userEmail = 'Некорректный email адрес';
-					} else if (values.transfer_po_marshrutu.length <= 0 || values.transfer_po_marshrutu_2.length <= 0 || values.transfer_po_marshrutu_3.length <= 0 || values.transfer_po_marshrutu_4.length <= 0) {
+					} else if (values.transfer_po_marshrutu.length <= 0 || values.transfer_po_marshrutu_2.length <= 0 ) {
 						errors.transfer_po_marshrutu = 'Заполните все поля'
 					}
 					return errors;
 				}}
 
-				
+
 				onSubmit={async (values, { setSubmitting, resetForm }) => {
 					setShowLoading(true)
 					resetForm()
@@ -78,8 +76,6 @@ export const Forms = ({ confirm, hiddenText, titleForForm, transfer_po_marshrutu
 						titleForForm: titleForForm,
 						transfer_po_marshrutu: values.transfer_po_marshrutu,
 						transfer_po_marshrutu_2: values.transfer_po_marshrutu_2,
-						transfer_po_marshrutu_3: values.transfer_po_marshrutu_3,
-						transfer_po_marshrutu_4: values.transfer_po_marshrutu_4,
 						assent: values.assent,
 						confirm: values.confirm,
 						linkForForm: baseURLSite + asPath.split('?')[0]
@@ -90,7 +86,7 @@ export const Forms = ({ confirm, hiddenText, titleForForm, transfer_po_marshrutu
 						setShowModal(true)
 						setTimeout(() => {
 							setShowModal(false)
-							
+
 							return
 						}, 3000)
 					}
@@ -157,29 +153,24 @@ export const Forms = ({ confirm, hiddenText, titleForForm, transfer_po_marshrutu
 								placeholder={'E-mail родителя/законного представителя'} />
 						</div>
 						<div className={styles.select}>
+							<label className={styles.birthdateLabel} htmlFor="transfer_po_marshrutu">
+								Трансфер по маршруту до лагеря (СПб, Выборгское шоссе, 5 до ДОЛ Золотая Долина)
+							</label>
 							<Field as="select" name="transfer_po_marshrutu">
-								<option value="no_route">Выбери маршрут</option>
+								<option value="no_route">Выберите смену</option>
 								{transfer_po_marshrutu.map((el: any, i: any) => <option key={i} value={el}>{el}</option>)}
 							</Field>
 						</div>
 						<div className={styles.select}>
+							<label className={styles.birthdateLabel} htmlFor="transfer_po_marshrutu_2">
+								Трансфер по маршруту в город (ДОЛ Золотая Долина до СПб, Выборгское шоссе, 5)
+							</label>
 							<Field as="select" name="transfer_po_marshrutu_2">
-								<option value="no_route">Выбери маршрут</option>
+								<option value="no_route">Выберите смену</option>
 								{transfer_po_marshrutu_2.map((el: any, i: any) => <option key={i} value={el}>{el}</option>)}
 							</Field>
 						</div>
-						<div className={styles.select}>
-							<Field as="select" name="transfer_po_marshrutu_3">
-								<option value="no_route">Выбери маршрут</option>
-								{transfer_po_marshrutu_3.map((el: any, i: any) => <option key={i} value={el}>{el}</option>)}
-							</Field>
-						</div>
-						<div className={styles.select}>
-							<Field as="select" name="transfer_po_marshrutu_4">
-								<option value="no_route">Выбери стоимость</option>
-								{transfer_po_marshrutu_4.map((el: any, i: any) => <option key={i} value={el}>{el}</option>)}
-							</Field>
-						</div>
+						<span className={styles.birthdateLabel}>Стоимость услуг в одну сторону составляет 250 (двести пятьдесят) рублей.</span>
 						<button className={styles.submitButton}
 							style={{ cursor: `${!values.assent || !values.confirm || Object.keys(errors).length > 0 ? 'no-drop' : 'pointer'}` }}
 							type={'submit'}

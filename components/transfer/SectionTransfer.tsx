@@ -8,6 +8,8 @@ export const SectionTransfer = ({ data }: any) => {
 		<Section>
 			<div className={styles.transferContainer}>
 
+				
+
 				<div className={styles.content} dangerouslySetInnerHTML={{ __html: data.content }} />
 
 				<div className={styles.transferBox}>

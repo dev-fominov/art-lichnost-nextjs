@@ -15,7 +15,9 @@
     }
 }
 
-
+.select select option {
+  -webkit-appearance: none;
+}
 .select select {
 	border: 1px solid #eb3535;
 	box-sizing: border-box;
@@ -26,6 +28,7 @@
 	margin-bottom: 15px;
 	font-size: 14px;
 	color: #808080;
+	-webkit-appearance: none;
 }
 
 .titleInnerForm {

@@ -24,6 +24,9 @@ export const pageAPI = {
 	contacts() {
 		return instance.get(`page/contacts`).then(res => res.data)
 	},
+	transfer() {
+		return instance.get(`page/transfer`).then(res => res.data)
+	},
 	about() {
 		return instance.get(`page/about`).then(res => res.data)
 	},
@@ -101,7 +104,16 @@ export const appAPI = {
 		let newUserEmail = rew.userEmail.split('.').join('/')
 		let wer = {...rew, userEmail: newUserEmail}
 		let newBody = JSON.stringify(wer)
+		console.log(newBody)
 		return instance.post(`send-mail/`, newBody).then(res => res.data)
+	},
+	commonFormTransfer(body: any) {
+		let rew = JSON.parse(body)
+		let newUserEmail = rew.userEmail.split('.').join('/')
+		let wer = {...rew, userEmail: newUserEmail}
+		let newBody = JSON.stringify(wer)
+		console.log(newBody)
+		return instance.post(`send-mail-transfer/`, newBody).then(res => res.data)
 	},
 	smena(id_page: any, slug: any) {
 		return instance.get(`camp-changes/?camp=${id_page === 10

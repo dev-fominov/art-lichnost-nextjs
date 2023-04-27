@@ -3,7 +3,7 @@
 	justify-content: space-between;
 	align-items: flex-start;
 }
-
+.content
 .transferContainer .content {
 	width: calc(100% - 430px);
 }
@@ -13,6 +13,13 @@
 	position: sticky;
 	top: 30px;
 } */
+
+.content {
+	overflow: hidden;
+}
+.content table {
+	width: 100%;
+}
 .btn_title_down {
 	background: #eb3535;
 	border-radius: 100px;

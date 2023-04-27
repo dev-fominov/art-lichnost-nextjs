@@ -9,7 +9,7 @@ import MaskedInput from "react-text-mask";
 import { appAPI, baseURLSite } from "../../api/api";
 import { useRouter } from "next/router";
 
-export const Forms = ({ confirm, hiddenText, titleForForm, transfer_po_marshrutu, transfer_po_marshrutu_2, transfer_po_marshrutu_3, transfer_po_marshrutu_4 }: any) => {
+export const Forms = ({ confirm, hiddenText, titleForForm, transfer_po_marshrutu, transfer_po_marshrutu_2, vklyuchit_v_formu_camp, vklyuchit_v_formu_city, opisanie_dlya_transfera_do_lagerya, opisanie_dlya_transfera_v_city, stoimost_uslug }: any) => {
 	const [showModal, setShowModal] = React.useState(false)
 	const [showLoading, setShowLoading] = React.useState(false)
 	const { asPath } = useRouter();
@@ -56,7 +56,7 @@ export const Forms = ({ confirm, hiddenText, titleForForm, transfer_po_marshrutu
 
 					} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.userEmail)) {
 						errors.userEmail = 'Некорректный email адрес';
-					} else if (values.transfer_po_marshrutu.length <= 0 || values.transfer_po_marshrutu_2.length <= 0) {
+					} else if ((vklyuchit_v_formu_camp && values.transfer_po_marshrutu.length <= 0) || (vklyuchit_v_formu_city && values.transfer_po_marshrutu_2.length <= 0)) {
 						errors.transfer_po_marshrutu = 'Заполните все поля'
 					}
 					return errors;
@@ -152,25 +152,22 @@ export const Forms = ({ confirm, hiddenText, titleForForm, transfer_po_marshrutu
 								type={'text'} name={'userEmail'}
 								placeholder={'E-mail родителя/законного представителя'} />
 						</div>
-						<div className={styles.select}>
-							<label className={styles.birthdateLabel} htmlFor="transfer_po_marshrutu">
-								Трансфер до лагеря (СПб, Выборгское шоссе, 5 до ДОЛ Золотая Долина)
-							</label>
+						{vklyuchit_v_formu_camp && <div className={styles.select}>
+							<label className={styles.birthdateLabel} htmlFor="transfer_po_marshrutu">{opisanie_dlya_transfera_do_lagerya}</label>
 							<Field as="select" name="transfer_po_marshrutu">
 								<option value="no_route">Выберите смену</option>
 								{transfer_po_marshrutu.map((el: any, i: any) => <option key={i} value={el}>{el}</option>)}
 							</Field>
-						</div>
-						<div className={styles.select}>
-							<label className={styles.birthdateLabel} htmlFor="transfer_po_marshrutu_2">
-								Трансфер в город (ДОЛ Золотая Долина до СПб, Выборгское шоссе, 5)
-							</label>
+						</div>}
+						{vklyuchit_v_formu_city && <div className={styles.select}>
+							<label className={styles.birthdateLabel} htmlFor="transfer_po_marshrutu_2">{opisanie_dlya_transfera_v_city}</label>
 							<Field as="select" name="transfer_po_marshrutu_2">
 								<option value="no_route">Выберите смену</option>
 								{transfer_po_marshrutu_2.map((el: any, i: any) => <option key={i} value={el}>{el}</option>)}
 							</Field>
-						</div>
-						<span className={styles.birthdateLabel}>Стоимость услуг в одну сторону составляет 250 (двести пятьдесят) рублей.</span>
+						</div>}
+
+						<span className={styles.birthdateLabel}>{stoimost_uslug}</span>
 						<button className={styles.submitButton}
 							style={{ cursor: `${!values.assent || !values.confirm || Object.keys(errors).length > 0 ? 'no-drop' : 'pointer'}` }}
 							type={'submit'}
@@ -185,8 +182,7 @@ export const Forms = ({ confirm, hiddenText, titleForForm, transfer_po_marshrutu
 									: <div className={styles.radioFalse} />}
 							</div>
 							<label className={styles.checkboxLabel} htmlFor={'assent'}>
-								Я согласен с обработкой и
-								хранением указанных здесь персональных данных
+								Я согласен с обработкой и хранением указанных здесь персональных данных
 							</label>
 							<br />
 						</div>

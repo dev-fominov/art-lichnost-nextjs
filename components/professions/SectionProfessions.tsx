@@ -285,7 +285,7 @@ export const SectionProfessions = ({ data }: any) => {
 				</>}
 			</div>}
 			<div className={styles.reasonsProgram}>
-				<h3 className={styles.titleInner}>5 причин, почему нужно поехать в лагерь:</h3>
+				<h3 className={styles.titleInner}>{data.benefits_title}</h3>
 				<div className={styles.reasonBox}>
 					<div className={styles.answerBlock}>
 						<div className={styles.answerFor}>

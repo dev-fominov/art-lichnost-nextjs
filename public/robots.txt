@@ -50,6 +50,7 @@ Disallow: /camp/vesna-2014-spasatel
 Disallow: /camp/6-smena-leto-2015-korotkij-metr-i-robotototehnika-i-mobilnye-prilozheniya
 Disallow: /camp/page/10
 Disallow: /camp/6-smena-leto-2017-ya-vybirayu
+Disallow: /transfer
 
 Sitemap: https://art-lichnost.ru/sitemap.xml
 Sitemap: https://art-lichnost.ru/sitemap1.xml

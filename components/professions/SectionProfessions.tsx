@@ -117,7 +117,6 @@ export const SectionProfessions = ({ data }: any) => {
 			? 'Навык'
 			: 'Профессия'
 
-
 	const priceName = data.id_page === 12
 		? 'Цена'
 		: data.id_page === 11

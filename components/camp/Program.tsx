@@ -49,6 +49,7 @@ const Program = (props: any) => {
 	const propsRef2 = props.propsRef2
 	const index = props.index
 	const data = props.data
+	let camp_card = data.camp_card.filter((el: any) => el.add_page_to_site)
 
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
@@ -110,14 +111,14 @@ const Program = (props: any) => {
 						itemClass="image-item"
 						infinite
 						responsive={responsive}>
-						{data.camp_card.map((el: any, index: any) => <Card key={index}
+						{camp_card.map((el: any, index: any) => <Card key={index}
 							term_id={data.term_id}
 							carouselCard={true}
 							data={el} />)}
 					</Carousel>
 				</div>
 				: <div className={styles.cards}>
-					{data.camp_card.map((el: any, index: any) => <Card key={index}
+					{camp_card.map((el: any, index: any) => <Card key={index}
 						term_id={data.term_id}
 						data={el} />)}
 				</div>}

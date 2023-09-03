@@ -56,7 +56,9 @@ export const SectionProfessions = ({ data }: any) => {
 	const router = useRouter()
 	const { slug } = router.query
 
-	const [slugProfi, setSlugProfi] = useState(data.shift_selection[0]?.slug)
+	let shift_selection = data.shift_selection.filter((el: any) => el.add_page_to_site)
+
+	const [slugProfi, setSlugProfi] = useState(shift_selection[0]?.slug)
 	const [smena, setSmena] = useState({ receivedData: false as any, loading: false })
 	const [showModal, updateShowModal] = useState('');
 	const [showInnerModal, updateInnerShowModal] = useState(false);
@@ -93,7 +95,7 @@ export const SectionProfessions = ({ data }: any) => {
 			setSlugProfi(slug)
 			getSmena(slug)
 		} else {
-			getSmena(data.shift_selection[0].slug)
+			getSmena(shift_selection[0].slug)
 		}
 	}, [slug])
 
@@ -127,10 +129,10 @@ export const SectionProfessions = ({ data }: any) => {
 			<Description img={data.description_img}
 				video={data.description_video}
 				text={data.description_text} />
-			{data.shift_selection.length !== 0 && <div className={styles.reasonsProgram}>
+			{shift_selection.length !== 0 && <div className={styles.reasonsProgram}>
 				<h1 className={styles.titleInner}>Выбрать смену и профессию</h1>
 				<ul className={styles.tablist}>
-					{data.shift_selection.map((el: any, index: number) => el.add_page_to_site && <li key={index}
+					{shift_selection.map((el: any, index: number) => el.add_page_to_site && <li key={index}
 						style={{
 							backgroundColor: `${el.slug === slugProfi
 								? data.id_page === 11 ? '#FF822E' : '#30aa33'

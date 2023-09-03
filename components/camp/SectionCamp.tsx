@@ -11,6 +11,8 @@ export const SectionCamp = (props: any) => {
 	const propsRef2 = props.propsRef2
 	const data = props.data
 
+	console.log(data.camps)
+
 	return (
 		<Section>
 			{data.camps.map((el: any, index: number) => {

@@ -131,7 +131,7 @@ export const SectionProfessions = ({ data }: any) => {
 			{data.shift_selection.length !== 0 && <div className={styles.reasonsProgram}>
 				<h1 className={styles.titleInner}>Выбрать смену и профессию</h1>
 				<ul className={styles.tablist}>
-					{data.shift_selection.map((el: any, index: number) => <li key={index}
+					{data.shift_selection.map((el: any, index: number) => el.add_page_to_site && <li key={index}
 						style={{
 							backgroundColor: `${el.slug === slugProfi
 								? data.id_page === 11 ? '#FF822E' : '#30aa33'

@@ -56,13 +56,10 @@ export const SectionProfessions = ({ data }: any) => {
 	const router = useRouter()
 	const { slug } = router.query
 
-	console.log(slug)
+	let shift_selection = data.shift_selection.length > 0 && data.shift_selection.filter((el: any) => el.add_page_to_site)
+	let shift_selection_slug = shift_selection ? shift_selection[0]?.slug : ''
 
-	let activeclass = slug ? 'slugactive' : 'none'
-
-	let shift_selection = data.shift_selection.filter((el: any) => el.add_page_to_site)
-
-	const [slugProfi, setSlugProfi] = useState(shift_selection[0]?.slug)
+	const [slugProfi, setSlugProfi] = useState(shift_selection_slug)
 	const [smena, setSmena] = useState({ receivedData: false as any, loading: false })
 	const [showModal, updateShowModal] = useState('');
 	const [showInnerModal, updateInnerShowModal] = useState(false);
@@ -99,7 +96,7 @@ export const SectionProfessions = ({ data }: any) => {
 			setSlugProfi(slug)
 			getSmena(slug)
 		} else {
-			getSmena(shift_selection[0].slug)
+			getSmena(shift_selection_slug)
 		}
 	}, [slug])
 
@@ -128,12 +125,13 @@ export const SectionProfessions = ({ data }: any) => {
 		: data.id_page === 11
 			? 'Навык'
 			: 'Профессия'
+
 	return (
 		<Section>
 			<Description img={data.description_img}
 				video={data.description_video}
 				text={data.description_text} />
-			{shift_selection.length !== 0 && <div className={styles.reasonsProgram}>
+			{(shift_selection.length > 0 || typeof slug !== 'undefined') && <div className={styles.reasonsProgram}>
 				<h1 className={styles.titleInner}>Выбрать смену и профессию</h1>
 				<ul className={styles.tablist}>
 					{data.shift_selection.map((el: any, index: number) => <li key={index}
@@ -167,7 +165,7 @@ export const SectionProfessions = ({ data }: any) => {
 										src={load}
 										alt={'logo'} />
 								</div>
-								: smena.receivedData.profstart.card.map((item: any, index: any) => <li
+								: smena.receivedData.profstart && smena.receivedData.profstart.card.map((item: any, index: any) => <li
 									key={index}>
 									{item.seats
 										? <span style={{ background: '#30aa33' }} className={styles.onstock}>Есть места</span>

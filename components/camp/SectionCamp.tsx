@@ -11,14 +11,14 @@ export const SectionCamp = (props: any) => {
 	const propsRef2 = props.propsRef2
 	const data = props.data
 
-	console.log(data.camps)
+	
 
 	return (
 		<Section>
 			{data.camps.map((el: any, index: number) => {
-
+			let camps_card = el.camp_card.filter((el:any) => el.add_page_to_site)
 				return (
-					el.count > 0
+					camps_card.length > 0
 						? <Program
 							key={el.term_id}
 							data={el}

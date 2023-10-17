@@ -40,7 +40,9 @@ export const SectionPsychologist = ({ data }: any) => {
 							</div>
 							<div className={styles.priceTime}>
 								<div className={styles.price}>{data.issues_addressed.for_kids.price_1[0]}</div>
+								<p className={styles.sale}>{data.issues_addressed.for_kids.sale_1[0]}</p>
 								<div className={styles.price}>{data.issues_addressed.for_kids.price_1[1]}</div>
+								<p className={styles.sale}>{data.issues_addressed.for_kids.sale_1[1]}</p>
 							</div>
 						</div>
 					</div>
@@ -66,7 +68,9 @@ export const SectionPsychologist = ({ data }: any) => {
 							</div>
 							<div className={styles.priceTime}>
 								<div className={styles.price}>{data.issues_addressed.for_parents.price_1[0]}</div>
+								<p className={styles.sale}>{data.issues_addressed.for_parents.sale_1[0]}</p>
 								<div className={styles.price}>{data.issues_addressed.for_parents.price_1[1]}</div>
+								<p className={styles.sale}>{data.issues_addressed.for_parents.sale_1[1]}</p>
 							</div>
 						</div>
 					</div>

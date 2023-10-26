@@ -42,6 +42,9 @@ const SectionTestirovanie = ({data}: any) => {
                             </button>
                         </div>
                         <div className={styles.priceTime}>
+														<div className={styles.price}>
+                                {item.time_2}
+                            </div>
                             <div className={styles.price}>
                                 {item.price}
                             </div>

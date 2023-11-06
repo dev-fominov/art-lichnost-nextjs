@@ -276,7 +276,7 @@ export const SectionProfessions = ({ data }: any) => {
 							}
 						} dangerouslySetInnerHTML={{ __html: smena.receivedData.text_sale_camp }}></p>}
 						<div className={styles.priceDes}>
-							{smena.receivedData.price && <span>
+							{smena.receivedData.price_certificate && <span>
 								{(data.id_page !== 12) && `Цена c учетом сертификата — ${smena.receivedData.price} рублей`}
 							</span>}
 							{smena.receivedData.price_certificate && <span>

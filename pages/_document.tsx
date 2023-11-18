@@ -16,7 +16,7 @@ export default function Document() {
 							m[i].l = 1 * new Date();
 							k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
 						})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-							ym(87539663, "init", {
+							ym(95611639, "init", {
 								clickmap: true,
 							trackLinks: true,
 							accurateTrackBounce: true
@@ -25,7 +25,7 @@ export default function Document() {
 				/>
 
 				<noscript>
-					<div><img src="https://mc.yandex.ru/watch/87539663" style={{ position: 'absolute', left: '-9999px' }} alt="" /></div>
+					<div><img src="https://mc.yandex.ru/watch/95611639" style={{ position: 'absolute', left: '-9999px' }} alt="" /></div>
 				</noscript>
 
 				<script dangerouslySetInnerHTML={{

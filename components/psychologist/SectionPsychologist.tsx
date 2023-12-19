@@ -90,13 +90,13 @@ export const SectionPsychologist = ({ data }: any) => {
 							</div>
 							<div className={styles.itemPsychologistTopRightInfo}>
 								<div
-									className={styles.rightInfoTitle}>{data.psihologi_art_lichnosti[0].title_item}</div>
+									className={styles.rightInfoTitle}>{data.psihologi_art_lichnosti[0]?.title_item}</div>
 								<div
-									className={styles.rightInfoSubTitle}>{data.psihologi_art_lichnosti[0].job_title}</div>
+									className={styles.rightInfoSubTitle}>{data.psihologi_art_lichnosti[0]?.job_title}</div>
 							</div>
 						</div>
 						<div className={styles.itemPsychologistBottom}>
-							<p>{data.psihologi_art_lichnosti[0].description}</p>
+							<p>{data.psihologi_art_lichnosti[0]?.description}</p>
 						</div>
 					</div>
 					<div className={styles.itemPsychologist}>
@@ -109,13 +109,13 @@ export const SectionPsychologist = ({ data }: any) => {
 							</div>
 							<div className={styles.itemPsychologistTopRightInfo}>
 								<div
-									className={styles.rightInfoTitle}>{data.psihologi_art_lichnosti[1].title_item}</div>
+									className={styles.rightInfoTitle}>{data.psihologi_art_lichnosti[1]?.title_item}</div>
 								<div
-									className={styles.rightInfoSubTitle}>{data.psihologi_art_lichnosti[1].job_title}</div>
+									className={styles.rightInfoSubTitle}>{data.psihologi_art_lichnosti[1]?.job_title}</div>
 							</div>
 						</div>
 						<div className={styles.itemPsychologistBottom}>
-							<p>{data.psihologi_art_lichnosti[1].description}</p>
+							<p>{data.psihologi_art_lichnosti[1]?.description}</p>
 						</div>
 					</div>
 				</div>

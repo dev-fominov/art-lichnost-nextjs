@@ -85,8 +85,8 @@ export const SectionPsychologist = ({ data }: any) => {
 							<div className={styles.itemPsychologistTopImage}>
 								<Image layout="fill"
 									quality={30}
-									src={data.psihologi_art_lichnosti[0].image?.url}
-									alt={data.psihologi_art_lichnosti[0].image?.alt} />
+									src={data.psihologi_art_lichnosti[0]?.image?.url}
+									alt={data.psihologi_art_lichnosti[0]?.image?.alt} />
 							</div>
 							<div className={styles.itemPsychologistTopRightInfo}>
 								<div
@@ -104,8 +104,8 @@ export const SectionPsychologist = ({ data }: any) => {
 							<div className={styles.itemPsychologistTopImage}>
 								<Image layout="fill"
 									quality={30}
-									src={data.psihologi_art_lichnosti[1].image?.url}
-									alt={data.psihologi_art_lichnosti[1].image?.alt} />
+									src={data.psihologi_art_lichnosti[1]?.image?.url}
+									alt={data.psihologi_art_lichnosti[1]?.image?.alt} />
 							</div>
 							<div className={styles.itemPsychologistTopRightInfo}>
 								<div

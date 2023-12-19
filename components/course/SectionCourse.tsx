@@ -11,7 +11,7 @@ export const SectionCourse = ({ data }: any) => {
 					{/* {data.description_course.title} */}
 				</div>
 				<div className={styles.description}>
-					{data.description_course.description}
+					{data.description_course?.description}
 				</div>
 				<div className={styles.age}>
 					{data.description_course.ages}

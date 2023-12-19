@@ -8,6 +8,7 @@ const DEFAULT_META = {
 	keywords: "",
 	robots_nofollow: "",
 	canonical: "",
+	img: "",
 };
 
 interface MetaProps {
@@ -17,11 +18,12 @@ interface MetaProps {
 		keywords?: string;
 		robots_nofollow?: string;
 		canonical?: string;
+		img?: string;
 	};
 }
 
 const Meta: FC<MetaProps> = ({ meta }) => {
-	const { title, description, keywords, robots_nofollow, canonical } = meta ?? DEFAULT_META;
+	const { title, description, keywords, robots_nofollow, canonical, img } = meta ?? DEFAULT_META;
 	const router = useRouter();
 
 	return (
@@ -38,6 +40,7 @@ const Meta: FC<MetaProps> = ({ meta }) => {
 				content={description ?? DEFAULT_META.description}
 			/>
 			<meta property="og:locale" content="en_US" />
+			<meta property="og:image" content={img.url} />
 			<meta property="og:image:width" content="968" />
 			<meta property="og:image:height" content="504" />
 			<meta property="og:url" content={router.pathname} />

@@ -43,7 +43,7 @@ const Meta: FC<MetaProps> = ({ meta }) => {
 			<meta property="og:image" content={img} />
 			<meta property="og:image:width" content="968" />
 			<meta property="og:image:height" content="504" />
-			<meta property="og:url" content={router.pathname} />
+			<meta property="og:url" content={router.asPath} />
 			{canonical == '10'
 				? <link rel="canonical" href="https://art-lichnost.ru/camp/professions" />
 				: canonical == '11'

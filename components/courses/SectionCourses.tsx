@@ -12,8 +12,7 @@ export const SectionCourses = ({data}: any) => {
                 <h3 className={styles.titleInner}>Старт запуска группы</h3>
                 <div className={styles.boxCourse}>
                     {data.launch_group.map((item: any, index: any) => {
-                        return item.count && <div key={index}
-                                                  className={styles.itemSkill}>
+                        return item.count && <div key={index} className={styles.itemSkill}>
                           <div className={styles.title}>
                               {item.name}
                           </div>

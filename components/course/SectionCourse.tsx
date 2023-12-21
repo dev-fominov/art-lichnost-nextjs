@@ -14,7 +14,7 @@ export const SectionCourse = ({ data }: any) => {
 					{data.description_course?.description}
 				</div>
 				<div className={styles.age}>
-					{data.description_course.ages}
+					{data.description_course?.ages}
 				</div>
 			</div>
 			<div className={styles.boxContent}>
@@ -85,8 +85,19 @@ export const SectionCourse = ({ data }: any) => {
 						<div className={styles.title}>
 							Стоимость
 						</div>
-						<div className={styles.price}>
-							{data.educator.price} рублей
+						<div style={{ 'display': 'flex', 'marginBottom': '20px' }}>
+							{data.educator.price && <div>
+								<div className={styles.price} style={{ 'margin': '0px 10px 5px 0px' }}>
+									{data.educator.price} рублей
+								</div>
+								{data.educator.description1 && <span className={styles.description}>{data.educator.description1}</span>}
+							</div>}
+							{data.educator.price2 && <div>
+								<div className={styles.price} style={{ 'margin': '0px 0px 5px 0px' }}>
+									{data.educator.price2} рублей
+								</div>
+								{data.educator.description2 && <span className={styles.description}>{data.educator.description2}</span>}
+							</div>}
 						</div>
 						<div className={styles.description}>
 							{data.educator.one_time_fee

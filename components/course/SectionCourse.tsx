@@ -87,13 +87,13 @@ export const SectionCourse = ({ data }: any) => {
 						</div>
 						<div style={{ 'display': 'flex', 'marginBottom': '20px' }}>
 							{data.educator.price && <div style={{ 'width': '50%'}}>
-								<div className={styles.price} style={{ 'margin': '0px 10px 5px 0px', 'textAlign': 'center', 'width': 'maxContent' }}>
+								<div className={styles.price} style={{ 'margin': '0px 10px 5px 0px', 'width': 'max-content' }}>
 									{data.educator.price} рублей
 								</div>
 								{data.educator.description1 && <span className={styles.description}>{data.educator.description1}</span>}
 							</div>}
 							{data.educator.price2 && <div style={{ 'width': '50%'}}>
-								<div className={styles.price} style={{ 'margin': '0px 0px 5px 0px', 'textAlign': 'center', 'width': 'maxContent' }}>
+								<div className={styles.price} style={{ 'margin': '0px 0px 5px 0px', 'width': 'max-content' }}>
 									{data.educator.price2} рублей
 								</div>
 								{data.educator.description2 && <span className={styles.description}>{data.educator.description2}</span>}

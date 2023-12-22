@@ -44,12 +44,12 @@ const Meta: FC<MetaProps> = ({ meta }) => {
 			<meta property="og:image:width" content="968" />
 			<meta property="og:image:height" content="504" />
 			<meta property="og:url" content={router.asPath} />
-			{canonical == '10'
-				? <link rel="canonical" href="https://art-lichnost.ru/camp/professions" />
-				: canonical == '11'
-					? <link rel="canonical" href="https://art-lichnost.ru/camp/skills" />
-					: <link rel="canonical" href="https://art-lichnost.ru/camp/art-community" />}
-
+			{canonical == '10' ?
+				<link rel="canonical" href="https://art-lichnost.ru/camp/professions" />
+				: canonical == '11' ? <link rel="canonical" href="https://art-lichnost.ru/camp/skills" />
+				: canonical == '12' ? <link rel="canonical" href="https://art-lichnost.ru/camp/art-community" />
+				: <link rel="canonical" href={`https://art-lichnost.ru${router.asPath}`} />
+			}
 			<meta name='robots' content={`index, ${robots_nofollow}, max-image-preview:large, max-snippet:-1, max-video-preview:-1`} />
 
 			<meta

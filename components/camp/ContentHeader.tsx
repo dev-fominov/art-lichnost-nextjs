@@ -25,6 +25,7 @@ export const ContentHeader = (props: any) => {
 			<Container>
 				<div className={styles.contentBox}>
 					<h1 className={styles.heading}>Детский лагерь в Ленобласти 7-17 лет</h1>
+					<div className={styles.headingSub}>Старт продаж лета — февраль 2024</div>
 					<div className={styles.content}>
 						{titleArr.map((item: any, index: any) => {
 							const color = item === 'ПРОФЕССИИ'

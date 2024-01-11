@@ -24,7 +24,19 @@
 	text-align: center;
 	text-transform: uppercase;
 	color: #FFFFFF;
-	margin-bottom: 100px;
+	margin-bottom: 30px;
+}
+.headingSub {
+	padding: 15px 30px;
+	border: 2px solid #FFFFFF;
+	border-radius: 100px;
+	font-weight: 800;
+	font-size: 26px;
+	line-height: 32px;
+	text-align: center;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	margin-bottom: 70px;
 }
 
 .content {

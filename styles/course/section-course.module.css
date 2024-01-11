@@ -171,6 +171,7 @@
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+	 flex-direction: column;
 }
 
 .leftUser {
@@ -343,11 +344,18 @@
     }
 
     .rightUser {
-        -webkit-box-align: end;
-        -ms-flex-align: end;
-        align-items: end;
-        width: 30%;
+        -webkit-box-align: flex-start;
+        -ms-flex-align: flex-start;
+        align-items: flex-start;
+        width: 100%;
+		  margin-top: 20px;
     }
+	 .rightUser > div {
+		flex-direction: column;
+	 }
+	 .rightUser > div > div:first-child {
+		margin-bottom: 20px;
+	 }
 
     .leftUser {
         width: 69%;

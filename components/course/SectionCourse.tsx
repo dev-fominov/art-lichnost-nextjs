@@ -116,11 +116,12 @@ export const SectionCourse = ({ data }: any) => {
 						<ul>
 							{data.step_form.steps_form_items.map((el: any, index: number) => <li key={index}>{el}</li>)}
 						</ul>
-						<div style={{
+						{data.step_form.img_steps_form.url && <div style={{
 							background: `url(${data.step_form.img_steps_form.url}) no-repeat center center`,
 							backgroundSize: 'cover'
 						}}
-							className={styles.formStepImg} />
+							className={styles.formStepImg} />}
+						
 					</div>
 				</div>
 			</div>

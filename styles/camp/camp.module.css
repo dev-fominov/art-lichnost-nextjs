@@ -27,11 +27,11 @@
 	margin-bottom: 30px;
 }
 .headingSub {
-	padding: 15px 30px;
+	padding: 5px 30px;
 	border: 2px solid #FFFFFF;
 	border-radius: 100px;
 	font-weight: 800;
-	font-size: 26px;
+	font-size: 22px;
 	line-height: 32px;
 	text-align: center;
 	text-transform: uppercase;
@@ -102,6 +102,9 @@
 }
 
 @media (max-width: 750px) {
+	.headingSub {
+		font-size: 14px;	
+	}
 	.content {
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;

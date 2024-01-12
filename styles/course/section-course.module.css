@@ -171,7 +171,6 @@
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-	 flex-direction: column;
 }
 
 .leftUser {
@@ -292,6 +291,9 @@
 }
 
 @media (max-width: 900px) {
+	.boxCoursesUser {
+		flex-direction: column;
+	}
     .boxCoursesDots {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;

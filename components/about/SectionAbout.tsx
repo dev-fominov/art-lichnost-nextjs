@@ -10,8 +10,7 @@ const SectionAbout = ({data}: any) => {
                     {data.our_records.title}
                 </div>
                 <div className={styles.contentBox}>
-                    {data.our_records.list_records.map((item: any, index: any) => <div key={index}
-                                                                                       className={styles.itemFirst}>
+                    {data.our_records.list_records.map((item: any, index: any) => <div key={index} className={styles.itemFirst}>
                         <img src={item.img.url} alt={item.img.alt}/>
                         <div className={styles.itemTitle}>
                             {item.title}

@@ -155,8 +155,7 @@ export const Forms = ({ confirm, hiddenText, titleForForm }: any) => {
                                     : <div className={styles.radioFalse} />}
                             </div>
                             <label className={styles.checkboxLabel} htmlFor={'assent'}>
-                                Я согласен с обработкой и
-                                хранением указанных здесь персональных данных
+                                Я согласен с обработкой и хранением указанных здесь персональных данных
                             </label>
                             <br />
                         </div>

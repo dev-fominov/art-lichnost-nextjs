@@ -131,6 +131,7 @@ export const SectionProfessions = ({ data }: any) => {
 			<Description img={data.description_img}
 				video={data.description_video}
 				text={data.description_text} />
+
 			{(shift_selection.length > 0 || typeof slug !== 'undefined') && <div className={styles.reasonsProgram}>
 				<h1 className={styles.titleInner}>Выбрать смену и профессию</h1>
 				<ul className={styles.tablist}>
@@ -288,6 +289,7 @@ export const SectionProfessions = ({ data }: any) => {
 					</div>
 				</>}
 			</div>}
+
 			<div className={styles.reasonsProgram}>
 				<h3 className={styles.titleInner}>{data.benefits_title}</h3>
 				<div className={styles.reasonBox}>
@@ -321,12 +323,14 @@ export const SectionProfessions = ({ data }: any) => {
 					</div>
 				</div>
 			</div>
+
 			<div className={styles.mesta_prozhivaniya}>
 				<h3 className={styles.titleInner}>{data.prozhivanie_title}</h3>
 				<div className={styles.prozhivanieDescription}
 					dangerouslySetInnerHTML={{ __html: data.prozhivanie_description }} />
 				<SliderProfessions data={data.mesta_prozhivaniya} />
 			</div>
+
 			<div className={styles.programDescription}>
 				<div className={styles.whatText}>
 					<h3 className={styles.titleInner}>{data.programm_title}</h3>
@@ -339,6 +343,7 @@ export const SectionProfessions = ({ data }: any) => {
 					backgroundSize: `cover`
 				}} />
 			</div>
+
 			{data.daily_regime && <div className={styles.modeDay}>
 				<h3 className={styles.titleInner}>{data.daily_regime_title}</h3>
 				<div className={styles.modeItem}>
@@ -346,15 +351,18 @@ export const SectionProfessions = ({ data }: any) => {
 					</p>)}
 				</div>
 			</div>}
+
 			<div className={styles.priceBox}>
 				<h3 className={styles.titleInner}>{data.includ_title}</h3>
 				<div className={styles.priceIclude}
 					dangerouslySetInnerHTML={{ __html: data.includ_content }} />
 			</div>
+
 			{data.faq && <div className={styles.faqBox}>
 				<h3 className={styles.titleInner}>Часто задаваемые вопросы</h3>
 				<CustomAccordion data={data.faq} />
 			</div>}
+
 			<div className={styles.reasonsProgram}>
 				<h3 className={styles.titleInner}>Оформить заявку</h3>
 				<div className={styles.formOrderBox}>
@@ -374,6 +382,7 @@ export const SectionProfessions = ({ data }: any) => {
 					</div>
 				</div>
 			</div>
+
 			{data.past_shifts.length > 0 && <div className={styles.reasonsProgram}>
 				<h1 className={styles.titleInner}>Прошедшие смены</h1>
 				<div className={styles.containerBtn}>
@@ -391,6 +400,7 @@ export const SectionProfessions = ({ data }: any) => {
 					>
 						{data.past_shifts.map((el: any, index: number) => <div key={index}
 							className={styles.carouselCard}>
+							
 							<A href={`/camp/smena/${el.slug}`} text={<div
 								className={styles.boxImg}
 								draggable={false}
@@ -399,6 +409,7 @@ export const SectionProfessions = ({ data }: any) => {
 									backgroundSize: `cover`
 								}}>
 							</div>} />
+
 							<div className={styles.boxLink}>
 								<h3 className={styles.postTitle}>{el.title}</h3>
 								<A href={`/camp/smena/${el.slug}`} text={'Узнать больше'} />
@@ -408,6 +419,7 @@ export const SectionProfessions = ({ data }: any) => {
 					</Carousel>
 				</div>
 			</div>}
+
 		</Section>
 	)
 }

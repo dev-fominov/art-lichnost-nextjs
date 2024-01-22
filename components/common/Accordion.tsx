@@ -18,11 +18,7 @@ export const CustomAccordion = ({data}: any) => {
             <Accordion allowZeroExpanded className={styles.accordion}>
                 {data.map((item: any, index: number) => (
                     <AccordionItem
-                        className={(index < 3)
-                            ? styles.accordionItem
-                            : openAllAccordion
-                                ? styles.accordionItem
-                                : styles.accordionItemNull} key={index}>
+                        className={(index < 3) ? styles.accordionItem : openAllAccordion ? styles.accordionItem : styles.accordionItemNull} key={index}>
                         <AccordionItemHeading className={styles.itemHeading}>
                             <AccordionItemButton className={styles.btn}>
                                 <AccordionItemState>

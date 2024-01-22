@@ -61,8 +61,8 @@ function BurgerNav() {
                     <A text={'Контакты'} href={"/contacts"}/>
                 </div>
                 <div className={styles.contact}>
-                    <Link href={"tel:+78125079790"}>
-                        <a target="_blank">(812) 507-97-90</a>
+                    <Link href={"tel:+78127010919"}>
+                        <a target="_blank">(812) 701-09-19</a>
                     </Link>
                     <span>Санкт-Петербург</span>
                 </div>
